@@ -91,12 +91,12 @@ function search($lang, $arglist=false) {
 				$search_url=url('search', $lang, $cloud_name);
 			}
 			if (!$thread_nocloud) {
-				$cloud = build('cloud', $lang, $cloud_id, false, 60, true, true);
+				$cloud = build('cloud', $lang, $cloud_id, false, 30, true, true);
 			}
 		}
 		else {
 			$search_url=url('search', $lang);
-			$cloud = build('cloud', $lang, false, false, 60, true, true);
+			$cloud = build('cloud', $lang, false, false, 30, true, true);
 		}
 		$headline_text=$search_title;
 		$headline_url=false;
@@ -141,7 +141,10 @@ function search($lang, $arglist=false) {
 	head('description', false);
 	head('keywords', false);
 
-	$output = layout('standard', compact('banner', 'content', 'sidebar'));
+	$contact=true;
+	$footer = build('footer', $lang, compact('contact'));
+
+	$output = layout('standard', compact('banner', 'footer', 'content', 'sidebar'));
 
 	return $output;
 }

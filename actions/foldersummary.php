@@ -66,7 +66,10 @@ function foldersummary($lang, $folder) {
 	$banner = build('banner', $lang, $with_toolbar ? false : compact('edit', 'validate'));
 	$toolbar = $with_toolbar ? build('toolbar', $lang, compact('edit', 'validate')) : false;
 
-	$output = layout('standard', compact('toolbar', 'banner', 'content'));
+	$contact=true;
+	$footer = build('footer', $lang, compact('contact'));
+
+	$output = layout('standard', compact('toolbar', 'banner', 'footer', 'content'));
 
 	return $output;
 }

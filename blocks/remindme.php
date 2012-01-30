@@ -16,7 +16,7 @@ require_once 'validatemail.php';
 require_once 'validateusername.php';
 
 function remindme($lang, $login=false) {
-	$with_name=true;
+	$with_name=false;
 	$with_captcha=true;
 
 	$action='init';

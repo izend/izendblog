@@ -17,7 +17,7 @@ function nodecomment($lang, $node_id, $node_url, $nomore, $moderate) {
 	$user_id = user_profile('id');
 	$now = time();
 
-	$message_maxlen=2000;
+	$message_maxlen=1000;
 
 	$action='init';
 	if (isset($_POST['comment_comment'])) {

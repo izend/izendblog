@@ -13,7 +13,7 @@ global $request_path, $request_query;
 
 global $sitename, $webmaster, $mailer, $blackmaillist, $blacknamelist;
 
-$sitename = 'izend.org';
+$sitename = 'izendblog.org';
 $webmaster = 'izend@izend.org';
 $mailer = 'izend';
 $blackmaillist = array('izend@izend.org', 'webmaster@izend.org', 'keymaster@izend.org');

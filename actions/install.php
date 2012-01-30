@@ -2,7 +2,7 @@
 
 /**
  *
- * @copyright  2010-2011 izend.org
+ * @copyright  2010-2012 izend.org
  * @version    1
  * @link       http://www.izend.org
  */
@@ -13,15 +13,17 @@ function install($lang) {
 	head('keywords', false);
 	head('robots', 'noindex, nofollow');
 
-	$languages='install';
-	$contact=true;
-	$banner = build('banner', $lang, compact('languages', 'contact'));
+	$banner = build('banner', $lang);
 
 	$configure = build('configure', $lang);
 
 	$content = view('install', $lang, compact('configure'));
 
-	$output = layout('standard', compact('banner', 'content'));
+	$languages='install';
+	$contact=true;
+	$footer = build('footer', $lang, compact('languages', 'contact'));
+
+	$output = layout('standard', compact('footer', 'banner', 'content'));
 
 	return $output;
 }

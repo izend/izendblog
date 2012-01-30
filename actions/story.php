@@ -160,7 +160,10 @@ function story($lang, $arglist=false) {
 	$banner = build('banner', $lang, $with_toolbar ? compact('headline', 'search') : compact('headline', 'edit', 'validate', 'search'));
 	$toolbar = $with_toolbar ? build('toolbar', $lang, compact('edit', 'validate')) : false;
 
-	$output = layout('standard', compact('sharebar', 'toolbar', 'banner', 'sidebar', 'content'));
+	$contact=true;
+	$footer = build('footer', $lang, compact('contact'));
+
+	$output = layout('standard', compact('sharebar', 'toolbar', 'banner', 'footer', 'content', 'sidebar'));
 
 	return $output;
 }

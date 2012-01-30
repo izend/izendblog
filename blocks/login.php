@@ -15,7 +15,7 @@ require_once 'validatepassword.php';
 require_once 'validateusername.php';
 
 function login($lang) {
-	$with_name=true;
+	$with_name=false;
 	$with_captcha=true;
 
 	$action='init';
@@ -76,7 +76,7 @@ function login($lang) {
 			if (!$login) {
 				$missing_login=true;
 			}
-			else if (!(($with_name and validate_user_name($login)) or validate_mail($login))) {
+			else if (!validate_user_name($login) and !validate_mail($login)) {
 				$bad_login=true;
 			}
 

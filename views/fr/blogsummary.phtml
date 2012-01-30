@@ -1,0 +1,49 @@
+<?php
+
+/**
+ *
+ * @copyright  2010-2012 izend.org
+ * @version    1
+ * @link       http://www.izend.org
+ */
+?>
+<?php require_once 'datefr.php'; ?>
+<div id="homeblog">
+<?php foreach ($blogsummary as $summary): extract($summary); ?>
+<?php
+$month = longmonth_fr($created);
+
+$day = date('j', $created);
+$year = date('Y', $created);
+?>
+<div class="blogsummary">
+<h4><a href="/<?php echo $uri; ?>"><?php echo $title; ?></a></h4>
+<p><a href="/<?php echo $uri; ?>"><span class="date"><span class="day"><?php echo $day; ?></span> <span class="month"><?php echo $month; ?></span> <span class="year"><?php echo $year; ?></span></span></a>
+<?php if($author): ?><span class="author">par <?php echo $author; ?></span><?php endif; ?></p>
+<?php echo $summary; ?>
+<p class="readmore"><a href="/<?php echo $uri; ?>">Lire la suite</a></p>
+</div>
+<?php endforeach; ?>
+<?php if ($count > $pagesize): ?>
+<?php
+require_once 'pagerange.php';
+
+$npages=ceil($count / $pagesize);
+$pagenums=page_range($page, $npages, 2);
+?>
+<div class="pageselector">
+<?php foreach ($pagenums as $p): ?>
+<?php if ($p==$page): ?>
+<span class="pagenumber currentpage"><?php echo $p; ?></span>
+<?php else: ?>
+<span class="pagenumber"><a href="?p=<?php echo $p; ?>"><?php echo $p; ?></a></span>
+<?php endif; ?>
+<?php endforeach; ?>
+</div>
+<?php endif; ?>
+</div>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.vignette').each(function() {$(this).css('display', 'none').fadeIn(2000);});
+});
+</script>

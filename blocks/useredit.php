@@ -19,7 +19,7 @@ require_once 'validatewebsite.php';
 require_once 'models/user.inc';
 
 function useredit($lang, $user_id, $administrator=false) {
-	$with_name=true;
+	$with_name=false;
 	$with_status=($user_id != 1 and $administrator == true);
 	$with_delete=($user_id != 1 and $user_id != user_profile('id'));
 	$with_newpassword=false; 	// ($user_id != 1 and $user_id == user_profile('id'));

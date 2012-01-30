@@ -27,7 +27,10 @@ function account($lang) {
 
 	$content = view('account', $lang, compact('useredit'));
 
-	$output = layout('standard', compact('banner', 'content'));
+	$contact=true;
+	$footer = build('footer', $lang, compact('contact'));
+
+	$output = layout('standard', compact('footer', 'banner', 'content'));
 
 	return $output;
 }

@@ -15,7 +15,9 @@
 <body>
 <div id="standard">
 <?php echo $banner; ?>
-<div id="bannerline"></div>
+<?php if (!empty($social)): ?>
+<?php echo $social; ?>
+<?php endif; ?>
 <div id="content">
 <?php if (!empty($toolbar)): ?>
 <?php echo $toolbar; ?>

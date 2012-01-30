@@ -75,7 +75,7 @@ $supported_contents=array('text', 'infile', 'download', 'file', 'longtail');	// 
 
 global $with_toolbar;
 
-$with_toolbar=false;
+$with_toolbar=true;
 
 global $search_distance, $search_closest;
 
@@ -102,5 +102,5 @@ global $home_action, $default_action, $default_folder;
 
 $home_action = <?php echo "'$home_action'"; ?>;		// 'home' or 'homepage'
 $default_action = <?php echo $default_action ? "'$default_action'" : 'false'; ?>;	// 'page' or 'anypage' or false
-$default_folder = 1;			// can be an array
+$default_folder = 3;			// can be an array
 

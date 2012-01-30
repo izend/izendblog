@@ -1,0 +1,19 @@
+<?php
+
+/**
+ *
+ * @copyright  2010-2011 izend.org
+ * @version    1
+ * @link       http://www.izend.org
+ */
+?>
+<?php
+$dot=strrpos($sitename, '.');
+if ($dot) {
+	$name=substr($sitename, 0, $dot);
+	$ext=substr($sitename, $dot);
+}
+?>
+<div id="logo">
+<h1><a href="<?php echo $home_page; ?>" title=""><?php if ($dot): ?><span id="sitename"><?php echo ($name); ?></span><span id="sitedomain"><?php echo ($ext); ?></span><?php else: ?><span id="sitename"><?php echo $sitename; ?></span><?php endif; ?></a></h1>
+</div>

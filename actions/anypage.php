@@ -2,8 +2,8 @@
 
 /**
  *
- * @copyright  2010-2012 izend.org
- * @version    4
+ * @copyright  2010-2011 izend.org
+ * @version    3
  * @link       http://www.izend.org
  */
 
@@ -42,10 +42,9 @@ function anypage($lang, $arglist=false) {
 
 	head('title', $sitename);
 
-	$contact=false;
-	$banner = build('banner', $lang, compact('contact'));
+	$banner = build('banner', $lang);
 
-	$contact=false;
+	$contact=true;
 	$footer = build('footer', $lang, compact('contact'));
 
 	$output = layout('standard', compact('sharebar', 'banner', 'footer', 'content'));

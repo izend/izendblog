@@ -24,7 +24,9 @@ function admin($lang) {
 	$usersearch = build('usersearch', $lang);
 	$content = view('admin', $lang, compact('usersearch'));
 
-	$output = layout('standard', compact('banner', 'content'));
+	$footer = build('footer', $lang);
+
+	$output = layout('standard', compact('footer', 'banner', 'content'));
 
 	return $output;
 }

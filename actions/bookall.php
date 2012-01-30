@@ -24,7 +24,10 @@ function bookall($lang) {
 
 	$content = view('bookall', $lang, compact('booklist'));
 
-	$output = layout('standard', compact('toolbar', 'banner', 'content'));
+	$contact=true;
+	$footer = build('footer', $lang, compact('contact'));
+
+	$output = layout('standard', compact('toolbar', 'banner', 'footer', 'content'));
 
 	return $output;
 }

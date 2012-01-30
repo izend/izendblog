@@ -11,7 +11,7 @@ require_once 'readarg.php';
 require_once 'models/user.inc';
 
 function usersearch($lang) {
-	$with_name=true;
+	$with_name=false;
 
 	$action='init';
 	if (isset($_POST['usersearch_search']) or isset($_GET['q'])) {

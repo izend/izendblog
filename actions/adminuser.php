@@ -43,12 +43,14 @@ function adminuser($lang, $arglist=false) {
 	head('keywords', false);
 	head('robots', 'noindex, nofollow');
 
-	$admin=true;
-	$banner = build('banner', $lang, compact('admin'));
+	$banner = build('banner', $lang);
 
 	$content = view('adminuser', $lang, compact('useredit'));
 
-	$output = layout('standard', compact('banner', 'content'));
+	$admin=true;
+	$footer = build('footer', $lang, compact('admin'));
+
+	$output = layout('standard', compact('footer', 'banner', 'content'));
 
 	return $output;
 }

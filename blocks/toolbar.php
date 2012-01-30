@@ -11,22 +11,17 @@ require_once 'userisidentified.php';
 require_once 'userhasrole.php';
 
 function toolbar($lang, $components=false) {
-	$nobody_page=$edit_page=$view_page=$validate_page=$admin_page=false;
+	$edit_page=$view_page=$validate_page=$admin_page=false;
 
 	$is_identified = user_is_identified();
 	$is_admin = user_has_role('administrator');
 	$is_writer = user_has_role('writer');
 
+	$nobody_page=$is_identified ? url('nobody', $lang) : false;
+
 	if ($components) {
 		foreach ($components as $v => $param) {
 			switch ($v) {
-				case 'logout':
-					if ($param) {
-						if ($is_identified) {
-							$nobody_page=url('nobody', $lang);
-						}
-					}
-					break;
 				case 'edit':
 					if ($param) {
 						if ($is_writer) {

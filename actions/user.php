@@ -26,7 +26,10 @@ function user($lang, $arglist=false) {
 	head('keywords', false);
 	head('robots', 'noindex, nofollow');
 
-	$output = layout('standard', compact('banner', 'content'));
+	$contact=true;
+	$footer = build('footer', $lang, compact('contact'));
+
+	$output = layout('standard', compact('footer', 'banner', 'content'));
 
 	return $output;
 }

@@ -22,7 +22,7 @@
 <img src="<?php echo $base_path; ?>/images/theme/edit/help.png" alt="?" title="?" onclick="togglehelp()" />
 <span id="comment_limiter"><?php echo $message_maxlen; ?></span>
 </div>
-<textarea id="comment_message" name="comment_message" cols="80" rows="10" title="Texte" onkeyup="return inputlimit('comment_message', 'comment_limiter', <?php echo $message_maxlen; ?>)"><?php echo htmlspecialchars($message, ENT_COMPAT, 'UTF-8'); ?></textarea>
+<textarea id="comment_message" name="comment_message" cols="80" rows="6" title="Texte" onkeyup="return inputlimit('comment_message', 'comment_limiter', <?php echo $message_maxlen; ?>)"><?php echo htmlspecialchars($message, ENT_COMPAT, 'UTF-8'); ?></textarea>
 <br/><img class="grippie" src="<?php echo $base_path; ?>/images/theme/edit/grippie.png" alt="===" />
 <p id="comment_help" class="bbcodehelp">
 Entrez un maximum de <b><?php echo $message_maxlen; ?></b> caractères. Améliorez la présentation de votre texte avec les balises de formatage suivantes&nbsp;:<br />

@@ -19,7 +19,10 @@ function contact($lang) {
 
 	$content = view('contact', $lang, compact('mailme'));
 
-	$output = layout('standard', compact('banner', 'content'));
+	$languages='contact';
+	$footer = build('footer', $lang, compact('languages'));
+
+	$output = layout('standard', compact('footer', 'banner', 'content'));
 
 	return $output;
 }

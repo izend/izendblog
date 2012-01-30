@@ -14,7 +14,7 @@ function banner($lang, $components=false) {
 	global $home_action;
 
 	$home_page=url($home_action, $lang);
-	$logo = view('logo', $lang, compact('home_page'));
+	$logo = view('logo', false, compact('home_page'));
 
 	$menu=$languages=$headline=$search=false;
 
@@ -23,10 +23,6 @@ function banner($lang, $components=false) {
 	$is_identified = user_is_identified();
 	$is_admin = user_has_role('administrator');
 	$is_writer = user_has_role('writer');
-
-	if ($is_identified) {
-		$nobody_page=url('nobody', $lang);
-	}
 
 	if ($components) {
 		foreach ($components as $v => $param) {

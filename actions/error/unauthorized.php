@@ -11,13 +11,15 @@ function unauthorized($lang) {
 	head('title', translate('http_unauthorized:title', $lang));
 	head('robots', 'noindex, nofollow');
 
-	$contact=$account=true;
+	$contact=$account=false;
 	$banner = build('banner', $lang, compact('contact', 'account'));
 
 	$contact_page=url('contact', $lang);
 	$content = view('error/unauthorized', $lang, compact('contact_page'));
 
-	$output = layout('standard', compact('banner', 'content'));
+	$footer = build('footer', $lang);
+
+	$output = layout('standard', compact('footer', 'banner', 'content'));
 
 	header('HTTP/1.1 401 Unauthorized');
 

@@ -17,7 +17,7 @@ require_once 'validateusername.php';
 require_once 'models/user.inc';
 
 function register($lang) {
-	$with_name=true;
+	$with_name=false;
 	$with_captcha=true;
 
 	$action='init';

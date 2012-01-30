@@ -8,14 +8,15 @@
  */
 ?>
 <?php extract($errors); ?>
-<form action="" method="post">
+<form action="" method="post" class="compact">
 <input type="hidden" name="mailme_token" value="<?php echo $token; ?>" />
-<p class="inlabel<?php if ($missing_mail or $bad_mail): ?> inerror<?php endif; ?>">Quelle est votre adresse d'email&nbsp;?</p>
-<p><input type="text" name="mailme_mail" id="mailme_mail" size="50" maxlength="100" title="Email" onkeypress="return focusonenter(event, 'mailme_subject')" value="<?php echo $mail; ?>" /></p>
+<p class="inlabel<?php if ($missing_mail or $bad_mail): ?> inerror<?php endif; ?>">Email</p>
+<p><input type="text" name="mailme_mail" id="mailme_mail" size="50" maxlength="100" title="nom@domaine.fr" onkeypress="return focusonenter(event, 'mailme_subject')" value="<?php echo $mail; ?>" /></p>
 <p class="info">Votre adresse d'email est strictement confidentielle.</p>
-<p class="inlabel<?php if ($missing_subject or $bad_subject or $missing_message): ?> inerror<?php endif; ?>">Tapez le sujet et le texte de votre message&nbsp;:</p>
+<p class="inlabel<?php if ($missing_subject or $bad_subject): ?> inerror<?php endif; ?>">Sujet</p>
 <p><input type="text" name="mailme_subject" id="mailme_subject" size="60" maxlength="100" title="Sujet" onkeypress="return focusonenter(event, 'mailme_message')" value="<?php echo $subject; ?>" /></p>
-<p><textarea name="mailme_message" id="mailme_message" cols="70" rows="6" title="Texte"><?php echo $message; ?></textarea><br/><img class="grippie" src="<?php echo $base_path; ?>/images/theme/edit/grippie.png" alt="===" /></p>
+<p class="inlabel<?php if ($missing_message): ?> inerror<?php endif; ?>">Message</p>
+<p><textarea name="mailme_message" id="mailme_message" cols="70" rows="5" title="Texte"><?php echo $message; ?></textarea><br/><img class="grippie" src="<?php echo $base_path; ?>/images/theme/edit/grippie.png" alt="===" /></p>
 <?php if ($with_appointment): ?>
 <p>
 <span class="inlabel<?php if ($bad_appointment): ?> inerror<?php endif; ?>">Rendez-vous le</span>

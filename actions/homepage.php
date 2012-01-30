@@ -2,8 +2,8 @@
 
 /**
  *
- * @copyright  2010-2012 izend.org
- * @version    5
+ * @copyright  2010-2011 izend.org
+ * @version    4
  * @link       http://www.izend.org
  */
 
@@ -29,15 +29,15 @@ function homepage($lang) {
 
 	head('title', $sitename);
 
+	$banner = build('banner', $lang);
+
 	$languages='homepage';
 	$contact=true;
-	$banner = build('banner', $lang, compact('languages', 'contact'));
-
-	$languages=false;
-	$contact=false;
 	$footer = build('footer', $lang, compact('languages', 'contact'));
 
-	$output = layout('standard', compact('sharebar', 'banner', 'footer', 'content'));
+	$social = view('social', $lang);
+
+	$output = layout('standard', compact('sharebar', 'banner', 'footer', 'content', 'social'));
 
 	return $output;
 }
