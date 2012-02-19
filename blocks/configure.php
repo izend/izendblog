@@ -2,8 +2,13 @@
 
 /**
  *
+<<<<<<< HEAD
  * @copyright  2010-2012 izend.org
  * @version    1
+=======
+ * @copyright  2010-2011 izend.org
+ * @version    17
+>>>>>>> izend
  * @link       http://www.izend.org
  */
 
@@ -656,7 +661,7 @@ _SEP_;
 	$sql= <<<_SEP_
 CREATE TABLE `${db_prefix}user` (
   `user_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(40) NOT NULL,
+  `name` varchar(40) DEFAULT NULL,
   `password` varchar(32) NOT NULL,
   `newpassword` varchar(32) DEFAULT NULL,
   `mail` varchar(100) DEFAULT NULL,
