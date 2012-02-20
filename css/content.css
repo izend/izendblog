@@ -19,6 +19,8 @@
 .pagenumber {font-size:small;padding:5px;background-color:#ffffff;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
 .pagenumber.currentpage {font-size:large;padding-top:7px;padding-bottom:7px;}
 
+.notice {display:inline-block;background:#ffffe0;padding:1em;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;overflow:auto;}
+
 .btn_browser {width:18px;height:18px;background-image:url(/files/images/browser.png);background-repeat:no-repeat;display:inline-block;text-indent:-1000em;vertical-align:bottom;cursor:text;}
 #browser_firefox {background-position:0 0;}
 #browser_firefox:hover {background-position:0 -18px;}
