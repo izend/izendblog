@@ -17,12 +17,8 @@ $aliases = array(
 	),
 	'en' => array(
 		'install'		=> 'install',
-<<<<<<< HEAD
 		'homeblog'		=> 'home',
-=======
->>>>>>> izend
 		'homepage'		=> 'home',
-		'home'			=> 'home',
 		'contact'		=> 'contact',
 		'user'			=> 'user',
 		'nobody'		=> 'disconnect',

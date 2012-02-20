@@ -2,13 +2,8 @@
 
 /**
  *
-<<<<<<< HEAD
- * @copyright  2010-2012 izend.org
- * @version    1
-=======
  * @copyright  2010-2011 izend.org
  * @version    17
->>>>>>> izend
  * @link       http://www.izend.org
  */
 
