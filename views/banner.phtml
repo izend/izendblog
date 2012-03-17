@@ -2,17 +2,17 @@
 
 /**
  *
- * @copyright  2010-2011 izend.org
- * @version    2
+ * @copyright  2010-2012 izend.org
+ * @version    3
  * @link       http://www.izend.org
  */
 ?>
 <div id="banner">
 <?php echo $logo; ?>
-<?php if (isset($menu)): ?>
+<?php if (!empty($menu)): ?>
 <?php echo $menu; ?>
 <?php endif; ?>
-<?php if (isset($languages)): ?>
+<?php if (!empty($languages)): ?>
 <?php echo $languages; ?>
 <?php endif; ?>
 <?php if (true): ?>
@@ -24,5 +24,8 @@
 <?php if (isset($headline)): ?>
 <?php echo $headline; ?>
 <?php endif; ?>
+<?php endif; ?>
+<?php if (!empty($donate)): ?>
+<?php echo $donate; ?>
 <?php endif; ?>
 </div>

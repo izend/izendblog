@@ -81,6 +81,7 @@ function homeblog($lang, $arglist=false) {
 
 	$content = view('homeblog', false, compact('page_header', 'page_footer', 'page_contents', 'besocial'));
 
+	$donate=true;
 	$search_text='';
 	$search_url=url('search', $lang);
 	$suggest_url=url('suggest', $lang);
@@ -88,7 +89,7 @@ function homeblog($lang, $arglist=false) {
 	$edit=user_has_role('writer') ? url('folderedit', $_SESSION['user']['locale']) . '/'. 1 . '/'. 1 . '?' . 'clang=' . $lang : false;
 	$validate=url('homeblog', $lang);
 
-	$banner = build('banner', $lang, $with_toolbar ? compact('search') : compact('edit', 'validate', 'search'));
+	$banner = build('banner', $lang, $with_toolbar ? compact('search', 'donate') : compact('edit', 'validate', 'search', 'donate'));
 	$toolbar = $with_toolbar ? build('toolbar', $lang, compact('edit', 'validate')) : false;
 
 	$languages='homeblog';
