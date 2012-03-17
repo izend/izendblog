@@ -2,8 +2,8 @@
 
 /**
  *
- * @copyright  2010-2011 izend.org
- * @version    9
+ * @copyright  2010-2012 izend.org
+ * @version    10
  * @link       http://www.izend.org
  */
 
@@ -79,9 +79,10 @@ function homeblog($lang, $arglist=false) {
 		list($besocial, $sharebar) = socialize($lang, compact('ilike', 'tweetit', 'plusone', 'linkedin'));
 	}
 
-	$content = view('homeblog', false, compact('page_header', 'page_footer', 'page_contents', 'besocial'));
+	$donate = build('donate', $lang);
 
-	$donate=true;
+	$content = view('homeblog', false, compact('page_header', 'page_footer', 'page_contents', 'besocial', 'donate'));
+
 	$search_text='';
 	$search_url=url('search', $lang);
 	$suggest_url=url('suggest', $lang);
@@ -89,7 +90,7 @@ function homeblog($lang, $arglist=false) {
 	$edit=user_has_role('writer') ? url('folderedit', $_SESSION['user']['locale']) . '/'. 1 . '/'. 1 . '?' . 'clang=' . $lang : false;
 	$validate=url('homeblog', $lang);
 
-	$banner = build('banner', $lang, $with_toolbar ? compact('search', 'donate') : compact('edit', 'validate', 'search', 'donate'));
+	$banner = build('banner', $lang, $with_toolbar ? compact('search') : compact('edit', 'validate', 'search'));
 	$toolbar = $with_toolbar ? build('toolbar', $lang, compact('edit', 'validate')) : false;
 
 	$languages='homeblog';

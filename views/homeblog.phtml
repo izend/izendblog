@@ -3,12 +3,15 @@
 /**
  *
  * @copyright  2010-2012 izend.org
- * @version    1
+ * @version    2
  * @link       http://www.izend.org
  */
 ?>
 <div id="home">
 <?php echo $page_header; ?>
+<?php if ($donate): ?>
+<?php echo $donate; ?>
+<?php endif; ?>
 <?php if ($page_contents): ?>
 <?php echo $page_contents; ?>
 <?php endif; ?>
