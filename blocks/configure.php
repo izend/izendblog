@@ -804,12 +804,12 @@ _SEP_;
 INSERT INTO `${db_prefix}content_longtail` (`content_id`, `locale`, `file`, `image`, `width`, `height`, `icons`, `skin`, `controlbar`, `duration`, `autostart`, `repeat`) VALUES
 (1, 'fr', '/files/sounds/smoke.mp3', NULL, 250, 30, 0, '/longtail/modieus.zip', 'bottom', 0, 0, 1),
 (1, 'en', '/files/sounds/smoke.mp3', NULL, 250, 30, 0, '/longtail/modieus.zip', 'bottom', 0, 0, 1),
-(2, 'fr', 'http://www.youtube.com/watch?v=BeP80btBxIE', NULL, 320, 240, 0, '/longtail/modieus.zip', 'none', 0, 0, 0),
-(2, 'en', 'http://www.youtube.com/watch?v=BeP80btBxIE', NULL, 320, 240, 0, '/longtail/modieus.zip', 'none', 0, 0, 0),
+(2, 'fr', 'http://www.youtube.com/watch?v=BeP80btBxIE', NULL, 320, 240, 1, '/longtail/modieus.zip', 'none', 0, 0, 0),
+(2, 'en', 'http://www.youtube.com/watch?v=BeP80btBxIE', NULL, 320, 240, 1, '/longtail/modieus.zip', 'none', 0, 0, 0),
 (5, 'fr', '/files/sounds/smoke.mp3', NULL, 250, 30, 0, '/longtail/modieus.zip', 'bottom', 0, 0, 1),
 (5, 'en', '/files/sounds/smoke.mp3', NULL, 250, 30, 0, '/longtail/modieus.zip', 'bottom', 0, 0, 1),
-(6, 'fr', 'http://www.youtube.com/watch?v=BeP80btBxIE', NULL, 320, 240, 0, '/longtail/modieus.zip', 'none', 0, 0, 0),
-(6, 'en', 'http://www.youtube.com/watch?v=BeP80btBxIE', NULL, 320, 240, 0, '/longtail/modieus.zip', 'none', 0, 0, 0);
+(6, 'fr', 'http://www.youtube.com/watch?v=BeP80btBxIE', NULL, 320, 240, 1, '/longtail/modieus.zip', 'none', 0, 0, 0),
+(6, 'en', 'http://www.youtube.com/watch?v=BeP80btBxIE', NULL, 320, 240, 1, '/longtail/modieus.zip', 'none', 0, 0, 0);
 _SEP_;
 	if (!@mysql_query($sql, $db_conn)) {
 		return false;
