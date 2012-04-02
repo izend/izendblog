@@ -3,50 +3,61 @@
 /**
  *
  * @copyright  2010-2012 izend.org
- * @version    2
+ * @version    3
  * @link       http://www.izend.org
  */
 
 require_once 'qrencode.php';
+require_once 'validatecolor.php';
 
 function qrcode($lang, $arglist=false) {
 	$s=false;
-	$size=100;
-	$color=false;
-	$quality='L';
+	$size=1;
+	$fg=$bg=false;
+	$quality='M';
+
+	$qs = array('L' => 25, 'M' => 25, 'Q' => 29, 'H' => 33);
 
 	if (is_array($arglist)) {
-		if (isset($arglist[0])) {
-			$s = $arglist[0];
-		}
-		else if (isset($arglist['s'])) {
+		if (isset($arglist['s'])) {
 			$s = $arglist['s'];
 		}
-		if (isset($arglist['size'])) {
-			$size = $arglist['size'];
+		if (isset($arglist['fg'])) {
+			$fg = $arglist['fg'];
 		}
-		if (isset($arglist['color'])) {
-			$color = $arglist['color'];
+		if (isset($arglist['bg'])) {
+			$bg = $arglist['bg'];
 		}
 		if (isset($arglist['quality'])) {
 			$quality = $arglist['quality'];
 		}
+		if (isset($arglist['size'])) {
+			$size = $arglist['size'];
+		}
 	}
 
-	if (!$s or !$size or !is_numeric($size) or ($color and !preg_match('/([0-9A-F]){6}/i', $color))) {
+	if (!$s or !$size or !is_numeric($size) or $size < 1 or $size > 10 or !$quality or !isset($qs[$quality]) or ($fg and !validate_color($fg)) or ($bg and !validate_color($bg))) {
 		return run('error/badrequest', $lang);
 	}
 
-	$png=qrencode($s, $size, $quality);
+	$png=qrencode($s, $qs[$quality] * $size, $quality);
 
 	if (!$png) {
 		return run('error/internalerror', $lang);
 	}
 
-	if ($color) {
-		$rgb=str_split($color, 2);
+	if ($fg or $bg) {
 		$img=imagecreatefromstring($png);
-		imagefilter($img, IMG_FILTER_COLORIZE, hexdec($rgb[0]), hexdec($rgb[1]), hexdec($rgb[2]), 0);
+		imagetruecolortopalette($img, false, 255);
+
+		if ($fg) {
+			$rgb=str_split($fg[0] == '#' ? substr($fg, 1, 6) : $fg, 2);
+			imagecolorset($img, 0, hexdec($rgb[0]), hexdec($rgb[1]), hexdec($rgb[2]));
+		}
+		if ($bg) {
+			$rgb=str_split($bg[0] == '#' ? substr($bg, 1, 6) : $bg, 2);
+			imagecolorset($img, 1, hexdec($rgb[0]), hexdec($rgb[1]), hexdec($rgb[2]));
+		}
 
 		ob_start();
 		imagepng($img);

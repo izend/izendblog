@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2010-2012 izend.org
- * @version    18
+ * @version    19
  * @link       http://www.izend.org
  */
 
@@ -498,6 +498,7 @@ CREATE TABLE `${db_prefix}content_longtail` (
   `height` int(4) unsigned NOT NULL DEFAULT '0',
   `icons` tinyint(1) NOT NULL DEFAULT '0',
   `skin` varchar(200) DEFAULT NULL,
+  `controlbar` enum('none','bottom','top','over') NOT NULL DEFAULT 'none',
   `duration` int(5) unsigned NOT NULL DEFAULT '0',
   `autostart` tinyint(1) NOT NULL DEFAULT '0',
   `repeat` tinyint(1) NOT NULL DEFAULT '0',
@@ -800,15 +801,15 @@ _SEP_;
 	}
 
 	$sql= <<<_SEP_
-INSERT INTO `${db_prefix}content_longtail` (`content_id`, `locale`, `file`, `image`, `width`, `height`, `icons`, `skin`, `duration`, `autostart`, `repeat`) VALUES
-(1, 'fr', '/files/sounds/smoke.mp3', NULL, 250, 30, 0, '/longtail/modieus.zip', 0, 0, 1),
-(1, 'en', '/files/sounds/smoke.mp3', NULL, 250, 30, 0, '/longtail/modieus.zip', 0, 0, 1),
-(2, 'fr', 'http://www.youtube.com/watch?v=BeP80btBxIE', NULL, 320, 272, 0, '/longtail/modieus.zip', 0, 0, 0),
-(2, 'en', 'http://www.youtube.com/watch?v=BeP80btBxIE', NULL, 320, 272, 0, '/longtail/modieus.zip', 0, 0, 0),
-(5, 'fr', '/files/sounds/smoke.mp3', NULL, 250, 30, 0, '/longtail/modieus.zip', 0, 0, 1),
-(5, 'en', '/files/sounds/smoke.mp3', NULL, 250, 30, 0, '/longtail/modieus.zip', 0, 0, 1),
-(6, 'fr', 'http://www.youtube.com/watch?v=BeP80btBxIE', NULL, 320, 272, 0, '/longtail/modieus.zip', 0, 0, 0),
-(6, 'en', 'http://www.youtube.com/watch?v=BeP80btBxIE', NULL, 320, 272, 0, '/longtail/modieus.zip', 0, 0, 0);
+INSERT INTO `${db_prefix}content_longtail` (`content_id`, `locale`, `file`, `image`, `width`, `height`, `icons`, `skin`, `controlbar`, `duration`, `autostart`, `repeat`) VALUES
+(1, 'fr', '/files/sounds/smoke.mp3', NULL, 250, 30, 0, '/longtail/modieus.zip', 'bottom', 0, 0, 1),
+(1, 'en', '/files/sounds/smoke.mp3', NULL, 250, 30, 0, '/longtail/modieus.zip', 'bottom', 0, 0, 1),
+(2, 'fr', 'http://www.youtube.com/watch?v=BeP80btBxIE', NULL, 320, 240, 0, '/longtail/modieus.zip', 'none', 0, 0, 0),
+(2, 'en', 'http://www.youtube.com/watch?v=BeP80btBxIE', NULL, 320, 240, 0, '/longtail/modieus.zip', 'none', 0, 0, 0),
+(5, 'fr', '/files/sounds/smoke.mp3', NULL, 250, 30, 0, '/longtail/modieus.zip', 'bottom', 0, 0, 1),
+(5, 'en', '/files/sounds/smoke.mp3', NULL, 250, 30, 0, '/longtail/modieus.zip', 'bottom', 0, 0, 1),
+(6, 'fr', 'http://www.youtube.com/watch?v=BeP80btBxIE', NULL, 320, 240, 0, '/longtail/modieus.zip', 'none', 0, 0, 0),
+(6, 'en', 'http://www.youtube.com/watch?v=BeP80btBxIE', NULL, 320, 240, 0, '/longtail/modieus.zip', 'none', 0, 0, 0);
 _SEP_;
 	if (!@mysql_query($sql, $db_conn)) {
 		return false;

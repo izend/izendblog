@@ -3,9 +3,11 @@
 /**
  *
  * @copyright  2010-2012 izend.org
- * @version    15
+ * @version    17
  * @link       http://www.izend.org
  */
+
+require_once 'ismobile.php';
 
 global $base_url, $base_path, $base_root;
 
@@ -33,7 +35,7 @@ $signature='izend.org - http://www.izend.org';
 
 global $socializing, $facebookid;
 
-$socializing='inline';	// false, 'bar', 'inline'
+$socializing='inline';	// is_mobile() ? 'inline' : 'bar';	// false, 'inline', 'bar'
 $facebookid = false;
 
 global $log_dir;
@@ -72,14 +74,14 @@ $contents_model = array(
 	'infile'	=>	array('path' => array('type' => 'string', 'null' => true)),
 	'download'	=>	array('name' => array('type' => 'string', 'null' => true), 'path' => array('type' => 'string', 'null' => true)),
 	'file'		=>	array('path' => array('type' => 'string', 'null' => true), 'start' => array('type' => 'number', 'default' => 0), 'end' => array('type' => 'number', 'default' => 0), 'format' => array('type' => 'string', 'null' => true), 'lineno' => array('type' => 'boolean', 'default' => true)),
-	'longtail'	=>	array('file' => array('type' => 'string', 'null' => true), 'image' => array('type' => 'string', 'null' => true), 'width' => array('type' => 'number', 'default' => 0), 'height' => array('type' => 'number', 'default' => 0), 'icons' => array('type' => 'boolean'), 'skin' => array('type' => 'string', 'null' => true), 'duration' => array('type' => 'number', 'default' => 0), 'autostart' => array('type' => 'boolean'), 'repeat' => array('type' => 'boolean'))
+	'longtail'	=>	array('file' => array('type' => 'string', 'null' => true), 'image' => array('type' => 'string', 'null' => true), 'width' => array('type' => 'number', 'default' => 0), 'height' => array('type' => 'number', 'default' => 0), 'icons' => array('type' => 'boolean'), 'skin' => array('type' => 'string', 'null' => true), 'controlbar' => array('type' => 'string', 'default' => 'none'), 'duration' => array('type' => 'number', 'default' => 0), 'autostart' => array('type' => 'boolean'), 'repeat' => array('type' => 'boolean'))
 );
 
 $supported_contents=array('text', 'infile', 'download', 'file', 'longtail');	// 'text', 'infile', 'download', 'file', 'longtail'
 
 global $with_toolbar;
 
-$with_toolbar=false;
+$with_toolbar=true;	// is_mobile() ? false : true;
 
 global $search_distance, $search_closest;
 
