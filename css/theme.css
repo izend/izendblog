@@ -153,7 +153,7 @@ a:hover #sitedomain {color:#ff9900;}
 
 #sidebar {float:right;width:180px;margin:0 0 1em 1em;}
 
-#toolbar {width:24px;background-color:#ffffff;padding:6px;position:fixed;top:85px;margin-left:930px;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;z-index:2000;}
+#toolbar {width:24px;background-color:#ffffff;padding:6px;position:fixed;top:85px;margin-left:930px;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
 #toolbar #exit {width:24px;height:24px;float:left;background:transparent url(../images/theme/icons/cancel.png) no-repeat;}
 #toolbar #admin {width:24px;height:24px;float:left;background:transparent url(../images/theme/icons/work.png) no-repeat;}
 #toolbar #edit {width:24px;height:24px;float:left;background:transparent url(../images/theme/icons/edit.png) no-repeat;}
@@ -175,7 +175,7 @@ a:hover #sitedomain {color:#ff9900;}
 .navigation .previous {width:16px;height:16px;display:inline-block;background:transparent url(../images/theme/icons/left.png) no-repeat;vertical-align:bottom;}
 .navigation .next {width:16px;height:16px;display:inline-block;background:transparent url(../images/theme/icons/right.png) no-repeat;vertical-align:bottom;}
 
-#sharebar {width:75px;background-color:#ffffff;padding:5px;position:fixed;top:70px;left:0px;border-radius:0px 8px 8px 0px;-webkit-border-radius:0px 8px 8px 0px;-moz-border-radius:0px 8px 8px 0px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;z-index:2000;}
+#sharebar {width:75px;background-color:#ffffff;padding:5px;position:fixed;top:70px;left:0px;border-radius:0px 8px 8px 0px;-webkit-border-radius:0px 8px 8px 0px;-moz-border-radius:0px 8px 8px 0px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
 #sharebar > li {padding:5px;}
 
 .besocial {width:100%;height:35px;padding:0;margin:1em 0;}
