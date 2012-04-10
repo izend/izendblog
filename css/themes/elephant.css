@@ -1,0 +1,16 @@
+/**
+ *
+ * @copyright  2012 izend.org
+ * @version    1
+ * @link       http://www.izend.org
+ */
+ 
+/* elephant.css */
+
+body {background-image:url(../../images/dinpattern/elephant.gif);}
+
+a:hover #sitedomain {color:#369ac3;}
+
+#socialbar a {background-color:#666666;}
+
+.submit {width:100px;height:28px;background-color:#666666;color:#ffffff;background-image:none;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border:none;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;cursor:pointer;}
