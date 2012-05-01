@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2010-2012 izend.org
- * @version    2
+ * @version    4
  * @link       http://www.izend.org
  */
 
@@ -12,24 +12,23 @@ require_once 'userisidentified.php';
 require_once 'userprofile.php';
 
 function paypalreturn($lang, $arglist=false) {
-	if (!isset($_SESSION['paypal']['token'])) {
+	if (!isset($_SESSION['paypal'])) {
 		return run('error/badrequest', $lang);
 	}
 
 	$token=$_SESSION['paypal']['token'];
 
+	$amt=$_SESSION['paypal']['amt'];
+	$itemamt=$_SESSION['paypal']['itemamt'];
+	$taxamt=$_SESSION['paypal']['taxamt'];
+	$currencycode=$_SESSION['paypal']['currencycode'];
+	$context=$_SESSION['paypal']['context'];
+
+	unset($_SESSION['paypal']);
+
 	if (!isset($arglist['token']) or $arglist['token'] != $token) {
 		return run('error/badrequest', $lang);
 	}
-
-	if (!isset($_SESSION['paypal']['amt']) or !isset($_SESSION['paypal']['currencycode'])) {
-		return run('error/badrequest', $lang);
-	}
-
-	$amt=paypal_amt($_SESSION['paypal']['amt']);
-	$currencycode=$_SESSION['paypal']['currencycode'];
-
-	unset($_SESSION['paypal']);
 
 	$params = array(
 		'TOKEN' 							=> $token,
@@ -41,7 +40,7 @@ function paypalreturn($lang, $arglist=false) {
 		return run('error/internalerror', $lang);
 	}
 
-	if ($r['TOKEN'] != $token or $r['PAYMENTREQUEST_0_AMT'] != $amt or $r['PAYMENTREQUEST_0_CURRENCYCODE'] != $currencycode) {
+	if ($r['TOKEN'] != $token or $r['PAYMENTREQUEST_0_AMT'] != $amt or $r['PAYMENTREQUEST_0_ITEMAMT'] != $itemamt or $r['PAYMENTREQUEST_0_TAXAMT'] != $taxamt or $r['PAYMENTREQUEST_0_CURRENCYCODE'] != $currencycode) {
 		return run('error/internalerror', $lang);
 	}
 
@@ -54,6 +53,8 @@ function paypalreturn($lang, $arglist=false) {
 		'PAYMENTREQUEST_0_PAYMENTACTION'	=> 'Sale',
 		'PAYMENTREQUEST_0_CURRENCYCODE' 	=> $currencycode,
 		'PAYMENTREQUEST_0_AMT' 				=> $amt,
+		'PAYMENTREQUEST_0_ITEMAMT' 			=> $itemamt,
+		'PAYMENTREQUEST_0_TAXAMT' 			=> $taxamt,
 	);
 
 	$r = paypal_doexpresscheckoutpayment($params);
@@ -62,7 +63,7 @@ function paypalreturn($lang, $arglist=false) {
 		return run('error/internalerror', $lang);
 	}
 
-	if ($r['TOKEN'] != $token or $r['PAYMENTINFO_0_AMT'] != $amt or $r['PAYMENTINFO_0_CURRENCYCODE'] != $currencycode) {
+	if ($r['TOKEN'] != $token or $r['PAYMENTINFO_0_AMT'] != $amt or $r['PAYMENTINFO_0_TAXAMT'] != $taxamt or $r['PAYMENTINFO_0_CURRENCYCODE'] != $currencycode) {
 		return run('error/internalerror', $lang);
 	}
 
@@ -86,14 +87,13 @@ function paypalreturn($lang, $arglist=false) {
 	if (!$completed) {
 		require_once 'actions/paymentrejected.php';
 
-		$output = paymentrejected($lang, $amt, $currencycode);
+		$output = paymentrejected($lang, $amt, $currencycode, $context);
 	}
 	else {
 		require_once 'actions/paymentaccepted.php';
 
-		$output = paymentaccepted($lang, $amt, $currencycode);
+		$output = paymentaccepted($lang, $amt, $currencycode, $context);
 	}
 
 	return $output;
 }
-

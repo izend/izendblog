@@ -3,17 +3,17 @@
 /**
  *
  * @copyright  2010-2012 izend.org
- * @version    2
+ * @version    3
  * @link       http://www.izend.org
  */
 
-function paymentaccepted($lang, $amount, $currency) {
+function paymentaccepted($lang, $amount, $currency, $context) {
 	head('title', translate('payment_accepted:title', $lang));
 	head('robots', 'noindex, nofollow');
 
 	$banner = build('banner', $lang);
 
-	$content = view('paymentaccepted', $lang, compact('amount', 'currency', 'contact_page'));
+	$content = view('paymentaccepted', $lang, compact('amount', 'currency'));
 
 	$contact=true;
 	$footer = build('footer', $lang, compact('contact'));
