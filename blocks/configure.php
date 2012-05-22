@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2010-2012 izend.org
- * @version    21
+ * @version    22
  * @link       http://www.izend.org
  */
 
@@ -437,7 +437,7 @@ CREATE TABLE `${db_prefix}comment` (
   `created` datetime NOT NULL,
   `edited` datetime NOT NULL,
   `user_id` int(10) NOT NULL DEFAULT '0',
-  `ip_address` varchar(15) NOT NULL,
+  `ip_address` int(10) unsigned NOT NULL,
   `text` text NOT NULL,
   PRIMARY KEY (`comment_id`),
   KEY `NODE` (`node_id`,`locale`)
@@ -718,8 +718,8 @@ _SEP_;
 	$sql= <<<_SEP_
 CREATE TABLE `${db_prefix}track` (
   `track_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `time_stamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `ip_address` varchar(15) NOT NULL,
+  `time_stamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `ip_address` int(10) unsigned NOT NULL,
   `request_uri` varchar(255) NOT NULL,
   `user_agent` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`track_id`)
@@ -764,14 +764,14 @@ _SEP_;
 
 	$sql= <<<_SEP_
 INSERT INTO `${db_prefix}comment` (`comment_id`, `node_id`, `locale`, `created`, `edited`, `user_id`, `ip_address`, `text`) VALUES
-(1, 3, 'fr', '2011-12-27 09:39:02', `created`, 1, '127.0.0.1', '[p]J''essaye un commentaire avec une url : [url=http://www.izend.org]iZend[/url] ![/p]'),
-(2, 3, 'fr', '2011-12-27 09:41:29', `created`, 1, '127.0.0.1', '[p][u]Citation[/u] :[/p][quote]J''essaye un commentaire avec une url : [url=http://www.izend.org]iZend[/url] ![/quote]\r\n[p]Non ! On peut mettre une [b]url[/b] dans un commentaire ?\r\n[br]Dis-moi pas que c''est pas vrai ![/p]'),
-(3, 3, 'en', '2011-12-27 09:53:47', `created`, 1, '127.0.0.1', '[p]Let me try a comment with a url: [url=http://www.izend.org]iZend[/url]![/p]'),
-(4, 3, 'en', '2011-12-27 09:57:21', `created`, 1, '127.0.0.1', '[p][u]Quote[/u]:[/p][quote]Let me try a comment with a url: [url=http://www.izend.org]iZend[/url]![/quote]\r\n[p]No! One can put a [b]url[/b] in a comment?\r\n[br]Don''t tell me it''s not true![/p]'),
-(5, 17, 'fr', '2011-12-29 21:54:04', `created`, 1, '127.0.0.1', '[p]J''essaye un commentaire avec une url : [url=http://www.izend.org]iZend[/url] ![/p]'),
-(6, 17, 'fr', '2012-01-12 13:04:42', `created`, 1, '127.0.0.1', '[p][u]Citation[/u] :[/p][quote]J''essaye un commentaire avec une url : [url=http://www.izend.org]iZend[/url] ![/quote]\r\n[p]Non ! On peut mettre une [b]url[/b] dans un commentaire ?\r\n[br]Dis-moi pas que c''est pas vrai ![/p]'),
-(7, 17, 'en', '2011-12-29 21:54:04', `created`, 1, '127.0.0.1', '[p]Let me try a comment with a url: [url=http://www.izend.org]iZend[/url]![/p]'),
-(8, 17, 'en', '2012-01-12 13:04:42', `created`, 1, '127.0.0.1', '[p][u]Quote[/u]:[/p][quote]Let me try a comment with a url: [url=http://www.izend.org]iZend[/url]![/quote]\r\n[p]No! One can put a [b]url[/b] in a comment?\r\n[br]Don''t tell me it''s not true![/p]');
+(1, 3, 'fr', '2011-12-27 09:39:02', `created`, 1, INET_ATON('127.0.0.1'), '[p]J''essaye un commentaire avec une url : [url=http://www.izend.org]iZend[/url] ![/p]'),
+(2, 3, 'fr', '2011-12-27 09:41:29', `created`, 1, INET_ATON('127.0.0.1'), '[p][u]Citation[/u] :[/p][quote]J''essaye un commentaire avec une url : [url=http://www.izend.org]iZend[/url] ![/quote]\r\n[p]Non ! On peut mettre une [b]url[/b] dans un commentaire ?\r\n[br]Dis-moi pas que c''est pas vrai ![/p]'),
+(3, 3, 'en', '2011-12-27 09:53:47', `created`, 1, INET_ATON('127.0.0.1'), '[p]Let me try a comment with a url: [url=http://www.izend.org]iZend[/url]![/p]'),
+(4, 3, 'en', '2011-12-27 09:57:21', `created`, 1, INET_ATON('127.0.0.1'), '[p][u]Quote[/u]:[/p][quote]Let me try a comment with a url: [url=http://www.izend.org]iZend[/url]![/quote]\r\n[p]No! One can put a [b]url[/b] in a comment?\r\n[br]Don''t tell me it''s not true![/p]'),
+(5, 17, 'fr', '2011-12-29 21:54:04', `created`, 1, INET_ATON('127.0.0.1'), '[p]J''essaye un commentaire avec une url : [url=http://www.izend.org]iZend[/url] ![/p]'),
+(6, 17, 'fr', '2012-01-12 13:04:42', `created`, 1, INET_ATON('127.0.0.1'), '[p][u]Citation[/u] :[/p][quote]J''essaye un commentaire avec une url : [url=http://www.izend.org]iZend[/url] ![/quote]\r\n[p]Non ! On peut mettre une [b]url[/b] dans un commentaire ?\r\n[br]Dis-moi pas que c''est pas vrai ![/p]'),
+(7, 17, 'en', '2011-12-29 21:54:04', `created`, 1, INET_ATON('127.0.0.1'), '[p]Let me try a comment with a url: [url=http://www.izend.org]iZend[/url]![/p]'),
+(8, 17, 'en', '2012-01-12 13:04:42', `created`, 1, INET_ATON('127.0.0.1'), '[p][u]Quote[/u]:[/p][quote]Let me try a comment with a url: [url=http://www.izend.org]iZend[/url]![/quote]\r\n[p]No! One can put a [b]url[/b] in a comment?\r\n[br]Don''t tell me it''s not true![/p]');
 _SEP_;
 	if (!@mysql_query($sql, $db_conn)) {
 		return false;
