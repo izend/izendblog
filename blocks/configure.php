@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2010-2012 izend.org
- * @version    22
+ * @version    23
  * @link       http://www.izend.org
  */
 
@@ -389,8 +389,8 @@ function create_db($db_admin_user, $db_admin_password, $db_host, $db_name, $db_u
 	}
 
 	$sql= <<<_SEP_
-INSERT INTO mysql.`user` (`Host`, `User`, `Password`)
-VALUES ('$db_host', '$db_user', PASSWORD('$db_password'));
+INSERT INTO mysql.`user` (`Host`, `User`, `Password`, `ssl_cipher`, `x509_issuer`, `x509_subject`)
+VALUES ('$db_host', '$db_user', PASSWORD('$db_password'), '', '', '');
 _SEP_;
 	if (!@mysql_query($sql, $db_conn)) {
 		return false;
@@ -953,8 +953,8 @@ INSERT INTO `${db_prefix}node_locale` (`node_id`, `locale`, `name`, `title`, `ab
 (1, 'fr', 'lorem-ipsum-dolor', 'Lorem ipsum dolor', 'Lorem ipsum dolor sit amet.', 'lorem ipsum'),
 (2, 'en', 'first-steps', 'First steps', NULL, 'identification editing'),
 (2, 'fr', 'premiers-pas', 'Premiers pas', NULL, 'identification édition'),
-(3, 'en', 'contents', 'Contents', NULL, 'content text PHP insertion file download audio video Longtail YouTube'),
-(3, 'fr', 'contenus', 'Contenus', NULL, 'contenu texte PHP insertion fichier téléchargement audio vidéo Longtail YouTube'),
+(3, 'en', 'contents', 'Contents', NULL, 'content text PHP insertion file download audio video LongTail YouTube'),
+(3, 'fr', 'contenus', 'Contenus', NULL, 'contenu texte PHP insertion fichier téléchargement audio vidéo LongTail YouTube'),
 (4, 'en', 'menu', 'Menu', 'A menu in pure CSS with animations in jQuery.', 'menu menubar jQuery'),
 (4, 'fr', 'menu', 'Menu', 'Un menu en pur CSS avec des animations en jQuery.', 'menu menubar jQuery'),
 (5, 'en', 'jquery-ui', 'jQuery UI', 'jQuery UI components in the style of the website.', 'jQuery UI calendar tab accordion'),
@@ -999,7 +999,7 @@ INSERT INTO `${db_prefix}tag` (`tag_id`, `locale`, `name`) VALUES
 (16, 'en', 'download'),
 (17, 'en', 'audio'),
 (18, 'en', 'video'),
-(19, 'en', 'Longtail'),
+(19, 'en', 'LongTail'),
 (20, 'en', 'YouTube'),
 (21, 'fr', 'contenu'),
 (22, 'fr', 'texte'),
@@ -1009,7 +1009,7 @@ INSERT INTO `${db_prefix}tag` (`tag_id`, `locale`, `name`) VALUES
 (26, 'fr', 'téléchargement'),
 (27, 'fr', 'audio'),
 (28, 'fr', 'vidéo'),
-(29, 'fr', 'Longtail'),
+(29, 'fr', 'LongTail'),
 (30, 'fr', 'YouTube'),
 (31, 'en', 'menu'),
 (32, 'en', 'menubar'),
