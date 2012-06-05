@@ -1,7 +1,7 @@
 /**
  *
  * @copyright  2010-2012 izend.org
- * @version    25
+ * @version    26
  * @link       http://www.izend.org
  */
  
@@ -110,7 +110,7 @@ input#en {width:24px;height:24px;padding:0;margin:0;border:none;background:trans
 #headline {margin:0 0 0.5em 0;text-align:right;}
 
 #searchinput {padding:3px;background-color:#ffffff;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
-#searchtext {width:140px;padding:2px;margin:0;border:none;outline:none;-webkit-appearance:none;}
+#searchtext {width:160px;padding:2px;margin:0;border:none;outline:none;-webkit-appearance:none;}
 #search {width:24px;height:24px;padding:0;margin:0;border:none;background:transparent url(../images/theme/icons/find.png) no-repeat;vertical-align:middle;text-indent:-1000em;cursor:pointer;}
 
 #footer .btn_mail {width:16px;height:16px;background:transparent url(../images/theme/icons/small/mail.png) no-repeat;display:inline-block;text-indent:-1000em;vertical-align:middle;}
@@ -152,7 +152,7 @@ a:hover #sitedomain {color:#ff9900;}
 #banner #headline {float:right;margin-top:20px;margin-bottom:0;}
 #banner #searchinput {float:right;margin:12px 0 0 30px;}
 
-#sidebar {float:right;width:180px;margin:0 0 1em 1em;}
+#sidebar {float:right;width:200px;margin:0 0 1em 1em;}
 
 #toolbar {width:24px;background-color:#ffffff;padding:6px;position:fixed;top:85px;margin-left:930px;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
 #toolbar #exit {width:24px;height:24px;float:left;background:transparent url(../images/theme/icons/cancel.png) no-repeat;}
@@ -182,12 +182,14 @@ a:hover #sitedomain {color:#ff9900;}
 .besocial {width:100%;height:35px;padding:0;margin:1em 0;}
 .besocial li {display:inline-block;vertical-align:top;}
 
-#socialbar {float:right;margin-right:30px;}
-#socialbar a {width:30px;height:30px;background:#333333 url(../images/social.png) no-repeat;display:inline-block;margin:0 3px;border-radius:0 0 5px 5px;-webkit-border-radius:0 0 5px 5px;-moz-border-radius:0 0 5px 5px;box-shadow:1px 2px 2px #cccccc;-webkit-box-shadow:1px 2px 2px #cccccc;-moz-box-shadow:1px 2px 2px #cccccc;}
+#socialbar {float:right;margin-right:26px;}
+#socialbar a {width:30px;height:30px;background:#333333 url(../images/social.png) no-repeat;display:inline-block;margin:0 2px;border-radius:0 0 5px 5px;-webkit-border-radius:0 0 5px 5px;-moz-border-radius:0 0 5px 5px;box-shadow:1px 2px 2px #cccccc;-webkit-box-shadow:1px 2px 2px #cccccc;-moz-box-shadow:1px 2px 2px #cccccc;}
 #socialbar a.facebook {background-position:-30px 0;}
 #socialbar a.facebook:hover {background-color:#3b5998;}
 #socialbar a.twitter {background-position:-120px 0;}
 #socialbar a.twitter:hover {background-color:#4ad2ff;}
+#socialbar a.gplus {background-position:-150px 0;}
+#socialbar a.gplus:hover {background-color:#a7291c;}
 #socialbar a.linkedin {background-position:-60px 0;}
 #socialbar a.linkedin:hover {background-color:#0183b3;}
 #socialbar a.rss {background-position:-90px 0;}
