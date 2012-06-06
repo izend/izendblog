@@ -1,7 +1,7 @@
 /**
  *
  * @copyright  2010-2012 izend.org
- * @version    26
+ * @version    28
  * @link       http://www.izend.org
  */
  
@@ -43,6 +43,14 @@ th {background-color:#ffffe0;font-weight:bold;}
 .vignette {float:right;margin:0 0 0 1em;}
 
 .readmore {background:transparent url(../images/theme/icons/look.png) no-repeat;text-indent:30px;line-height:24px;}
+
+.topbar a:link, #topbar a:visited {color:#ffffff;}
+.topbar a:hover {color:#ffffff;}
+.topbar > li {box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
+.topbar > li:first-child {border-radius:5px 0 0 5px;-webkit-border-radius:5px 0 0 5px;-moz-border-radius:5px 0 0 5px;}
+.topbar > li:last-child {border-radius:0 5px 5px 0;-webkit-border-radius:0 5px 5px 0;-moz-border-radius:0 5px 5px 0;}
+.topbar > li {background-color:#666666;}
+.topbar ul li a {background-color:#666666;}
 
 .date {float:left;width:60px;height:60px;margin:0;padding:0;background:#ffffff url(../images/theme/calendar.jpg) no-repeat;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;margin-right:1em;position:relative;}
 .date span {width:100%;text-align:center;margin:0;padding:0;position:absolute;}
@@ -161,22 +169,13 @@ a:hover #sitedomain {color:#ff9900;}
 #toolbar #view {width:24px;height:24px;float:left;background:transparent url(../images/theme/icons/web.png) no-repeat;}
 #toolbar #validate {width:24px;height:24px;float:left;background:transparent url(../images/theme/icons/check.png) no-repeat;}
 
-#menubar {display:inline-block;margin:1em auto;}
-#menubar a:link, #menubar a:visited {color:#ffffff;}
-#menubar a:hover {color:#ff9900;}
-#menubar > li {float:left;width:10em;background-color:#333333;margin-right:-1em;padding:5px 0;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
-#menubar li a {display:block;padding:0 1em 0 1em;}
-#menubar ul {position:absolute;margin:0;padding:0.5em 0;left:-1000em;z-index:3000;}
-#menubar ul li a {background-color:#333333;width:7em;padding:0.5em 1em;}
-#menubar li:hover ul {left:auto;}
-
 #threadlist {margin-top:1em;}
 
 .navigation {font-size:small;margin-bottom:1em;}
 .navigation .previous {width:16px;height:16px;display:inline-block;background:transparent url(../images/theme/icons/left.png) no-repeat;vertical-align:bottom;}
 .navigation .next {width:16px;height:16px;display:inline-block;background:transparent url(../images/theme/icons/right.png) no-repeat;vertical-align:bottom;}
 
-#sharebar {width:75px;background-color:#ffffff;padding:5px;position:fixed;top:70px;left:0px;border-radius:0px 8px 8px 0px;-webkit-border-radius:0px 8px 8px 0px;-moz-border-radius:0px 8px 8px 0px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
+#sharebar {display:none;width:75px;background-color:#ffffff;padding:5px;position:fixed;top:70px;left:0px;border-radius:0px 8px 8px 0px;-webkit-border-radius:0px 8px 8px 0px;-moz-border-radius:0px 8px 8px 0px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
 #sharebar > li {padding:5px;}
 
 .besocial {width:100%;height:35px;padding:0;margin:1em 0;}
