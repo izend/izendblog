@@ -9,12 +9,6 @@
 
 #home .summary {width:180px;}
 
-#homeblog h4 a:link, #homeblog h4 a:visited {color:#666666;}
-#homeblog h4 a:hover {color:#ff9900;}
-#homeblog p {margin:0.5em 0;}
-#homeblog .author {color:#999999;font-size:smaller;font-style:italic;}
-#homeblog .vignette {margin-top:-1.5em;}
-
 .notice {display:inline-block;background:#ffffe0;padding:1em;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;overflow:auto;}
 
 .btn_browser {width:18px;height:18px;background-image:url(../files/images/browser.png);background-repeat:no-repeat;display:inline-block;text-indent:-1000em;vertical-align:bottom;cursor:text;}

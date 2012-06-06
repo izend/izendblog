@@ -3,8 +3,8 @@
 /**
  *
  * @copyright  2010-2012 izend.org
- * @version    1
- * @link       http://www.frasq.org
+ * @version    2
+ * @link       http://www.izend.org
  */
 ?>
 <?php require_once 'dateen.php'; ?>
@@ -17,10 +17,20 @@ $day = date('j', $created);
 $year = date('Y', $created);
 ?>
 <div class="blogsummary">
+<div class="blogsummarytitle">
+<div>
+<p class="date"><a href="/<?php echo $uri; ?>"><span class="month"><?php echo $month; ?></span> <span class="day"><?php echo $day; ?></span><span class="comma">, </span><span class="year"><?php echo $year; ?></span></a></p>
+</div>
+<div>
 <h4><a href="/<?php echo $uri; ?>"><?php echo $title; ?></a></h4>
-<p><a href="/<?php echo $uri; ?>"><span class="date"><span class="month"><?php echo $month; ?></span> <span class="day"><?php echo $day; ?></span><span class="comma">, </span><span class="year"><?php echo $year; ?></span></span></a>
-<?php if($author): ?><span class="author">by <?php echo $author; ?></span><?php endif; ?></p>
+<?php if($author): ?>
+<p class="author">by <?php echo $author; ?></p>
+<?php endif; ?>
+</div>
+</div>
+<div class="blogsummarycontent">
 <?php echo $summary; ?>
+</div>
 <p class="readmore"><a href="/<?php echo $uri; ?>">Read more</a></p>
 </div>
 <?php endforeach; ?>

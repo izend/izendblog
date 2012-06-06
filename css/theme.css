@@ -59,6 +59,15 @@ th {background-color:#ffffe0;font-weight:bold;}
 .date .year {color:#999999;font-size:9px;top:5em;}
 .date .comma {display:none;}
 
+.blogsummarytitle {height:60px;margin:1em 0;}
+.blogsummarytitle > div {float:left;}
+.blogsummarytitle h4 {margin:0.25em 0;}
+.blogsummarytitle h4 a:link, .blogsummarytitle h4 a:visited {color:#666666;}
+.blogsummarytitle h4 a:hover {color:#ff9900;}
+.blogsummarytitle .author {color:#999999;font-size:smaller;font-style:italic;margin:0.5em 0;}
+
+.blogsummary, .blogsummary .readmore, .blogsummarycontent {clear:both;}
+
 .cloud li a:link, .cloud li a:visited {color:#666666;text-decoration:none;}
 .cloud li a:hover {color:#ff9900;text-decoration:none;}
 .cloud li .btn_index {float:left;width:24px;height:24px;background:transparent url(../images/theme/icons/tag.png) no-repeat;display:inline-block;text-indent:-1000em;vertical-align:middle;}

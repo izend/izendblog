@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2010-2012 izend.org
- * @version    1
+ * @version    2
  * @link       http://www.izend.org
  */
 
@@ -34,7 +34,7 @@ function blogsummary($lang, $blog_id, $page, $pagesize=4) {
 		$limit=($page - 1) * $pagesize . ', ' . $pagesize;
 	}
 
-	$sql="SELECT tn.node_id, u.name AS user_name, UNIX_TIMESTAMP(n.created) AS node_created, UNIX_TIMESTAMP(n.modified) AS node_modified, nl.name AS node_name, nl.title AS node_title, nl.abstract AS node_abstract, nl.cloud AS node_cloud, nc.content_id AS content_id, ct.text AS content_text FROM $tabthreadnode tn JOIN $tabnode n ON n.node_id=tn.node_id JOIN $tabnodelocale nl ON nl.node_id=tn.node_id LEFT JOIN $tabuser u ON u.user_id=n.user_id JOIN $tabnodecontent nc ON nc.node_id=n.node_id AND nc.number=1 JOIN $tabcontenttext ct ON ct.content_id=nc.content_id AND ct.locale=nl.locale $where ORDER BY tn.number DESC";
+	$sql="SELECT tn.node_id, u.name AS user_name, UNIX_TIMESTAMP(n.created) AS node_created, UNIX_TIMESTAMP(n.modified) AS node_modified, nl.name AS node_name, nl.title AS node_title, nl.abstract AS node_abstract, nl.cloud AS node_cloud FROM $tabthreadnode tn JOIN $tabnode n ON n.node_id=tn.node_id JOIN $tabnodelocale nl ON nl.node_id=tn.node_id JOIN $tabuser u ON u.user_id=n.user_id $where ORDER BY tn.number";
 
 	if ($limit) {
 		$sql .= " LIMIT $limit";
@@ -55,8 +55,8 @@ function blogsummary($lang, $blog_id, $page, $pagesize=4) {
 		$modified = $node_modified;
 		$abstract = $node_abstract;
 		$cloud = $node_cloud;
-		$summary = $content_text;
 		$author = $user_name;
+		$summary = build('nodecontent', $lang, $node_id);
 		$blogsummary[] = compact('author', 'title', 'uri', 'created', 'modified', 'abstract', 'cloud', 'summary');
 	}
 

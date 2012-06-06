@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2010-2012 izend.org
- * @version    1
+ * @version    2
  * @link       http://www.izend.org
  */
 ?>
@@ -17,10 +17,20 @@ $day = date('j', $created);
 $year = date('Y', $created);
 ?>
 <div class="blogsummary">
+<div class="blogsummarytitle">
+<div>
+<p class="date"><a href="/<?php echo $uri; ?>"><span class="day"><?php echo $day; ?></span> <span class="month"><?php echo $month; ?></span> <span class="year"><?php echo $year; ?></span></a></p>
+</div>
+<div>
 <h4><a href="/<?php echo $uri; ?>"><?php echo $title; ?></a></h4>
-<p><a href="/<?php echo $uri; ?>"><span class="date"><span class="day"><?php echo $day; ?></span> <span class="month"><?php echo $month; ?></span> <span class="year"><?php echo $year; ?></span></span></a>
-<?php if($author): ?><span class="author">par <?php echo $author; ?></span><?php endif; ?></p>
+<?php if($author): ?>
+<p class="author">par <?php echo $author; ?></p>
+<?php endif; ?>
+</div>
+</div>
+<div class="blogsummarycontent">
 <?php echo $summary; ?>
+</div>
 <p class="readmore"><a href="/<?php echo $uri; ?>">Lire la suite</a></p>
 </div>
 <?php endforeach; ?>

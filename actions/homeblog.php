@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2010-2012 izend.org
- * @version    10
+ * @version    11
  * @link       http://www.izend.org
  */
 
@@ -16,8 +16,13 @@ function homeblog($lang, $arglist=false) {
 	global $request_path, $with_toolbar, $sitename;
 	global $default_folder;
 
-	$pagesize=3;
+	$thread_home=1;
+	$node_top=1;
+	$node_bottom=2;
 
+	$thread_summary=4;
+
+	$pagesize=3;
 	$page=1;
 
 	if (isset($_SESSION['homepage'])) {
@@ -39,7 +44,7 @@ function homeblog($lang, $arglist=false) {
 		$_SESSION['homepage']=$page;
 	}
 
-	$r = thread_get_node($lang, 1, 1);
+	$r = thread_get_node($lang, $thread_home, $node_top);
 	if (!$r) {
 		return run('error/notfound', $lang);
 	}
@@ -61,10 +66,10 @@ function homeblog($lang, $arglist=false) {
 
 	$request_path=$lang;
 
-	$page_header = build('nodecontent', $lang, 1);
-	$page_footer = build('nodecontent', $lang, 2);
+	$page_header = build('nodecontent', $lang, $node_top);
+	$page_footer = build('nodecontent', $lang, $node_bottom);
 
-	$page_contents=build('blogsummary', $lang, $default_folder, $page, $pagesize);
+	$page_contents=build('blogsummary', $lang, $thread_summary, $page, $pagesize);
 
 	$besocial=$sharebar=false;
 	if ($page_contents) {
@@ -87,7 +92,7 @@ function homeblog($lang, $arglist=false) {
 	$search_url=url('search', $lang);
 	$suggest_url=url('suggest', $lang);
 	$search=compact('search_url', 'search_text', 'suggest_url');
-	$edit=user_has_role('writer') ? url('folderedit', $_SESSION['user']['locale']) . '/'. 1 . '/'. 1 . '?' . 'clang=' . $lang : false;
+	$edit=user_has_role('writer') ? url('folderedit', $_SESSION['user']['locale']) . '/'. $thread_home . '/'. $node_top . '?' . 'clang=' . $lang : false;
 	$validate=url('homeblog', $lang);
 
 	$banner = build('banner', $lang, $with_toolbar ? compact('search') : compact('edit', 'validate', 'search'));
