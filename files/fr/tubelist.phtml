@@ -1,0 +1,46 @@
+<?php
+
+/**
+ *
+ * @copyright  2012 qrmii.com
+ * @version    1
+ * @link       http://www.qrmii.com
+ */
+?>
+<?php $lang ='fr'; ?>
+<?php
+$dir=ROOT_DIR . DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR . 'tubes' . DIRECTORY_SEPARATOR . $lang;
+
+$thumbs=glob($dir . DIRECTORY_SEPARATOR . '*.png');
+
+if (!$thumbs) {
+	return false;
+}
+
+shuffle($thumbs);
+
+$tubes=array();
+foreach ($thumbs as $file) {
+	$tubes[]=basename($file, '.png');
+}
+$dir='/files/tubes/' . $lang;
+?>
+<div class="gallery">
+<?php foreach ($tubes as $name): ?>
+<a class="yt" href="http://www.youtube.com/embed/<?php echo $name; ?>?autoplay=1&amp;autohide=2&amp;controls=1&amp;fs=0&amp;modestbranding=0&amp;showinfo=0&amp;rel=1&amp;theme=light&amp;color=white"><img src="<?php echo $dir; ?>/<?php echo $name; ?>.png" alt="" width="240px" height="135px" /></a>
+<?php endforeach; ?>
+</div>
+<?php head('javascript', 'jquery.jscrollpane'); ?>
+<?php head('stylesheet', 'jquery.jscrollpane', 'screen'); ?>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.gallery').jScrollPane().data('jsp').scrollToPercentX(.2);
+});
+</script>
+<?php head('javascript', 'jquery.colorbox'); ?>
+<?php head('stylesheet', 'jquery.colorbox', 'screen'); ?>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.yt').colorbox({iframe:true, opacity: 0.8, transition: 'none', innerWidth:640, innerHeight:390});
+});
+</script>
