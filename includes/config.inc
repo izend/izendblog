@@ -31,7 +31,7 @@ $logoascii='';
 
 global $signature;
 
-$signature='izend.org - http://www.izend.org';
+$signature='izendblog.org - http://www.izendblog.org';
 
 global $socializing, $facebookid;
 
@@ -81,7 +81,7 @@ $supported_contents=array('text', 'infile', 'download', 'file', 'longtail');	// 
 
 global $with_toolbar;
 
-$with_toolbar=true;	// is_mobile() ? false : true;
+$with_toolbar=is_mobile() ? false : true;
 
 global $search_distance, $search_closest;
 
@@ -105,13 +105,13 @@ $track_visitor_agent=false;
 
 global $root_node;
 
-$root_node = false;	// home page node, e.g. 1 or false
+$root_node = 1;	// home page node, e.g. 1 or false
 
 global $home_action, $default_action, $default_folder;
 
-$home_action = 'install';		// 'home' or 'install'
-$default_action = 'install';	// 'page' or 'install' or false
-$default_folder = 1;			// can be an array
+$home_action = 'homeblog';		// 'home' or 'homepage'
+$default_action = 'page';	// 'page' or 'anypage' or false
+$default_folder = 3;			// can be an array
 
 global $theme;
 

@@ -148,21 +148,25 @@ input#en {width:24px;height:24px;padding:0;margin:0;border:none;background:trans
 #sitedomain {color:#cccccc;font-family:"Courier New", Courier, monospace;font-size:24px;}
 a:hover #sitedomain {color:#ff9900;}
 
-#bannermenu {width:220px;float:left;margin-top:18px;margin-left:40px;position:relative;}
-#bannermenu .btn_mail {width:24px;height:24px;position:absolute;left:130px;background:transparent url(../images/theme/icons/mail.png) no-repeat;}
-#bannermenu .btn_login {width:24px;height:24px;position:absolute;left:100px;background:transparent url(../images/theme/icons/user.png) no-repeat;}
-#bannermenu .btn_logout {width:24px;height:24px;position:absolute;left:0px;background:transparent url(../images/theme/icons/cancel.png) no-repeat;}
-#bannermenu .btn_account {width:24px;height:24px;position:absolute;left:100px;background:transparent url(../images/theme/icons/user.png) no-repeat;}
-#bannermenu .btn_edit {width:24px;height:24px;position:absolute;left:30px;background:transparent url(../images/theme/icons/edit.png) no-repeat;}
-#bannermenu .btn_view {width:24px;height:24px;position:absolute;left:30px;background:transparent url(../images/theme/icons/web.png) no-repeat;}
-#bannermenu .btn_validate {width:24px;height:24px;position:absolute;left:60px;background:transparent url(../images/theme/icons/check.png) no-repeat;}
-#bannermenu .btn_admin {width:24px;height:24px;position:absolute;left:180px;background:transparent url(../images/theme/icons/work.png) no-repeat;}
+#bannermenu {width:200px;float:left;margin-top:12px;}
 
-#banner #languages {width:40px;float:left;margin-top:18px;margin-left:20px;}
+#bannerediting {float:left;background-color:#ffffff;padding:3px 6px;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
+#bannerediting .btn_edit {width:24px;height:24px;float:left;background:transparent url(../images/theme/icons/edit.png) no-repeat;}
+#bannerediting .btn_view {width:24px;height:24px;float:left;background:transparent url(../images/theme/icons/web.png) no-repeat;}
+#bannerediting .btn_validate {width:24px;height:24px;float:right;background:transparent url(../images/theme/icons/check.png) no-repeat;}
+
+#bannercontrols {float:right;background-color:#ffffff;padding:3px 6px;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
+#bannercontrols .btn_account {width:24px;height:24px;float:right;background:transparent url(../images/theme/icons/user.png) no-repeat;}
+#bannercontrols .btn_login {width:24px;height:24px;float:right;background:transparent url(../images/theme/icons/user.png) no-repeat;}
+#bannercontrols .btn_logout {width:24px;height:24px;float:right;background:transparent url(../images/theme/icons/cancel.png) no-repeat;}
+#bannercontrols .btn_mail {width:24px;height:24px;float:left;background:transparent url(../images/theme/icons/mail.png) no-repeat;}
+#bannercontrols .btn_admin {width:24px;height:24px;float:left;background:transparent url(../images/theme/icons/work.png) no-repeat;}
+
+#banner #languages {width:40px;float:right;margin-top:14px;margin-right:10px;}
 #banner #languages .btn_fr {width:32px;height:24px;float:left;margin-right:2px;background:transparent url(../images/theme/flags/fr.png) no-repeat;}
 #banner #languages .btn_en {width:32px;height:24px;float:left;margin-right:2px;background:transparent url(../images/theme/flags/en.png) no-repeat;}
 
-#banner #donate {width:120px;float:left;margin-top:18px;}
+#banner #donate {width:120px;float:right;margin-top:16px;margin-right:10px;}
 #donate .btn_donate_fr {width:108px;height:21px;float:right;background:transparent url(../images/paypal_donate_fr.gif) no-repeat;}
 #donate .btn_donate_en {width:74px;height:21px;float:right;background:transparent url(../images/paypal_donate_en.gif) no-repeat;}
 

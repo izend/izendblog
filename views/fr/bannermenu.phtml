@@ -7,20 +7,10 @@
  * @link       http://www.izend.org
  */
 ?>
-<?php if (!empty($contact_page) or !empty($user_page) or !empty($nobody_page) or !empty($account_page) or !empty($edit_page) or !empty($view_page) or !empty($validate_page) or !empty($admin_page)): ?>
-<ul id="bannermenu" class="menu menubar">
-<?php if (!empty($contact_page)): ?>
-<li><a class="btn_mail" href="<?php echo $contact_page; ?>" rel="nofollow" title="Nous contacter"><span>Contact</span></a></li>
-<?php endif; ?>
-<?php if (!empty($user_page)): ?>
-<li><a class="btn_login" href="<?php echo $user_page; ?>" rel="nofollow" title="Votre compte"><span>Compte</span></a></li>
-<?php endif; ?>
-<?php if (!empty($nobody_page)): ?>
-<li><a class="btn_logout" href="<?php echo $nobody_page; ?>" rel="nofollow" title="Déconnexion"><span>Déconnexion</span></a></li>
-<?php endif; ?>
-<?php if (!empty($account_page)): ?>
-<li><a class="btn_account" href="<?php echo $account_page; ?>" rel="nofollow" title="Votre compte"><span>Compte</span></a></li>
-<?php endif; ?>
+<?php if (!empty($edit_page) or !empty($view_page) or !empty($validate_page) or !empty($nobody_page) or !empty($account_page) or !empty($user_page) or !empty($contact_page) or !empty($admin_page)): ?>
+<div id="bannermenu">
+<?php if (!empty($edit_page) or !empty($view_page) or !empty($validate_page)): ?>
+<ul id="bannerediting" class="menu menubar">
 <?php if (!empty($edit_page)): ?>
 <li><a class="btn_edit" href="<?php echo $edit_page; ?>" title="Éditer" rel="nofollow"><span>Éditer</span></a></li>
 <?php elseif ($view_page): ?>
@@ -29,8 +19,26 @@
 <?php if (!empty($validate_page)): ?>
 <li><a class="btn_validate" href="http://validator.w3.org/check?uri=<?php echo $base_root . $validate_page; ?>" target="validator.w3.org" rel="nofollow" title="Valider"><span>Valider</span></a></li>
 <?php endif; ?>
+</ul>
+<?php endif; ?>
+<?php if (!empty($nobody_page) or !empty($account_page) or !empty($user_page) or !empty($contact_page) or !empty($admin_page)): ?>
+<ul id="bannercontrols" class="menu menubar">
+<?php if (!empty($nobody_page)): ?>
+<li><a class="btn_logout" href="<?php echo $nobody_page; ?>" rel="nofollow" title="Déconnexion"><span>Déconnexion</span></a></li>
+<?php endif; ?>
+<?php if (!empty($account_page)): ?>
+<li><a class="btn_account" href="<?php echo $account_page; ?>" rel="nofollow" title="Votre compte"><span>Votre compte</span></a></li>
+<?php endif; ?>
+<?php if (!empty($user_page)): ?>
+<li><a class="btn_login" href="<?php echo $user_page; ?>" rel="nofollow" title="Votre compte"><span>Votre compte</span></a></li>
+<?php endif; ?>
+<?php if (!empty($contact_page)): ?>
+<li><a class="btn_mail" href="<?php echo $contact_page; ?>" rel="nofollow" title="Nous contacter"><span>Contact</span></a></li>
+<?php endif; ?>
 <?php if (!empty($admin_page)): ?>
-<li><a class="btn_admin" href="<?php echo $admin_page; ?>" rel="nofollow" title="Gérer"><span>Gérer</span></a></li>
+<li><a class="btn_admin" href="<?php echo $admin_page; ?>" rel="nofollow" title="Gestion"><span>Gestion</span></a></li>
 <?php endif; ?>
 </ul>
+<?php endif; ?>
+</div>
 <?php endif; ?>
