@@ -113,6 +113,11 @@ $home_action = 'homeblog';		// 'home' or 'homepage'
 $default_action = 'page';	// 'page' or 'anypage' or false
 $default_folder = 3;			// can be an array
 
+global $blog_thread, $blog_pagesize;
+
+$blog_thread = 4;
+$blog_pagesize = 3;
+
 global $theme;
 
 $theme = false;		// see css/themes

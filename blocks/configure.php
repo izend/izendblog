@@ -1196,10 +1196,10 @@ INSERT INTO `${db_prefix}thread_locale` (`thread_id`, `locale`, `name`, `title`,
 (1, 'en', 'binder', 'Binder', NULL, NULL),
 (2, 'fr', 'test', 'Test', NULL, NULL),
 (2, 'en', 'test', 'Test', NULL, NULL),
-(3, 'fr', 'blog', 'Blog', NULL, 'blog'),
-(3, 'en', 'blog', 'Blog', NULL, 'blog'),
-(4, 'fr', 'sommaire', 'Sommaire', NULL, NULL),
-(4, 'en', 'summary', 'Summary', NULL, NULL);
+(3, 'fr', 'blog', 'Blog', NULL, NULL),
+(3, 'en', 'blog', 'Blog', NULL, NULL),
+(4, 'fr', 'sommaire', 'Sommaire', 'Un blog par iZend.', 'iZend blog'),
+(4, 'en', 'summary', 'Summary', 'A blog by iZend.', 'iZend blog');
 _SEP_;
 	if (!@mysql_query($sql, $db_conn)) {
 		return false;
