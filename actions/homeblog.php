@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2010-2012 izend.org
- * @version    11
+ * @version    12
  * @link       http://www.izend.org
  */
 
@@ -50,7 +50,36 @@ function homeblog($lang, $arglist=false) {
 		}
 	}
 
-	$page_contents=build('blogsummary', $lang, $blog_thread, $page, $blog_pagesize);
+	$action='none';
+	if (isset($_POST['search'])) {
+		$action='search';
+	}
+
+	$searchtext=$taglist=false;
+	$rsearch=false;
+	switch($action) {
+		case 'none':
+			if (!empty($arglist['q'])) {
+				$searchtext=$arglist['q'];
+				$taglist=explode(' ', $searchtext);
+			}
+			break;
+		case 'search':
+			if (isset($_POST['searchtext'])) {
+				$searchtext=readarg($_POST['searchtext'], true, false);	// trim but DON'T strip!
+
+				if ($searchtext) {
+					global $search_distance, $search_closest;
+
+					$taglist=cloud_match($lang, $blog_thread, $searchtext, $search_distance, $search_closest);
+				}
+			}
+			break;
+		default:
+			break;
+	}
+
+	$page_contents=build('blogsummary', $lang, $blog_thread, $taglist, $blog_pagesize, $page);
 
 	$besocial=$sharebar=false;
 	if ($page_contents) {
@@ -69,9 +98,9 @@ function homeblog($lang, $arglist=false) {
 
 	$content = view('homeblog', false, compact('page_header', 'page_footer', 'page_contents', 'besocial', 'donate'));
 
-	$search_text='';
-	$search_url=url('search', $lang);
-	$suggest_url=url('suggest', $lang);
+	$search_text=$searchtext;
+	$search_url=url('homeblog', $lang);
+	$suggest_url=url('suggestblog', $lang);
 	$search=compact('search_url', 'search_text', 'suggest_url');
 	$edit=user_has_role('writer') ? url('threadedit', $_SESSION['user']['locale']) . '/'. $blog_thread . '?' . 'clang=' . $lang : false;
 	$validate=url('homeblog', $lang);

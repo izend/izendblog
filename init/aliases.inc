@@ -19,8 +19,9 @@ $aliases = array(
 	),
 	'en' => array(
 		'install'		=> 'install',
-		'homeblog'		=> 'home',
 		'homepage'		=> 'home',
+		'homeblog'		=> 'home',
+		'suggestblog'	=> 'home/suggest',
 		'contact'		=> 'contact',
 		'user'			=> 'user',
 		'nobody'		=> 'disconnect',
@@ -48,8 +49,9 @@ $aliases = array(
 	),
 	'fr' => array(
 		'install'		=> 'installation',
-		'homeblog'		=> 'accueil',
 		'homepage'		=> 'accueil',
+		'homeblog'		=> 'accueil',
+		'suggestblog'	=> 'accueil/suggestion',
 		'contact'		=> 'contact',
 		'user'			=> 'utilisateur',
 		'nobody'		=> 'deconnexion',

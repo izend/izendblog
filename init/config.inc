@@ -121,6 +121,11 @@ $home_action = <?php echo "'$home_action'"; ?>;		// 'home' or 'homepage'
 $default_action = <?php echo $default_action ? "'$default_action'" : 'false'; ?>;	// 'page' or 'anypage' or false
 $default_folder = 3;			// can be an array
 
+global $blog_thread, $blog_pagesize;
+
+$blog_thread = 4;
+$blog_pagesize = 3;
+
 global $theme;
 
 $theme = false;		// see css/themes

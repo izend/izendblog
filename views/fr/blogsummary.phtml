@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2010-2012 izend.org
- * @version    2
+ * @version    3
  * @link       http://www.izend.org
  */
 ?>
@@ -46,7 +46,7 @@ $pagenums=page_range($page, $npages, 2);
 <?php if ($p==$page): ?>
 <span class="pagenumber currentpage"><?php echo $p; ?></span>
 <?php else: ?>
-<span class="pagenumber"><a href="?p=<?php echo $p; ?>"><?php echo $p; ?></a></span>
+<span class="pagenumber"><a href="?p=<?php echo $p; ?><?php if ($taglist): ?>&q=<?php echo urlencode(implode(' ', $taglist)); ?><?php endif; ?>"><?php echo $p; ?></a></span>
 <?php endif; ?>
 <?php endforeach; ?>
 </div>

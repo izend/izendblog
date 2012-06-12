@@ -3,50 +3,31 @@
 /**
  *
  * @copyright  2010-2012 izend.org
- * @version    2
+ * @version    3
  * @link       http://www.izend.org
  */
 
+require_once 'models/blog.inc';
 
-function blogsummary($lang, $blog_id, $page, $pagesize=4) {
-	$sqllang=db_sql_arg($lang, false);
+function blogsummary($lang, $blog_id, $taglist=false, $pagesize=false, $page=1) {
+	$r=false;
 
-	$tabthreadnode=db_prefix_table('thread_node');
-	$tabnode=db_prefix_table('node');
-	$tabnodelocale=db_prefix_table('node_locale');
-	$tabnodecontent=db_prefix_table('node_content');
-	$tabcontenttext=db_prefix_table('content_text');
-	$tabuser=db_prefix_table('user');
-
-	$count=0;
-
-	$where="WHERE tn.thread_id=$blog_id AND tn.ignored=0 AND nl.locale=$sqllang";
-
-	if ($pagesize) {
-		$sql="SELECT COUNT(*) AS count FROM $tabthreadnode tn JOIN $tabnode n ON n.node_id=tn.node_id JOIN $tabnodelocale nl ON nl.node_id=tn.node_id $where";
-
-		$r = db_query($sql);
-		if (!$r) {
-			return false;
-		}
-		$count=$r[0]['count'];
-
-		$limit=($page - 1) * $pagesize . ', ' . $pagesize;
+	if ($taglist) {
+		$r=blog_search($lang, $blog_id, $taglist, $pagesize, $page);
 	}
 
-	$sql="SELECT tn.node_id, u.name AS user_name, UNIX_TIMESTAMP(n.created) AS node_created, UNIX_TIMESTAMP(n.modified) AS node_modified, nl.name AS node_name, nl.title AS node_title, nl.abstract AS node_abstract, nl.cloud AS node_cloud FROM $tabthreadnode tn JOIN $tabnode n ON n.node_id=tn.node_id JOIN $tabnodelocale nl ON nl.node_id=tn.node_id JOIN $tabuser u ON u.user_id=n.user_id $where ORDER BY tn.number";
-
-	if ($limit) {
-		$sql .= " LIMIT $limit";
+	if (!$r) {
+		$r=blog_summary($lang, $blog_id, $pagesize, $page);
 	}
 
-	$r = db_query($sql);
 	if (!$r) {
 		return false;
 	}
 
+	list($count, $nodelist)=$r;
+
 	$blogsummary = array();
-	foreach ($r as $node) {
+	foreach ($nodelist as $node) {
 		extract($node);
 		$author = $user_name;
 		$title = $node_title;
@@ -60,7 +41,7 @@ function blogsummary($lang, $blog_id, $page, $pagesize=4) {
 		$blogsummary[] = compact('author', 'title', 'uri', 'created', 'modified', 'abstract', 'cloud', 'summary');
 	}
 
-	$output = view('blogsummary', $lang, compact('blogsummary', 'count', 'page', 'pagesize'));
+	$output = view('blogsummary', $lang, compact('blogsummary', 'taglist', 'count', 'page', 'pagesize'));
 
 	return $output;
 }

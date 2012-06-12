@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2010-2012 izend.org
- * @version    23
+ * @version    24
  * @link       http://www.izend.org
  */
 
@@ -296,7 +296,7 @@ function configure($lang) {
 
 			$db_inc = build_db_inc($db_host, $db_name, $db_user, $db_password, $db_prefix);
 			$config_inc = build_config_inc($sitename, $webmaster, $site_admin_user, 1, 'homeblog', 'page', $languages);
-			$features=array('captcha', 'avatar', 'rssfeed', 'homeblog', 'contact', 'user', 'nobody', 'account', 'password', 'newuser', 'search', 'suggest', 'download', 'admin', 'adminuser', 'page', 'editpage', 'folder', 'folderedit', 'story', 'storyedit', 'book', 'bookedit', 'thread', 'threadedit', 'node', 'editnode', 'donation', 'paypalreturn', 'paypalcancel');
+			$features=array('captcha', 'avatar', 'rssfeed', 'homeblog', 'suggestblog', 'contact', 'user', 'nobody', 'account', 'password', 'newuser', 'search', 'suggest', 'download', 'admin', 'adminuser', 'page', 'editpage', 'folder', 'folderedit', 'story', 'storyedit', 'book', 'bookedit', 'thread', 'threadedit', 'node', 'editnode', 'donation', 'paypalreturn', 'paypalcancel');
 			$aliases_inc = build_aliases_inc($features, $languages);
 
 			if (!$db_inc or !$config_inc or !$aliases_inc) {
@@ -1173,7 +1173,7 @@ INSERT INTO `${db_prefix}thread` (`thread_id`, `user_id`, `thread_type`, `create
 (1, 1, 'thread', '2011-12-26 15:44:55', '2012-06-06 17:14:17', 0, 0, 0, 0, 1, 1, 1, 1),
 (2, 1, 'story', '2011-12-26 21:32:47', '2012-01-24 21:57:34', 0, 0, 0, 0, 1, 1, 1, 1),
 (3, 1, 'folder', '2012-05-13 22:50:17', '2012-06-06 17:51:22', 0, 0, 0, 0, 1, 1, 1, 1),
-(4, 1, 'thread', '2012-05-13 17:14:32', '2012-06-06 17:14:39', 0, 0, 1, 1, 1, 1, 1, 1);
+(4, 1, 'folder', '2012-05-13 17:14:32', '2012-06-06 17:14:39', 0, 0, 1, 1, 1, 1, 1, 1);
 _SEP_;
 	if (!@mysql_query($sql, $db_conn)) {
 		return false;

@@ -94,8 +94,8 @@ function folderpage($lang, $folder, $page) {
 	$content = view('folderpage', false, compact('page_title', 'page_contents', 'page_comment', 'besocial'));
 
 	$search_text='';
-	$search_url= url('search', $lang);
-	$suggest_url= url('suggest', $lang);
+	$search_url= url('homeblog', $lang);
+	$suggest_url= url('suggestblog', $lang);
 	$search=compact('search_url', 'search_text', 'suggest_url');
 	$edit=user_has_role('writer') ? url('folderedit', $_SESSION['user']['locale']) . '/'. $folder_id . '/'. $page_id . '?' . 'clang=' . $lang : false;
 	$validate=url('folder', $lang) . '/'. $folder_name . '/' . $page_name;
