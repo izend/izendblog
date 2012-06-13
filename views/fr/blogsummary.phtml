@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2010-2012 izend.org
- * @version    4
+ * @version    5
  * @link       http://www.izend.org
  */
 ?>
@@ -22,8 +22,8 @@ $year = date('Y', $created);
 <p class="date"><a href="/<?php echo $uri; ?>"><span class="day"><?php echo $day; ?></span> <span class="month"><?php echo $month; ?></span> <span class="year"><?php echo $year; ?></span></a></p>
 </div>
 <div>
-<h4><a href="/<?php echo $uri; ?>"><?php echo $title; ?></a></h4>
-<?php if($author): ?>
+<h4><a href="/<?php echo $uri; ?>"><?php echo htmlspecialchars($title, ENT_COMPAT, 'UTF-8'); ?></a></h4>
+<?php if ($author): ?>
 <p class="author">par <?php echo $author; ?></p>
 <?php endif; ?>
 </div>
@@ -31,7 +31,7 @@ $year = date('Y', $created);
 <div class="blogsummarycontent">
 <?php echo $summary; ?>
 </div>
-<?php if($cloud): ?>
+<?php if ($cloud): ?>
 <?php echo $cloud; ?>
 <?php endif; ?>
 <p class="readmore"><a href="/<?php echo $uri; ?>">Lire la suite</a></p>
