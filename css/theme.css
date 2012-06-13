@@ -66,7 +66,9 @@ th {background-color:#ffffe0;font-weight:bold;}
 .blogsummarytitle h4 a:hover {color:#ff9900;}
 .blogsummarytitle .author {color:#999999;font-size:smaller;font-style:italic;margin:0.5em 0;}
 
-.blogsummary, .blogsummary .readmore, .blogsummarycontent {clear:both;}
+.blogsummary .cloud {font-size:small;text-align:left;}
+
+.blogsummary, .blogsummarycontent, .blogsummary .readmore, .blogsummary .cloud {clear:both;}
 
 .cloud li a:link, .cloud li a:visited {color:#666666;text-decoration:none;}
 .cloud li a:hover {color:#ff9900;text-decoration:none;}

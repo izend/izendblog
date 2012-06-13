@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2010-2012 izend.org
- * @version    3
+ * @version    4
  * @link       http://www.izend.org
  */
 
@@ -26,6 +26,12 @@ function blogsummary($lang, $blog_id, $taglist=false, $pagesize=false, $page=1) 
 
 	list($count, $nodelist)=$r;
 
+	$cloud_url=url('homeblog', $lang);
+	$inclusive=true;
+	$byname=$bycount=true;
+	$index=false;
+	$flat=true;
+
 	$blogsummary = array();
 	foreach ($nodelist as $node) {
 		extract($node);
@@ -35,10 +41,10 @@ function blogsummary($lang, $blog_id, $taglist=false, $pagesize=false, $page=1) 
 		$created = $node_created;
 		$modified = $node_modified;
 		$abstract = $node_abstract;
-		$cloud = $node_cloud;
 		$author = $user_name;
 		$summary = build('nodecontent', $lang, $node_id);
-		$blogsummary[] = compact('author', 'title', 'uri', 'created', 'modified', 'abstract', 'cloud', 'summary');
+		$cloud=build('cloud', $lang, $cloud_url, $blog_id, $node_id, 10, compact('inclusive', 'byname', 'bycount', 'index', 'flat'));
+		$blogsummary[] = compact('author', 'title', 'uri', 'created', 'modified', 'abstract', 'cloud', 'summary', 'cloudlist');
 	}
 
 	$output = view('blogsummary', $lang, compact('blogsummary', 'taglist', 'count', 'page', 'pagesize'));

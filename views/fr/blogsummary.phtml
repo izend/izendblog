@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2010-2012 izend.org
- * @version    3
+ * @version    4
  * @link       http://www.izend.org
  */
 ?>
@@ -31,6 +31,9 @@ $year = date('Y', $created);
 <div class="blogsummarycontent">
 <?php echo $summary; ?>
 </div>
+<?php if($cloud): ?>
+<?php echo $cloud; ?>
+<?php endif; ?>
 <p class="readmore"><a href="/<?php echo $uri; ?>">Lire la suite</a></p>
 </div>
 <?php endforeach; ?>
