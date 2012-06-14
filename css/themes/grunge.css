@@ -5,16 +5,11 @@
  * @link       http://www.izend.org
  */
  
-/* skippy.css */
+/* grunge.css */
 
-body {background-image:url(../../images/dinpattern/skippy.gif);}
+body {background-image:url(../../images/bg/grunge.jpg);}
 
-#banner {padding:15px 20px 5px 20px;}
-
-#sitedomain {color:#ffffff;}
-a:hover #sitedomain {color:#f12a8c;}
-
-#socialbar a {background-color:#756c5b;}
+#socialbar a {background-color:#666666;}
 
 #footer {color:#333333;background-color:#ffffff;}
 #footer a:link, #footer a:visited {color:#333333;}
@@ -27,4 +22,4 @@ a:hover #sitedomain {color:#f12a8c;}
 
 #footer {background-color:#ffffff;margin-top:5px;padding:10px 20px;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
 
-.submit {width:100px;height:28px;background-color:#d0bd98;color:#756c5b;background-image:none;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border:none;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;cursor:pointer;}
+.submit {width:100px;height:28px;background-color:#666666;color:#ffffff;background-image:none;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border:none;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;cursor:pointer;}

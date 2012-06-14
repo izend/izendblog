@@ -5,19 +5,19 @@
  * @link       http://www.izend.org
  */
  
-/* hearts.css */
+/* bonbon.css */
 
-body {background-image:url(../../images/dinpattern/hearts.gif);}
+body {background-image:url(../../images/bg/bonbon.jpg);}
 
 #banner {background-color:#ffffff;margin:5px 0;padding:5px 20px;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
 
-#sitename {color:#ff9cc9;}
-#sitedomain {color:#ffcae2;}
-a:hover #sitedomain {color:#ff4398;}
+#sitename {color:#f74018;}
+#sitedomain {color:#ffa508;}
+a:hover #sitedomain {color:#2885d5;}
 
-#socialbar a {background-color:#ff9cc9;}
+#socialbar a {background-color:#9567a7;}
 
-#footer {color:#333333;background-color:#ffffff;}
+#footer {color:#333333;}
 #footer a:link, #footer a:visited {color:#333333;}
 #footer a:hover {color:#ff9900;}
 
@@ -28,4 +28,5 @@ a:hover #sitedomain {color:#ff4398;}
 
 #footer {background-color:#ffffff;margin-top:5px;padding:10px 20px;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
 
-.submit {width:100px;height:28px;background-color:#ff9cc9;color:#ffffff;background-image:none;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border:none;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;cursor:pointer;}
+.submit {width:100px;height:28px;background-color:#2885d5;color:#ffffff;background-image:none;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border:none;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;cursor:pointer;}
+.submit:hover {color:#ffa70c;}

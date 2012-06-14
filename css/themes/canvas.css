@@ -1,0 +1,25 @@
+/**
+ *
+ * @copyright  2012 izend.org
+ * @version    1
+ * @link       http://www.izend.org
+ */
+ 
+/* canvas.css */
+
+body {background-image:url(../../images/bg/canvas.gif);}
+
+#sitedomain {color:#666666;}
+a:hover #sitedomain {color:#ffffff;}
+
+#socialbar a {background-color:#efdec6;}
+
+#footer {color:#333333;}
+#footer a:link, #footer a:visited {color:#333333;}
+#footer a:hover {color:#333333;}
+
+#footer .btn_mail {background:url(../../images/light/small/mail.png) no-repeat;}
+#footer .btn_login {background:url(../../images/light/small/user.png) no-repeat;}
+#footer .btn_logout {background:url(../../images/light/small/cancel.png) no-repeat;}
+#footer .btn_admin {background:url(../../images/light/small/work.png) no-repeat;}
+

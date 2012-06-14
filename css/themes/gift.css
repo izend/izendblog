@@ -1,0 +1,16 @@
+/**
+ *
+ * @copyright  2012 izend.org
+ * @version    1
+ * @link       http://www.izend.org
+ */
+ 
+/* gift.css */
+
+body {background-image:url(../../images/bg/gift.jpg);}
+
+#socialbar a {background-color:#816c67;}
+
+#footer a:hover {color:#ffffff;}
+
+.submit {width:100px;height:28px;background-color:#816c67;color:#000000;background-image:none;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border:none;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;cursor:pointer;}

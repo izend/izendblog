@@ -196,7 +196,7 @@ a:hover #sitedomain {color:#ff9900;}
 .besocial {width:100%;height:35px;padding:0;margin:1em 0;}
 .besocial li {display:inline-block;vertical-align:top;}
 
-#socialbar {float:right;margin-right:26px;}
+#socialbar {float:right;margin-right:28px;}
 #socialbar a {width:30px;height:30px;background:#333333 url(../images/social.png) no-repeat;display:inline-block;margin:0 2px;border-radius:0 0 5px 5px;-webkit-border-radius:0 0 5px 5px;-moz-border-radius:0 0 5px 5px;box-shadow:1px 2px 2px #cccccc;-webkit-box-shadow:1px 2px 2px #cccccc;-moz-box-shadow:1px 2px 2px #cccccc;}
 #socialbar a.facebook {background-position:-30px 0;}
 #socialbar a.facebook:hover {background-color:#3b5998;}
