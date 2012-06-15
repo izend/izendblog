@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2010-2012 izend.org
- * @version    12
+ * @version    13
  * @link       http://www.izend.org
  */
 
@@ -94,9 +94,17 @@ function homeblog($lang, $arglist=false) {
 		list($besocial, $sharebar) = socialize($lang, compact('ilike', 'tweetit', 'plusone', 'linkedin'));
 	}
 
+	$content = view('homeblog', false, compact('page_header', 'page_footer', 'page_contents', 'besocial'));
+
+	$cloud_url= url('homeblog', $lang);
+	$byname=$bycount=true;
+	$index=false;
+	$cloud = build('cloud', $lang, $cloud_url, $blog_thread, false, 10, compact('byname', 'bycount', 'index'));
+
+	$social = view('social', $lang);
 	$donate = build('donate', $lang);
 
-	$content = view('homeblog', false, compact('page_header', 'page_footer', 'page_contents', 'besocial', 'donate'));
+	$sidebar = view('sidebar', false, compact('social', 'cloud', 'donate'));
 
 	$search_text=$searchtext;
 	$search_url=url('homeblog', $lang);
@@ -112,9 +120,7 @@ function homeblog($lang, $arglist=false) {
 	$contact=$account=$admin=true;
 	$footer = build('footer', $lang, compact('contact', 'account', 'admin', 'languages'));
 
-	$social = view('social', $lang);
-
-	$output = layout('standard', compact('sharebar', 'toolbar', 'footer', 'banner', 'content', 'social'));
+	$output = layout('standard', compact('sharebar', 'toolbar', 'footer', 'banner', 'content', 'sidebar'));
 
 	return $output;
 }

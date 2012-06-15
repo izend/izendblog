@@ -177,7 +177,9 @@ a:hover #sitedomain {color:#ff9900;}
 
 #sidebar {float:right;width:200px;margin:0 0 1em 1em;}
 
-#toolbar {width:24px;background-color:#ffffff;padding:6px;position:fixed;top:85px;margin-left:930px;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
+#sidebar #donate {margin:1em 0;}
+
+#toolbar {width:24px;background-color:#ffffff;padding:6px;position:fixed;margin-top:-5px;margin-left:930px;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
 #toolbar #exit {width:24px;height:24px;float:left;background:transparent url(../images/theme/icons/cancel.png) no-repeat;}
 #toolbar #admin {width:24px;height:24px;float:left;background:transparent url(../images/theme/icons/work.png) no-repeat;}
 #toolbar #edit {width:24px;height:24px;float:left;background:transparent url(../images/theme/icons/edit.png) no-repeat;}
@@ -196,7 +198,7 @@ a:hover #sitedomain {color:#ff9900;}
 .besocial {width:100%;height:35px;padding:0;margin:1em 0;}
 .besocial li {display:inline-block;vertical-align:top;}
 
-#socialbar {float:right;margin-right:28px;}
+#socialbar {margin-top:-20px;margin-left:7px;}
 #socialbar a {width:30px;height:30px;background:#333333 url(../images/social.png) no-repeat;display:inline-block;margin:0 2px;border-radius:0 0 5px 5px;-webkit-border-radius:0 0 5px 5px;-moz-border-radius:0 0 5px 5px;box-shadow:1px 2px 2px #cccccc;-webkit-box-shadow:1px 2px 2px #cccccc;-moz-box-shadow:1px 2px 2px #cccccc;}
 #socialbar a.facebook {background-position:-30px 0;}
 #socialbar a.facebook:hover {background-color:#3b5998;}
