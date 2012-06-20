@@ -24,4 +24,4 @@ a:hover #sitedomain {color:#ff9900;}
 #footer .btn_logout {background-image:url(../../images/light/small/cancel.png);}
 #footer .btn_admin {background-image:url(../../images/light/small/work.png);}
 
-.submit {width:100px;height:28px;background-color:#dcdcdc;color:#333333;background-image:none;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border:none;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;cursor:pointer;}
+input.submit {width:100px;height:28px;background-color:#dcdcdc;color:#333333;background-image:none;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border:none;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;cursor:pointer;}
