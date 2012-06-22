@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2012 izend.org
- * @version    1
+ * @version    2
  * @link       http://www.izend.org
  */
 
@@ -58,4 +58,23 @@ function blog_search($lang, $blog_id, $taglist, $pagesize=false, $page=1) {
 	}
 
 	return array($count, $r);
+}
+
+function blog_node($node_name, $locale) {
+	global $default_folder;
+
+	$sqlname = db_sql_arg($node_name, true);
+	$sqllocale = db_sql_arg($locale, false);
+
+	$tabthreadnode=db_prefix_table('thread_node');
+	$tabnodelocale=db_prefix_table('node_locale');
+
+	$where = is_array($default_folder) ? ('tn.thread_id IN (' . implode(',', $default_folder) . ')') : "tn.thread_id=$default_folder";
+	$where.= " AND nl.locale=$sqllocale AND nl.name=$sqlname";
+
+	$sql="SELECT tn.node_id FROM $tabthreadnode tn JOIN $tabnodelocale nl ON nl.node_id=tn.node_id WHERE $where LIMIT 1";
+
+	$r = db_query($sql);
+
+	return $r ? $r[0]['node_id'] : false;
 }

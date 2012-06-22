@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2010-2012 izend.org
- * @version    5
+ * @version    6
  * @link       http://www.izend.org
  */
 ?>
@@ -17,6 +17,9 @@ $day = date('j', $created);
 $year = date('Y', $created);
 ?>
 <div class="blogsummary">
+<?php if ($vote): ?>
+<?php echo $vote; ?>
+<?php endif; ?>
 <div class="blogsummarytitle">
 <div>
 <p class="date"><a href="/<?php echo $uri; ?>"><span class="month"><?php echo $month; ?></span> <span class="day"><?php echo $day; ?></span><span class="comma">, </span><span class="year"><?php echo $year; ?></span></a></p>
