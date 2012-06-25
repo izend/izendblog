@@ -250,6 +250,7 @@ a:hover #sitedomain {color:#ff9900;}
 .userpagenumber {font-size:large;}
 .username {font-weight:bold;}
 .usermail {font-style:italic;}
+.userlogged {text-align:right;}
 
 #useredit_status {background-color:#ffffe0;}
 #useredit_accessed {font-size:small;}

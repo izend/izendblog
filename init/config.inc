@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2010-2012 izend.org
- * @version    19
+ * @version    20
  * @link       http://www.izend.org
  */
 <?php
@@ -125,6 +125,10 @@ global $blog_thread, $blog_pagesize;
 
 $blog_thread = 4;
 $blog_pagesize = 3;
+
+global $rss_thread;
+
+$rss_thread = 5;
 
 global $theme;
 

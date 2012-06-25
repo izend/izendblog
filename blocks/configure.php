@@ -909,27 +909,30 @@ INSERT INTO `${db_prefix}content_text` (`content_id`, `locale`, `text`, `eval`) 
 (31, 'fr', '<p>Un QRmii est un code QR qui contient une URL courte qui est automatiquement redirigée vers une URL complète.\r\nFlasher un QRmii avec un smartphone affiche directement la page de l''URL d''origine.</p>\r\n<p class="acenter"><a href="http://www.qrmii.com/"><img src="/files/images/qrmii.png" alt="" title="qrmii - 1 URL 1 QR" /></a></p>', 0),
 (31, 'en', '<p>A QRmii is QR code which contains a short URL which is automatically redirected to a complete URL.\r\nFlashing a QRmii with a smartphone directly displays the page of the original URL.</p>\r\n<p class="acenter"><a href="http://www.qrmii.com/"><img src="/files/images/qrmii.png" alt="" title="qrmii - 1 URL 1 QR" /></a></p>', 0),
 (32, 'fr', '<div class="row bythree">\r\n<p class="top bottom">No dolor invenire adversarium nam, erat suscipit per no. Id duo summo mollis.</p>\r\n<p class="top bottom">Per ut illud tempor. Ut vis laboramus voluptatibus. Vel oporteat ullamcorper id, modus decore luptatum vim ea. Nec ex brute placerat, feugiat percipitur eos ea, fabulas principes ea sit.</p>\r\n<p class="top bottom"><img class="left" src="/logos/izend.png" alt="" title="www.izend.org" />Ad eam odio evertitur neglegentur, verterem disputationi eam ex. Sed no solet homero voluptua.</p>\r\n</div>', 0),
-(32, 'en', '<div class="row bythree">\r\n<p class="top bottom">No dolor invenire adversarium nam, erat suscipit per no. Id duo summo mollis.</p>\r\n<p class="top bottom">Per ut illud tempor. Ut vis laboramus voluptatibus. Vel oporteat ullamcorper id, modus decore luptatum vim ea. Nec ex brute placerat, feugiat percipitur eos ea, fabulas principes ea sit.</p>\r\n<p class="top bottom"><img class="left" src="/logos/izend.png" alt="" title="www.izend.org" />Ad eam odio evertitur neglegentur, verterem disputationi eam ex. Sed no solet homero voluptua.</p>\r\n</div>', 0);
+(32, 'en', '<div class="row bythree">\r\n<p class="top bottom">No dolor invenire adversarium nam, erat suscipit per no. Id duo summo mollis.</p>\r\n<p class="top bottom">Per ut illud tempor. Ut vis laboramus voluptatibus. Vel oporteat ullamcorper id, modus decore luptatum vim ea. Nec ex brute placerat, feugiat percipitur eos ea, fabulas principes ea sit.</p>\r\n<p class="top bottom"><img class="left" src="/logos/izend.png" alt="" title="www.izend.org" />Ad eam odio evertitur neglegentur, verterem disputationi eam ex. Sed no solet homero voluptua.</p>\r\n</div>', 0),
+(33, 'fr', '<p>Un QRmii est un code QR qui contient une URL courte qui est automatiquement redirigée vers une URL complète. Flasher un QRmii avec un smartphone affiche directement la page de l''URL d''origine.</p>', 0),
+(33, 'en', '<p>A QRmii is QR code which contains a short URL which is automatically redirected to a complete URL.\r\nFlashing a QRmii with a smartphone directly displays the page of the original URL.</p>', 0);
 _SEP_;
 	if (!@mysql_query($sql, $db_conn)) {
 		return false;
 	}
 
 	$sql= <<<_SEP_
-INSERT INTO `${db_prefix}node` (`node_id`, `user_id`, `created`, `modified`, `nocomment`, `nomorecomment`, `ilike`, `tweet`, `plusone`, `linkedin`) VALUES
-(1, 1, '2011-11-18 15:44:55', '2012-06-06 17:13:12', 1, 1, 1, 1, 1, 1),
-(2, 1, '2011-12-03 11:04:32', '2012-06-06 19:15:02', 1, 1, 0, 0, 0, 0),
-(3, 1, '2011-12-26 22:52:00', '2012-04-10 17:01:55', 0, 1, 1, 1, 1, 1),
-(4, 1, '2011-12-27 12:54:12', '2012-06-06 22:36:15', 0, 0, 0, 0, 0, 0),
-(5, 1, '2011-12-29 17:28:33', '2011-12-29 17:28:33', 0, 0, 0, 0, 0, 0),
-(6, 1, '2012-06-01 20:18:49', '2012-06-06 17:44:05', 0, 0, 1, 1, 1, 1),
-(7, 1, '2012-05-28 11:41:18', '2012-06-06 17:50:25', 0, 0, 1, 1, 1, 1),
-(8, 1, '2012-05-28 09:40:15', '2012-06-06 17:52:46', 0, 0, 1, 1, 1, 1),
-(9, 1, '2012-05-25 14:49:26', '2012-06-06 17:55:20', 0, 0, 1, 1, 1, 1),
-(10, 1, '2012-05-25 13:42:53', '2012-06-06 17:51:00', 0, 0, 1, 1, 1, 1),
-(11, 1, '2012-05-28 09:57:38', '2012-06-06 17:50:53', 0, 0, 1, 1, 1, 1),
-(12, 1, '2012-05-28 16:40:15', '2012-06-06 17:50:42', 0, 0, 1, 1, 1, 1),
-(13, 1, '2012-06-01 09:42:21', '2012-06-06 17:31:49', 0, 0, 1, 1, 1, 1);
+INSERT INTO `${db_prefix}node` (`node_id`, `user_id`, `created`, `modified`, `nocomment`, `nomorecomment`, `novote`, `nomorevote`, `ilike`, `tweet`, `plusone`, `linkedin`) VALUES
+(1, 1, '2011-11-18 15:44:55', '2012-06-06 17:13:12', 1, 1, 1, 1, 1, 1, 1, 1),
+(2, 1, '2011-12-03 11:04:32', '2012-06-06 19:15:02', 1, 1, 1, 1, 0, 0, 0, 0),
+(3, 1, '2011-12-26 22:52:00', '2012-04-10 17:01:55', 0, 1, 0, 0, 1, 1, 1, 1),
+(4, 1, '2011-12-27 12:54:12', '2012-06-06 22:36:15', 0, 0, 0, 0, 0, 0, 0, 0),
+(5, 1, '2011-12-29 17:28:33', '2011-12-29 17:28:33', 0, 0, 0, 0, 0, 0, 0, 0),
+(6, 1, '2012-06-01 20:18:49', '2012-06-06 17:44:05', 0, 0, 0, 0, 1, 1, 1, 1),
+(7, 1, '2012-05-28 11:41:18', '2012-06-06 17:50:25', 0, 0, 0, 0, 1, 1, 1, 1),
+(8, 1, '2012-05-28 09:40:15', '2012-06-06 17:52:46', 0, 0, 0, 0, 1, 1, 1, 1),
+(9, 1, '2012-05-25 14:49:26', '2012-06-06 17:55:20', 0, 0, 0, 0, 1, 1, 1, 1),
+(10, 1, '2012-05-25 13:42:53', '2012-06-06 17:51:00', 0, 0, 0, 0, 1, 1, 1, 1),
+(11, 1, '2012-05-28 09:57:38', '2012-06-06 17:50:53', 0, 0, 0, 0, 1, 1, 1, 1),
+(12, 1, '2012-05-28 16:40:15', '2012-06-06 17:50:42', 0, 0, 0, 0, 1, 1, 1, 1),
+(13, 1, '2012-06-01 09:42:21', '2012-06-06 17:31:49', 0, 0, 0, 0, 1, 1, 1, 1),
+(14, 1, '2012-06-24 16:34:58', '2012-06-24 17:36:58', 1, 1, 1, 1, 1, 1, 1, 1);
 _SEP_;
 	if (!@mysql_query($sql, $db_conn)) {
 		return false;
@@ -978,7 +981,8 @@ INSERT INTO `${db_prefix}node_content` (`node_id`, `content_id`, `content_type`,
 (12, 29, 'text', 1, 0),
 (12, 4, 'longtail', 2, 0),
 (12, 30, 'text', 3, 0),
-(13, 31, 'text', 1, 0);
+(13, 31, 'text', 1, 0),
+(14, 33, 'text', 1, 0);
 _SEP_;
 	if (!@mysql_query($sql, $db_conn)) {
 		return false;
@@ -1011,7 +1015,9 @@ INSERT INTO `${db_prefix}node_locale` (`node_id`, `locale`, `name`, `title`, `ab
 (12, 'fr', 'rolltop', 'Rolltop', NULL, 'Rolltop YouTube latin'),
 (12, 'en', 'rolltop', 'Rolltop', NULL, 'Rolltop YouTube latin'),
 (13, 'fr', 'qrmii', 'Qu''est-ce qu''un QRmii ?', NULL, 'qrmii QR URL redirection'),
-(13, 'en', 'qrmii', 'What is a QRmii?', NULL, 'qrmii QR URL redirection');
+(13, 'en', 'qrmii', 'What is a QRmii?', NULL, 'qrmii QR URL redirection'),
+(14, 'fr', 'qrmii', 'Qu''est-ce qu''un QRmii ?', NULL, NULL),
+(14, 'en', 'qrmii', 'What is a QRmii?', NULL, NULL);
 _SEP_;
 	if (!@mysql_query($sql, $db_conn)) {
 		return false;
@@ -1191,11 +1197,12 @@ _SEP_;
 	}
 
 	$sql= <<<_SEP_
-INSERT INTO `${db_prefix}thread` (`thread_id`, `user_id`, `thread_type`, `created`, `modified`, `nosearch`, `nocloud`, `nocomment`, `nomorecomment`, `ilike`, `tweet`, `plusone`, `linkedin`) VALUES
-(1, 1, 'thread', '2011-12-26 15:44:55', '2012-06-06 17:14:17', 0, 0, 0, 0, 1, 1, 1, 1),
-(2, 1, 'story', '2011-12-26 21:32:47', '2012-01-24 21:57:34', 0, 0, 0, 0, 1, 1, 1, 1),
-(3, 1, 'folder', '2012-05-13 22:50:17', '2012-06-06 17:51:22', 0, 0, 0, 0, 1, 1, 1, 1),
-(4, 1, 'folder', '2012-05-13 17:14:32', '2012-06-06 17:14:39', 0, 0, 1, 1, 1, 1, 1, 1);
+INSERT INTO `${db_prefix}thread` (`thread_id`, `user_id`, `thread_type`, `created`, `modified`, `nosearch`, `nocloud`, `nocomment`, `nomorecomment`, `novote`, `nomorevote`, `ilike`, `tweet`, `plusone`, `linkedin`) VALUES
+(1, 1, 'thread', '2011-12-26 15:44:55', '2012-06-06 17:14:17', 0, 0, 0, 0, 0, 0, 1, 1, 1, 1),
+(2, 1, 'story', '2011-12-26 21:32:47', '2012-01-24 21:57:34', 0, 0, 0, 0, 0, 0, 1, 1, 1, 1),
+(3, 1, 'folder', '2012-05-13 22:50:17', '2012-06-06 17:51:22', 0, 0, 0, 0, 0, 0, 1, 1, 1, 1),
+(4, 1, 'folder', '2012-05-13 17:14:32', '2012-06-06 17:14:39', 0, 0, 1, 1, 1, 1, 1, 1, 1, 1),
+(5, 1, 'thread', '2012-06-24 16:23:16', '2012-06-24 16:23:32', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
 _SEP_;
 	if (!@mysql_query($sql, $db_conn)) {
 		return false;
@@ -1206,7 +1213,8 @@ INSERT INTO `${db_prefix}thread_list` (`thread_id`, `number`) VALUES
 (1, 1),
 (2, 2),
 (3, 3),
-(4, 4);
+(4, 4),
+(5, 5);
 _SEP_;
 	if (!@mysql_query($sql, $db_conn)) {
 		return false;
@@ -1221,7 +1229,9 @@ INSERT INTO `${db_prefix}thread_locale` (`thread_id`, `locale`, `name`, `title`,
 (3, 'fr', 'blog', 'Blog', NULL, NULL),
 (3, 'en', 'blog', 'Blog', NULL, NULL),
 (4, 'fr', 'sommaire', 'Sommaire', 'Un blog par iZend.', 'iZend blog'),
-(4, 'en', 'summary', 'Summary', 'A blog by iZend.', 'iZend blog');
+(4, 'en', 'summary', 'Summary', 'A blog by iZend.', 'iZend blog'),
+(5, 'fr', 'rss', 'RSS', NULL, NULL),
+(5, 'en', 'rss', 'RSS', NULL, NULL);
 _SEP_;
 	if (!@mysql_query($sql, $db_conn)) {
 		return false;
@@ -1241,7 +1251,8 @@ INSERT INTO `${db_prefix}thread_node` (`thread_id`, `node_id`, `number`, `ignore
 (4, 10, 4, 0),
 (4, 11, 3, 0),
 (4, 12, 2, 0),
-(4, 13, 1, 0);
+(4, 13, 1, 0),
+(5, 14, 1, 0);
 _SEP_;
 	if (!@mysql_query($sql, $db_conn)) {
 		return false;
