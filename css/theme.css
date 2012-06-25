@@ -1,7 +1,7 @@
 /**
  *
  * @copyright  2010-2012 izend.org
- * @version    30
+ * @version    31
  * @link       http://www.izend.org
  */
  
@@ -177,6 +177,7 @@ a:hover #sitedomain {color:#ff9900;}
 
 #sidebar {float:right;width:200px;margin:0 0 1em 1em;}
 
+#sidebar #headline {margin:0.25em 0 0.5em 0;}
 #sidebar #searchinput {margin:-2px 0 0.5em 0;}
 #sidebar #donate {margin:1em 0;}
 
