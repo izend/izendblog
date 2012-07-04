@@ -179,7 +179,7 @@ a:hover #sitedomain {color:#ff9900;}
 #footer #languages {float:right;}
 #footer #languages a span {display:inline;}
 
-#toolbar {width:24px;background-color:#ffffff;padding:6px;position:fixed;margin-top:-3px;margin-left:930px;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
+#toolbar {width:24px;background-color:#ffffff;padding:6px;position:fixed;margin-top:-6px;margin-left:930px;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
 #toolbar #exit {width:24px;height:24px;float:left;background:transparent url(../images/theme/icons/cancel.png) no-repeat;}
 #toolbar #admin {width:24px;height:24px;float:left;background:transparent url(../images/theme/icons/work.png) no-repeat;}
 #toolbar #edit {width:24px;height:24px;float:left;background:transparent url(../images/theme/icons/edit.png) no-repeat;}
