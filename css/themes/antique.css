@@ -7,10 +7,13 @@
  
 /* antique.css */
 
+a:link, a:visited {color:#ff9900;}
+a:hover {color:#a0917f;text-decoration:none;}
+
 body {background-image:url(../../images/bg/antique.png);}
 
-#sitename {color:#ffffff;}
-#sitedomain {color:#ffea00;}
+#sitename {color:#ffffff;text-shadow: 1px 2px 3px #a0917f;}
+#sitedomain {color:#3c2b17;}
 a:hover #sitedomain {color:#ffffff;}
 
 #socialbar a {background-color:#3c2b17;}
@@ -24,5 +27,30 @@ a:hover #sitedomain {color:#ffffff;}
 #footer .btn_logout {background-image:url(../../images/light/small/cancel.png);}
 #footer .btn_admin {background-image:url(../../images/light/small/work.png);}
 
-input.submit {width:100px;height:28px;background-color:#c0bbb9;color:#ffffff;background-image:none;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border:none;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;cursor:pointer;}
-input.submit:hover {color:#ffea00;}
+input.submit {width:100px;height:30px;background-color:#c0bbb9;color:#ffffff;background-image:none;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border:none;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;cursor:pointer;}
+
+h1,h2,h3 {color:#392e20;}
+h4 {color:#c0bbb9;}
+h5 {color:#a0917f;}
+h6 {color:#c0bbb9;}
+
+.topbar a:link, #topbar a:visited {color:#ffffff;}
+.topbar > li {box-shadow:1px 2px 5px #c0bbb9;-webkit-box-shadow:1px 2px 5px #c0bbb9;-moz-box-shadow:1px 2px 5px #c0bbb9;}
+.topbar > li {background-color:#c0bbb9;}
+.topbar ul li a {background-color:#c0bbb9;}
+
+.date {width:80px;height:80px;margin:0;padding:0;background:#c0bbb9;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;margin-right:1em;position:relative;border-radius:40px;-webkit-border-radius:40px;-moz-border-radius:40px;}
+.date span {width:100%;color:#a0917f;font-weight:bold;text-align:center;margin:0;padding:0;position:absolute;}
+.date .day {color:#a0917f;font-size:24px;top:28px;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;}
+.date .month {color:#a0917f;font-size:18px;text-transform:capitalize;top:10px;}
+.date .year {color:#a0917f;font-size:12px;top:55px;}
+.date .comma {display:none;}
+
+.blogsummarytitle {height:5em;}
+.blogsummarytitle > div {float:left;}
+.blogsummarytitle h4 {margin:1em 0 0.5em 0;}
+.blogsummarytitle h4 a:link, #homeblog h4 a:visited {color:#a0917f;}
+.blogsummarytitle h4 a:hover {color:#ff9900;}
+.blogsummarytitle .author {color:#a0917f;font-size:smaller;font-style:italic;margin:0.5em 0;}
+
+.cloud li a:link, .cloud li a:visited {color:#a0917f;}

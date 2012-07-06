@@ -13,6 +13,8 @@ body {background-image:url(../../images/bg/greenblue.gif);}
 
 #socialbar a {background-color:#bde7ce;}
 
+#content {padding-bottom:15px;}
+
 #footer {color:#333333;}
 #footer a:link, #footer a:visited {color:#333333;}
 #footer a:hover {color:#ff9900;}
@@ -22,6 +24,6 @@ body {background-image:url(../../images/bg/greenblue.gif);}
 #footer .btn_logout {background:url(../../images/light/small/cancel.png) no-repeat;}
 #footer .btn_admin {background:url(../../images/light/small/work.png) no-repeat;}
 
-#footer {background-color:#ffffff;margin-top:5px;padding:10px 20px;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
+#footer {background-color:#ffffff;margin-top:5px;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
 
-input.submit {width:100px;height:28px;background-color:#bde7ce;color:#666666;background-image:none;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border:none;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;cursor:pointer;}
+input.submit {width:100px;height:30px;background-color:#bde7ce;color:#666666;background-image:none;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border:none;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;cursor:pointer;}
