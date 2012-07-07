@@ -70,6 +70,8 @@ th {background-color:#ffffe0;font-weight:bold;}
 
 .blogsummary, .blogsummarycontent, .blogsummary .readmore, .blogsummary .cloud {clear:left;}
 
+.blogsummarycontent {margin:1em 0;}
+
 .cloud li a:link, .cloud li a:visited {color:#666666;text-decoration:none;}
 .cloud li a:hover {color:#ff9900;text-decoration:none;}
 .cloud li .btn_index {float:left;width:24px;height:24px;background:transparent url(../images/theme/icons/tag.png) no-repeat;display:inline-block;text-indent:-9999px;vertical-align:middle;}
