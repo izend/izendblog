@@ -8,7 +8,7 @@
 /* longchair.css */
 
 html, body {height:100%;}
-body {background-image:url(../../images/bg/longchair.png);}
+body {background-image:url(../../images/bg/longchair.png);margin-top:0;margin-bottom:0;}
 
 #sitename {color:#00a1c7;}
 #sitedomain {color:#73bc43;}

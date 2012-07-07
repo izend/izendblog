@@ -28,6 +28,7 @@ a:hover #sitedomain {color:#ffffff;}
 #footer .btn_admin {background-image:url(../../images/light/small/work.png);}
 
 input.submit {width:100px;height:30px;background-color:#c0bbb9;color:#ffffff;background-image:none;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border:none;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;cursor:pointer;}
+input.submit:hover {color:#392e20;}
 
 h1,h2,h3 {color:#392e20;}
 h4 {color:#c0bbb9;}
@@ -54,3 +55,4 @@ h6 {color:#c0bbb9;}
 .blogsummarytitle .author {color:#a0917f;font-size:smaller;font-style:italic;margin:0.5em 0;}
 
 .cloud li a:link, .cloud li a:visited {color:#a0917f;}
+.cloud li a:hover {color:#ff9900;}
