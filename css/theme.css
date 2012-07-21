@@ -1,7 +1,7 @@
 /**
  *
  * @copyright  2010-2012 izend.org
- * @version    33
+ * @version    34
  * @link       http://www.izend.org
  */
  
@@ -15,7 +15,7 @@ a:hover {color:#333333;text-decoration:none;}
 body {color:#333333;width:960px;margin:0 0 10px 150px;background:transparent url(../images/bg.png) repeat;}
 
 @media (max-device-width:1024px) {
-body {margin-left:auto;margin-right:auto;}
+body {margin:auto;}
 }
 
 h1,h2,h3 {color:#666666;}
@@ -174,7 +174,6 @@ a:hover #sitedomain {color:#ff9900;}
 #footer a:hover {color:#ff9900;text-decoration:none;}
 
 #footer .btn_mail {width:16px;height:16px;background:transparent url(../images/theme/icons/small/mail.png) no-repeat;display:inline-block;text-indent:-9999px;vertical-align:middle;}
-#footer .btn_account {width:16px;height:16px;background:transparent url(../images/theme/icons/small/user.png) no-repeat;display:inline-block;text-indent:-9999px;vertical-align:middle;}
 #footer .btn_login {width:16px;height:16px;background:transparent url(../images/theme/icons/small/user.png) no-repeat;display:inline-block;text-indent:-9999px;vertical-align:middle;}
 #footer .btn_logout {width:16px;height:16px;background:transparent url(../images/theme/icons/small/cancel.png) no-repeat;display:inline-block;text-indent:-9999px;vertical-align:middle;}
 #footer .btn_admin {width:16px;height:16px;background:transparent url(../images/theme/icons/small/work.png) no-repeat;display:inline-block;text-indent:-9999px;vertical-align:middle;}
@@ -188,6 +187,8 @@ a:hover #sitedomain {color:#ff9900;}
 #toolbar #edit {width:24px;height:24px;float:left;background:transparent url(../images/theme/icons/edit.png) no-repeat;}
 #toolbar #view {width:24px;height:24px;float:left;background:transparent url(../images/theme/icons/web.png) no-repeat;}
 #toolbar #validate {width:24px;height:24px;float:left;background:transparent url(../images/theme/icons/check.png) no-repeat;}
+#toolbar #scrolltop {width:24px;height:12px;float:left;background:transparent url(../images/theme/icons/top.png) no-repeat;}
+#toolbar #scrollbottom {width:24px;height:12px;float:left;background:transparent url(../images/theme/icons/bottom.png) no-repeat;}
 
 #threadlist {margin-top:1em;}
 

@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2010-2012 izend.org
- * @version    11
+ * @version    12
  * @link       http://www.izend.org
  */
 
@@ -49,10 +49,10 @@ function threadsummary($lang, $thread) {
 	$thread_contents = array();
 	$r = thread_get_contents($lang, $thread_id, false);
 	if ($r) {
-		$thread_url = url('thread', $lang) . '/'. $thread_name;
+		$thread_url = url('thread', $lang) . '/'. $thread_id;
 		foreach ($r as $c) {
 			extract($c);	/* node_id node_name node_title node_number node_ignored */
-			$node_url = $thread_url . '/' . ($node_name ? $node_name : $node_id) . '?' . 'slang=' . $slang;
+			$node_url = $thread_url . '/' . $node_id . '?' . 'slang=' . $slang;
 			$thread_contents[] = compact('node_id', 'node_title' , 'node_url', 'node_ignored');
 		}
 	}
@@ -70,10 +70,11 @@ function threadsummary($lang, $thread) {
 	head('robots', 'noindex, nofollow');
 
 	$edit=user_has_role('writer') ? url('threadedit', $_SESSION['user']['locale']) . '/'. $thread_id . '?' . 'clang=' . $lang : false;
-	$validate=url('thread', $lang) . '/'. $thread_name;
 
-	$banner = build('banner', $lang, $with_toolbar ? compact('headline') : compact('headline', 'edit', 'validate'));
-	$toolbar = $with_toolbar ? build('toolbar', $lang, compact('edit', 'validate')) : false;
+	$banner = build('banner', $lang, $with_toolbar ? compact('headline') : compact('headline', 'edit'));
+
+	$scroll=true;
+	$toolbar = $with_toolbar ? build('toolbar', $lang, compact('edit', 'scroll')) : false;
 
 	$content = view('threadsummary', $slang, compact('thread_id', 'thread_title', 'thread_abstract', 'thread_cloud', 'thread_search', 'thread_tag', 'thread_comment', 'thread_morecomment', 'thread_vote', 'thread_morevote', 'thread_ilike', 'thread_tweet', 'thread_plusone', 'thread_linkedin', 'thread_created', 'thread_modified', 'thread_contents'));
 
