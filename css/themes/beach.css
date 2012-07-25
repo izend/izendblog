@@ -1,13 +1,13 @@
 /**
  *
  * @copyright  2012 izend.org
- * @version    1
+ * @version    2
  * @link       http://www.izend.org
  */
  
 /* beach.css */
 
-body {background:#e1c294 url(../../images/beach.jpg) no-repeat;-webkit-background-size:1920px 1200px;}
+body {background:#e1c294 url(../../images/beach.jpg) no-repeat;-webkit-background-size:1920px 1200px;margin:0 auto 20px auto;overflow-y:scroll;}
 
 #sitename {color:#ffffff;}
 #sitedomain {color:#ffffff;}
