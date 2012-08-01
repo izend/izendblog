@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2010-2012 izend.org
- * @version    27
+ * @version    28
  * @link       http://www.izend.org
  */
 
@@ -846,8 +846,8 @@ INSERT INTO `${db_prefix}content_text` (`content_id`, `locale`, `text`, `eval`) 
 (4, 'en', '<h6 class="noprint">Video&nbsp;<img src="/files/images/youtube.png" alt="" title="YouTube"/></h6>', 0),
 (5, 'fr', '<h6 class="noprint">Téléchargement</h6>', 0),
 (5, 'en', '<h6 class="noprint">Download</h6>', 0),
-(6, 'fr', '<h6>PHP</h6>\r\n<p>&lt;p&gt;&lt;i&gt;&lt;?php setlocale(LC_TIME, &apos;fr_FR.UTF-8&apos;); echo strftime(&apos;%e %B %Y&apos;); ?&gt;&lt;/i&gt;&lt;/p&gt;</p>\r\n<p><i><?php setlocale(LC_TIME, ''fr_FR.UTF-8''); echo strftime(''%e %B %Y''); ?></i></p>', 1),
-(6, 'en', '<h6>PHP</h6>\r\n<p>&lt;p&gt;&lt;i&gt;&lt;?php setlocale(LC_TIME, &apos;en_US.UTF-8&apos;); echo strftime(&apos;%B %e, %Y&apos;); ?&gt;&lt;/i&gt;&lt;/p&gt;</p>\r\n<p><i><?php setlocale(LC_TIME, ''en_US.UTF-8''); echo strftime(''%B %e, %Y''); ?></i></p>', 1),
+(6, 'fr', '<h6>PHP</h6>\r\n<code>&lt;p&gt;&lt;i&gt;&lt;?php setlocale(LC_TIME, ''fr_FR.UTF-8''); \$fmt=strtoupper(substr(PHP_OS, 0, 3)) == ''WIN'' ? ''%#d %B %Y'' : ''%e %B %Y''; echo strftime(\$fmt); ?&gt;&lt;/i&gt;&lt;/p&gt;</code>\r\n<p><i><?php setlocale(LC_TIME, ''fr_FR.UTF-8''); \$fmt=strtoupper(substr(PHP_OS, 0, 3)) == ''WIN'' ? ''%#d %B %Y'' : ''%e %B %Y''; echo strftime(\$fmt); ?></i></p>', 1),
+(6, 'en', '<h6>PHP</h6>\r\n<code>&lt;p&gt;&lt;i&gt;&lt;?php setlocale(LC_TIME, ''en_US.UTF-8''); \$fmt=strtoupper(substr(PHP_OS, 0, 3)) == ''WIN'' ? ''%B %#d, %Y'' : ''%B %e, %Y''; echo strftime(\$fmt); ?&gt;&lt;/i&gt;&lt;/p&gt;</code>\r\n<p><i><?php setlocale(LC_TIME, ''en_US.UTF-8''); \$fmt=strtoupper(substr(PHP_OS, 0, 3)) == ''WIN'' ? ''%B %#d, %Y'' : ''%B %e, %Y''; echo strftime(\$fmt); ?></i></p>', 1),
 (7, 'fr', '<ul id="test-menubar" class="topbar menu">\r\n<li><a href="#">Lorem</a>\r\n<ul>\r\n<li><a href="#">Quaerendum</a></li>\r\n<li><a href="#">Discere</a></li>\r\n<li><a href="#">Bonorum</a></li>\r\n</ul>\r\n</li>\r\n<li><a href="#">Ipsum</a>\r\n<ul>\r\n<li><a href="#">Petentium</a></li>\r\n<li><a href="#">Usu iuvaret</a></li>\r\n</ul>\r\n</li>\r\n<li><a href="#">Dolor</a></li>\r\n</ul>', 0),
 (7, 'en', '<ul id="test-menubar" class="topbar menu">\r\n<li><a href="#">Lorem</a>\r\n<ul>\r\n<li><a href="#">Quaerendum</a></li>\r\n<li><a href="#">Discere</a></li>\r\n<li><a href="#">Bonorum</a></li>\r\n</ul>\r\n</li>\r\n<li><a href="#">Ipsum</a>\r\n<ul>\r\n<li><a href="#">Petentium</a></li>\r\n<li><a href="#">Usu iuvaret</a></li>\r\n</ul>\r\n</li>\r\n<li><a href="#">Dolor</a></li>\r\n</ul>', 0),
 (8, 'fr', '<h5>Calendrier</h5>\r\n<form action="" method="post">\r\n<p><input type="text" name="test-date" id="test-date" title="aaaa-mm-jj" /></p>\r\n</form>', 0),
