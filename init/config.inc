@@ -134,7 +134,7 @@ $rss_thread = 5;
 
 global $newsletter_thread;
 
-$newsletter_thread = false;		// see cron.php
+$newsletter_thread = 6;		// see cron.php
 
 global $theme;
 

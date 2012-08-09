@@ -126,7 +126,7 @@ $blog_pagesize = 3;
 
 global $newsletter_thread;
 
-$newsletter_thread = false;		// see cron.php
+$newsletter_thread = 6;		// see cron.php
 
 global $theme;
 

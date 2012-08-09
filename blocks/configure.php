@@ -286,7 +286,7 @@ function configure($lang) {
 				}
 			}
 
-			if (!init_db($db_host, $db_name, $db_user, $db_password, $db_prefix, $site_admin_user, $site_admin_password, $site_admin_mail, $default_language)) {
+			if (!init_db($db_host, $db_name, $db_user, $db_password, $db_prefix, $site_admin_user, $site_admin_password, $site_admin_mail, $default_language, $sitename)) {
 				$db_error=mysql_error();
 				break;
 			}
@@ -415,7 +415,7 @@ _SEP_;
 	return true;
 }
 
-function init_db($db_host, $db_name, $db_user, $db_password, $db_prefix, $site_admin_user, $site_admin_password, $site_admin_mail, $default_language) {
+function init_db($db_host, $db_name, $db_user, $db_password, $db_prefix, $site_admin_user, $site_admin_password, $site_admin_mail, $default_language, $sitename) {
 	$db_conn=@mysql_connect($db_host, $db_user, $db_password);
 	if (!$db_conn) {
 		return false;
@@ -928,7 +928,9 @@ INSERT INTO `${db_prefix}content_text` (`content_id`, `locale`, `text`, `eval`) 
 (32, 'fr', '<div class="row bythree">\r\n<p class="top bottom">No dolor invenire adversarium nam, erat suscipit per no. Id duo summo mollis.</p>\r\n<p class="top bottom">Per ut illud tempor. Ut vis laboramus voluptatibus. Vel oporteat ullamcorper id, modus decore luptatum vim ea. Nec ex brute placerat, feugiat percipitur eos ea, fabulas principes ea sit.</p>\r\n<p class="top bottom"><img class="left" src="/logos/izend.png" alt="" title="www.izend.org" />Ad eam odio evertitur neglegentur, verterem disputationi eam ex. Sed no solet homero voluptua.</p>\r\n</div>', 0),
 (32, 'en', '<div class="row bythree">\r\n<p class="top bottom">No dolor invenire adversarium nam, erat suscipit per no. Id duo summo mollis.</p>\r\n<p class="top bottom">Per ut illud tempor. Ut vis laboramus voluptatibus. Vel oporteat ullamcorper id, modus decore luptatum vim ea. Nec ex brute placerat, feugiat percipitur eos ea, fabulas principes ea sit.</p>\r\n<p class="top bottom"><img class="left" src="/logos/izend.png" alt="" title="www.izend.org" />Ad eam odio evertitur neglegentur, verterem disputationi eam ex. Sed no solet homero voluptua.</p>\r\n</div>', 0),
 (33, 'fr', '<p>Un QRmii est un code QR qui contient une URL courte qui est automatiquement redirigée vers une URL complète. Flasher un QRmii avec un smartphone affiche directement la page de l''URL d''origine.</p>', 0),
-(33, 'en', '<p>A QRmii is QR code which contains a short URL which is automatically redirected to a complete URL.\r\nFlashing a QRmii with a smartphone directly displays the page of the original URL.</p>', 0);
+(33, 'en', '<p>A QRmii is QR code which contains a short URL which is automatically redirected to a complete URL.\r\nFlashing a QRmii with a smartphone directly displays the page of the original URL.</p>', 0),
+(34, 'fr', '<p><a href="http://www.${sitename}"><img src="/logos/sitelogo.png" alt="" title="" /></a></p>\r\n<p><a href="http://www.qrmii.com/"><img src="/files/images/qrmii.png" alt="" title="qrmii - 1 URL 1 QR" /></a></p>\r\n<p>Un QRmii est un code QR qui contient une URL courte qui est automatiquement redirigée vers une URL complète.\r\nFlasher un QRmii avec un smartphone affiche directement la page de l''URL d''origine.</p>\r\n<p><a href="http://www.${sitename}/fr/qrmii">Lire l''article</a></p>\r\n<div class="acenter"><a href="http://qrmii.com/a944d525"><img src="/files/images/qr50.png" width="50" height="50" alt="" title="http://qrmii.com/a944d525" /></a> Flashez-moi&nbsp;!</div>', 0),
+(34, 'en', '<p><a href="http://www.${sitename}"><img src="/logos/sitelogo.png" alt="" title="" /></a></p>\r\n<p><a href="http://www.qrmii.com/"><img src="/files/images/qrmii.png" alt="" title="qrmii - 1 URL 1 QR" /></a></p>\r\n<p>A QRmii is QR code which contains a short URL which is automatically redirected to a complete URL.\r\nFlashing a QRmii with a smartphone directly displays the page of the original URL.</p>\r\n<p><a href="http://www.${sitename}/en/qrmii">Read the article</a></p>\r\n<div class="acenter"><a href="http://qrmii.com/a944d525"><img src="/files/images/qr50.png" width="50" height="50" alt="" title="http://qrmii.com/a944d525" /></a> Flash me!</div>', 0);
 _SEP_;
 	if (!@mysql_query($sql, $db_conn)) {
 		return false;
@@ -949,7 +951,8 @@ INSERT INTO `${db_prefix}node` (`node_id`, `user_id`, `created`, `modified`, `no
 (11, 1, '2012-05-28 09:57:38', '2012-06-06 17:50:53', 0, 0, 0, 0, 1, 1, 1, 1),
 (12, 1, '2012-05-28 16:40:15', '2012-06-06 17:50:42', 0, 0, 0, 0, 1, 1, 1, 1),
 (13, 1, '2012-06-01 09:42:21', '2012-06-06 17:31:49', 0, 0, 0, 0, 1, 1, 1, 1),
-(14, 1, '2012-06-24 16:34:58', '2012-06-24 17:36:58', 1, 1, 1, 1, 1, 1, 1, 1);
+(14, 1, '2012-06-24 16:34:58', '2012-06-24 17:36:58', 1, 1, 1, 1, 1, 1, 1, 1),
+(15, 1, '2012-08-09 11:25:13', '2012-08-09 11:47:51', 1, 1, 1, 1, 1, 1, 1, 1);
 _SEP_;
 	if (!@mysql_query($sql, $db_conn)) {
 		return false;
@@ -999,7 +1002,8 @@ INSERT INTO `${db_prefix}node_content` (`node_id`, `content_id`, `content_type`,
 (12, 4, 'longtail', 2, 0),
 (12, 30, 'text', 3, 0),
 (13, 31, 'text', 1, 0),
-(14, 33, 'text', 1, 0);
+(14, 33, 'text', 1, 0),
+(15, 34, 'text', 1, 0);
 _SEP_;
 	if (!@mysql_query($sql, $db_conn)) {
 		return false;
@@ -1034,7 +1038,9 @@ INSERT INTO `${db_prefix}node_locale` (`node_id`, `locale`, `name`, `title`, `ab
 (13, 'fr', 'qrmii', 'Qu''est-ce qu''un QRmii ?', NULL, 'qrmii QR URL redirection'),
 (13, 'en', 'qrmii', 'What is a QRmii?', NULL, 'qrmii QR URL redirection'),
 (14, 'fr', 'qrmii', 'Qu''est-ce qu''un QRmii ?', NULL, NULL),
-(14, 'en', 'qrmii', 'What is a QRmii?', NULL, NULL);
+(14, 'en', 'qrmii', 'What is a QRmii?', NULL, NULL),
+(15, 'fr', 'qrmii', 'Qu''est-ce qu''un QRmii ?', 'Un QRmii est un code QR qui contient une URL courte qui est automatiquement redirigée vers une URL complète.', 'qrmii QR URL redirection'),
+(15, 'en', 'qrmii', 'What is a QRmii?', 'A QRmii is QR code which contains a short URL which is automatically redirected to a complete URL.', 'qrmii QR URL redirection');
 _SEP_;
 	if (!@mysql_query($sql, $db_conn)) {
 		return false;
@@ -1174,20 +1180,28 @@ INSERT INTO `${db_prefix}tag_index` (`tag_id`, `node_id`) VALUES
 (48, 5),
 (49, 6),
 (49, 13),
+(49, 15),
 (50, 6),
 (50, 13),
+(50, 15),
 (51, 6),
 (51, 13),
+(51, 15),
 (52, 6),
 (52, 13),
+(52, 15),
 (53, 6),
 (53, 13),
+(53, 15),
 (54, 6),
 (54, 13),
+(54, 15),
 (55, 6),
 (55, 13),
+(55, 15),
 (56, 6),
 (56, 13),
+(56, 15),
 (57, 7),
 (57, 12),
 (58, 7),
@@ -1219,7 +1233,8 @@ INSERT INTO `${db_prefix}thread` (`thread_id`, `user_id`, `thread_type`, `create
 (2, 1, 'story', '2011-12-26 21:32:47', '2012-01-24 21:57:34', 2, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1),
 (3, 1, 'folder', '2012-05-13 22:50:17', '2012-06-06 17:51:22', 3, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1),
 (4, 1, 'folder', '2012-05-13 17:14:32', '2012-06-06 17:14:39', 4, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1),
-(5, 1, 'thread', '2012-06-24 16:23:16', '2012-06-24 16:23:32', 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+(5, 1, 'thread', '2012-06-24 16:23:16', '2012-06-24 16:23:32', 5, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0),
+(6, 1, 'newsletter', '2012-08-06 15:01:17', '2012-08-06 15:01:51', 6, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0);
 _SEP_;
 	if (!@mysql_query($sql, $db_conn)) {
 		return false;
@@ -1233,10 +1248,12 @@ INSERT INTO `${db_prefix}thread_locale` (`thread_id`, `locale`, `name`, `title`,
 (2, 'en', 'test', 'Test', NULL, NULL),
 (3, 'fr', 'blog', 'Blog', NULL, NULL),
 (3, 'en', 'blog', 'Blog', NULL, NULL),
-(4, 'fr', 'sommaire', 'Sommaire', 'Un blog par iZend.', 'iZend blog'),
-(4, 'en', 'summary', 'Summary', 'A blog by iZend.', 'iZend blog'),
+(4, 'fr', 'sommaire', 'Sommaire', NULL, NULL),
+(4, 'en', 'summary', 'Summary', NULL, NULL),
 (5, 'fr', 'rss', 'RSS', NULL, NULL),
-(5, 'en', 'rss', 'RSS', NULL, NULL);
+(5, 'en', 'rss', 'RSS', NULL, NULL),
+(6, 'fr', 'infolettre', 'Infolettre', NULL, NULL),
+(6, 'en', 'newsletter', 'Newsletter', NULL, NULL);
 _SEP_;
 	if (!@mysql_query($sql, $db_conn)) {
 		return false;
@@ -1257,7 +1274,8 @@ INSERT INTO `${db_prefix}thread_node` (`thread_id`, `node_id`, `number`, `ignore
 (4, 11, 3, 0),
 (4, 12, 2, 0),
 (4, 13, 1, 0),
-(5, 14, 1, 0);
+(5, 14, 1, 0),
+(6, 15, 1, 0);
 _SEP_;
 	if (!@mysql_query($sql, $db_conn)) {
 		return false;
