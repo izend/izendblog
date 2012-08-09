@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2010-2012 izend.org
- * @version    21
+ * @version    22
  * @link       http://www.izend.org
  */
 
@@ -65,7 +65,7 @@ $supported_roles=array('administrator', 'writer', 'reader', 'moderator');
 
 global $supported_threads;
 
-$supported_threads=array('thread', 'folder', 'story', 'book');	// 'thread', 'folder', 'story', 'book'
+$supported_threads=array('thread', 'folder', 'story', 'book', 'newsletter');	// 'thread', 'folder', 'story', 'book', 'newsletter'
 
 global $contents_model, $supported_contents;
 
@@ -123,6 +123,10 @@ global $blog_thread, $blog_pagesize;
 
 $blog_thread = 4;
 $blog_pagesize = 3;
+
+global $newsletter_thread;
+
+$newsletter_thread = false;		// see cron.php
 
 global $theme;
 

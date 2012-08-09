@@ -1,7 +1,7 @@
 /**
  *
  * @copyright  2010-2012 izend.org
- * @version    35
+ * @version    36
  * @link       http://www.izend.org
  */
  
@@ -9,7 +9,7 @@
 
 * {outline:none;}
 
-a:link, a:visited {color:#ff9900;}
+a:link, a:visited {color:#ff9900;text-decoration:none;}
 a:hover {color:#333333;text-decoration:none;}
 
 body {color:#333333;width:960px;margin:0 0 10px 150px;background:transparent url(../images/bg.png) repeat;}
@@ -72,8 +72,8 @@ th {background-color:#ffffe0;font-weight:bold;}
 
 .blogsummarycontent {margin:1em 0;}
 
-.cloud li a:link, .cloud li a:visited {color:#666666;text-decoration:none;}
-.cloud li a:hover {color:#ff9900;text-decoration:none;}
+.cloud li a:link, .cloud li a:visited {color:#666666;}
+.cloud li a:hover {color:#ff9900;}
 .cloud li .btn_index {float:left;width:24px;height:24px;background:transparent url(../images/theme/icons/tag.png) no-repeat;display:inline-block;text-indent:-9999px;vertical-align:middle;}
 
 .tag {color:#333333;font-size:large;}
@@ -161,7 +161,7 @@ a:hover #sitedomain {color:#ff9900;}
 #banner #headline a:hover {color:#ffffff;}
 #banner #searchinput {float:right;margin:12px 0 0 30px;}
 
-#sidebar {float:right;width:200px;margin:0 0 1em 1em;}
+#sidebar {float:right;width:200px;margin-left:1em;}
 
 #sidebar #headline {margin:0.25em 0 0.5em 0;text-align:right;}
 #sidebar #searchinput {margin:-2px 0 0.5em 0;}
@@ -265,9 +265,7 @@ a:hover #sitedomain {color:#ff9900;}
 
 .summary {float:right;display:block;font-size:small;text-align:right;margin:0 0 0 2em;padding:10px;background-color:#ffffff;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
 .summary li {list-style:none;}
-.summary li a:link, .summary li a:visited {text-decoration:none;}
 
 .pageselector {display:inline-block;color:#666666;font-weight:bold;margin:1em auto;}
 .pagenumber {font-size:small;padding:5px;background-color:#ffffff;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
 .pagenumber.currentpage {font-size:large;padding-top:7px;padding-bottom:7px;}
-
