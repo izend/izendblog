@@ -1,7 +1,7 @@
 /**
  *
  * @copyright  2010-2012 izend.org
- * @version    36
+ * @version    37
  * @link       http://www.izend.org
  */
  
@@ -118,8 +118,8 @@ div.alert p, div.warning p {margin-top:0.5em; margin-bottom:0.5em;}
 
 .hidy {height:16px;background:transparent url(../images/theme/icons/down.png) top right no-repeat;margin:0 8px 0 0;}
 
-input#fr {width:24px;height:24px;padding:0;margin:0;border:none;background:transparent url(../images/theme/flags/fr.png) no-repeat;vertical-align:middle;text-indent:-9999px;cursor:pointer;}
-input#en {width:24px;height:24px;padding:0;margin:0;border:none;background:transparent url(../images/theme/flags/en.png) no-repeat;vertical-align:middle;text-indent:-9999px;cursor:pointer;}
+input[type="submit"]#fr {width:24px;height:24px;padding:0;margin:0;border:none;background:transparent url(../images/theme/flags/fr.png) no-repeat;vertical-align:middle;text-indent:-9999px;cursor:pointer;}
+input[type="submit"]#en {width:24px;height:24px;padding:0;margin:0;border:none;background:transparent url(../images/theme/flags/en.png) no-repeat;vertical-align:middle;text-indent:-9999px;cursor:pointer;}
 
 #content {color:#333333;background-color:#ffffff;min-height:480px;margin:0;padding:20px;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
 
@@ -202,8 +202,8 @@ a:hover #sitedomain {color:#ff9900;}
 .besocial {width:100%;height:35px;padding:0;margin:1em 0;}
 .besocial li {display:inline-block;vertical-align:top;}
 
-#socialbar {margin-top:-20px;margin-left:7px;}
-#socialbar a {width:30px;height:30px;background:#333333 url(../images/social.png) no-repeat;display:inline-block;margin:0 2px;border-radius:0 0 5px 5px;-webkit-border-radius:0 0 5px 5px;-moz-border-radius:0 0 5px 5px;box-shadow:1px 2px 2px #cccccc;-webkit-box-shadow:1px 2px 2px #cccccc;-moz-box-shadow:1px 2px 2px #cccccc;}
+#socialbar {margin-top:-20px;}
+#socialbar a {width:30px;height:30px;background:#333333 url(../images/social.png) no-repeat;display:inline-block;border-radius:0 0 5px 5px;-webkit-border-radius:0 0 5px 5px;-moz-border-radius:0 0 5px 5px;box-shadow:1px 2px 2px #cccccc;-webkit-box-shadow:1px 2px 2px #cccccc;-moz-box-shadow:1px 2px 2px #cccccc;}
 #socialbar a.facebook {background-position:-30px 0;}
 #socialbar a.facebook:hover {background-color:#3b5998;}
 #socialbar a.twitter {background-position:-120px 0;}
@@ -214,6 +214,8 @@ a:hover #sitedomain {color:#ff9900;}
 #socialbar a.linkedin:hover {background-color:#0183b3;}
 #socialbar a.rss {background-position:-90px 0;}
 #socialbar a.rss:hover {background-color:#fa9d39;}
+#socialbar a.newsletter {background-position:-180px 0;}
+#socialbar a.newsletter:hover {background-color:#ffe900;}
 
 #comments {margin-top:2em;}
 #comments > h4 {color:#666666;background:transparent url(../images/theme/icons/user.png) no-repeat;text-indent:30px;line-height:24px;}
