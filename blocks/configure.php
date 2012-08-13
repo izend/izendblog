@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2010-2012 izend.org
- * @version    29
+ * @version    30
  * @link       http://www.izend.org
  */
 
@@ -603,7 +603,7 @@ _SEP_;
 CREATE TABLE `${db_prefix}thread` (
   `thread_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` int(10) unsigned NOT NULL DEFAULT '1',
-  `thread_type` enum('thread','folder','story','book','newsletter') NOT NULL DEFAULT 'thread',
+  `thread_type` enum('thread','folder','story','book','rss','newsletter') NOT NULL DEFAULT 'thread',
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL,
   `number` int(4) unsigned NOT NULL,
@@ -1021,8 +1021,8 @@ INSERT INTO `${db_prefix}node_locale` (`node_id`, `locale`, `name`, `title`, `ab
 (4, 'en', 'menu', 'Menu', 'A menu in pure CSS with animations in jQuery.', 'menu menubar jQuery'),
 (5, 'fr', 'jquery-ui', 'jQuery UI', 'Des composants jQuery UI dans le style du site web.', 'jQuery UI calendrier onglet accordéon'),
 (5, 'en', 'jquery-ui', 'jQuery UI', 'jQuery UI components in the style of the website.', 'jQuery UI calendar tab accordion'),
-(6, 'fr', 'qrmii', 'Qu''est-ce qu''un QRmii ?', NULL, 'qrmii QR URL redirection'),
-(6, 'en', 'qrmii', 'What is a QRmii?', NULL, 'qrmii QR URL redirection'),
+(6, 'fr', 'qrmii', 'Qu''est-ce qu''un QRmii ?', NULL, 'QRmii QR URL redirection'),
+(6, 'en', 'qrmii', 'What is a QRmii?', NULL, 'QRmii QR URL redirection'),
 (7, 'fr', 'rolltop', 'Rolltop', NULL, 'Rolltop YouTube latin'),
 (7, 'en', 'rolltop', 'Rolltop', NULL, 'Rolltop YouTube latin'),
 (8, 'fr', 'lorem-ipsum-dolor', 'Lorem Ipsum Dolor', NULL, 'latin'),
@@ -1035,12 +1035,12 @@ INSERT INTO `${db_prefix}node_locale` (`node_id`, `locale`, `name`, `title`, `ab
 (11, 'en', 'lorem-ipsum-dolor', 'Lorem Ipsum Dolor', NULL, 'latin'),
 (12, 'fr', 'rolltop', 'Rolltop', NULL, 'Rolltop YouTube latin'),
 (12, 'en', 'rolltop', 'Rolltop', NULL, 'Rolltop YouTube latin'),
-(13, 'fr', 'qrmii', 'Qu''est-ce qu''un QRmii ?', NULL, 'qrmii QR URL redirection'),
-(13, 'en', 'qrmii', 'What is a QRmii?', NULL, 'qrmii QR URL redirection'),
+(13, 'fr', 'qrmii', 'Qu''est-ce qu''un QRmii ?', NULL, 'QRmii QR URL redirection'),
+(13, 'en', 'qrmii', 'What is a QRmii?', NULL, 'QRmii QR URL redirection'),
 (14, 'fr', 'qrmii', 'Qu''est-ce qu''un QRmii ?', NULL, NULL),
 (14, 'en', 'qrmii', 'What is a QRmii?', NULL, NULL),
-(15, 'fr', 'qrmii', 'Qu''est-ce qu''un QRmii ?', 'Un QRmii est un code QR qui contient une URL courte qui est automatiquement redirigée vers une URL complète.', 'qrmii QR URL redirection'),
-(15, 'en', 'qrmii', 'What is a QRmii?', 'A QRmii is QR code which contains a short URL which is automatically redirected to a complete URL.', 'qrmii QR URL redirection');
+(15, 'fr', 'qrmii', 'Qu''est-ce qu''un QRmii ?', 'Un QRmii est un code QR qui contient une URL courte qui est automatiquement redirigée vers une URL complète.', 'QRmii QR URL redirection'),
+(15, 'en', 'qrmii', 'What is a QRmii?', 'A QRmii is QR code which contains a short URL which is automatically redirected to a complete URL.', 'QRmii QR URL redirection');
 _SEP_;
 	if (!@mysql_query($sql, $db_conn)) {
 		return false;
@@ -1095,11 +1095,11 @@ INSERT INTO `${db_prefix}tag` (`tag_id`, `locale`, `name`) VALUES
 (46, 'fr', 'calendrier'),
 (47, 'fr', 'onglet'),
 (48, 'fr', 'accordéon'),
-(49, 'en', 'qrmii'),
+(49, 'en', 'QRmii'),
 (50, 'en', 'QR'),
 (51, 'en', 'URL'),
 (52, 'en', 'redirection'),
-(53, 'fr', 'qrmii'),
+(53, 'fr', 'QRmii'),
 (54, 'fr', 'QR'),
 (55, 'fr', 'URL'),
 (56, 'fr', 'redirection'),
