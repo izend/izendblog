@@ -7,7 +7,7 @@
  * @link       http://www.izend.org
  */
 ?>
-<?php if (!empty($social) or !empty($title) or !empty($search) or !empty($summary) or !empty($cloud)): ?>
+<?php if (!empty($social) or !empty($title) or !empty($search) or !empty($summary) or !empty($cloud) or !empty($donate)): ?>
 <div id="sidebar">
 <?php if (!empty($social)): ?>
 <?php echo $social; ?>
@@ -43,6 +43,9 @@ $('#sidebar #cloud').click(function() {
 	$.cookie('nosidecloud', $('#sidebar .cloud').is(':hidden') ? 1 : 0, { path: '/' });
 });
 </script>
+<?php endif; ?>
+<?php if (!empty($donate)): ?>
+<?php echo $donate; ?>
 <?php endif; ?>
 </div>
 <?php endif; ?>

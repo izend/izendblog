@@ -165,7 +165,7 @@ a:hover #sitedomain {color:#ff9900;}
 
 #sidebar #headline {margin:0.25em 0 0.5em 0;text-align:right;}
 #sidebar #searchinput {margin:-2px 0 0.5em 0;}
-#sidebar #donate {margin:1em 0;}
+#sidebar #donate {height:21px;margin:1em 0;}
 
 #footer {color:#cccccc;font-size:small;margin:0;padding:10px 20px;line-height:1.5em;clear:both;}
 #footer p, #footer ul {margin: 0.5em 0;}
