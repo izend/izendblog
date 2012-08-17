@@ -204,8 +204,11 @@ a:hover #sitedomain {color:#ff9900;}
 .besocial {width:100%;height:35px;padding:0;margin:1em 0;}
 .besocial li {display:inline-block;vertical-align:top;}
 
-#socialbar {margin-top:-20px;}
-#socialbar a {width:30px;height:30px;background:#333333 url(../images/social.png) no-repeat;display:inline-block;border-radius:0 0 5px 5px;-webkit-border-radius:0 0 5px 5px;-moz-border-radius:0 0 5px 5px;box-shadow:1px 2px 2px #cccccc;-webkit-box-shadow:1px 2px 2px #cccccc;-moz-box-shadow:1px 2px 2px #cccccc;}
+#socialbar {margin-top:-20px;height:35px;}
+#socialbar a:first-child {margin-left:0;}
+#socialbar a:last-child {margin-right:0;}
+#socialbar a {float:left;margin-left:2px;margin-right:2px;}
+#socialbar a {width:30px;height:30px;background:#333333 url(../images/social.png) no-repeat;border-radius:0 0 5px 5px;-webkit-border-radius:0 0 5px 5px;-moz-border-radius:0 0 5px 5px;box-shadow:1px 2px 2px #cccccc;-webkit-box-shadow:1px 2px 2px #cccccc;-moz-box-shadow:1px 2px 2px #cccccc;}
 #socialbar a.facebook {background-position:-30px 0;}
 #socialbar a.facebook:hover {background-color:#3b5998;}
 #socialbar a.twitter {background-position:-120px 0;}
