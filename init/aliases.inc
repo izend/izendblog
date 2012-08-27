@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2010-2012 izend.org
- * @version    9
+ * @version    10
  * @link       http://www.izend.org
  */
 
@@ -49,6 +49,7 @@ $aliases = array(
 		'threadedit'		=> 'edit/thread',
 		'node'				=> 'node',
 		'editnode'			=> 'edit/node',
+		'pagecontent'		=> 'content',
 	),
 	'fr' => array(
 		'install'			=> 'installation',
@@ -82,6 +83,7 @@ $aliases = array(
 		'threadedit'		=> 'edition/fil',
 		'node'				=> 'noeud',
 		'editnode'			=> 'edition/noeud',
+		'pagecontent'		=> 'contenu',
 	),
 );
 ?>

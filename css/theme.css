@@ -1,7 +1,7 @@
 /**
  *
  * @copyright  2010-2012 izend.org
- * @version    38
+ * @version    39
  * @link       http://www.izend.org
  */
  
@@ -44,7 +44,7 @@ th {background-color:#ffffe0;font-weight:bold;}
 
 .readmore {background:transparent url(../images/theme/icons/look.png) no-repeat;text-indent:30px;line-height:24px;}
 
-.topbar a:link, #topbar a:visited {color:#ffffff;}
+.topbar a:link, .topbar a:visited {color:#ffffff;}
 .topbar a:hover {color:#ffffff;}
 .topbar > li {box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
 .topbar > li:first-child {border-radius:5px 0 0 5px;-webkit-border-radius:5px 0 0 5px;-moz-border-radius:5px 0 0 5px;}
