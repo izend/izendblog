@@ -1,7 +1,7 @@
 /**
  *
  * @copyright  2010-2012 izend.org
- * @version    39
+ * @version    40
  * @link       http://www.izend.org
  */
  
@@ -183,14 +183,15 @@ a:hover #sitedomain {color:#ff9900;}
 #footer #languages {float:right;}
 #footer #languages a span {display:inline;}
 
-#toolbar {width:24px;background-color:#ffffff;padding:6px;position:fixed;margin-top:-6px;margin-left:930px;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
-#toolbar #exit {width:24px;height:24px;float:left;background:transparent url(../images/theme/icons/cancel.png) no-repeat;}
-#toolbar #admin {width:24px;height:24px;float:left;background:transparent url(../images/theme/icons/work.png) no-repeat;}
-#toolbar #edit {width:24px;height:24px;float:left;background:transparent url(../images/theme/icons/edit.png) no-repeat;}
-#toolbar #view {width:24px;height:24px;float:left;background:transparent url(../images/theme/icons/web.png) no-repeat;}
-#toolbar #validate {width:24px;height:24px;float:left;background:transparent url(../images/theme/icons/check.png) no-repeat;}
-#toolbar #scrolltop {width:24px;height:12px;float:left;background:transparent url(../images/theme/icons/top.png) no-repeat;}
-#toolbar #scrollbottom {width:24px;height:12px;float:left;background:transparent url(../images/theme/icons/bottom.png) no-repeat;}
+#toolbar {width:24px;padding:6px;background-color:#ffffff;position:fixed;margin-top:-6px;margin-left:930px;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
+#toolbar a {width:24px;height:24px;float:left;}
+#toolbar #exit {background:transparent url(../images/theme/icons/cancel.png) no-repeat;}
+#toolbar #admin {background:transparent url(../images/theme/icons/work.png) no-repeat;}
+#toolbar #edit {background:transparent url(../images/theme/icons/edit.png) no-repeat;}
+#toolbar #view {background:transparent url(../images/theme/icons/web.png) no-repeat;}
+#toolbar #validate {background:transparent url(../images/theme/icons/check.png) no-repeat;}
+#toolbar #scrolltop {height:12px;background:transparent url(../images/theme/icons/top.png) no-repeat;}
+#toolbar #scrollbottom {height:12px;background:transparent url(../images/theme/icons/bottom.png) no-repeat;}
 
 #threadlist {margin-top:1em;}
 
