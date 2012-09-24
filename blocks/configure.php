@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2010-2012 izend.org
- * @version    30
+ * @version    31
  * @link       http://www.izend.org
  */
 
@@ -284,6 +284,14 @@ function configure($lang) {
 					$db_error=mysql_error();
 					break;
 				}
+
+				$img=identicon($site_admin_user, AVATAR_SIZE);
+				@imagepng($img, AVATARS_DIR . DIRECTORY_SEPARATOR . $site_admin_user . '.png');
+
+				$db_inc = build_db_inc($db_host, $db_name, $db_user, $db_password, $db_prefix);
+				$config_inc = build_config_inc($sitename, $webmaster, $site_admin_user, 1, 'home', 'page', $languages);
+				$features=array('captcha', 'avatar', 'rssfeed', 'home', 'contact', 'user', 'nobody', 'account', 'password', 'newuser', 'search', 'suggest', 'download', 'admin', 'adminuser', 'pagecontent', 'page', 'editpage', 'folder', 'folderedit', 'story', 'storyedit', 'book', 'bookedit', 'newsletter', 'newsletteredit', 'newsletteruser', 'thread', 'threadedit', 'node', 'editnode', 'donation', 'paypalreturn', 'paypalcancel');
+				$aliases_inc = build_aliases_inc($features, $languages);
 			}
 
 			if (!init_db($db_host, $db_name, $db_user, $db_password, $db_prefix, $site_admin_user, $site_admin_password, $site_admin_mail, $default_language, $sitename)) {
@@ -296,7 +304,7 @@ function configure($lang) {
 
 			$db_inc = build_db_inc($db_host, $db_name, $db_user, $db_password, $db_prefix);
 			$config_inc = build_config_inc($sitename, $webmaster, $site_admin_user, 1, 'homeblog', 'page', $languages);
-			$features=array('captcha', 'avatar', 'rssfeed', 'homeblog', 'suggestblog', 'contact', 'user', 'nobody', 'account', 'password', 'newuser', 'search', 'suggest', 'download', 'admin', 'adminuser', 'page', 'editpage', 'folder', 'folderedit', 'story', 'storyedit', 'book', 'bookedit', 'newsletter', 'newsletteredit', 'newsletteruser', 'thread', 'threadedit', 'node', 'editnode', 'donation', 'paypalreturn', 'paypalcancel');
+			$features=array('captcha', 'avatar', 'rssfeed', 'homeblog', 'suggestblog', 'contact', 'user', 'nobody', 'account', 'password', 'newuser', 'search', 'suggest', 'download', 'admin', 'adminuser', 'pagecontent', 'page', 'editpage', 'folder', 'folderedit', 'story', 'storyedit', 'book', 'bookedit', 'newsletter', 'newsletteredit', 'newsletteruser', 'thread', 'threadedit', 'node', 'editnode', 'donation', 'paypalreturn', 'paypalcancel');
 			$aliases_inc = build_aliases_inc($features, $languages);
 
 			if (!$db_inc or !$config_inc or !$aliases_inc) {
