@@ -1,7 +1,7 @@
 /**
  *
  * @copyright  2012 izend.org
- * @version    1
+ * @version    2
  * @link       http://www.izend.org
  */
  
@@ -11,13 +11,13 @@ body {background-image:url(../../images/bg/concrete.jpg);}
 
 #sitename {color:#1c1c1c;}
 #sitedomain {color:#ffffff;}
-a:hover #sitedomain {color:#ff9900;}
+a:hover #sitedomain {color:#1c1c1c;}
 
 #socialbar a {background-color:#1c1c1c;}
              
 #footer {color:#333333;}
 #footer a:link, #footer a:visited {color:#333333;}
-#footer a:hover {color:#ffffff;}
+#footer a:hover {color:#333333;}
 
 #footer .btn_mail {background-image:url(../../images/light/small/mail.png);}
 #footer .btn_login {background-image:url(../../images/light/small/user.png);}
