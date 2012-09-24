@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2010-2012 izend.org
- * @version    24
+ * @version    25
  * @link       http://www.izend.org
  */
 <?php
@@ -134,6 +134,10 @@ global $blog_thread, $blog_pagesize;
 
 $blog_thread = 4;
 $blog_pagesize = 3;
+
+global $content_folder;
+
+$content_folder = false;		// can be an array
 
 global $rss_thread;
 
