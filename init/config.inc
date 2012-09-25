@@ -137,7 +137,7 @@ $blog_pagesize = 3;
 
 global $content_folder;
 
-$content_folder = false;		// can be an array
+$content_folder = 7;		// can be an array
 
 global $rss_thread;
 

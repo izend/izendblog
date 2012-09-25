@@ -284,14 +284,6 @@ function configure($lang) {
 					$db_error=mysql_error();
 					break;
 				}
-
-				$img=identicon($site_admin_user, AVATAR_SIZE);
-				@imagepng($img, AVATARS_DIR . DIRECTORY_SEPARATOR . $site_admin_user . '.png');
-
-				$db_inc = build_db_inc($db_host, $db_name, $db_user, $db_password, $db_prefix);
-				$config_inc = build_config_inc($sitename, $webmaster, $site_admin_user, 1, 'home', 'page', $languages);
-				$features=array('captcha', 'avatar', 'rssfeed', 'home', 'contact', 'user', 'nobody', 'account', 'password', 'newuser', 'search', 'suggest', 'download', 'admin', 'adminuser', 'pagecontent', 'page', 'editpage', 'folder', 'folderedit', 'story', 'storyedit', 'book', 'bookedit', 'newsletter', 'newsletteredit', 'newsletteruser', 'thread', 'threadedit', 'node', 'editnode', 'donation', 'paypalreturn', 'paypalcancel');
-				$aliases_inc = build_aliases_inc($features, $languages);
 			}
 
 			if (!init_db($db_host, $db_name, $db_user, $db_password, $db_prefix, $site_admin_user, $site_admin_password, $site_admin_mail, $default_language, $sitename)) {
@@ -871,8 +863,8 @@ _SEP_;
 
 	$sql= <<<_SEP_
 INSERT INTO `${db_prefix}content_text` (`content_id`, `locale`, `text`, `eval`) VALUES
-(1, 'fr', '<h3>Bienvenue</h3>\r\n<p>Lorem ipsum dolor sit amet, quaeque fabellas indoctum et vel, ut graecis urbanitas eum. Et vix assum assentior. Duo eu inermis propriae labore feugiat.</p>\r\n<p class="left"><a href="http://www.izend.org"><img src="/logos/izend.png" alt="" title="" /></a></p>\r\n<p>Perfecto intellegat moderatius ei est. Quod consetetur has ea, id viderer delectus dignissim vel. Et sed homero gubergren.</p>\r\n<h6 class="noprint">Aliquam feugait</h6>\r\n<ol class="summary">\r\n<li><a href="#">Duo ridens</a></li>\r\n<li><a href="#">Commodo quaestio</a></li>\r\n<li><a href="#">Tale posidonium</a></li>\r\n\r\n</ol>\r\n<p>Stet choro inimicus eum ea. Nulla utinam semper an has, ex qui ferri dissentias. Ut laboramus assentior nam.</p>', 0),
-(1, 'en', '<h3>Welcome</h3>\r\n<p>Lorem ipsum dolor sit amet, quaeque fabellas indoctum et vel, ut graecis urbanitas eum. Et vix assum assentior. Duo eu inermis propriae labore feugiat.</p>\r\n<p class="left"><a href="http://www.izend.org"><img src="/logos/izend.png" alt="" title="" /></a></p>\r\n<p>Perfecto intellegat moderatius ei est. Quod consetetur has ea, id viderer delectus dignissim vel. Et sed homero gubergren.</p>\r\n<h6 class="noprint">Aliquam feugait</h6>\r\n<ol class="summary">\r\n<li><a href="#">Duo ridens</a></li>\r\n<li><a href="#">Commodo quaestio</a></li>\r\n<li><a href="#">Tale posidonium</a></li>\r\n\r\n</ol>\r\n<p>Stet choro inimicus eum ea. Nulla utinam semper an has, ex qui ferri dissentias. Ut laboramus assentior nam.</p>', 0),
+(1, 'fr', '<h3>Bienvenue</h3>\r\n<p>Lorem ipsum dolor sit amet, quaeque fabellas indoctum et vel, ut graecis urbanitas eum. Et vix assum assentior. Duo eu inermis propriae labore feugiat.</p>\r\n<p class="readmore"><a href="/fr/article/test">Voir les pages de test</a></p>\r\n<p class="left"><a href="http://www.izend.org"><img src="/logos/izend.png" alt="www.izend.org" title="iZend - Le moteur web" /></a></p>\r\n<p>Perfecto intellegat moderatius ei est. Quod consetetur has ea, id viderer delectus dignissim vel. Et sed homero gubergren.</p>\r\n<h6 class="noprint">Aliquam feugait</h6>\r\n<ol class="summary">\r\n<li><a href="#">Duo ridens</a></li>\r\n<li><a href="#">Commodo quaestio</a></li>\r\n<li><a href="#">Tale posidonium</a></li>\r\n\r\n</ol>\r\n<p>Stet choro inimicus eum ea. Nulla utinam semper an has, ex qui ferri dissentias. Ut laboramus assentior nam.</p>', 0),
+(1, 'en', '<h3>Welcome</h3>\r\n<p>Lorem ipsum dolor sit amet, quaeque fabellas indoctum et vel, ut graecis urbanitas eum. Et vix assum assentior. Duo eu inermis propriae labore feugiat.</p>\r\n<p class="readmore"><a href="/en/article/test">View the test pages</a></p><p class="left"><a href="http://www.izend.org"><img src="/logos/izend.png" alt="www.izend.org" title="iZend - The web engine" /></a></p>\r\n<p>Perfecto intellegat moderatius ei est. Quod consetetur has ea, id viderer delectus dignissim vel. Et sed homero gubergren.</p>\r\n<h6 class="noprint">Aliquam feugait</h6>\r\n<ol class="summary">\r\n<li><a href="#">Duo ridens</a></li>\r\n<li><a href="#">Commodo quaestio</a></li>\r\n<li><a href="#">Tale posidonium</a></li>\r\n\r\n</ol>\r\n<p>Stet choro inimicus eum ea. Nulla utinam semper an has, ex qui ferri dissentias. Ut laboramus assentior nam.</p>', 0),
 (2, 'fr', '<div class="vignette"><a href="http://www.izend.org"><img src="/logos/izend.png" alt="" title="" /></a></div>\r\n<p>Lorem ipsum dolor sit amet, alterum antiopam maluisset vis eu, et brute expetenda iracundia has. Eos animal nusquam delicata ad. Cetero legendos in pri, no usu quidam utamur. Vel quodsi voluptua cu, eam ex reque audire vidisse. Te modo omnes sea, ad detracto praesent cotidieque vim, eam quando intellegat an. Aeque erroribus mei te, ei est possit iriure.</p>\r\n<p>Texte en <b>gras</b>, en <i>italique</i>, <u>souligné</u> et <s>barré</s>.</p>\r\n<h4>H4</h4>\r\n<p>Paragraphe avec du <code>code inséré</code> dans le texte.</p>\r\n<h5>H5</h5>\r\n<p>Une série de commandes&nbsp;:</p>\r\n<pre><code>$ ls -l\r\n$ pwd</code></pre>\r\n<h6>H6</h6>\r\n<ol class="summary">\r\n<li><a href="#">Duo ridens</a></li>\r\n<li><a href="#">Tale posidonium</a></li>\r\n<li><a href="#">Cu mea ferri</a></li>\r\n</ol>\r\n<blockquote>Et scaevola principes elaboraret mea. At usu docendi epicurei, et ferri sensibus deterruisset nec, mei solet persius dignissim te. Vix velit rationibus at. Ei eum simul suscipit, assum munere recusabo vix no.</blockquote>\r\n<h6>Image</h6>\r\n<p><img src="/logos/izend.png" alt="" title="www.izend.org" /></p>\r\n<h6>Tableau</h6>\r\n<table>\r\n<thead>\r\n<tr><th>Français</th><th>Anglais</th></tr>\r\n</thead>\r\n<tbody>\r\n<tr><td>Un</td><td>One</td></tr>\r\n<tr><td>Deux</td><td>Two</td></tr>\r\n</tbody>\r\n</table>\r\n<h6>Arbre</h6>\r\n<ol class="tree">\r\n<li class="dirnode firstnode">/dossier\r\n  <ol>\r\n  <li class="dirnode">dossier</li>\r\n  <li class="dirnode">dossier\r\n    <ol>\r\n    <li class="filenode lastnode">fichier</li>\r\n    </ol>\r\n  </li>\r\n  <li class="filenode lastnode">fichier</li>\r\n  </ol>\r\n</li>\r\n</ol>\r\n<h6>Colonnes</h6>\r\n<div class="row bythree">\r\n<p class="top bottom">No dolor invenire adversarium nam, erat suscipit per no. Id duo summo mollis.</p>\r\n<p class="top bottom">Per ut illud tempor. Ut vis laboramus voluptatibus. Vel oporteat ullamcorper id, modus decore luptatum vim ea. Nec ex brute placerat, feugiat percipitur eos ea, fabulas principes ea sit.</p>\r\n<p class="top bottom"><img class="left" src="/logos/izend.png" alt="" title="www.izend.org" />Ad eam odio evertitur neglegentur, verterem disputationi eam ex. Sed no solet homero voluptua.</p>\r\n</div>', 0),
 (2, 'en', '<div class="vignette"><a href="http://www.izend.org"><img src="/logos/izend.png" alt="" title="" /></a></div>\r\n<p>Lorem ipsum dolor sit amet, alterum antiopam maluisset vis eu, et brute expetenda iracundia has. Eos animal nusquam delicata ad. Cetero legendos in pri, no usu quidam utamur. Vel quodsi voluptua cu, eam ex reque audire vidisse. Te modo omnes sea, ad detracto praesent cotidieque vim, eam quando intellegat an. Aeque erroribus mei te, ei est possit iriure.</p>\r\n<p>Text <b>bold</b>, <i>italics</i>, <u>underlined</u> and <s>striked</s>.</p>\r\n<h4>H4</h4>\r\n<p>Paragraph with some <code>code embedded</code> in the text.</p>\r\n<h5>H5</h5>\r\n<p>A series of commands:</p>\r\n<pre><code>$ ls -l\r\n$ pwd</code></pre>\r\n<h6>H6</h6>\r\n<ol class="summary">\r\n<li><a href="#">Duo ridens</a></li>\r\n<li><a href="#">Tale posidonium</a></li>\r\n<li><a href="#">Cu mea ferri</a></li>\r\n</ol>\r\n<blockquote>Et scaevola principes elaboraret mea. At usu docendi epicurei, et ferri sensibus deterruisset nec, mei solet persius dignissim te. Vix velit rationibus at. Ei eum simul suscipit, assum munere recusabo vix no.</blockquote>\r\n<h6>Image</h6>\r\n<p><img src="/logos/izend.png" alt="" title="www.izend.org" /></p>\r\n<h6>Table</h6>\r\n<table>\r\n<thead>\r\n<tr><th>French</th><th>English</th></tr>\r\n</thead>\r\n<tbody>\r\n<tr><td>Un</td><td>One</td></tr>\r\n<tr><td>Deux</td><td>Two</td></tr>\r\n</tbody>\r\n</table>\r\n<h6>Tree</h6>\r\n<ol class="tree">\r\n<li class="dirnode firstnode">/folder\r\n  <ol>\r\n  <li class="dirnode">folder</li>\r\n  <li class="dirnode">folder\r\n    <ol>\r\n    <li class="filenode lastnode">file</li>\r\n    </ol>\r\n  </li>\r\n  <li class="filenode lastnode">file</li>\r\n  </ol>\r\n</li>\r\n</ol>\r\n<h6>Columns</h6>\r\n<div class="row bythree">\r\n<p class="top bottom">No dolor invenire adversarium nam, erat suscipit per no. Id duo summo mollis.</p>\r\n<p class="top bottom">Per ut illud tempor. Ut vis laboramus voluptatibus. Vel oporteat ullamcorper id, modus decore luptatum vim ea. Nec ex brute placerat, feugiat percipitur eos ea, fabulas principes ea sit.</p>\r\n<p class="top bottom"><img class="left" src="/logos/izend.png" alt="" title="www.izend.org" />Ad eam odio evertitur neglegentur, verterem disputationi eam ex. Sed no solet homero voluptua.</p>\r\n</div>', 0),
 (3, 'fr', '<h5 class="noprint">HTML5</h5>\r\n<h6 class="noprint">Audio</h6>\r\n<audio controls="controls" loop="loop">\r\n<source src="/files/sounds/smoke.ogg" type="audio/ogg" />\r\n<source src="/files/sounds/smoke.m4a" type="audio/m4a" />\r\n<source src="/files/sounds/smoke.mp3" type="audio/mpeg" />\r\n</audio>\r\n<h6 class="noprint">Vidéo</h6>\r\n<video controls="controls" width="635px" height="264px" poster="http://video-js.zencoder.com/oceans-clip.png">\r\n<source src="http://video-js.zencoder.com/oceans-clip.ogv" type=''video/ogg'' /> \r\n<source src="http://video-js.zencoder.com/oceans-clip.mp4" type=''video/mp4'' />  \r\n<source src="http://video-js.zencoder.com/oceans-clip.webm" type=''video/webm'' />    \r\n</video>', 0),
@@ -938,7 +930,25 @@ INSERT INTO `${db_prefix}content_text` (`content_id`, `locale`, `text`, `eval`) 
 (33, 'fr', '<p>Un QRmii est un code QR qui contient une URL courte qui est automatiquement redirigée vers une URL complète. Flasher un QRmii avec un smartphone affiche directement la page de l''URL d''origine.</p>', 0),
 (33, 'en', '<p>A QRmii is QR code which contains a short URL which is automatically redirected to a complete URL.\r\nFlashing a QRmii with a smartphone directly displays the page of the original URL.</p>', 0),
 (34, 'fr', '<p><a href="http://www.${sitename}"><img src="/logos/sitelogo.png" alt="" title="" /></a></p>\r\n<p><a href="http://www.qrmii.com/"><img src="/files/images/qrmii.png" alt="" title="qrmii - 1 URL 1 QR" /></a></p>\r\n<p>Un QRmii est un code QR qui contient une URL courte qui est automatiquement redirigée vers une URL complète.\r\nFlasher un QRmii avec un smartphone affiche directement la page de l''URL d''origine.</p>\r\n<p><a href="http://www.${sitename}/fr/qrmii">Lire l''article</a></p>\r\n<div class="acenter"><a href="http://qrmii.com/a944d525"><img src="/files/images/qr50.png" width="50" height="50" alt="" title="http://qrmii.com/a944d525" /></a> Flashez-moi&nbsp;!</div>', 0),
-(34, 'en', '<p><a href="http://www.${sitename}"><img src="/logos/sitelogo.png" alt="" title="" /></a></p>\r\n<p><a href="http://www.qrmii.com/"><img src="/files/images/qrmii.png" alt="" title="qrmii - 1 URL 1 QR" /></a></p>\r\n<p>A QRmii is QR code which contains a short URL which is automatically redirected to a complete URL.\r\nFlashing a QRmii with a smartphone directly displays the page of the original URL.</p>\r\n<p><a href="http://www.${sitename}/en/qrmii">Read the article</a></p>\r\n<div class="acenter"><a href="http://qrmii.com/a944d525"><img src="/files/images/qr50.png" width="50" height="50" alt="" title="http://qrmii.com/a944d525" /></a> Flash me!</div>', 0);
+(34, 'en', '<p><a href="http://www.${sitename}"><img src="/logos/sitelogo.png" alt="" title="" /></a></p>\r\n<p><a href="http://www.qrmii.com/"><img src="/files/images/qrmii.png" alt="" title="qrmii - 1 URL 1 QR" /></a></p>\r\n<p>A QRmii is QR code which contains a short URL which is automatically redirected to a complete URL.\r\nFlashing a QRmii with a smartphone directly displays the page of the original URL.</p>\r\n<p><a href="http://www.${sitename}/en/qrmii">Read the article</a></p>\r\n<div class="acenter"><a href="http://qrmii.com/a944d525"><img src="/files/images/qr50.png" width="50" height="50" alt="" title="http://qrmii.com/a944d525" /></a> Flash me!</div>', 0),
+(36, 'fr', '<?php head(''javascript'', ''jquery-ui''); ?>\r\n<?php head(''stylesheet'', ''jquery-ui'', ''screen''); ?>\r\n<?php head(''javascript'', ''jquery.qtip''); ?>\r\n<?php head(''stylesheet'', ''jquery.qtip'', ''screen''); ?>', 1),
+(36, 'en', '<?php head(''javascript'', ''jquery-ui''); ?>\r\n<?php head(''stylesheet'', ''jquery-ui'', ''screen''); ?>\r\n<?php head(''javascript'', ''jquery.qtip''); ?>\r\n<?php head(''stylesheet'', ''jquery.qtip'', ''screen''); ?>', 1),
+(37, 'fr', '<div id="sidemenu" class="sidemenu">\r\n<div class="sidemenu-tabs">\r\n<ul>\r\n<li><a href="#sidemenu-tabs-1">Blog</a></li>\r\n<li><a href="#sidemenu-tabs-2">Dolor</a></li>\r\n<li><a href="#sidemenu-tabs-3">Lacinia</a></li>\r\n</ul>', 0),
+(37, 'en', '<div id="sidemenu" class="sidemenu">\r\n<div class="sidemenu-tabs">\r\n<ul>\r\n<li><a href="#sidemenu-tabs-1">Blog</a></li>\r\n<li><a href="#sidemenu-tabs-2">Dolor</a></li>\r\n<li><a href="#sidemenu-tabs-3">Lacinia</a></li>\r\n</ul>', 0),
+(38, 'fr', '<div id="sidemenu-tabs-1">\r\n<div class="sidemenu-accordion">\r\n<h6><a href="#">Sommaire</a></h6>\r\n<div>\r\n<p><a class="sidemenu-qtipbox" href="/fr/rolltop" rel="/fr/contenu/rolltop" title="Rolltop">Rolltop</a></p>\r\n<p><a class="sidemenu-qtipbox" href="/fr/qrmii" rel="/fr/contenu/qrmii" title="QRmii"><img src="/files/images/qrmii.png" alt="" title="qrmii - 1 URL 1 QR" /></a></p>\r\n<p><a class="sidemenu-qtipbox" href="/fr/lorem-ipsum-dolor" rel="/fr/contenu/lorem-ipsum-dolor" title="Lorem Ipsum Dolor"><img src="/logos/izend.png" alt="" title="iZend - Le moteur web" /></a></p>\r\n</div>\r\n<h6><a href="#">Proin dolor</a></h6>\r\n<div>\r\n<p>Praesent in eros vestibulum mi adipiscing adipiscing.\r\nAenean vel metus. Ut posuere viverra nulla.</p>\r\n</div>\r\n<h6><a href="#">Aenean lacinia</a></h6>\r\n<div>\r\n<p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>\r\n</div>\r\n</div>\r\n</div>', 0),
+(38, 'en', '<div id="sidemenu-tabs-1">\r\n<div class="sidemenu-accordion">\r\n<h6><a href="#">Summary</a></h6>\r\n<div>\r\n<p><a class="sidemenu-qtipbox" href="/en/rolltop" rel="/en/content/rolltop" title="Rolltop">Rolltop</a></p>\r\n<p><a class="sidemenu-qtipbox" href="/en/qrmii" rel="/en/content/qrmii" title="QRmii"><img src="/files/images/qrmii.png" alt="" title="qrmii - 1 URL 1 QR" /></a></p>\r\n<p><a class="sidemenu-qtipbox" href="/en/lorem-ipsum-dolor" rel="/en/content/lorem-ipsum-dolor" title="Lorem Ipsum Dolor"><img src="/logos/izend.png" alt="" title="iZend - The web engine" /></a></p>\r\n</div>\r\n<h6><a href="#">Proin dolor</a></h6>\r\n<div>\r\n<p>Praesent in eros vestibulum mi adipiscing adipiscing.\r\nAenean vel metus. Ut posuere viverra nulla.</p>\r\n</div>\r\n<h6><a href="#">Aenean lacinia</a></h6>\r\n<div>\r\n<p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>\r\n</div>\r\n</div>\r\n</div>', 0),
+(39, 'fr', '<div id="sidemenu-tabs-2">\r\n<p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc.</p>\r\n</div>', 0),
+(39, 'en', '<div id="sidemenu-tabs-2">\r\n<p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc.</p>\r\n</div>', 0),
+(40, 'fr', '<div id="sidemenu-tabs-3">\r\n<p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante.</p>\r\n</div>\r\n</div>\r\n</div>', 0),
+(40, 'en', '<div id="sidemenu-tabs-3">\r\n<p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante.</p>\r\n</div>\r\n</div>\r\n</div>', 0),
+(42, 'fr', '<script type="text/javascript">\r\n$(document).ready(function() {\r\n    $(''.sidemenu-tabs'').tabs({fx: { opacity: ''toggle'' } });\r\n    $(''.sidemenu-accordion'').accordion({header: ''h6'', autoHeight: false, collapsible: true, active: 0});\r\n    $(''.sidemenu-qtipbox'').each(function() {\r\n        $(this).qtip({\r\n            content: {\r\n                 ajax: {url: $(this).attr(''rel'')},\r\n            },\r\n            position: {\r\n                my: ''left top'',\r\n                at: ''right top'',\r\n                target: $(''#sidemenu''),\r\n                viewport: $(window),\r\n            },\r\n            show: {\r\n                event: ''mouseenter'',\r\n                solo: true,\r\n            },\r\n            hide: {\r\n                event: ''unfocus'',\r\n            },\r\n            style: {\r\n                classes: ''ui-tooltip-light'',\r\n                tip: {corner: false},\r\n            }\r\n        }).click(function(event) { event.preventDefault(); });\r\n    });\r\n});\r\n</script>', 0),
+(42, 'en', '<script type="text/javascript">\r\n$(document).ready(function() {\r\n    $(''.sidemenu-tabs'').tabs({fx: { opacity: ''toggle'' } });\r\n    $(''.sidemenu-accordion'').accordion({header: ''h6'', autoHeight: false, collapsible: true, active: 0});\r\n    $(''.sidemenu-qtipbox'').each(function() {\r\n        $(this).qtip({\r\n            content: {\r\n                 ajax: {url: $(this).attr(''rel'')},\r\n            },\r\n            position: {\r\n                my: ''left top'',\r\n                at: ''right top'',\r\n                target: $(''#sidemenu''),\r\n                viewport: $(window),\r\n            },\r\n            show: {\r\n                event: ''mouseenter'',\r\n                solo: true,\r\n            },\r\n            hide: {\r\n                event: ''unfocus'',\r\n            },\r\n            style: {\r\n                classes: ''ui-tooltip-light'',\r\n                tip: {corner: false},\r\n            }\r\n        }).click(function(event) { event.preventDefault(); });\r\n    });\r\n});\r\n</script>', 0),
+(43, 'fr', '<h6>Qu''est-ce qu''un QRmii ?</h6>\r\n<p>Un QRmii est un code QR qui contient une URL courte qui est automatiquement redirigée vers une URL complète.\r\nFlasher un QRmii avec un smartphone affiche directement la page de l''URL d''origine.</p>\r\n<p class="acenter"><a href="/fr/qrmii"><img src="/files/images/qrmii.png" alt="www.qrmii.com" title="www.qrmii.com" /></a></p>', 0),
+(43, 'en', '<h6>What is a QRmii?</h6>\r\n<p>A QRmii is QR code which contains a short URL which is automatically redirected to a complete URL.\r\nFlashing a QRmii with a smartphone directly displays the page of the original URL.</p>\r\n<p class="acenter"><a href="/en/qrmii"><img src="/files/images/qrmii.png" alt="www.qrmii.com" title="www.qrmii.com" /></a></p>', 0),
+(44, 'fr', '<h6>Atqui noster honestatis <a href="http://www.youtube.com/watch?v=b3txQs7jEJ4" target="_blank"><img src="/files/images/youtube.png" alt="" title="Rolltop on YouTube"/></a></h6>\r\n<p>Lorem ipsum dolor sit amet, vis ne nonumes tractatos neglegentur. In eam ludus constituam. Est cu dicat aliquid dissentias, ea esse possim adipiscing eam. Aliquam volumus accumsan id cum, justo vivendum senserit ex eos, ad per nulla oporteat.</p>\r\n<p>Mel eu aliquando pertinacia, at sit causae cetero aliquip. Atqui noster honestatis sea id, eu illum veritus propriae per. Erat vidit dolores eos ut, ex his elit tota fuisset. Cu utroque moderatius vis, eam magna nihil ut.</p>\r\n<p class="readmore"><a href="/fr/rolltop">Lire la suite</a></p>', 0),
+(44, 'en', '<h6>Atqui noster honestatis <a href="http://www.youtube.com/watch?v=b3txQs7jEJ4" target="_blank"><img src="/files/images/youtube.png" alt="" title="Rolltop on YouTube"/></a></h6>\r\n<p>Lorem ipsum dolor sit amet, vis ne nonumes tractatos neglegentur. In eam ludus constituam. Est cu dicat aliquid dissentias, ea esse possim adipiscing eam. Aliquam volumus accumsan id cum, justo vivendum senserit ex eos, ad per nulla oporteat.</p>\r\n<p>Mel eu aliquando pertinacia, at sit causae cetero aliquip. Atqui noster honestatis sea id, eu illum veritus propriae per. Erat vidit dolores eos ut, ex his elit tota fuisset. Cu utroque moderatius vis, eam magna nihil ut.</p>\r\n<p class="readmore"><a href="/en/rolltop">Read more</a></p>', 0),
+(45, 'fr', '<p><a href="http://www.izend.org"><img class="left" src="/logos/izend.png" alt="www.izend.org" title="www.izend.org" /></a>\r\nAd eam odio evertitur neglegentur, verterem disputationi eam ex.</p>\r\n<div class="clear"></div>\r\n<h6>Illud tempor</h6>\r\n<p>Per ut illud tempor. Ut vis laboramus voluptatibus. Vel oporteat ullamcorper id, modus decore luptatum vim ea. Nec ex brute placerat, feugiat percipitur eos ea, fabulas principes ea sit.</p>', 0),
+(45, 'en', '<p><a href="http://www.izend.org"><img class="left" src="/logos/izend.png" alt="www.izend.org" title="www.izend.org" /></a>\r\nAd eam odio evertitur neglegentur, verterem disputationi eam ex.</p>\r\n<div class="clear"></div>\r\n<h6>Illud tempor</h6>\r\n<p>Per ut illud tempor. Ut vis laboramus voluptatibus. Vel oporteat ullamcorper id, modus decore luptatum vim ea. Nec ex brute placerat, feugiat percipitur eos ea, fabulas principes ea sit.</p>', 0);
 _SEP_;
 	if (!@mysql_query($sql, $db_conn)) {
 		return false;
@@ -960,7 +970,11 @@ INSERT INTO `${db_prefix}node` (`node_id`, `user_id`, `created`, `modified`, `no
 (12, 1, '2012-05-28 16:40:15', '2012-06-06 17:50:42', 0, 0, 0, 0, 1, 1, 1, 1),
 (13, 1, '2012-06-01 09:42:21', '2012-06-06 17:31:49', 0, 0, 0, 0, 1, 1, 1, 1),
 (14, 1, '2012-06-24 16:34:58', '2012-06-24 17:36:58', 1, 1, 1, 1, 1, 1, 1, 1),
-(15, 1, '2012-08-09 11:25:13', '2012-08-09 11:47:51', 1, 1, 1, 1, 1, 1, 1, 1);
+(15, 1, '2012-08-09 11:25:13', '2012-08-09 11:47:51', 1, 1, 1, 1, 1, 1, 1, 1),
+(16, 1, '2012-09-22 19:18:14', '2012-09-24 18:53:49', 0, 0, 0, 0, 1, 1, 1, 1),
+(17, 1, '2012-09-23 13:06:07', '2012-09-23 22:27:36', 0, 0, 0, 0, 1, 1, 1, 1),
+(18, 1, '2012-09-23 13:07:00', '2012-09-23 18:02:28', 0, 0, 0, 0, 1, 1, 1, 1),
+(19, 1, '2012-09-23 13:59:28', '2012-09-23 22:28:00', 0, 0, 0, 0, 1, 1, 1, 1);
 _SEP_;
 	if (!@mysql_query($sql, $db_conn)) {
 		return false;
@@ -1011,7 +1025,16 @@ INSERT INTO `${db_prefix}node_content` (`node_id`, `content_id`, `content_type`,
 (12, 30, 'text', 3, 0),
 (13, 31, 'text', 1, 0),
 (14, 33, 'text', 1, 0),
-(15, 34, 'text', 1, 0);
+(15, 34, 'text', 1, 0),
+(16, 36, 'text', 1, 0),
+(16, 37, 'text', 2, 0),
+(16, 38, 'text', 3, 0),
+(16, 39, 'text', 4, 0),
+(16, 40, 'text', 5, 0),
+(16, 42, 'text', 6, 0),
+(17, 43, 'text', 1, 0),
+(18, 44, 'text', 1, 0),
+(19, 45, 'text', 1, 0);
 _SEP_;
 	if (!@mysql_query($sql, $db_conn)) {
 		return false;
@@ -1048,7 +1071,15 @@ INSERT INTO `${db_prefix}node_locale` (`node_id`, `locale`, `name`, `title`, `ab
 (14, 'fr', 'qrmii', 'Qu''est-ce qu''un QRmii ?', NULL, NULL),
 (14, 'en', 'qrmii', 'What is a QRmii?', NULL, NULL),
 (15, 'fr', 'qrmii', 'Qu''est-ce qu''un QRmii ?', 'Un QRmii est un code QR qui contient une URL courte qui est automatiquement redirigée vers une URL complète.', 'QRmii QR URL redirection'),
-(15, 'en', 'qrmii', 'What is a QRmii?', 'A QRmii is QR code which contains a short URL which is automatically redirected to a complete URL.', 'QRmii QR URL redirection');
+(15, 'en', 'qrmii', 'What is a QRmii?', 'A QRmii is QR code which contains a short URL which is automatically redirected to a complete URL.', 'QRmii QR URL redirection'),
+(16, 'fr', 'qtip', 'qTip', 'Menu vertical en accordéon en jQuery UI qui affiche des contenus avec qTip.', 'qTip menu accordéon onglet Ajax'),
+(16, 'en', 'qtip', 'qTip', 'Vertical accordion menu in jQuery UI which displays contents with qTip.', 'qTip menu accordion tab Ajax'),
+(17, 'fr', 'qrmii', 'QRmii', NULL, NULL),
+(17, 'en', 'qrmii', 'QRmii', NULL, NULL),
+(18, 'fr', 'rolltop', 'Rolltop', NULL, NULL),
+(18, 'en', 'rolltop', 'Rolltop', NULL, NULL),
+(19, 'fr', 'lorem-ipsum-dolor', 'Lorem Ipsum Dolor', NULL, NULL),
+(19, 'en', 'lorem-ipsum-dolor', 'Lorem Ipsum Dolor', NULL, NULL);
 _SEP_;
 	if (!@mysql_query($sql, $db_conn)) {
 		return false;
@@ -1103,20 +1134,24 @@ INSERT INTO `${db_prefix}tag` (`tag_id`, `locale`, `name`) VALUES
 (46, 'fr', 'calendrier'),
 (47, 'fr', 'onglet'),
 (48, 'fr', 'accordéon'),
-(49, 'en', 'QRmii'),
-(50, 'en', 'QR'),
-(51, 'en', 'URL'),
-(52, 'en', 'redirection'),
-(53, 'fr', 'QRmii'),
-(54, 'fr', 'QR'),
-(55, 'fr', 'URL'),
-(56, 'fr', 'redirection'),
-(57, 'en', 'Rolltop'),
-(58, 'en', 'latin'),
-(59, 'fr', 'Rolltop'),
-(60, 'fr', 'latin'),
-(61, 'en', 'Sintel'),
-(62, 'fr', 'Sintel');
+(49, 'en', 'qTip'),
+(50, 'en', 'Ajax'),
+(51, 'fr', 'qTip'),
+(52, 'fr', 'Ajax'),
+(53, 'en', 'QRmii'),
+(54, 'en', 'QR'),
+(55, 'en', 'URL'),
+(56, 'en', 'redirection'),
+(57, 'fr', 'QRmii'),
+(58, 'fr', 'QR'),
+(59, 'fr', 'URL'),
+(60, 'fr', 'redirection'),
+(61, 'en', 'Rolltop'),
+(62, 'en', 'latin'),
+(63, 'fr', 'Rolltop'),
+(64, 'fr', 'latin'),
+(65, 'en', 'Sintel'),
+(66, 'fr', 'Sintel');
 _SEP_;
 	if (!@mysql_query($sql, $db_conn)) {
 		return false;
@@ -1171,33 +1206,35 @@ INSERT INTO `${db_prefix}tag_index` (`tag_id`, `node_id`) VALUES
 (33, 12),
 (34, 3),
 (35, 4),
+(35, 16),
 (36, 4),
 (37, 4),
 (37, 5),
+(37, 16),
 (38, 4),
+(38, 16),
 (39, 4),
 (40, 4),
 (40, 5),
+(40, 16),
 (41, 5),
+(41, 16),
 (42, 5),
 (43, 5),
+(43, 16),
 (44, 5),
+(44, 16),
 (45, 5),
+(45, 16),
 (46, 5),
 (47, 5),
+(47, 16),
 (48, 5),
-(49, 6),
-(49, 13),
-(49, 15),
-(50, 6),
-(50, 13),
-(50, 15),
-(51, 6),
-(51, 13),
-(51, 15),
-(52, 6),
-(52, 13),
-(52, 15),
+(48, 16),
+(49, 16),
+(50, 16),
+(51, 16),
+(52, 16),
 (53, 6),
 (53, 13),
 (53, 15),
@@ -1210,26 +1247,38 @@ INSERT INTO `${db_prefix}tag_index` (`tag_id`, `node_id`) VALUES
 (56, 6),
 (56, 13),
 (56, 15),
-(57, 7),
-(57, 12),
-(58, 7),
-(58, 8),
-(58, 9),
-(58, 10),
-(58, 11),
-(58, 12),
-(59, 7),
-(59, 12),
-(60, 7),
-(60, 8),
-(60, 9),
-(60, 10),
-(60, 11),
-(60, 12),
-(61, 9),
-(61, 10),
+(57, 6),
+(57, 13),
+(57, 15),
+(58, 6),
+(58, 13),
+(58, 15),
+(59, 6),
+(59, 13),
+(59, 15),
+(60, 6),
+(60, 13),
+(60, 15),
+(61, 7),
+(61, 12),
+(62, 7),
+(62, 8),
 (62, 9),
-(62, 10);
+(62, 10),
+(62, 11),
+(62, 12),
+(63, 7),
+(63, 12),
+(64, 7),
+(64, 8),
+(64, 9),
+(64, 10),
+(64, 11),
+(64, 12),
+(65, 9),
+(65, 10),
+(66, 9),
+(66, 10);
 _SEP_;
 	if (!@mysql_query($sql, $db_conn)) {
 		return false;
@@ -1241,8 +1290,9 @@ INSERT INTO `${db_prefix}thread` (`thread_id`, `user_id`, `thread_type`, `create
 (2, 1, 'story', '2011-12-26 21:32:47', '2012-01-24 21:57:34', 2, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1),
 (3, 1, 'folder', '2012-05-13 22:50:17', '2012-06-06 17:51:22', 3, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1),
 (4, 1, 'folder', '2012-05-13 17:14:32', '2012-06-06 17:14:39', 4, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1),
-(5, 1, 'thread', '2012-06-24 16:23:16', '2012-06-24 16:23:32', 5, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0),
-(6, 1, 'newsletter', '2012-08-06 15:01:17', '2012-08-06 15:01:51', 6, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0);
+(5, 1, 'rss', '2012-06-24 16:23:16', '2012-06-24 16:23:32', 5, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0),
+(6, 1, 'newsletter', '2012-08-06 15:01:17', '2012-08-06 15:01:51', 6, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0),
+(7, 1, 'folder', '2012-09-23 13:03:32', '2012-09-23 11:56:21', 7, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0);
 _SEP_;
 	if (!@mysql_query($sql, $db_conn)) {
 		return false;
@@ -1261,7 +1311,9 @@ INSERT INTO `${db_prefix}thread_locale` (`thread_id`, `locale`, `name`, `title`,
 (5, 'fr', 'rss', 'RSS', NULL, NULL),
 (5, 'en', 'rss', 'RSS', NULL, NULL),
 (6, 'fr', 'infolettre', 'Infolettre', NULL, NULL),
-(6, 'en', 'newsletter', 'Newsletter', NULL, NULL);
+(6, 'en', 'newsletter', 'Newsletter', NULL, NULL),
+(7, 'fr', 'menu', 'Menu', NULL, NULL),
+(7, 'en', 'menu', 'Menu', NULL, NULL);
 _SEP_;
 	if (!@mysql_query($sql, $db_conn)) {
 		return false;
@@ -1274,6 +1326,7 @@ INSERT INTO `${db_prefix}thread_node` (`thread_id`, `node_id`, `number`, `ignore
 (2, 3, 1, 0),
 (2, 4, 2, 0),
 (2, 5, 3, 0),
+(2, 16, 4, 0),
 (3, 6, 1, 0),
 (3, 7, 2, 0),
 (3, 8, 3, 0),
@@ -1283,7 +1336,10 @@ INSERT INTO `${db_prefix}thread_node` (`thread_id`, `node_id`, `number`, `ignore
 (4, 12, 2, 0),
 (4, 13, 1, 0),
 (5, 14, 1, 0),
-(6, 15, 1, 0);
+(6, 15, 1, 0),
+(7, 17, 1, 0),
+(7, 18, 2, 0),
+(7, 19, 3, 0);
 _SEP_;
 	if (!@mysql_query($sql, $db_conn)) {
 		return false;
