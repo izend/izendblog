@@ -1,0 +1,74 @@
+/**
+ *
+ * @copyright  2012 izend.org
+ * @version    1
+ * @link       http://www.izend.org
+ */
+ 
+/* patchwork.css */
+
+body {background-image:url(../../images/bg/patchwork.jpg);margin-top:0;margin-bottom:0;}
+
+#sitename {color:#56b4aa;}
+#sitedomain {color:#99b559;}
+a:hover #sitedomain {color:#e7504c;}
+
+#socialbar a {background-color:#56b4aa;}
+
+#standard, #editor, #viewer {height:100%;background-color:#ffffff;}
+
+#banner, #content, #footer {background-color:#ffffff;margin:0;border-radius:0;-webkit-border-radius:0;-moz-border-radius:0;box-shadow:none;}
+
+#footer {color:#333333;}
+#footer a:link, #footer a:visited {color:#333333;}
+#footer a:hover {color:#e7504c;}
+
+#footer .btn_mail {background-image:url(../../images/light/small/mail.png);}
+#footer .btn_login {background-image:url(../../images/light/small/user.png);}
+#footer .btn_logout {background-image:url(../../images/light/small/cancel.png);}
+#footer .btn_admin {background-image:url(../../images/light/small/work.png);}
+
+input.submit {width:100px;height:30px;background-color:#99b559;color:#ffffff;background-image:none;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border:none;cursor:pointer;}
+
+a:link, a:visited {color:#e7504c;text-decoration:none;}
+
+h1,h2,h3 {color:#4e2c29;}
+h4 {color:#56b4aa;}
+h5 {color:#99b559;}
+h6 {color:#b49f9a;}
+
+pre {background-color:#fafaa1;}
+
+.topbar > li {background-color:#4e2c29;}
+.topbar ul li a {background-color:#4e2c29;}
+
+.date {background-image:none;}
+.date .day {color:#4e2c29;top:0.6em;}
+.date .month {color:#4e2c29;top:0.6em;}
+.date .year {color:#b49f9a;top:4.5em;}
+
+.lang {color:#ffffff;text-indent:0;text-align:center;padding:0 0.25em;}
+.lang.fr {background:#56b4aa;}
+.lang.en {background:#e7504c;}
+
+input[type="submit"]#fr {width:auto;height:auto;color:#ffffff;background:#56b4aa;text-indent:0;text-align:center;padding:0.25em;}
+input[type="submit"]#en {width:auto;height:auto;color:#ffffff;background:#e7504c;text-indent:0;text-align:center;padding:0.25em;}
+
+.blogsummarytitle h4 a:link, .blogsummarytitle h4 a:visited {color:#56b4aa;}
+.blogsummarytitle h4 a:hover {color:#e7504c;}
+.blogsummarytitle .author {color:#b49f9a;}
+
+.cloud li a:link, .cloud li a:visited {color:#99b559;}
+.cloud li a:hover {color:#e7504c;}
+
+.error, .errors, .inerror, .bbcodebar .alert {color:#e7504c;}
+
+pre, th, .hilite, div.warning, #useredit_status {background-color:#efef9f;}
+.odd {background-color:#efef9f;}
+.even {background-color:#cc7c76;}
+
+#searchlinks h3 a:hover {color:#e7504c;}
+
+.jspDrag {background:#e7504c;}
+
+.notice {background-color:#efef9f;}
