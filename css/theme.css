@@ -1,7 +1,7 @@
 /**
  *
  * @copyright  2010-2012 izend.org
- * @version    44
+ * @version    45
  * @link       http://www.izend.org
  */
  
@@ -46,11 +46,11 @@ th {background-color:#ffffe0;font-weight:bold;}
 
 .topbar a:link, .topbar a:visited {color:#ffffff;}
 .topbar a:hover {color:#ffffff;}
-.topbar > li {box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
+.topbar, .topbar ul li a {background-color:#666666;}
+.topbar {border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px;}
+.topbar {box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
 .topbar > li:first-child {border-radius:5px 0 0 5px;-webkit-border-radius:5px 0 0 5px;-moz-border-radius:5px 0 0 5px;}
 .topbar > li:last-child {border-radius:0 5px 5px 0;-webkit-border-radius:0 5px 5px 0;-moz-border-radius:0 5px 5px 0;}
-.topbar > li {background-color:#666666;}
-.topbar ul li a {background-color:#666666;}
 
 .date {float:left;width:60px;height:60px;margin:0;padding:0;background:#ffffff url(../images/theme/calendar.jpg) no-repeat;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;margin-right:1em;position:relative;}
 .date span {width:100%;text-align:center;margin:0;padding:0;position:absolute;}
