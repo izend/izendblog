@@ -35,6 +35,7 @@
         #cboxLoadedContent{margin-bottom:0px;}
         #cboxTitle{position:absolute; bottom:0px; left:0; text-align:center; width:100%; color:#fff; background-color:rgba(0, 0, 0, 0.6);}
         #cboxCurrent{position:absolute; bottom:0px; left:100px; color:#999;}
+        #cboxCurrent{position:absolute; bottom:0px; left:100px; color:#fff;}
         #cboxSlideshow{position:absolute; bottom:0px; right:42px; color:#444;}
         #cboxPrevious, #cboxNext, #cboxClose, #cboxSlideshow{text-indent:-9999px;}
 

@@ -1,7 +1,7 @@
 /**
  *
  * @copyright  2010-2012 izend.org
- * @version    45
+ * @version    47
  * @link       http://www.izend.org
  */
  
@@ -31,10 +31,6 @@ pre {color:#333333;background:#ffffe0;padding:0.5em;border-radius:8px;-webkit-bo
 
 ol.tree li.dirnode {color:#666666;}
 ol.tree li.filenode {color:#333333;}
-
-form.compact p {margin-top:0.75em; margin-bottom:0.5em;}
-
-textarea {resize:none;}
 
 th {background-color:#ffffe0;font-weight:bold;}
 
@@ -153,10 +149,10 @@ a:hover #sitedomain {color:#ff9900;}
 #bannercontrols .btn_mail {width:24px;height:24px;float:left;background:transparent url(../images/theme/icons/mail.png) no-repeat;}
 #bannercontrols .btn_admin {width:24px;height:24px;float:left;background:transparent url(../images/theme/icons/work.png) no-repeat;}
 
-#banner #languages {width:40px;float:left;margin-top:13px;margin-left:20px;}
-#banner #languages a {width:24px;height:24px;display:inline-block;vertical-align:middle;text-indent:-9999px;cursor:pointer;}
-#banner #languages .btn_fr {background:transparent url(../images/theme/flags/fr.png) no-repeat;}
-#banner #languages .btn_en {background:transparent url(../images/theme/flags/en.png) no-repeat;}
+#banner .languages {width:40px;float:left;margin-top:13px;margin-left:20px;}
+#banner .languages a {width:24px;height:24px;display:inline-block;vertical-align:middle;text-indent:-9999px;cursor:pointer;}
+#banner .languages .btn_fr {background:transparent url(../images/theme/flags/fr.png) no-repeat;}
+#banner .languages .btn_en {background:transparent url(../images/theme/flags/en.png) no-repeat;}
 
 #banner #donate {width:120px;float:right;margin-top:16px;margin-right:10px;}
 #donate .btn_donate_fr {width:108px;height:21px;float:right;background:transparent url(../images/paypal_donate_fr.gif) no-repeat;}
@@ -187,8 +183,8 @@ a:hover #sitedomain {color:#ff9900;}
 #footer .btn_account {width:16px;height:16px;background:transparent url(../images/theme/icons/small/user.png) no-repeat;display:inline-block;text-indent:-9999px;vertical-align:middle;}
 #footer .btn_admin {width:16px;height:16px;background:transparent url(../images/theme/icons/small/work.png) no-repeat;display:inline-block;text-indent:-9999px;vertical-align:middle;}
 
-#footer #languages {float:right;}
-#footer #languages a span {display:inline;}
+#footer .languages {float:right;}
+#footer .languages a span {display:inline;}
 
 #toolbar {width:24px;padding:6px;background-color:#ffffff;position:fixed;margin-top:-6px;margin-left:930px;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
 #toolbar a {width:24px;height:24px;float:left;}
