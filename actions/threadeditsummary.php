@@ -2,8 +2,8 @@
 
 /**
  *
- * @copyright  2010-2012 izend.org
- * @version    19
+ * @copyright  2010-2013 izend.org
+ * @version    20
  * @link       http://www.izend.org
  */
 
@@ -411,7 +411,8 @@ function threadeditsummary($lang, $clang, $thread) {
 	$headline = compact('headline_text', 'headline_url');
 	$view=$thread_name ? url('thread', $clang) . '/'. $thread_id . '?' . 'slang=' . $lang : false;
 
-	$banner = build('banner', $lang, $with_toolbar ? compact('headline') : compact('headline', 'view'));
+	$logout=true;
+	$banner = build('banner', $lang, $with_toolbar ? compact('headline') : compact('headline', 'view', 'logout'));
 
 	$scroll=true;
 	$toolbar = $with_toolbar ? build('toolbar', $lang, compact('view', 'scroll')) : false;

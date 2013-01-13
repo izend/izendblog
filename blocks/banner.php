@@ -2,8 +2,8 @@
 
 /**
  *
- * @copyright  2010-2011 izend.org
- * @version    6
+ * @copyright  2010-2013 izend.org
+ * @version    7
  * @link       http://www.izend.org
  */
 
@@ -27,6 +27,16 @@ function banner($lang, $components=false) {
 	if ($components) {
 		foreach ($components as $v => $param) {
 			switch ($v) {
+				case 'logout':
+					if ($is_identified) {
+						$nobody_page=url('nobody', $lang);
+					}
+					break;
+				case 'login':
+					if (!$is_identified) {
+						$user_page=url('user', $lang);
+					}
+					break;
 				case 'account':
 					if ($param) {
 						if ($is_identified) {

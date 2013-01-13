@@ -2,8 +2,8 @@
 
 /**
  *
- * @copyright  2012 izend.org
- * @version    2
+ * @copyright  2012-2013 izend.org
+ * @version    3
  * @link       http://www.izend.org
  */
 
@@ -81,7 +81,9 @@ function newslettersummary($lang, $newsletter) {
 	$edit=user_has_role('writer') ? url('newsletteredit', $_SESSION['user']['locale']) . '/'. $newsletter_id : false;
 	$validate=url('newsletter', $lang) . '/'. $newsletter_name;
 
-	$banner = build('banner', $lang, $with_toolbar ? compact('headline', 'search') : compact('headline', 'edit', 'validate', 'search'));
+	$logout=true;
+	$banner = build('banner', $lang, $with_toolbar ? compact('headline', 'search') : compact('headline', 'edit', 'validate', 'search', 'logout'));
+
 	$toolbar = $with_toolbar ? build('toolbar', $lang, compact('edit', 'validate')) : false;
 
 	$output = layout('standard', compact('sharebar', 'toolbar', 'banner', 'sidebar', 'content'));

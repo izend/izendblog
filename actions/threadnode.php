@@ -2,8 +2,8 @@
 
 /**
  *
- * @copyright  2010-2012 izend.org
- * @version    11
+ * @copyright  2010-2013 izend.org
+ * @version    12
  * @link       http://www.izend.org
  */
 
@@ -87,7 +87,8 @@ function threadnode($lang, $thread, $node) {
 
 	$edit=user_has_role('writer') ? url('threadedit', $_SESSION['user']['locale']) . '/' . $thread_id . '/' . $node_id . '?' . 'clang=' . $lang : false;
 
-	$banner = build('banner', $lang, $with_toolbar ? compact('headline') : compact('headline', 'edit'));
+	$logout=true;
+	$banner = build('banner', $lang, $with_toolbar ? compact('headline') : compact('headline', 'edit', 'logout'));
 
 	$scroll=true;
 	$toolbar = $with_toolbar ? build('toolbar', $lang, compact('edit', 'scroll')) : false;

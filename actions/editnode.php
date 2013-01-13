@@ -2,8 +2,8 @@
 
 /**
  *
- * @copyright  2010-2011 izend.org
- * @version    5
+ * @copyright  2010-2013 izend.org
+ * @version    6
  * @link       http://www.izend.org
  */
 
@@ -65,7 +65,8 @@ function editnode($lang, $arglist=false) {
 
 	$view=url('node', $clang) . '/'. $node_id . '?' . 'slang=' . $lang;
 
-	$banner = build('banner', $lang, $with_toolbar ? false : compact('view'));
+	$logout=true;
+	$banner = build('banner', $lang, $with_toolbar ? false : compact('view', 'logout'));
 
 	$scroll=true;
 	$toolbar = $with_toolbar ? build('toolbar', $lang, compact('view', 'scroll')) : false;
