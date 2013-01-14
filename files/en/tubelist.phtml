@@ -2,8 +2,8 @@
 
 /**
  *
- * @copyright  2012 qrmii.com
- * @version    1
+ * @copyright  2012-2013 qrmii.com
+ * @version    2
  * @link       http://www.qrmii.com
  */
 ?>
@@ -25,7 +25,7 @@ foreach ($thumbs as $file) {
 }
 $dir='/files/tubes/' . $lang;
 ?>
-<div class="gallery">
+<div class="gallery compact">
 <?php foreach ($tubes as $name): ?>
 <a class="yt" href="http://www.youtube.com/embed/<?php echo $name; ?>?autoplay=1&amp;autohide=2&amp;controls=1&amp;fs=0&amp;modestbranding=0&amp;showinfo=0&amp;rel=1&amp;theme=light&amp;color=white"><img src="<?php echo $dir; ?>/<?php echo $name; ?>.png" alt="" width="240px" height="135px" /></a>
 <?php endforeach; ?>
