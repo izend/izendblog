@@ -1,0 +1,25 @@
+  
+          _       _            
+__      _(_)_ __ | |_ ___ _ __ 
+\ \ /\ / / | '_ \| __/ _ \ '__|
+ \ V  V /| | | | | ||  __/ |   
+  \_/\_/ |_|_| |_|\__\___|_|   
+
+Edit the files standard.phml, editing.phtml and viewing.phtml in layouts.
+
+Add 1 <div id="top"> after <body> and 1 <div id="bottom"> before </body> to the 3 layouts:
+
+<body>
+<div id="top"></div>
+...
+<div id="bottom">
+<div id="trees"></div>
+<div id="forest"></div>
+<div id="grass"></div>
+</div>
+</body>
+
+Change $theme in includes/config.inc to 'winter':
+
+$theme='winter';
+

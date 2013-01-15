@@ -1,0 +1,37 @@
+/**
+ *
+ * @copyright  2013 izend.org
+ * @version    1
+ * @link       http://www.izend.org
+ */
+ 
+/* winter.css */
+
+body {width:100%;color:#333333;margin:0 auto;background:#f0f0f0 url(winter/bg.gif) repeat-x;}
+
+#standard, #editor, #viewer {width:960px;margin:0 auto;}
+
+#top {width:100%;height:154px;background:url(winter/swirls.png) repeat-x top center;}
+#bottom {width:100%;position:relative;}
+#trees {width:571px;height:396px;background:url(winter/trees.png) no-repeat left bottom;position:absolute;top:-320px;z-index:-1;}
+#forest {width:535px;height:114px;background:url(winter/forest.png) no-repeat left bottom;position:absolute;top:-75px;z-index:-2;}
+#grass {width:100%;height:79px;background:url(winter/grass.png) repeat-x left bottom;position:absolute;z-index:-3;}
+
+#background {background-color:#ffffff;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
+#content, #footer {background-color:transparent;border-radius:0;-webkit-border-radius:0;-moz-border-radius:0;box-shadow:none;}
+
+#footer {color:#333333;}
+#footer a:link, #footer a:visited {color:#333333;}
+#footer a:hover {color:#ff9900;}
+
+#footer .btn_mail {background-image:url(../../images/light/small/mail.png);}
+#footer .btn_login {background-image:url(../../images/light/small/user.png);}
+#footer .btn_logout {background-image:url(../../images/light/small/cancel.png);}
+#footer .btn_admin {background-image:url(../../images/light/small/work.png);}
+
+#sitedomain {color:#333333;}
+
+.error, .errors, .inerror {color:#99cccc;}
+
+input.submit {width:100px;height:30px;background-color:#cccccc;color:#333333;background-image:none;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border:none;cursor:pointer;}
+
