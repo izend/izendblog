@@ -1,13 +1,13 @@
 /**
  *
  * @copyright  2012 izend.org
- * @version    2
+ * @version    3
  * @link       http://www.izend.org
  */
  
 /* beach.css */
 
-body {background:#e1c294 url(../../images/beach.jpg) no-repeat;-webkit-background-size:1920px 1200px;margin:0 auto 20px auto;overflow-y:scroll;}
+body {background:#e1c294 url(beach/beach.jpg) no-repeat;-webkit-background-size:1920px 1200px;margin:0 auto 20px auto;overflow-y:scroll;}
 
 #sitename {color:#ffffff;}
 #sitedomain {color:#ffffff;}
@@ -28,3 +28,17 @@ a:hover #sitedomain {color:#e1c294;}
 #footer .btn_admin {background-image:url(../../images/light/small/work.png);}
 
 input.submit {width:100px;height:30px;background-color:#68c2f7;color:#ffffff;background-image:none;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border:none;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;cursor:pointer;}
+
+.topbar a:link, #topbar a:visited {color:#ffffff;}
+.topbar > li {box-shadow:1px 2px 5px #e1c294;-webkit-box-shadow:1px 2px 5px #e1c294;-moz-box-shadow:1px 2px 5px #e1c294;}
+.topbar > li {background-color:#e1c294;}
+.topbar ul li a {background-color:#e1c294;}
+
+.date {width:80px;height:80px;background:#e1c294;margin-right:1em;border-radius:40px;-webkit-border-radius:40px;-moz-border-radius:40px;}
+.date span {color:#ffffff;font-weight:bold;}
+.date .day {color:#ffffff;font-size:24px;top:28px;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;}
+.date .month {color:#ffffff;font-size:18px;top:10px;text-transform:capitalize;}
+.date .year {color:#ffffff;font-size:12px;top:55px;}
+
+.blogsummarytitle {height:5em;}
+.blogsummarytitle h4 {margin:1em 0 0.5em 0;}

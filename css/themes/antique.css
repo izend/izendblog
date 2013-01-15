@@ -1,7 +1,7 @@
 /**
  *
  * @copyright  2012 izend.org
- * @version    1
+ * @version    2
  * @link       http://www.izend.org
  */
  
@@ -40,19 +40,17 @@ h6 {color:#c0bbb9;}
 .topbar > li {background-color:#c0bbb9;}
 .topbar ul li a {background-color:#c0bbb9;}
 
-.date {width:80px;height:80px;margin:0;padding:0;background:#c0bbb9;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;margin-right:1em;position:relative;border-radius:40px;-webkit-border-radius:40px;-moz-border-radius:40px;}
-.date span {width:100%;color:#a0917f;font-weight:bold;text-align:center;margin:0;padding:0;position:absolute;}
+.date {width:80px;height:80px;background:#c0bbb9;margin-right:1em;border-radius:40px;-webkit-border-radius:40px;-moz-border-radius:40px;}
+.date span {color:#a0917f;font-weight:bold;}
 .date .day {color:#a0917f;font-size:24px;top:28px;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;}
-.date .month {color:#a0917f;font-size:18px;text-transform:capitalize;top:10px;}
+.date .month {color:#a0917f;font-size:18px;top:10px;text-transform:capitalize;}
 .date .year {color:#a0917f;font-size:12px;top:55px;}
-.date .comma {display:none;}
 
 .blogsummarytitle {height:5em;}
-.blogsummarytitle > div {float:left;}
 .blogsummarytitle h4 {margin:1em 0 0.5em 0;}
 .blogsummarytitle h4 a:link, #homeblog h4 a:visited {color:#a0917f;}
 .blogsummarytitle h4 a:hover {color:#ff9900;}
-.blogsummarytitle .author {color:#a0917f;font-size:smaller;font-style:italic;margin:0.5em 0;}
+.blogsummarytitle .author {color:#a0917f;}
 
 .cloud li a:link, .cloud li a:visited {color:#a0917f;}
 .cloud li a:hover {color:#ff9900;}
