@@ -1,13 +1,13 @@
 /**
  *
- * @copyright  2012 izend.org
- * @version    1
+ * @copyright  2012-2013 izend.org
+ * @version    2
  * @link       http://www.izend.org
  */
  
 /* patchwork.css */
 
-body {background-image:url(../../images/bg/patchwork.jpg);margin-top:0;margin-bottom:0;}
+body {background-image:url(../../images/bg/patchwork.jpg);margin:0 auto;}
 
 #sitename {color:#56b4aa;}
 #sitedomain {color:#99b559;}
@@ -30,7 +30,8 @@ a:hover #sitedomain {color:#e7504c;}
 
 input.submit {width:100px;height:30px;background-color:#99b559;color:#ffffff;background-image:none;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border:none;cursor:pointer;}
 
-a:link, a:visited {color:#e7504c;text-decoration:none;}
+a:link, a:visited {color:#e7504c;}
+a:hover {color:#99b559;}
 
 h1,h2,h3 {color:#4e2c29;}
 h4 {color:#56b4aa;}

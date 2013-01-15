@@ -1,13 +1,13 @@
 /**
  *
  * @copyright  2013 izend.org
- * @version    1
+ * @version    2
  * @link       http://www.izend.org
  */
  
 /* winter.css */
 
-body {width:100%;color:#333333;margin:0 auto;background:#f0f0f0 url(winter/bg.gif) repeat-x;}
+body {width:100%;color:#333333;margin:0 auto 10px;background:#f0f0f0 url(winter/bg.gif) repeat-x;}
 
 #standard, #editor, #viewer {width:960px;margin:0 auto;}
 
