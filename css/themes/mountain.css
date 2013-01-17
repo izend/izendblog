@@ -1,0 +1,65 @@
+/**
+ *
+ * @copyright  2013 izend.org
+ * @version    1
+ * @link       http://www.izend.org
+ */
+ 
+/* mountain.css */
+
+body {width:100%;color:#333333;margin:0 auto 20px;background:#cec5b1 url(mountain/grass.jpg) repeat-x bottom fixed;}
+
+#bg {background:url(mountain/glare.png) no-repeat;}
+
+#standard, #editor, #viewer {width:960px;margin:0 auto;}
+
+#sitename {color:#ffffff;}
+#sitedomain {color:#817151;}
+a:hover #sitedomain {color:#ffffff;}
+
+#socialbar a {background-color:#817151;}
+
+#background {background-color:#ffffff;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
+#content, #footer {background-color:transparent;border-radius:0;-webkit-border-radius:0;-moz-border-radius:0;box-shadow:none;}
+
+#footer {color:#333333;}
+#footer a:link, #footer a:visited {color:#333333;}
+#footer a:hover {color:#ff9900;}
+
+#footer .btn_mail {background-image:url(../../images/light/small/mail.png);}
+#footer .btn_login {background-image:url(../../images/light/small/user.png);}
+#footer .btn_logout {background-image:url(../../images/light/small/cancel.png);}
+#footer .btn_admin {background-image:url(../../images/light/small/work.png);}
+
+input.submit {width:100px;height:30px;background-color:#cec5b1;color:#ffffff;background-image:none;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border:none;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;cursor:pointer;}
+input.submit:hover {color:#817151;}
+
+h1,h2,h3 {color:#817151;}
+h4 {color:#cec5b1;}
+h5 {color:#817151;}
+h6 {color:#333333;}
+
+.topbar a:link, #topbar a:visited {color:#ffffff;}
+.topbar > li {box-shadow:1px 2px 5px #817151;-webkit-box-shadow:1px 2px 5px #817151;-moz-box-shadow:1px 2px 5px #a3d848;}
+.topbar > li {background-color:#817151;}
+.topbar ul li a {background-color:#817151;}
+
+.date {width:80px;height:80px;background:#cec5b1;margin-right:1em;border-radius:40px;-webkit-border-radius:40px;-moz-border-radius:40px;}
+.date span {color:#817151;font-weight:bold;}
+.date .day {color:#817151;font-size:24px;top:28px;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;}
+.date .month {color:#817151;font-size:18px;top:10px;text-transform:capitalize;}
+.date .year {color:#817151;font-size:12px;top:55px;}
+
+.blogsummarytitle {height:5em;}
+.blogsummarytitle h4 {margin:1em 0 0.5em 0;}
+.blogsummarytitle h4 a:link, #homeblog h4 a:visited {color:#817151;}
+.blogsummarytitle h4 a:hover {color:#ff9900;}
+.blogsummarytitle .author {color:#cec5b1;}
+
+.cloud li a:link, .cloud li a:visited {color:#817151;}
+.cloud li a:hover {color:#ff9900;}
+
+.error, .errors, .inerror {color:#833311;}
+
+.jspDrag {background:#833311;}
+
