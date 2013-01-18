@@ -1,7 +1,7 @@
 /**
  *
- * @copyright  2010-2012 izend.org
- * @version    47
+ * @copyright  2010-2013 izend.org
+ * @version    48
  * @link       http://www.izend.org
  */
  
@@ -15,7 +15,7 @@ a:hover {color:#333333;text-decoration:none;}
 body {color:#333333;width:960px;margin:0 0 10px 150px;background:transparent url(../images/bg.png) repeat;}
 
 @media (max-device-width:1024px) {
-body {margin:auto;}
+body {margin-left:auto;margin-right:auto;}
 }
 
 h1,h2,h3 {color:#666666;}
