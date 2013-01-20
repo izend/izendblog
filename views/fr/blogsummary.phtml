@@ -22,10 +22,10 @@ $year = date('Y', $created);
 <?php endif; ?>
 <div class="blogsummarytitle">
 <div>
-<p class="date"><a href="/<?php echo $uri; ?>"><span class="day"><?php echo $day; ?></span> <span class="month"><?php echo $month; ?></span> <span class="year"><?php echo $year; ?></span></a></p>
+<p class="date"><?php if ($uri): ?><a href="/<?php echo $uri; ?>"><?php endif; ?><span class="day"><?php echo $day; ?></span> <span class="month"><?php echo $month; ?></span> <span class="year"><?php echo $year; ?></span><?php if ($uri): ?></a><?php endif; ?></p>
 </div>
 <div>
-<h4><a href="/<?php echo $uri; ?>"><?php echo htmlspecialchars($title, ENT_COMPAT, 'UTF-8'); ?></a></h4>
+<h4><?php if ($uri): ?><a href="/<?php echo $uri; ?>"><?php endif; ?><?php echo htmlspecialchars($title, ENT_COMPAT, 'UTF-8'); ?><?php if ($uri): ?></a><?php endif; ?></h4>
 <?php if ($author): ?>
 <p class="author">par <?php echo $author; ?></p>
 <?php endif; ?>
@@ -37,7 +37,9 @@ $year = date('Y', $created);
 <?php if ($cloud): ?>
 <?php echo $cloud; ?>
 <?php endif; ?>
+<?php if ($uri): ?>
 <p class="readmore"><a href="/<?php echo $uri; ?>">Lire la suite</a></p>
+<?php endif; ?>
 </div>
 <?php endforeach; ?>
 <?php if ($count > $pagesize): ?>

@@ -2,10 +2,12 @@
 
 /**
  *
- * @copyright  2010-2012 izend.org
- * @version    5
+ * @copyright  2010-2013 izend.org
+ * @version    6
  * @link       http://www.izend.org
  */
+
+require_once 'nodethread.php';
 
 require_once 'models/blog.inc';
 
@@ -36,8 +38,8 @@ function blogsummary($lang, $blog_id, $taglist=false, $pagesize=false, $page=1) 
 	foreach ($nodelist as $node) {
 		extract($node);
 		$author = $user_name;
-		$title = $node_title;
-		$uri = $lang . '/' . $node_name;
+		$title = $node_title ? $node_title : $node_id;
+		$uri = nodethread($lang, $node_name) ? $lang . '/' . $node_name : false;
 		$created = $node_created;
 		$modified = $node_modified;
 		$abstract = $node_abstract;
