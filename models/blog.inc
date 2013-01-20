@@ -2,8 +2,8 @@
 
 /**
  *
- * @copyright  2012 izend.org
- * @version    2
+ * @copyright  2012-2013 izend.org
+ * @version    3
  * @link       http://www.izend.org
  */
 
@@ -31,6 +31,10 @@ function blog_summary($lang, $blog_id, $pagesize=false, $page=1) {
 	$sql="SELECT tn.node_id, u.user_id, u.name AS user_name, UNIX_TIMESTAMP(n.created) AS node_created, UNIX_TIMESTAMP(n.modified) AS node_modified, nl.name AS node_name, nl.title AS node_title, nl.abstract AS node_abstract, nl.cloud AS node_cloud FROM $tabthreadnode tn JOIN $tabnode n ON n.node_id=tn.node_id JOIN $tabnodelocale nl ON nl.node_id=tn.node_id JOIN $tabuser u ON u.user_id=n.user_id $where ORDER BY tn.number";
 
 	if ($pagesize) {
+		$npages=ceil($count / $pagesize);
+		if ($page > $npages) {
+			$page=$npages;
+		}
 		$limit=($page > 1 ? ($page - 1) * $pagesize : 0) . ', ' . $pagesize;
 
 		$sql .= " LIMIT $limit";
