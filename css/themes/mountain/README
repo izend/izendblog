@@ -15,6 +15,14 @@ Add 1 <div id="bg"> around the whole content of <body> to the 3 layouts:
 </div>
 </body>
 
+Edit the file views/en/blogsummary.phtml. Replace the call to longmonth_en to shortmonth_en:
+
+$month = shortmonth_en($created);
+
+Edit the file views/fr/blogsummary.phtml. Replace the call to longmonth_fr to shortmonth_fr:
+
+$month = shortmonth_fr($created);
+
 Change $theme in includes/config.inc to 'mountain':
 
 $theme='mountain';
