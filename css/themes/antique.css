@@ -1,7 +1,7 @@
 /**
  *
- * @copyright  2012 izend.org
- * @version    2
+ * @copyright  2012-2013 izend.org
+ * @version    3
  * @link       http://www.izend.org
  */
  
@@ -40,14 +40,11 @@ h6 {color:#c0bbb9;}
 .topbar > li {background-color:#c0bbb9;}
 .topbar ul li a {background-color:#c0bbb9;}
 
-.date {width:80px;height:80px;background:#c0bbb9;margin-right:1em;border-radius:40px;-webkit-border-radius:40px;-moz-border-radius:40px;}
-.date span {color:#a0917f;font-weight:bold;}
-.date .day {color:#a0917f;font-size:24px;top:28px;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;}
-.date .month {color:#a0917f;font-size:18px;top:10px;text-transform:capitalize;}
-.date .year {color:#a0917f;font-size:12px;top:55px;}
+.date {background:none;}
+.date .day {color:#392e20;top:0.6em;}
+.date .month {color:#392e20;top:0.6em;}
+.date .year {color:#a0917f;top:4.5em;}
 
-.blogsummarytitle {height:5em;}
-.blogsummarytitle h4 {margin:1em 0 0.5em 0;}
 .blogsummarytitle h4 a:link, #homeblog h4 a:visited {color:#a0917f;}
 .blogsummarytitle h4 a:hover {color:#ff9900;}
 .blogsummarytitle .author {color:#a0917f;}
