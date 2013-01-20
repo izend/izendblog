@@ -1,0 +1,19 @@
+
+ _                     _     
+| |__   ___  __ _  ___| |__  
+| '_ \ / _ \/ _` |/ __| '_ \ 
+| |_) |  __/ (_| | (__| | | |
+|_.__/ \___|\__,_|\___|_| |_|
+                             
+Edit the file views/en/blogsummary.phtml. Replace the call to longmonth_en to shortmonth_en:
+
+$month = shortmonth_en($created);
+
+Edit the file views/fr/blogsummary.phtml. Replace the call to longmonth_fr to shortmonth_fr:
+
+$month = shortmonth_fr($created);
+
+Change $theme in includes/config.inc to 'beach':
+
+$theme='beach';
+
