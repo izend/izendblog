@@ -124,7 +124,7 @@ $default_folder = 1;			// can be an array
 
 global $content_folder;
 
-$content_folder = 4;			// can be an array
+$content_folder = 7;			// can be an array
 
 global $rss_thread;
 
