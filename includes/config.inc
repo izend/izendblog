@@ -124,7 +124,7 @@ $default_folder = 1;			// can be an array
 
 global $content_folder;
 
-$content_folder = false;		// can be an array
+$content_folder = 4;			// can be an array
 
 global $rss_thread;
 
@@ -132,7 +132,7 @@ $rss_thread = 5;
 
 global $blog_thread, $blog_pagesize;
 
-$blog_thread = 4;
+$blog_thread = 3;
 $blog_pagesize = 3;
 
 global $newsletter_thread;

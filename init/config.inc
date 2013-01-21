@@ -128,11 +128,11 @@ global $home_action, $default_action, $default_folder;
 
 $home_action = <?php echo "'$home_action'"; ?>;		// 'home' or 'homepage'
 $default_action = <?php echo $default_action ? "'$default_action'" : 'false'; ?>;	// 'page' or 'anypage' or false
-$default_folder = 3;			// can be an array
+$default_folder = 4;			// can be an array
 
 global $blog_thread, $blog_pagesize;
 
-$blog_thread = 4;
+$blog_thread = 3;
 $blog_pagesize = 3;
 
 global $content_folder;
