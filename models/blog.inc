@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2012-2013 izend.org
- * @version    3
+ * @version    4
  * @link       http://www.izend.org
  */
 
@@ -74,7 +74,7 @@ function blog_node($node_name, $locale) {
 	$tabnodelocale=db_prefix_table('node_locale');
 
 	$where = is_array($default_folder) ? ('tn.thread_id IN (' . implode(',', $default_folder) . ')') : "tn.thread_id=$default_folder";
-	$where.= " AND nl.locale=$sqllocale AND nl.name=$sqlname";
+	$where.= " AND tn.ignored=0 AND nl.locale=$sqllocale AND nl.name=$sqlname";
 
 	$sql="SELECT tn.node_id FROM $tabthreadnode tn JOIN $tabnodelocale nl ON nl.node_id=tn.node_id WHERE $where LIMIT 1";
 
