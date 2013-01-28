@@ -1,0 +1,12 @@
+/**
+ *
+ * @copyright  2013 izend.org
+ * @version    1
+ * @link       http://www.izend.org
+ */
+ 
+/* dark-fixation.css */
+
+body {background:url(../../images/bg/dark-fixation.gif) fixed repeat;}
+
+#socialbar a {background-color:#111111;}
