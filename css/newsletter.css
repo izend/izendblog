@@ -41,17 +41,17 @@ ul {list-style-type:disc;}
 
 ul, pre {margin-top:1em;}
 
-pre {background:#ffffe0;border-style:solid;border-color:#eaefb3;border-width:1px 0 4px 6px;padding:0.5em;overflow:auto;}
+pre {background:#ffffe0;border-style:solid;border-color:#cccccc;border-width:1px 0 4px 6px;padding:0.5em;overflow:auto;}
 
-h1,h2,h3 {color:#aec14e;}
-h4 {color:#aec14e;}
-h5 {color:#df6f6f;}
-h6 {color:#666666;}
+h1,h2,h3 {color:#666666;}
+h4 {color:#666666;}
+h5 {color:#333333;}
+h6 {color:#333333;}
 
 label, legend {color:#666666;}
 
 a {text-decoration:none;}
-a:link, a:visited {color:#ec902d;}
+a:link, a:visited {color:#ff9900;}
 a:hover {color:#333333;}
 
 .top {margin-top:0 !important;}
@@ -73,7 +73,7 @@ div.bytwo > * {width:48%;}
 div.bythree > * {width:32%;}
 div.byfour > * {width:23.5%;}
 
-.summary {float:right;display:block;font-size:small;text-align:right;margin:0 0 0 2em;padding:10px;border-style:solid;border-color:#eaefb3;border-width:1px 1px 4px 6px;background-color:#ffffff;}
+.summary {float:right;display:block;font-size:small;text-align:right;margin:0 0 0 2em;padding:10px;border-style:solid;border-color:#cccccc;border-width:1px 1px 4px 6px;background-color:#ffffff;}
 .summary li {list-style:none;}
 .summary li a:link, .summary li a:visited {text-decoration:none;}
 
