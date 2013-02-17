@@ -1,7 +1,7 @@
 /**
  *
- * @copyright  2012 izend.org
- * @version    1
+ * @copyright  2012-2013 izend.org
+ * @version    2
  * @link       http://www.izend.org
  */
  
@@ -24,9 +24,10 @@ a:hover #sitedomain {color:#ff9900;}
 #footer a:link, #footer a:visited {color:#333333;}
 #footer a:hover {color:#ff9900;}
 
-#footer .btn_mail {background-image:url(../../images/light/small/mail.png);}
-#footer .btn_login {background-image:url(../../images/light/small/user.png);}
-#footer .btn_logout {background-image:url(../../images/light/small/cancel.png);}
-#footer .btn_admin {background-image:url(../../images/light/small/work.png);}
+#footer .btn_mail {background-position:-120px -88px;}
+#footer .btn_login {background-position:-104px -88px;}
+#footer .btn_logout {background-position:-152px -88px;}
+#footer .btn_account {background-position:-104px -88px;}
+#footer .btn_admin {background-position:-136px -88px;}
 
 input.submit {width:100px;height:30px;background-color:#00a1c7;color:#ffffff;background-image:none;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border:none;cursor:pointer;}
