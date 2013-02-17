@@ -1,7 +1,7 @@
 /**
  *
  * @copyright  2012-2013 izend.org
- * @version    2
+ * @version    3
  * @link       http://www.izend.org
  */
  
@@ -48,6 +48,10 @@ pre {background-color:#fafaa1;}
 .date .month {color:#4e2c29;top:0.6em;}
 .date .year {color:#b49f9a;top:4.5em;}
 
+@media (min-device-width:1280px) {
+.date {margin-left:-80px;border-radius:8px 0px 0px 8px;-webkit-border-radius:8px 0px 0px 8px;-moz-border-radius:8px 0px 0px 8px;}
+}
+
 .lang {color:#ffffff;text-indent:0;text-align:center;padding:0 0.25em;}
 .lang.fr {background:#56b4aa;}
 .lang.en {background:#e7504c;}
@@ -64,7 +68,7 @@ input[type="submit"]#en {width:auto;height:auto;color:#ffffff;background:#e7504c
 
 .error, .errors, .inerror, .bbcodebar .alert {color:#e7504c;}
 
-pre, th, .hilite, div.warning, #useredit_status {background-color:#efef9f;}
+pre, th, .hilite, div.warning, #useredit_status {background-color:#e4deac;}
 .odd {background-color:#efef9f;}
 .even {background-color:#cc7c76;}
 
