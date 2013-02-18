@@ -1,7 +1,7 @@
 /**
  *
  * @copyright  2013 izend.org
- * @version    2
+ * @version    3
  * @link       http://www.izend.org
  */
  
@@ -11,7 +11,7 @@ body {width:100%;color:#333333;margin:0 auto 20px;background:#cec5b1 url(mountai
 
 #bg {background:url(mountain/glare.png) no-repeat;}
 
-#standard, #editor, #viewer {width:960px;margin:0 auto;}
+#standard, #editor, #viewer {width:1000px;margin:0 auto;}
 
 #sitename {color:#ffffff;}
 #sitedomain {color:#817151;}

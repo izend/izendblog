@@ -1,7 +1,7 @@
 /**
  *
  * @copyright  2010-2013 izend.org
- * @version    51
+ * @version    52
  * @link       http://www.izend.org
  */
  
@@ -12,7 +12,7 @@
 a:link, a:visited {color:#ff9900;text-decoration:none;}
 a:hover {color:#333333;text-decoration:none;}
 
-body {color:#333333;width:960px;margin:0 0 10px 150px;background:transparent url(../images/bg.png) repeat;}
+body {color:#333333;width:1000px;margin:0 0 10px 150px;background:transparent url(../images/bg.png) repeat;}
 
 @media (max-device-width:1024px) {
 body {margin-left:auto;margin-right:auto;}
@@ -255,7 +255,7 @@ a:hover #sitedomain {color:#ff9900;}
 #footer .languages {float:right;}
 #footer .languages a span {display:inline;}
 
-#toolbar {width:24px;padding:6px;background-color:#ffffff;position:fixed;margin-top:-6px;margin-left:930px;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
+#toolbar {width:24px;padding:6px;background-color:#ffffff;position:fixed;margin-top:-6px;margin-left:970px;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
 #toolbar a {width:24px;height:24px;float:left;background:transparent url(../images/theme/icons.png) no-repeat;}
 #toolbar #exit {background-position:-72px 0;}
 #toolbar #admin {background-position:-48px 0;}
