@@ -272,7 +272,7 @@ a:hover #sitedomain {color:#ff9900;}
 .navigation .next {width:16px;height:16px;display:inline-block;background:transparent url(../images/theme/icons.png) no-repeat;background-position:-48px -88px;vertical-align:bottom;}
 
 #sharebar {display:none;width:75px;background-color:#ffffff;padding:5px;position:fixed;margin-top:-20px;left:0px;border-radius:0px 8px 8px 0px;-webkit-border-radius:0px 8px 8px 0px;-moz-border-radius:0px 8px 8px 0px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
-#sharebar > li {padding:5px;}
+#sharebar > li {padding:3px 2px;}
 
 .besocial {width:100%;padding:0;margin:1em 0;}
 .besocial li {display:inline-block;height:30px;vertical-align:top;padding:0;margin:0;}
