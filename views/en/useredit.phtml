@@ -14,10 +14,16 @@
 <input type="hidden" name="useredit_accessed" value="<?php echo $user_accessed; ?>" />
 <?php endif; ?>
 <?php if ($with_info): ?>
-<p class="inlabel<?php if ($missing_firstname): ?> inerror<?php endif; ?>">First name</p>
-<p><input type="text" name="useredit_firstname" id="useredit_firstname" size="30" maxlength="100" title="First name" onkeypress="return focusonenter(event, 'useredit_lastname')" value="<?php echo htmlspecialchars($user_firstname, ENT_COMPAT, 'UTF-8'); ?>" /></p>
-<p class="inlabel<?php if ($missing_lastname): ?> inerror<?php endif; ?>">Last name</p>
-<p><input type="text" name="useredit_lastname" id="useredit_lastname" size="30" maxlength="100" title="Last name" onkeypress="return focusonenter(event, '<?php echo $with_name ? 'useredit_name' : 'useredit_mail'; ?>')" value="<?php echo htmlspecialchars($user_lastname, ENT_COMPAT, 'UTF-8'); ?>" /></p>
+<div class="row">
+<div>
+<p class="top inlabel<?php if ($missing_firstname): ?> inerror<?php endif; ?>">First name</p>
+<p class="bottom"><input type="text" name="useredit_firstname" id="useredit_firstname" size="25" maxlength="100" title="First name" onkeypress="return focusonenter(event, 'useredit_lastname')" value="<?php echo htmlspecialchars($user_firstname, ENT_COMPAT, 'UTF-8'); ?>" /></p>
+</div>
+<div>
+<p class="top inlabel<?php if ($missing_lastname): ?> inerror<?php endif; ?>">Last name</p>
+<p class="bottom"><input type="text" name="useredit_lastname" id="useredit_lastname" size="25" maxlength="100" title="Last name" onkeypress="return focusonenter(event, '<?php echo $with_name ? 'useredit_name' : 'useredit_mail'; ?>')" value="<?php echo htmlspecialchars($user_lastname, ENT_COMPAT, 'UTF-8'); ?>" /></p>
+</div>
+</div>
 <?php endif; ?>
 <?php if ($with_name): ?>
 <p class="inlabel<?php if ($missing_name or $bad_name or $duplicated_name): ?> inerror<?php endif; ?>">Identifier</p>
