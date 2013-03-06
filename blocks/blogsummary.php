@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2010-2013 izend.org
- * @version    7
+ * @version    8
  * @link       http://www.izend.org
  */
 
@@ -35,18 +35,18 @@ function blogsummary($lang, $blog_id, $taglist=false, $pagesize=false, $page=1) 
 	$blogsummary=array();
 	foreach ($nodelist as $node) {
 		extract($node);
-		$author=$user_name;
+		$author=$user_name;	// $user_firstname ? $user_firstname . ' ' . $user_lastname : $user_lastname;
+		$website=$user_website;
 		$title=$node_title ? $node_title : $node_id;
 		$created=$node_created;
 		$modified=$node_modified;
 		$abstract=$node_abstract;
-		$author=$user_name;
 		$summary=build('nodecontent', $lang, $node_id);
 		$cloud=build('cloud', $lang, $cloud_url, $blog_id, $node_id, 10, compact('inclusive', 'byname', 'bycount', 'index', 'flat'));
 		$id=blog_node($node_name, $lang);
 		$uri=$id ? $lang . '/' . $node_name : false;
 		$vote=$id ? build('vote', $lang, $id, 'node', false) : false;
-		$blogsummary[]=compact('author', 'title', 'uri', 'created', 'modified', 'abstract', 'cloud', 'summary', 'vote');
+		$blogsummary[]=compact('author', 'website', 'title', 'uri', 'created', 'modified', 'abstract', 'cloud', 'summary', 'vote');
 	}
 
 	$output = view('blogsummary', $lang, compact('blogsummary', 'taglist', 'count', 'page', 'pagesize'));

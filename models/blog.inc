@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2012-2013 izend.org
- * @version    4
+ * @version    5
  * @link       http://www.izend.org
  */
 
@@ -16,6 +16,7 @@ function blog_summary($lang, $blog_id, $pagesize=false, $page=1) {
 	$tabnode=db_prefix_table('node');
 	$tabnodelocale=db_prefix_table('node_locale');
 	$tabuser=db_prefix_table('user');
+	$tabuserinfo=db_prefix_table('user_info');
 
 	$where="WHERE tn.thread_id=$blog_id AND tn.ignored=0 AND nl.locale=$sqllang";
 
@@ -28,7 +29,7 @@ function blog_summary($lang, $blog_id, $pagesize=false, $page=1) {
 
 	$count = $r[0]['count'];
 
-	$sql="SELECT tn.node_id, u.user_id, u.name AS user_name, UNIX_TIMESTAMP(n.created) AS node_created, UNIX_TIMESTAMP(n.modified) AS node_modified, nl.name AS node_name, nl.title AS node_title, nl.abstract AS node_abstract, nl.cloud AS node_cloud FROM $tabthreadnode tn JOIN $tabnode n ON n.node_id=tn.node_id JOIN $tabnodelocale nl ON nl.node_id=tn.node_id JOIN $tabuser u ON u.user_id=n.user_id $where ORDER BY tn.number";
+	$sql="SELECT tn.node_id, u.user_id, u.name AS user_name, u.website AS user_website, ui.lastname AS user_lastname, ui.firstname AS user_firstname, UNIX_TIMESTAMP(n.created) AS node_created, UNIX_TIMESTAMP(n.modified) AS node_modified, nl.name AS node_name, nl.title AS node_title, nl.abstract AS node_abstract, nl.cloud AS node_cloud FROM $tabthreadnode tn JOIN $tabnode n ON n.node_id=tn.node_id JOIN $tabnodelocale nl ON nl.node_id=tn.node_id JOIN $tabuser u ON u.user_id=n.user_id LEFT JOIN $tabuserinfo ui ON ui.user_id=n.user_id $where ORDER BY tn.number";
 
 	if ($pagesize) {
 		$npages=ceil($count / $pagesize);
