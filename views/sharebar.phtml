@@ -30,8 +30,23 @@
 </li>
 <?php endif; ?>
 </ul>
-<?php endif; ?><script type="text/javascript">
+<script type="text/javascript">
 $(document).ready(function() {
-	$('#sharebar').show();
+	var content=$('#content');
+	var bar=$('#sharebar');
+
+	if (content.position().left > 0) {
+		bar.show();
+	}
+
+	$(window).resize(function () {
+		if (content.position().left > 0) {
+			bar.show();
+		}
+		else {
+			bar.hide();
+		}
+	});
 });
 </script>
+<?php endif; ?>

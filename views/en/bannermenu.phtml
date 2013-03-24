@@ -26,9 +26,6 @@
 <?php if (!empty($nobody_page)): ?>
 <li><a class="btn_logout" href="<?php echo $nobody_page; ?>" rel="nofollow" title="Disconnect"><span>Disconnect</span></a></li>
 <?php endif; ?>
-<?php if (!empty($account_page)): ?>
-<li><a class="btn_account" href="<?php echo $account_page; ?>" rel="nofollow" title="Your account"><span>Your account</span></a></li>
-<?php endif; ?>
 <?php if (!empty($user_page)): ?>
 <li><a class="btn_login" href="<?php echo $user_page; ?>" rel="nofollow" title="Your account"><span>Your account</span></a></li>
 <?php endif; ?>
@@ -37,6 +34,9 @@
 <?php endif; ?>
 <?php if (!empty($admin_page)): ?>
 <li><a class="btn_admin" href="<?php echo $admin_page; ?>" rel="nofollow" title="Manage"><span>Manage</span></a></li>
+<?php endif; ?>
+<?php if (!empty($account_page)): ?>
+<li><a class="btn_account" href="<?php echo $account_page; ?>" rel="nofollow" title="Your account"><span>Your account</span></a></li>
 <?php endif; ?>
 </ul>
 <?php endif; ?>
