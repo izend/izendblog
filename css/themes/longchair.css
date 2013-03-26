@@ -1,24 +1,25 @@
 /**
  *
  * @copyright  2012-2013 izend.org
- * @version    2
+ * @version    3
  * @link       http://www.izend.org
  */
  
 /* longchair.css */
 
+body {background-image:url(../../images/bg/longchair.png);margin:0 auto;}
 html, body {height:100%;}
-body {background-image:url(../../images/bg/longchair.png);margin-top:0;margin-bottom:0;}
+
+#standard, #editor, #viewer {height:100%;background-color:#ffffff;}
+#banner, #content, #footer {background-color:#ffffff;border-radius:0;-webkit-border-radius:0;-moz-border-radius:0;box-shadow:none;-webkit-box-shadow:none;-moz-box-shadow:none;}
+#banner {padding-top:20px;}
+#bg {height:100%;}
 
 #sitename {color:#00a1c7;}
 #sitedomain {color:#73bc43;}
 a:hover #sitedomain {color:#ff9900;}
 
 #socialbar a {background-color:#73bc43;}
-
-#standard, #editor, #viewer {height:100%;background-color:#ffffff;}
-
-#banner, #content, #footer {background-color:#ffffff;margin:0;border-radius:0;-webkit-border-radius:0;-moz-border-radius:0;box-shadow:none;}
 
 #footer {color:#333333;}
 #footer a:link, #footer a:visited {color:#333333;}

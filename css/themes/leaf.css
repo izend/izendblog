@@ -1,7 +1,7 @@
 /**
  *
  * @copyright  2013 izend.org
- * @version    3
+ * @version    4
  * @link       http://www.izend.org
  */
  
@@ -16,7 +16,7 @@ a:hover #sitedomain {color:#1f4a0b;}
 #socialbar a {background-color:#a3d848;}
 
 #background {background-color:#ffffff;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
-#content, #footer {background-color:transparent;border-radius:0;-webkit-border-radius:0;-moz-border-radius:0;box-shadow:none;}
+#content, #footer {background-color:transparent;border-radius:0;-webkit-border-radius:0;-moz-border-radius:0;box-shadow:none;-webkit-box-shadow:none;-moz-box-shadow:none;}
 
 #footer {color:#333333;}
 #footer a:link, #footer a:visited {color:#333333;}
@@ -41,13 +41,14 @@ h6 {color:#333333;}
 .topbar > li {background-color:#a3d848;}
 .topbar ul li a {background-color:#a3d848;}
 
-.date {width:80px;height:80px;background:#a3d848;margin-right:1em;border-radius:40px;-webkit-border-radius:40px;-moz-border-radius:40px;}
+.date {width:80px;height:80px;background:#a3d848;border-radius:40px;-webkit-border-radius:40px;-moz-border-radius:40px;}
 .date span {color:#a0917f;font-weight:bold;}
 .date .day {color:#1f4a0b;font-size:24px;top:28px;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;}
 .date .month {color:#1f4a0b;font-size:18px;top:10px;text-transform:capitalize;}
 .date .year {color:#1f4a0b;font-size:12px;top:55px;}
 
-.blogsummarytitle {height:5em;}
+.blogsummarytitle {margin-top:2em;}
+.blogsummarytitle .date {margin-top:-1em;}
 .blogsummarytitle h4 {margin:1em 0 0.5em 0;}
 .blogsummarytitle h4 a:link, #homeblog h4 a:visited {color:#1f4a0b;}
 .blogsummarytitle h4 a:hover {color:#ff9900;}

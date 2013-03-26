@@ -96,7 +96,7 @@ $supported_contents=array('text', 'infile', 'download', 'file', 'longtail');	// 
 
 global $with_toolbar;
 
-$with_toolbar=true;
+$with_toolbar=is_mobile() ? false : true;
 
 global $search_distance, $search_closest;
 

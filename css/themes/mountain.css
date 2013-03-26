@@ -7,11 +7,9 @@
  
 /* mountain.css */
 
-body {width:100%;color:#333333;margin:0 auto 20px;background:#cec5b1 url(mountain/grass.jpg) repeat-x bottom fixed;}
+body {color:#333333;background:#cec5b1 url(mountain/grass.jpg) repeat-x bottom fixed;margin:0 auto 20px;}
 
 #bg {background:url(mountain/glare.png) no-repeat;}
-
-#standard, #editor, #viewer {width:1000px;margin:0 auto;}
 
 #sitename {color:#ffffff;}
 #sitedomain {color:#817151;}
@@ -20,7 +18,8 @@ a:hover #sitedomain {color:#ffffff;}
 #socialbar a {background-color:#817151;}
 
 #background {background-color:#ffffff;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
-#content, #footer {background-color:transparent;border-radius:0;-webkit-border-radius:0;-moz-border-radius:0;box-shadow:none;}
+#content, #footer {background-color:transparent;border-radius:0;-webkit-border-radius:0;-moz-border-radius:0;box-shadow:none;-webkit-box-shadow:none;-moz-box-shadow:none;}
+#banner {padding-top:20px;}
 
 #footer {color:#333333;}
 #footer a:link, #footer a:visited {color:#333333;}
@@ -45,13 +44,14 @@ h6 {color:#333333;}
 .topbar > li {background-color:#817151;}
 .topbar ul li a {background-color:#817151;}
 
-.date {width:80px;height:80px;background:#cec5b1;margin-right:1em;border-radius:40px;-webkit-border-radius:40px;-moz-border-radius:40px;}
+.date {width:80px;height:80px;background:#cec5b1;border-radius:40px;-webkit-border-radius:40px;-moz-border-radius:40px;}
 .date span {color:#817151;font-weight:bold;}
 .date .day {color:#817151;font-size:24px;top:28px;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;}
 .date .month {color:#817151;font-size:18px;top:10px;text-transform:capitalize;}
 .date .year {color:#817151;font-size:12px;top:55px;}
 
-.blogsummarytitle {height:5em;}
+.blogsummarytitle {margin-top:2em;}
+.blogsummarytitle .date {margin-top:-1em;}
 .blogsummarytitle h4 {margin:1em 0 0.5em 0;}
 .blogsummarytitle h4 a:link, #homeblog h4 a:visited {color:#817151;}
 .blogsummarytitle h4 a:hover {color:#ff9900;}

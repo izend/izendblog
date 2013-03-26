@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2010-2013 izend.org
- * @version    7
+ * @version    8
  * @link       http://www.izend.org
  */
 ?>
@@ -21,15 +21,11 @@ $year = date('Y', $created);
 <?php echo $vote; ?>
 <?php endif; ?>
 <div class="blogsummarytitle">
-<div>
 <p class="date"><?php if ($uri): ?><a href="/<?php echo $uri; ?>"><?php endif; ?><span class="day"><?php echo $day; ?></span> <span class="month"><?php echo $month; ?></span> <span class="year"><?php echo $year; ?></span><?php if ($uri): ?></a><?php endif; ?></p>
-</div>
-<div>
 <h4><?php if ($uri): ?><a href="/<?php echo $uri; ?>"><?php endif; ?><?php echo htmlspecialchars($title, ENT_COMPAT, 'UTF-8'); ?><?php if ($uri): ?></a><?php endif; ?></h4>
 <?php if ($author): ?>
 <p class="author">par <?php if ($website): ?><a href="http://<?php echo $website; ?>" title="<?php echo $website; ?>"><?php endif; ?><?php echo $author; ?><?php if ($website): ?></a><?php endif; ?></p>
 <?php endif; ?>
-</div>
 </div>
 <div class="blogsummarycontent">
 <?php echo $summary; ?>

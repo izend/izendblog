@@ -1,7 +1,7 @@
 /**
  *
  * @copyright  2013 izend.org
- * @version    2
+ * @version    4
  * @link       http://www.izend.org
  */
  
@@ -23,7 +23,8 @@ div.bytwo > *, div.bythree > *, div.byfour > * {width:100%;}
 }
 
 @media screen and (max-width:480px) {
-video, audio {max-width:100%;height:auto;}
+audio, video {max-width:100%;}
+video {height:auto;}
 #content {min-height:100%;}
 #bannercontrols {margin-left:20px;}
 }
@@ -31,6 +32,7 @@ video, audio {max-width:100%;height:auto;}
 @media screen and (max-width:320px) {
 #bannermenu {width:100%;}
 #banner #searchinput {float:left;margin-left:0;}
+#footer .languages {float:none;margin-left:0;}
 #sidebar {width:100%;float:none;margin-left:0;margin-bottom:1em;}
 #sidebar #searchinput {max-width:100%;margin-left:0;margin-right:auto;}
 #sidebar #headline {text-align:left;}
@@ -42,7 +44,7 @@ video, audio {max-width:100%;height:auto;}
 #comments .signature {float:none;}
 .bbcodehelp {display:none;}
 .vignette {float:none;margin:1em 0;}
-.blogsummarytitle > div {float:none;}
+.blogsummarytitle .date {float:none;}
 }
 
 @media screen and (max-width:240px) {

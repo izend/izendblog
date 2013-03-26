@@ -1,7 +1,7 @@
 /**
  *
  * @copyright  2012-2013 izend.org
- * @version    2
+ * @version    3
  * @link       http://www.izend.org
  */
  
@@ -16,9 +16,7 @@ a:hover #sitedomain {color:#369ac3;}
 #socialbar a {background-color:#666666;}
 
 #standard, #editor, #viewer {background-color:#ffffff;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
-#content, #footer {background-color:transparent;border-radius:0;-webkit-border-radius:0;-moz-border-radius:0;box-shadow:none;}
-
-#banner {margin:5px 0;padding:5px 20px;}
+#content, #footer {border-radius:0;-webkit-border-radius:0;-moz-border-radius:0;box-shadow:none;-webkit-box-shadow:none;-moz-box-shadow:none;}
 
 #footer {color:#333333;}
 #footer a:link, #footer a:visited {color:#333333;}

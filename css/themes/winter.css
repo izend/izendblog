@@ -1,15 +1,13 @@
 /**
  *
  * @copyright  2013 izend.org
- * @version    4
+ * @version    5
  * @link       http://www.izend.org
  */
  
 /* winter.css */
 
-body {width:100%;color:#333333;margin:0 auto 10px;background:#f0f0f0 url(winter/bg.gif) repeat-x;}
-
-#standard, #editor, #viewer {width:1000px;margin:0 auto;}
+body {color:#333333;background:#f0f0f0 url(winter/bg.gif) repeat-x;}
 
 #top {width:100%;height:154px;background:url(winter/swirls.png) repeat-x top center;}
 #bottom {width:100%;position:relative;}
@@ -18,7 +16,7 @@ body {width:100%;color:#333333;margin:0 auto 10px;background:#f0f0f0 url(winter/
 #grass {width:100%;height:79px;background:url(winter/grass.png) repeat-x left bottom;position:absolute;z-index:-3;}
 
 #background {background-color:#ffffff;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
-#content, #footer {background-color:transparent;border-radius:0;-webkit-border-radius:0;-moz-border-radius:0;box-shadow:none;}
+#content, #footer {background-color:transparent;border-radius:0;-webkit-border-radius:0;-moz-border-radius:0;box-shadow:none;-webkit-box-shadow:none;-moz-box-shadow:none;}
 
 #footer {color:#333333;}
 #footer a:link, #footer a:visited {color:#333333;}
