@@ -18,7 +18,7 @@ body {width:100%;margin-left:auto;margin-right:auto;}
 @media screen and (max-width:640px) {
 #logo {float:none;width:100%;}
 #logo h1 a {width:100%;}
-div.row > * {display:block;margin:1em 0 !important;}
+div.row > * {display:block;margin:1em 0;}
 div.bytwo > *, div.bythree > *, div.byfour > * {width:100%;}
 }
 
