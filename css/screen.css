@@ -1,7 +1,7 @@
 /**
  *
  * @copyright  2010-2013 izend.org
- * @version    37
+ * @version    40
  * @link       http://www.izend.org
  */
  
@@ -12,7 +12,7 @@ body {font-family:Verdana, sans-serif;font-size:100%;line-height:1.4;}
 h1, h2, h3, h4, h5, h6, label, caption, #rate-it legend {font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;}
 
 code {font-family:"Courier New", Courier, monospace;}
-pre code {font-size:10pt;white-space:pre-line;}
+pre code {font-size:10pt;white-space:pre-wrap;}
 
 h1,h2,h3,h4,h5,h6 {font-weight:bold;margin:1em 0;}
 
@@ -26,13 +26,15 @@ input {font-family:Verdana, sans-serif;font-size:10pt;vertical-align:middle;}
 
 input[type="text"], input[type="password"], textarea {max-width:90%;}
 
+input[type="text"], input[type="password"], textarea {max-width:90%;}
+
 input[type="text"], input[type="password"], textarea, select, fieldset {border:1px solid #cccccc;outline:0 none;margin:1px 0;background:none repeat-x #ffffff;}
 input[type="text"]:focus, input[type="password"]:focus, textarea:focus {border-color:#aaaaaa;}
 
+input[type="text"], input[type="password"], textarea, select, fieldset {border-radius:2px;-webkit-border-radius:2px;-moz-border-radius:2px;}
+
 input[type="text"], input[type="password"], textarea {padding:3px;}
 select {padding:2px;}
-
-input, textarea, select, fieldset {border-radius:2px;-webkit-border-radius:2px;-moz-border-radius:2px;}
 
 form.compact p {margin-top:0.75em;margin-bottom:0.5em;}
 form div.row {margin-top:0;margin-bottom:0;}

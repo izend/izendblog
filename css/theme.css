@@ -32,8 +32,6 @@ ol.tree li.filenode {color:#333333;}
 
 th {background-color:#ffffe0;font-weight:bold;}
 
-input[type="text"], textarea {max-width:90%;}
-
 .grippie {display:block;margin-left:5px;margin-top:2px;cursor:ns-resize;}
 
 .vignette {float:right;margin:0 0 0.25em 1em;}
