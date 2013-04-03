@@ -40,13 +40,13 @@ video {height:auto;}
 #sidebar .hidy {margin-left:4px;}
 #sidebar .cloud {display:none;}
 #sidebar .cloud li .btn_index {float:right;margin-left:6px;margin-right:0;}
-#summary {padding:0;text-align:left;border-radius:0;-webkit-border-radius:0;-moz-border-radius:0;box-shadow:none;-webkit-box-shadow:none;-moz-box-shadow:none;}
+#summary {border:none;margin:1em 0;padding:0;text-align:left;border-radius:0;-webkit-border-radius:0;-moz-border-radius:0;box-shadow:none;-webkit-box-shadow:none;-moz-box-shadow:none;}
 #comments .signature {float:none;}
 .bbcodehelp {display:none;}
-.vignette {float:none;margin:1em 0;}
+.right, .left, .vignette {float:none;display:block;margin:1em 0;}
 .blogsummarytitle .date {float:none;}
 }
 
 @media screen and (max-width:240px) {
-.summary {float:none;margin-left:0;padding:0;text-align:left;border-radius:0;-webkit-border-radius:0;-moz-border-radius:0;box-shadow:none;-webkit-box-shadow:none;-moz-box-shadow:none;}	
+.summary {float:none;border:none;margin:1em 0;padding:0;text-align:left;border-radius:0;-webkit-border-radius:0;-moz-border-radius:0;box-shadow:none;-webkit-box-shadow:none;-moz-box-shadow:none;}	
 }

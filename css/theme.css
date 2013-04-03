@@ -12,7 +12,7 @@
 a:link, a:visited {color:#ff9900;text-decoration:none;}
 a:hover {color:#333333;text-decoration:none;}
 
-body {color:#333333;margin:10px auto;background:transparent url(../images/bg.png) repeat;overflow-x:hidden;}
+body {color:#333333;margin:0 auto;background:transparent url(../images/bg.png) repeat;overflow-x:hidden;}
 
 h1,h2,h3 {color:#666666;}
 h4 {color:#666666;}
@@ -188,7 +188,7 @@ span.btn_linkedin {background-position:-48px -48px;}
 
 #background {clear:both;}
 
-#content {color:#333333;background-color:#ffffff;min-height:480px;margin:0;padding:20px;clear:both;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
+#content {color:#333333;background-color:#ffffff;min-height:500px;margin:0;padding:20px;clear:both;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
 
 #banner {color:#333333;margin:0;padding:10px 20px;clear:both;}
 
@@ -331,7 +331,7 @@ a:hover #sitedomain {color:#ff9900;}
 #searchlinks li p {margin:0.5em 0 0.5em 0;font-size:small;font-style:italic;}
 #searchlinks li p+p {color:#666666;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;font-style:normal;}
 
-#summary {font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;font-size:small;text-align:right;margin-bottom:0.5em;padding:10px;background-color:#ffffff;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
+#summary {font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;font-size:small;text-align:right;margin:0 0 1em 0;padding:10px;background-color:#ffffff;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
 
 #mailme_message {font-family:Verdana, sans-serif;font-size:10pt;}
 
@@ -349,7 +349,7 @@ a:hover #sitedomain {color:#ff9900;}
 .balance {text-align:right;}
 .balance span {font-size:larger;display:block;}
 
-.summary {float:right;display:block;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;font-size:small;text-align:right;margin-left:2em;padding:10px;background-color:#ffffff;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
+.summary {float:right;display:block;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;font-size:small;text-align:right;margin:0 0 1em 2em;padding:10px;background-color:#ffffff;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
 .summary li {list-style:none;}
 
 .pageselector {display:inline-block;color:#666666;font-weight:bold;margin:1em auto;}

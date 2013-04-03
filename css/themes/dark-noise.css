@@ -1,0 +1,61 @@
+/**
+ *
+ * @copyright  2013 izend.org
+ * @version    1
+ * @link       http://www.izend.org
+ */
+ 
+/* dark-noise.css */
+
+html, body {height:100%;}
+body {background:#cccccc url(../../images/bg/papiermache.jpg);}
+
+#bg {min-height:100%;background:radial-gradient(circle farthest-corner at center center, transparent, rgba(0, 0, 0, 0.3));}
+#standard, #editor, #viewer {height:100%;}
+
+#banner, #content, #footer {color:#333333;background-color:transparent;border-radius:0;-webkit-border-radius:0;-moz-border-radius:0;box-shadow:none;-webkit-box-shadow:none;-moz-box-shadow:none;}
+
+#editor #content {color:#333333;background-color:#f0f0f0;}
+
+#toolbar {margin-left:-60px;margin-top:0;}
+
+a:link, a:visited {color:#006699;text-decoration:none;}
+a:hover {color:#333333;text-decoration:none;}
+
+#sitename {color:#ffffff;}
+#sitedomain {color:#999999;}
+a:hover #sitedomain {color:#006699;}
+
+fieldset {background-color:transparent;}
+
+pre, #searchinput, #toolbar, #sharebar, #socialbar a, #summary, .summary, .topbar, .pagenumber, #sidebar .qtip {border-radius:0;-webkit-border-radius:0;-moz-border-radius:0;box-shadow:none;-webkit-box-shadow:none;-moz-box-shadow:none;}
+
+#footer {color:#333333;}
+#footer a:link, #footer a:visited {color:#333333;}
+#footer a:hover {color:#006699;}
+
+#footer .btn_mail {background-position:-120px -88px;}
+#footer .btn_login {background-position:-104px -88px;}
+#footer .btn_logout {background-position:-152px -88px;}
+#footer .btn_account {background-position:-104px -88px;}
+#footer .btn_admin {background-position:-136px -88px;}
+
+.cloud li a:hover {color:#006699;}
+
+.inerror, .error, .errors {color:#aa0000;}
+
+span.btn_grippie {background-color:#ffffff;}
+
+.round {border-radius:0;-webkit-border-radius:0;-moz-border-radius:0;}
+.shadow {box-shadow:none;-webkit-box-shadow:none;-moz-box-shadow:none;}
+
+.date {background-image:none;}
+.date .day {color:#666666;top:0.6em;}
+.date .month {color:#333333;top:0.6em;}
+.date .year {color:#999999;top:4.5em;}
+
+.blogsummarytitle h4 a:hover {color:#006699;}
+
+.notice {color:#333333;border-radius:0;-webkit-border-radius:0;-moz-border-radius:0;box-shadow:none;-webkit-box-shadow:none;-moz-box-shadow:none;}
+
+

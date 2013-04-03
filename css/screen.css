@@ -24,6 +24,8 @@ table th, table td {padding:5px;margin:0;}
 
 input {font-family:Verdana, sans-serif;font-size:10pt;vertical-align:middle;}
 
+input[type="text"], input[type="password"], textarea {max-width:90%;}
+
 input[type="text"], input[type="password"], textarea, select, fieldset {border:1px solid #cccccc;outline:0 none;margin:1px 0;background:none repeat-x #ffffff;}
 input[type="text"]:focus, input[type="password"]:focus, textarea:focus {border-color:#aaaaaa;}
 
