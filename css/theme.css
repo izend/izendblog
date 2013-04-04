@@ -190,7 +190,7 @@ span.btn_linkedin {background-position:-48px -48px;}
 
 #banner {color:#333333;margin:0;padding:10px 20px;clear:both;}
 
-#logo {width:400px;float:left;margin-bottom:13px;}
+#logo {width:50%;float:left;margin-bottom:10px;}
 #logo h1 {padding:0;margin:0;}
 #sitename {color:#ffffff;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;font-size:36px;font-weight:bold;text-shadow:1px 2px 3px #cccccc;}
 #sitedomain {color:#cccccc;font-family:"Courier New", Courier, monospace;font-size:24px;}
@@ -221,7 +221,7 @@ a:hover #sitedomain {color:#ff9900;}
 #donate .btn_donate_fr {width:108px;height:21px;display:inline-block;background:transparent url(../images/paypal_donate_fr.gif) no-repeat;}
 #donate .btn_donate_en {width:74px;height:21px;display:inline-block;background:transparent url(../images/paypal_donate_en.gif) no-repeat;}
 
-#searchinput {width:194px;padding:3px;background-color:#ffffff;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
+#searchinput {width:194px;padding:3px 0 2px 6px;background-color:#ffffff;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
 #searchtext {width:160px;padding:2px;margin:0;border:none;outline:none;-webkit-appearance:none;}
 #search {width:24px;height:24px;padding:0;margin:0;border:none;background:transparent url(../images/theme/icons.png) no-repeat;background-position:-144px -24px;vertical-align:middle;text-indent:-9999px;cursor:pointer;}
 
