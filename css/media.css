@@ -26,12 +26,11 @@ div.bytwo > *, div.bythree > *, div.byfour > * {width:100%;}
 audio, video {max-width:100%;}
 video {height:auto;}
 #content {min-height:100%;}
-#bannercontrols {margin-left:20px;}
 }
 
 @media screen and (max-width:320px) {
-#bannermenu {width:100%;}
-#banner #searchinput {float:left;margin-left:0;}
+#bannermenu {width:100%;margin-top:0;}
+#banner #searchinput {float:left;margin-top:0;margin-left:0;}
 #footer .languages {float:none;margin-left:0;}
 #sidebar {width:100%;float:none;margin-left:0;margin-bottom:1em;}
 #sidebar #searchinput {max-width:100%;margin-left:0;margin-right:auto;}
