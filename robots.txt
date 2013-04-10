@@ -1,6 +1,9 @@
 User-agent: *
 Sitemap: sitemap.xml
-Disallow: /en/suggest
-Disallow: /fr/suggestion
 Disallow: /en/home/suggest
+Disallow: /en/suggest
+Disallow: /en/donation
 Disallow: /fr/accueil/suggestion
+Disallow: /fr/suggestion
+Disallow: /fr/donation
+
