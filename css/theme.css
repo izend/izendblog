@@ -1,7 +1,7 @@
 /**
  *
  * @copyright  2010-2013 izend.org
- * @version    61
+ * @version    63
  * @link       http://www.izend.org
  */
  
@@ -279,7 +279,7 @@ a:hover #sitedomain {color:#ff9900;}
 .besocial {width:100%;padding:0;margin:1em 0;}
 .besocial li {display:inline-block;height:30px;vertical-align:top;padding:0;margin:5px 0;}
 
-#socialbar {margin-top:-20px;height:35px;}
+#socialbar {margin-top:-20px;height:35px;display:block;}
 #socialbar a:first-child {margin-left:0;}
 #socialbar a:last-child {margin-right:0;}
 #socialbar a {float:left;margin-left:2px;margin-right:2px;}
@@ -296,6 +296,9 @@ a:hover #sitedomain {color:#ff9900;}
 #socialbar a.rss:hover {background-color:#fa9d39;}
 #socialbar a.newsletter {background-position:-180px 0;}
 #socialbar a.newsletter:hover {background-color:#ffe900;}
+
+#connectbar a {width:24px;height:24px;display:inline-block;background:transparent url(../images/theme/social.png) no-repeat;vertical-align:top;}
+#connectbar a.facebook {background-position:0 0;}
 
 #comments {margin-top:2em;}
 #comments > h4 {color:#666666;background:transparent url(../images/theme/icons/user.png) no-repeat;text-indent:30px;line-height:24px;}
