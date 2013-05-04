@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2010-2013 izend.org
- * @version    10
+ * @version    13
  * @link       http://www.izend.org
  */
 
@@ -27,6 +27,10 @@ function login($lang) {
 
 	$login=$password=$code=$token=false;
 
+	if (isset($_SESSION['login'])) {
+		$login=$_SESSION['login'];
+	}
+
 	$action='init';
 	if (isset($_POST['login_enter'])) {
 		$action='enter';
@@ -48,9 +52,6 @@ function login($lang) {
 					}
 					$facebook->destroySession();
 				}
-			}
-			else if (isset($_SESSION['login'])) {
-				$login=$_SESSION['login'];
 			}
 			break;
 
@@ -143,6 +144,22 @@ function login($lang) {
 			}
 
 			$user['ip'] = client_ip_address();
+
+			if (in_array('administrator', $user['role'])) {
+				require_once 'emailme.php';
+
+				global $sitename;
+
+				$timestamp=strftime('%d-%m-%Y %H:%M:%S', time());
+				$subject = 'admin_login' . '@' . $sitename;
+				$msg = $timestamp . ' ' . $user['id'] . ' ' . $lang . ' ' . $user['ip'];
+				emailme($subject, $msg);
+
+				if ($action == 'facebook') {
+					$access_denied=true;
+					break;
+				}
+			}
 
 			session_regenerate();
 
