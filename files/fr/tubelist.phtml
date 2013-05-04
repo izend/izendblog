@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2012-2013 qrmii.com
- * @version    4
+ * @version    5
  * @link       http://www.qrmii.com
  */
 ?>
@@ -43,6 +43,11 @@ $(document).ready(function() {
 <?php head('stylesheet', 'jquery.colorbox', 'screen'); ?>
 <script type="text/javascript">
 $(document).ready(function() {
-    $('.yt').colorbox({iframe:true, opacity: 0.8, transition: 'none', innerWidth:640, innerHeight:390, maxWidth:'100%'});
+    var ytch=30, bw=25, w=640, h=360, maxw=$(window).innerWidth()-2*bw;
+    if (maxw < w) {
+        h=Math.floor(h*maxw/w);
+        w=maxw;
+    }
+    $('.yt').colorbox({iframe:true, opacity: 0.8, transition: 'none', innerWidth:w, innerHeight:h+ytch});
 });
 </script>
