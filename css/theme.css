@@ -332,7 +332,7 @@ a:hover #sitedomain {color:#ff9900;}
 #searchlinks li p {margin:0.5em 0 0.5em 0;font-size:small;font-style:italic;}
 #searchlinks li p+p {color:#666666;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;font-style:normal;}
 
-#summary {font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;font-size:small;text-align:right;margin:0 0 1em 0;padding:10px;background-color:#ffffff;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
+#summary {font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;font-size:small;line-height:1.5;text-align:right;margin:0 0 1em 0;padding:10px;background-color:#ffffff;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
 
 #mailme_message {font-family:Verdana, sans-serif;font-size:10pt;}
 
@@ -350,7 +350,7 @@ a:hover #sitedomain {color:#ff9900;}
 .balance {text-align:right;}
 .balance span {font-size:larger;display:block;}
 
-.summary {float:right;display:block;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;font-size:small;text-align:right;margin:0 0 1em 2em;padding:10px;background-color:#ffffff;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
+.summary {float:right;display:block;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;font-size:small;line-height:1.5;text-align:right;margin:0 0 1em 2em;padding:10px;background-color:#ffffff;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
 .summary li {list-style:none;}
 
 .pageselector {display:inline-block;color:#666666;font-weight:bold;margin:1em auto;}
