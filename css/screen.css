@@ -1,7 +1,7 @@
 /**
  *
  * @copyright  2010-2013 izend.org
- * @version    44
+ * @version    46
  * @link       http://www.izend.org
  */
  
@@ -19,7 +19,7 @@ pre code {font-size:10pt;white-space:pre-wrap;}
 
 h1,h2,h3,h4,h5,h6 {font-weight:bold;margin:1em 0;}
 
-fieldset {display:inline-block;margin:0;}
+fieldset {display:inline-block;}
 
 label, legend {font-size:80%;}
 
@@ -36,7 +36,7 @@ input[type="text"]:focus, input[type="password"]:focus, textarea:focus {border-c
 
 input[type="text"], input[type="password"], textarea, select, fieldset {border-radius:2px;-webkit-border-radius:2px;-moz-border-radius:2px;}
 
-input[type="text"], input[type="password"], textarea {padding:3px;}
+input[type="text"], input[type="password"], textarea {padding:2px 3px 4px;}
 select {padding:2px;}
 
 form.compact p {margin-top:0.75em;margin-bottom:0.5em;}
@@ -151,7 +151,7 @@ div.vbar > *:last-child {margin-bottom:0;}
 
 .nowrap {white-space:nowrap !important;}
 
-input.submit {padding:0;margin:1px 0;border:none;vertical-align:middle;text-indent:-9999px;cursor:pointer;}
+input.submit {padding:0;margin:1px 0;border:none;vertical-align:middle;text-indent:-9999px;cursor:pointer;-webkit-appearance:none;}
 span.icon {display:inline-block;text-indent:-9999px;vertical-align:middle;}
 
 a.button {padding:5px 10px;margin:0;display:inline-block;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;font-weight:bold;cursor:pointer;}
