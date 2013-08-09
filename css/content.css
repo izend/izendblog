@@ -1,17 +1,13 @@
 /**
  *
- * @copyright  2010-2012 izend.org
+ * @copyright  2010-2013 izend.org
  * @version    2
  * @link       http://www.izend.org
  */
  
 /* content.css */
 
-#tubelist {height:141px;}
-
-.notice {display:inline-block;background:#ffffe0;padding:1em;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;overflow:auto;}
-
-.btn_browser {width:18px;height:18px;background-image:url(../files/images/browser.png);background-repeat:no-repeat;display:inline-block;text-indent:-1000em;vertical-align:bottom;cursor:text;}
+.btn_browser {width:18px;height:18px;background-image:url(../images/browser.png);background-repeat:no-repeat;display:inline-block;text-indent:-1000em;vertical-align:bottom;cursor:text;}
 #browser_firefox {background-position:0 0;}
 #browser_firefox:hover {background-position:0 -18px;}
 #browser_chrome {background-position:-18px 0;}
@@ -22,3 +18,7 @@
 #browser_safari:hover {background-position:-54px -18px;}
 #browser_ie {background-position:-72px 0;}
 #browser_ie:hover {background-position:-72px -18px;}
+
+.notice {display:inline-block;background:#ffffe0;padding:1em;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;overflow:auto;}
+
+#tubelist {height:141px;}
