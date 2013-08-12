@@ -866,8 +866,9 @@ INSERT INTO `${db_prefix}content_infile` (`content_id`, `locale`, `path`) VALUES
 (1, 'fr', 'files/sysinfo.php'),
 (1, 'en', 'files/sysinfo.php'),
 (2, 'fr', 'files/fr/tubelist.phtml'),
-(2, 'en', 'files/en/tubelist.phtml');
-
+(2, 'en', 'files/en/tubelist.phtml'),
+(3, 'fr', 'views/fr/link.phtml'),
+(3, 'en', 'views/en/link.phtml');
 _SEP_;
 	if (!@mysql_query($sql, $db_conn)) {
 		return false;
@@ -890,10 +891,10 @@ _SEP_;
 
 	$sql= <<<_SEP_
 INSERT INTO `${db_prefix}content_youtube` (`content_id`, `locale`, `id`, `width`, `height`, `autoplay`, `controls`, `fs`, `theme`, `rel`) VALUES
-(1, 'fr', 'b3txQs7jEJ4', 267, 200, 0, 0, 0, 'dark', 0),
-(1, 'en', 'b3txQs7jEJ4', 267, 200, 0, 0, 0, 'dark', 0),
-(2, 'fr', 'b3txQs7jEJ4', 267, 200, 0, 0, 0, 'dark', 0),
-(2, 'en', 'b3txQs7jEJ4', 267, 200, 0, 0, 0, 'dark', 0),
+(1, 'fr', 'b3txQs7jEJ4', 267, 200, 0, 1, 0, 'dark', 0),
+(1, 'en', 'b3txQs7jEJ4', 267, 200, 0, 1, 0, 'dark', 0),
+(2, 'fr', 'b3txQs7jEJ4', 267, 200, 0, 1, 0, 'dark', 0),
+(2, 'en', 'b3txQs7jEJ4', 267, 200, 0, 1, 0, 'dark', 0),
 (3, 'fr', 'eRsGyueVLvQ', 512, 218, 0, 1, 1, 'dark', 1),
 (3, 'en', 'eRsGyueVLvQ', 512, 218, 0, 1, 1, 'dark', 1);
 _SEP_;
@@ -1026,6 +1027,7 @@ INSERT INTO `${db_prefix}node_content` (`node_id`, `content_id`, `content_type`,
 (1, 25, 'text', 2, 0),
 (2, 15, 'text', 1, 0),
 (2, 16, 'text', 2, 0),
+(2, 3, 'infile', 3, 0),
 (3, 2, 'text', 1, 0),
 (3, 3, 'text', 2, 0),
 (3, 3, 'youtube', 3, 0),
