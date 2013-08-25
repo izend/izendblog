@@ -1,7 +1,7 @@
 /**
  *
  * @copyright  2013 izend.org
- * @version    1
+ * @version    2
  * @link       http://www.izend.org
  */
  
@@ -25,7 +25,7 @@ a:hover #sitedomain {color:#ff9900;}
 #footer .btn_account {background-position:-104px -88px;}
 #footer .btn_admin {background-position:-136px -88px;}
 
-input.submit {width:100px;height:30px;background:#cccccc;color:#333333;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border:1px solid #cccccc;;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;cursor:pointer;}
+input.submit {width:100px;height:30px;background:#cccccc;color:#333333;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border:2px solid #cccccc;;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;cursor:pointer;}
 input.submit {
 /* IE10 Consumer Preview */ 
 background-image: -ms-linear-gradient(top, #FFFFFF 0%, #999999 100%);
@@ -40,3 +40,4 @@ background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #999999 100%);
 /* W3C Markup, IE10 Release Preview */ 
 background-image: linear-gradient(to bottom, #FFFFFF 0%, #999999 100%);
 }
+input.submit.selected {color:#ffffff;}

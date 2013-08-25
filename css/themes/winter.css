@@ -1,7 +1,7 @@
 /**
  *
  * @copyright  2013 izend.org
- * @version    5
+ * @version    6
  * @link       http://www.izend.org
  */
  
@@ -47,4 +47,4 @@ background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #999999 100%);
 /* W3C Markup, IE10 Release Preview */ 
 background-image: linear-gradient(to bottom, #FFFFFF 0%, #999999 100%);
 }
-input.submit:hover {color:#ffffff;}
+input.submit:hover, input.submit.selected {color:#ffffff;}
