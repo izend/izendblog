@@ -8,7 +8,7 @@
 /* media.css */
 
 @media screen and (max-width:1024px) {
-body {margin-left:auto;margin-right:auto;}
+#sharebar {display:none !important;}
 }
 
 @media screen and (max-width:960px) {
