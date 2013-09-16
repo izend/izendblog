@@ -61,8 +61,10 @@ th {background-color:#ffffe0;font-weight:bold;}
 .blogsummarytitle .author a:link, #comments .author a:visited {color:#999999;}
 .blogsummarytitle .author a:hover {color:#ff9900;}
 
+.blogsummary {margin:2em 0;}
+.blogsummarycontent {margin:1em 0;}
+
 .blogsummary, .blogsummarycontent, .blogsummary .readmore, .blogsummary .cloud {clear:left;}
-.blogsummary, .blogsummarycontent {margin:1em 0;}
 
 .blogsummary .cloud {font-size:small;text-align:left;}
 
