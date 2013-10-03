@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2010-2013 izend.org
- * @version    36
+ * @version    37
  * @link       http://www.izend.org
  */
 
@@ -92,8 +92,13 @@ function configure($lang) {
 			$db_reuse=false;
 			$db_name='izendblog';
 			$db_user='izendblog';
-			$db_password=newpassword(8);
 			$db_prefix='izendblog_';
+
+			do {
+				$db_password=newpassword(8);
+			}
+			while (!validate_password($db_password));
+
 			break;
 
 		case 'configure':
