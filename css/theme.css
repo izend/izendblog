@@ -1,7 +1,7 @@
 /**
  *
  * @copyright  2010-2013 izend.org
- * @version    75
+ * @version    77
  * @link       http://www.izend.org
  */
  
@@ -186,6 +186,10 @@ span.btn_ilike {background-position:0 -48px;}
 span.btn_tweet {background-position:-16px -48px;}
 span.btn_plusone {background-position:-32px -48px;}
 span.btn_linkedin {background-position:-48px -48px;}
+span.btn_pinterest {background-position:-64px -48px;}
+span.btn_world {background-position:-240px -16px;}
+span.btn_map {background-position:-144px -32px;}
+span.btn_marker {background-position:-160px -32px;}
 
 #standard, #editor, #viewer {max-width:1000px;margin:0 auto;}
 
@@ -319,7 +323,7 @@ a .icon_newsletter {width:192px;height:30px;display:inline-block;background:tran
 a:link .icon_newsletter, a:visited span.icon_newsletter {background-position:0 -30px;}
 a:hover .icon_newsletter {background-position:0 0;}
 
-#linkbar {margin:1em 0;}
+#linkbar {margin:2em 0;}
 #linkbar > a {margin:0 30px 0 0;}
 #linkbar > *:last-child {margin-right:0;}
 
