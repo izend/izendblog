@@ -1,7 +1,7 @@
 /**
  *
  * @copyright  2010-2013 izend.org
- * @version    77
+ * @version    79
  * @link       http://www.izend.org
  */
  
@@ -192,6 +192,8 @@ span.btn_pinterest {background-position:-64px -48px;}
 span.btn_world {background-position:-240px -16px;}
 span.btn_map {background-position:-144px -32px;}
 span.btn_marker {background-position:-160px -32px;}
+span.btn_film {background-position:-144px -48px;}
+span.btn_camera {background-position:-160px -48px;}
 
 #standard, #editor, #viewer {max-width:1000px;margin:0 auto;}
 
@@ -355,8 +357,6 @@ a:hover .icon_newsletter {background-position:0 0;}
 .vote span.plusone {display:inline-block;cursor:default;}
 .vote input.plusone {cursor:pointer;}
 
-#searchlinks h3 a:link {color:#333333;}
-#searchlinks h3 a:hover {color:#ff9900;}
 #searchlinks ol {margin-top:0.5em;margin-left:0;padding:0;}
 #searchlinks li {list-style:none;margin-bottom:1em;}
 #searchlinks a {font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;}
