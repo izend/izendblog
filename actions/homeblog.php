@@ -2,8 +2,8 @@
 
 /**
  *
- * @copyright  2010-2012 izend.org
- * @version    13
+ * @copyright  2010-2013 izend.org
+ * @version    14
  * @link       http://www.izend.org
  */
 
@@ -13,7 +13,7 @@ require_once 'userhasrole.php';
 require_once 'models/thread.inc';
 
 function homeblog($lang, $arglist=false) {
-	global $request_path, $with_toolbar, $sitename;
+	global $request_path, $with_toolbar, $sitename, $siteshot;
 	global $blog_thread, $blog_pagesize;
 
 	$request_path=$lang;
@@ -22,7 +22,7 @@ function homeblog($lang, $arglist=false) {
 	if (!$r) {
 		return run('error/internalerror', $lang);
 	}
-	extract($r); /* thread_abstract thread_cloud thread_ilike thread_tweet thread_plusone thread_linkedin */
+	extract($r); /* thread_abstract thread_cloud thread_image thread_ilike thread_tweet thread_plusone thread_linkedin thread_pinit */
 
 	head('title', translate('home:title', $lang));
 	if ($thread_abstract) {
@@ -82,17 +82,24 @@ function homeblog($lang, $arglist=false) {
 	$page_contents=build('blogsummary', $lang, $blog_thread, $taglist, $blog_pagesize, $page);
 
 	$besocial=$sharebar=false;
-	if ($page_contents) {
-		$ilike=$thread_ilike;
-		$tweetit=$thread_tweet;
-		$plusone=$thread_plusone;
-		$linkedin=$thread_linkedin;
+	$ilike=$thread_ilike;
+	$tweetit=$thread_tweet;
+	$plusone=$thread_plusone;
+	$linkedin=$thread_linkedin;
+	$pinit=$thread_pinit;
+	if ($tweetit or $pinit) {
+		$description=translate('description', $lang);
 		if ($tweetit) {
-			$tweet_text=$thread_abstract ? $thread_abstract : translate('description', $lang);
+			$tweet_text=$thread_abstract ? $thread_abstract : $description;
 			$tweetit=$tweet_text ? compact('tweet_text') : true;
 		}
-		list($besocial, $sharebar) = socialize($lang, compact('ilike', 'tweetit', 'plusone', 'linkedin'));
+		if ($pinit) {
+			$pinit_text=$thread_abstract ? $thread_abstract : $description;
+			$pinit_image=$thread_image ? $thread_image : $siteshot;
+			$pinit=$pinit_text && $pinit_image ? compact('pinit_text', 'pinit_image') : false;
+		}
 	}
+	list($besocial, $sharebar) = socialize($lang, compact('ilike', 'tweetit', 'plusone', 'linkedin', 'pinit'));
 
 	$content = view('homeblog', false, compact('page_header', 'page_footer', 'page_contents', 'besocial'));
 
@@ -103,8 +110,9 @@ function homeblog($lang, $arglist=false) {
 
 	$social = view('social', $lang);
 	$donate = build('donate', $lang);
+	$sticker = view('slideshow', false);
 
-	$sidebar = view('sidebar', false, compact('social', 'cloud', 'donate'));
+	$sidebar = view('sidebar', false, compact('social', 'cloud', 'donate', 'sticker'));
 
 	$search_text=$searchtext;
 	$search_url=url('homeblog', $lang);
@@ -117,8 +125,8 @@ function homeblog($lang, $arglist=false) {
 	$toolbar = $with_toolbar ? build('toolbar', $lang, compact('edit', 'validate')) : false;
 
 	$languages='homeblog';
-	$contact=$account=$admin=true;
-	$footer = build('footer', $lang, compact('contact', 'account', 'admin', 'languages'));
+	$legal=$contact=$account=$admin=true;
+	$footer = build('footer', $lang, compact('legal', 'contact', 'account', 'admin', 'languages'));
 
 	$output = layout('standard', compact('sharebar', 'toolbar', 'footer', 'banner', 'content', 'sidebar'));
 
