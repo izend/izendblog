@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2010-2013 izend.org
- * @version    40
+ * @version    41
  * @link       http://www.izend.org
  */
 
@@ -590,6 +590,7 @@ CREATE TABLE `${db_prefix}node` (
   `tweet` tinyint(1) NOT NULL DEFAULT '1',
   `plusone` tinyint(1) NOT NULL DEFAULT '1',
   `linkedin` tinyint(1) NOT NULL DEFAULT '1',
+  `pinit` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`node_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 _SEP_;
@@ -605,6 +606,7 @@ CREATE TABLE `${db_prefix}node_locale` (
   `title` varchar(100) NULL default NULL,
   `abstract` text,
   `cloud` text,
+  `image` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`node_id`,`locale`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 _SEP_;
@@ -644,6 +646,7 @@ CREATE TABLE `${db_prefix}thread` (
   `tweet` tinyint(1) NOT NULL DEFAULT '1',
   `plusone` tinyint(1) NOT NULL DEFAULT '1',
   `linkedin` tinyint(1) NOT NULL DEFAULT '1',
+  `pinit` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`thread_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 _SEP_;
@@ -656,9 +659,10 @@ CREATE TABLE `${db_prefix}thread_locale` (
   `thread_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `locale` enum('fr','en') NOT NULL DEFAULT 'fr',
   `name` varchar(100) NOT NULL,
-  `title` varchar(100) NULL default NULL,
+  `title` varchar(100) DEFAULT NULL,
   `abstract` text,
   `cloud` text,
+  `image` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`thread_id`,`locale`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 _SEP_;
