@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2010-2013 izend.org
- * @version    14
+ * @version    15
  * @link       http://www.izend.org
  */
 
@@ -110,9 +110,8 @@ function homeblog($lang, $arglist=false) {
 
 	$social = view('social', $lang);
 	$donate = build('donate', $lang);
-	$sticker = view('slideshow', false);
 
-	$sidebar = view('sidebar', false, compact('social', 'cloud', 'donate', 'sticker'));
+	$sidebar = view('sidebar', false, compact('social', 'cloud', 'donate'));
 
 	$search_text=$searchtext;
 	$search_url=url('homeblog', $lang);
