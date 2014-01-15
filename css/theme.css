@@ -1,7 +1,7 @@
 /**
  *
- * @copyright  2010-2013 izend.org
- * @version    83
+ * @copyright  2010-2014 izend.org
+ * @version    84
  * @link       http://www.izend.org
  */
 
@@ -303,8 +303,7 @@ a:hover #sitedomain {color:#ff9900;}
 #sharebar > li {padding:3px 0;}
 
 .besocial {width:100%;padding:0;margin:1em 0;}
-.besocial li {display:inline-block;height:30px;vertical-align:top;padding:0;margin:5px 0;}
-.besocial li.pinit {margin-top:-2px;}
+.besocial li {display:inline-block;height:30px;vertical-align:top;padding:0;margin:0;}
 
 #socialbar {margin-top:-20px;height:35px;display:block;}
 #socialbar a:first-child {margin-left:0;}
