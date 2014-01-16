@@ -1,7 +1,7 @@
 /**
  *
  * @copyright  2010-2014 izend.org
- * @version    84
+ * @version    85
  * @link       http://www.izend.org
  */
 
@@ -322,6 +322,8 @@ a:hover #sitedomain {color:#ff9900;}
 #socialbar a.rss:hover {background-color:#fa9d39;}
 #socialbar a.newsletter {background-position:-180px 0;}
 #socialbar a.newsletter:hover {background-color:#ffe900;}
+#socialbar a.pinterest {background-position:-210px 0;}
+#socialbar a.pinterest:hover {background-color:#cb2027;}
 
 a .icon_facebook {width:111px;height:30px;display:inline-block;background:transparent url(../images/facebook.png) no-repeat;text-indent:-9999px;cursor:pointer;}
 a:link .icon_facebook, a:visited span.icon_facebook {background-position:0 -30px;}
