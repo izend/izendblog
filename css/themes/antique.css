@@ -1,7 +1,7 @@
 /**
  *
- * @copyright  2012-2013 izend.org
- * @version    5
+ * @copyright  2012-2014 izend.org
+ * @version    6
  * @link       http://www.izend.org
  */
  
@@ -31,6 +31,9 @@ a:hover #sitedomain {color:#ffffff;}
 input.submit {width:100px;height:30px;background-color:#c0bbb9;color:#ffffff;background-image:none;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border:none;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;cursor:pointer;}
 input.submit:hover, input.submit.selected {color:#392e20;}
 
+input.submit[name="fr"] {width:24px;height:24px;display:inline-block;background:transparent url(../../images/theme/flags.png) no-repeat 0 0;vertical-align:middle;text-indent:-9999px;}
+input.submit[name="en"] {width:24px;height:24px;display:inline-block;background:transparent url(../../images/theme/flags.png) no-repeat -24px 0;vertical-align:middle;text-indent:-9999px;}
+
 h1,h2,h3 {color:#392e20;}
 h4 {color:#c0bbb9;}
 h5 {color:#a0917f;}
@@ -46,9 +49,14 @@ h6 {color:#c0bbb9;}
 .date .month {color:#392e20;top:0.6em;}
 .date .year {color:#a0917f;top:4.5em;}
 
+.error, .errors, .inerror {color:#ff9900;}
+
 .blogsummarytitle h4 a:link, #homeblog h4 a:visited {color:#a0917f;}
-.blogsummarytitle h4 a:hover {color:#ff9900;}
+.blogsummarytitle h4 a:hover, .blogsummarytitle .author a:hover {color:#ff9900;}
 .blogsummarytitle .author {color:#a0917f;}
 
 .cloud li a:link, .cloud li a:visited {color:#a0917f;}
 .cloud li a:hover {color:#ff9900;}
+
+#sidemenu a:link, #sidemenu a:visited {color:#333333;}
+#sidemenu a:hover {color:#a0917f;}
