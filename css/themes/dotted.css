@@ -1,0 +1,30 @@
+/**
+ *
+ * @copyright  2014 izend.org
+ * @version    1
+ * @link       http://www.izend.org
+ */
+ 
+/* dotted.css */
+
+body {background-image:url(../../images/bg/dotted.png);}
+
+#standard, #editor, #viewer {height:100%;background-color:#ffffff;}
+#banner, #content, #footer {background-color:#ffffff;border-radius:0;-webkit-border-radius:0;-moz-border-radius:0;box-shadow:none;-webkit-box-shadow:none;-moz-box-shadow:none;}
+#bg {height:100%;}
+
+#sitename {color:#86867b;}
+#sitedomain {color:#adad96;}
+a:hover #sitedomain {color:#3f3f3d;}
+
+#socialbar a {background-color:#adad96;}
+
+#footer {color:#333333;}
+#footer a:link, #footer a:visited {color:#333333;}
+#footer a:hover {color:#ff9900;}
+
+#footer .btn_mail {background-position:-120px -88px;}
+#footer .btn_login {background-position:-104px -88px;}
+#footer .btn_logout {background-position:-152px -88px;}
+#footer .btn_account {background-position:-104px -88px;}
+#footer .btn_admin {background-position:-136px -88px;}
