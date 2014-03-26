@@ -1,7 +1,7 @@
 /**
  *
- * @copyright  2012-2013 izend.org
- * @version    2
+ * @copyright  2012-2014 izend.org
+ * @version    3
  * @link       http://www.izend.org
  */
  
@@ -27,6 +27,6 @@ a:hover #sitedomain {color:#ffffff;}
 #footer .btn_account {background-position:-104px -88px;}
 #footer .btn_admin {background-position:-136px -88px;}
 
-#footer {background-color:#ffffff;margin-top:5px;margin-bottom:10px;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
+#footer {background-color:#ffffff;margin-top:5px;margin-bottom:10px;border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
 
-input.submit {width:100px;height:30px;background-color:#4399f4;color:#ffffff;background-image:none;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border:none;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;cursor:pointer;}
+input.submit {width:100px;height:30px;background-color:#4399f4;color:#ffffff;background-image:none;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border:none;border-radius:8px;cursor:pointer;}

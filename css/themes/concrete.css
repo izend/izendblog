@@ -1,7 +1,7 @@
 /**
  *
- * @copyright  2012-2013 izend.org
- * @version    4
+ * @copyright  2012-2014 izend.org
+ * @version    5
  * @link       http://www.izend.org
  */
  
@@ -25,5 +25,5 @@ a:hover #sitedomain {color:#1c1c1c;}
 #footer .btn_account {background-position:-104px -88px;}
 #footer .btn_admin {background-position:-136px -88px;}
 
-input.submit {width:100px;height:30px;background-color:#cccccc;color:#333333;background-image:none;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border:none;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;cursor:pointer;}
+input.submit {width:100px;height:30px;background-color:#cccccc;color:#333333;background-image:none;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border:none;border-radius:8px;cursor:pointer;}
 input.submit:hover, input.submit.selected {color:#ffffff;}

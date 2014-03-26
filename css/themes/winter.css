@@ -1,6 +1,6 @@
 /**
  *
- * @copyright  2013 izend.org
+ * @copyright  2013-2014 izend.org
  * @version    6
  * @link       http://www.izend.org
  */
@@ -15,7 +15,7 @@ body {color:#333333;background:#f0f0f0 url(winter/bg.gif) repeat-x;}
 #forest {width:535px;height:114px;background:url(winter/forest.png) no-repeat left bottom;position:absolute;top:-75px;z-index:-2;}
 #grass {width:100%;height:79px;background:url(winter/grass.png) repeat-x left bottom;position:absolute;z-index:-3;}
 
-#background {background-color:#ffffff;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
+#background {background-color:#ffffff;border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
 #content, #footer {background-color:transparent;border-radius:0;-webkit-border-radius:0;-moz-border-radius:0;box-shadow:none;-webkit-box-shadow:none;-moz-box-shadow:none;}
 
 #footer {color:#333333;}
@@ -32,7 +32,7 @@ body {color:#333333;background:#f0f0f0 url(winter/bg.gif) repeat-x;}
 
 .error, .errors, .inerror {color:#99cccc;}
 
-input.submit {width:100px;height:30px;background:#cccccc;color:#333333;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;cursor:pointer;}
+input.submit {width:100px;height:30px;background:#cccccc;color:#333333;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border-radius:8px;cursor:pointer;}
 input.submit {border:1px solid #cccccc;transition: all 0.3s ease-out;
 /* IE10 Consumer Preview */ 
 background-image: -ms-linear-gradient(top, #FFFFFF 0%, #999999 100%);

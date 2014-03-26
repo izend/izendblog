@@ -1,7 +1,7 @@
 /**
  *
- * @copyright  2012-2013 izend.org
- * @version    3
+ * @copyright  2012-2014 izend.org
+ * @version    4
  * @link       http://www.izend.org
  */
  
@@ -13,7 +13,7 @@ body {background-image:url(../../images/bg/globule.gif);}
 
 #socialbar a {background-color:#666666;}
 
-#background {background-color:#ffffff;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
+#background {background-color:#ffffff;border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
 #content, #footer {background-color:transparent;border-radius:0;-webkit-border-radius:0;-moz-border-radius:0;box-shadow:none;-webkit-box-shadow:none;-moz-box-shadow:none;}
 
 #footer {color:#333333;margin-bottom:10px;}
@@ -25,5 +25,5 @@ body {background-image:url(../../images/bg/globule.gif);}
 #footer .btn_logout {background:url(../../images/light/small/cancel.png) no-repeat;}
 #footer .btn_admin {background:url(../../images/light/small/work.png) no-repeat;}
 
-input.submit {width:100px;height:30px;background-color:#999999;color:#333333;background-image:none;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border:none;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;cursor:pointer;}
+input.submit {width:100px;height:30px;background-color:#999999;color:#333333;background-image:none;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border:none;border-radius:8px;cursor:pointer;}
 input.submit:hover, input.submit.selected {color:#ffffff;}
