@@ -1,0 +1,39 @@
+/**
+ *
+ * @copyright  2014 izend.org
+ * @version    1
+ * @link       http://www.izend.org
+ */
+ 
+/* arte.css */
+
+a:link, a:visited {color:#c84526;}
+a:hover {color:#333333;text-decoration:none;}
+
+body {background-image:url(../../images/bg/arte.gif);}
+
+#sitename {color:#ffffff;}
+#sitedomain {color:#ffffff;}
+a:hover #sitedomain {color:#333333;}
+
+#socialbar a {background-color:#adad96;}
+
+#footer {color:#333333;margin-bottom:10px;}
+#footer a:link, #footer a:visited {color:#333333;}
+#footer a:hover {color:#ffffff;}
+
+#footer .btn_mail {background-position:-120px -88px;}
+#footer .btn_login {background-position:-104px -88px;}
+#footer .btn_logout {background-position:-152px -88px;}
+#footer .btn_account {background-position:-104px -88px;}
+#footer .btn_admin {background-position:-136px -88px;}
+
+.error, .errors, .inerror {color:#c84526;}
+
+.blogsummarytitle h4 a:hover, .blogsummarytitle .author a:hover {color:#c84526;}
+.cloud li a:hover {color:#c84526;}
+
+#comments .author a:hover {color:#c84526;}
+
+#sidemenu a:link, #sidemenu a:visited {color:#333333;}
+#sidemenu a:hover {color:#333333;}
