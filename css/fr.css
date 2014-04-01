@@ -32,3 +32,5 @@
 .submit_buy {width:82px !important;height:21px !important;background:transparent url(../images/paypal_buy_fr.gif) no-repeat !important;text-indent:-1000em !important;}
 .submit_pay {width:69px !important;height:21px !important;background:transparent url(../images/paypal_pay_fr.gif) no-repeat !important;text-indent:-1000em !important;}
 .submit_paypal {width:100px !important;height:35px !important;background:transparent url(../logos/paypal.gif) no-repeat !important;text-indent:-1000em !important;}
+
+#sharebar {width:67px;}

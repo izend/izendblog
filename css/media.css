@@ -1,14 +1,18 @@
 /**
  *
  * @copyright  2013-2014 izend.org
- * @version    14
+ * @version    16
  * @link       http://www.izend.org
  */
  
 /* media.css */
 
-@media screen and (max-width:1024px) {
-#sharebar {display:none !important;}
+@media screen and (min-width:1200px) {
+#shareline {position:absolute !important;top:-9999px !important;left:-9999px !important;}
+}
+
+@media screen and (max-width:1199px) {
+#sharebar {position:absolute !important;top:-9999px !important;left:-9999px !important;}
 }
 
 @media screen and (max-width:960px) {
