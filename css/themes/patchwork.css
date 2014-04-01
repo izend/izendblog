@@ -1,7 +1,7 @@
 /**
  *
  * @copyright  2012-2014 izend.org
- * @version    6
+ * @version    7
  * @link       http://www.izend.org
  */
  
@@ -50,7 +50,7 @@ pre {background-color:#fafaa1;}
 .date .month {color:#4e2c29;top:0.6em;}
 .date .year {color:#b49f9a;top:4.5em;}
 
-@media (min-width:1280px) {
+@media (min-width:1320px) {
 .blogsummarytitle .date {margin-left:-80px;border-radius:8px 0px 0px 8px;-webkit-border-radius:8px 0px 0px 8px;-moz-border-radius:8px 0px 0px 8px;}
 }
 
