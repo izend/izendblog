@@ -65,3 +65,7 @@ video {height:auto;}
 #summary {border:none;padding:0;border-radius:0;-webkit-border-radius:0;-moz-border-radius:0;box-shadow:none;-webkit-box-shadow:none;-moz-box-shadow:none;}	
 .summary {float:none;border:none;margin:1em 0;padding:0;text-align:left;border-radius:0;-webkit-border-radius:0;-moz-border-radius:0;box-shadow:none;-webkit-box-shadow:none;-moz-box-shadow:none;}	
 }
+
+@media screen and (max-width:220px) {
+#socialbar, #searchinput {display:none;}
+}
