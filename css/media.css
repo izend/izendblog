@@ -1,7 +1,7 @@
 /**
  *
  * @copyright  2013-2014 izend.org
- * @version    16
+ * @version    17
  * @link       http://www.izend.org
  */
  
@@ -68,4 +68,8 @@ video {height:auto;}
 
 @media screen and (max-width:220px) {
 #socialbar, #searchinput {display:none;}
+}
+
+@media screen and (max-width:220px) {
+#searchinput {display:none;}
 }
