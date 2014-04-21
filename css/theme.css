@@ -1,7 +1,7 @@
 /**
  *
  * @copyright  2010-2014 izend.org
- * @version    91
+ * @version    93
  * @link       http://www.izend.org
  */
 
@@ -77,6 +77,9 @@ th {background-color:#ffffe0;font-weight:bold;}
 .cloud li a:link, .cloud li a:visited {color:#666666;}
 .cloud li a:hover {color:#ff9900;}
 .cloud li .btn_index {width:24px;height:24px;float:left;margin-left:0;margin-right:6px;background:transparent url(../images/theme/icons.png) no-repeat;background-position:-120px -24px;text-indent:-9999px;cursor:pointer;}
+
+.hidy {width:16px;height:16px;background:transparent url(../images/theme/icons/down.png) no-repeat;text-indent:-9999px;cursor:pointer;}
+form .hidy {display:inline-block;float:right;}
 
 .tag {color:#333333;font-size:large;}
 
@@ -265,7 +268,7 @@ a:hover #sitedomain {color:#ff9900;}
 #sidebar #searchinput {margin-bottom:0.5em;}
 #sidebar #donate {float:right;margin:1em 0;}
 #sidebar .cloud {margin-bottom:1em;}
-#sidebar .hidy {height:16px;background:transparent url(../images/theme/icons/down.png) no-repeat;margin-left:176px;cursor:pointer;}
+#sidebar .hidy {margin-left:176px;}
 
 #sidemenu {width:240px;font-size:90%;}
 #sidemenu .qtip {font-size:90%;line-height:1.3;max-width:90%;background-color:#ffffff;border-radius:2px;box-shadow:2px 2px 3px #cccccc;-webkit-box-shadow:2px 2px 3px #cccccc;-moz-box-shadow:2px 2px 3px #cccccc;}
@@ -302,6 +305,8 @@ a:hover #sitedomain {color:#ff9900;}
 .navigation {font-size:small;margin-bottom:1em;}
 .navigation .previous {width:16px;height:16px;display:inline-block;background:transparent url(../images/theme/icons.png) no-repeat;background-position:-32px -88px;vertical-align:text-bottom;}
 .navigation .next {width:16px;height:16px;display:inline-block;background:transparent url(../images/theme/icons.png) no-repeat;background-position:-48px -88px;vertical-align:text-bottom;}
+
+#thread_image, #node_image {max-width:240px;height:auto;}
 
 #sharebar {background-color:#ffffff;padding:4px 6px;position:fixed;margin-top:-20px;left:0px;border-radius:0px 8px 8px 0px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
 #sharebar > li {padding:3px 0;}
