@@ -2,8 +2,8 @@
 
 /**
  *
- * @copyright  2010-2013 izend.org
- * @version    13
+ * @copyright  2010-2014 izend.org
+ * @version    15
  * @link       http://www.izend.org
  */
 
@@ -281,14 +281,16 @@ function register($lang) {
 				break;
 			}
 
+			require_once 'serveripaddress.php';
 			require_once 'emailme.php';
 
 			global $sitename;
 
-			$timestamp=strftime('%d-%m-%Y %H:%M:%S', time());
-			$subject = 'new_account' . '@' . $sitename;
-			$msg = $timestamp . ' ' . $user_id . ' ' . $lang . ' ' . $mail;
-			emailme($subject, $msg);
+			$ip=server_ip_address();
+			$timestamp=strftime('%Y-%m-%d %H:%M:%S', time());
+			$subject = 'register' . '@' . $sitename;
+			$msg = $ip . ' ' . $timestamp . ' ' . $user_id . ' ' . $lang . ' ' . $mail;
+			@emailme($subject, $msg);
 
 			$password=false;
 

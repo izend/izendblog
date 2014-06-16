@@ -2,8 +2,8 @@
 
 /**
  *
- * @copyright  2012-2013 izend.org
- * @version    5
+ * @copyright  2012-2014 izend.org
+ * @version    6
  * @link       http://www.izend.org
  */
 
@@ -18,7 +18,7 @@ function blog_summary($lang, $blog_id, $pagesize=false, $page=1) {
 	$tabuser=db_prefix_table('user');
 	$tabuserinfo=db_prefix_table('user_info');
 
-	$where="WHERE tn.thread_id=$blog_id AND tn.ignored=0 AND nl.locale=$sqllang";
+	$where="WHERE tn.thread_id=$blog_id AND tn.ignored=FALSE AND nl.locale=$sqllang";
 
 	$sql="SELECT COUNT(*) AS count FROM $tabthreadnode tn JOIN $tabnode n ON n.node_id=tn.node_id JOIN $tabnodelocale nl ON nl.node_id=tn.node_id $where";
 
@@ -36,9 +36,10 @@ function blog_summary($lang, $blog_id, $pagesize=false, $page=1) {
 		if ($page > $npages) {
 			$page=$npages;
 		}
-		$limit=($page > 1 ? ($page - 1) * $pagesize : 0) . ', ' . $pagesize;
+		$offset=$page > 1 ? ($page - 1) * $pagesize : 0;
+		$limit=$pagesize;
 
-		$sql .= " LIMIT $limit";
+		$sql .= " LIMIT $limit OFFSET $offset";
 	}
 
 	$r = db_query($sql);
@@ -75,7 +76,7 @@ function blog_node($node_name, $locale) {
 	$tabnodelocale=db_prefix_table('node_locale');
 
 	$where = is_array($default_folder) ? ('tn.thread_id IN (' . implode(',', $default_folder) . ')') : "tn.thread_id=$default_folder";
-	$where.= " AND tn.ignored=0 AND nl.locale=$sqllocale AND nl.name=$sqlname";
+	$where.= " AND tn.ignored=FALSE AND nl.locale=$sqllocale AND nl.name=$sqlname";
 
 	$sql="SELECT tn.node_id FROM $tabthreadnode tn JOIN $tabnodelocale nl ON nl.node_id=tn.node_id WHERE $where LIMIT 1";
 

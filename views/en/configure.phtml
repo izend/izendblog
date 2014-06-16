@@ -2,8 +2,8 @@
 
 /**
  *
- * @copyright  2010-2013 izend.org
- * @version    9
+ * @copyright  2010-2014 izend.org
+ * @version    10
  * @link       http://www.izend.org
  */
 ?>
@@ -22,6 +22,7 @@ $ cd <?php echo ROOT_DIR; ?>/includes; chmod 660 db.inc config.inc settings.inc 
 <p>NOTE: The name of the execution group of the server is defined by the Group directive, generally in the file <i>/etc/apache2/apache2.conf</i>.</p>
 <h6>Database</h6>
 <p>The configurator can create a new database or use an already existing database.
+You can choose MySQL or PostgreSQL.
 <b>IMPORTANT</b>: If the database is shared, ask the configurator to add a prefix to the table names.
 In any case, using a prefix is safer.</p>
 <p>NOTE: If you develop the site locally before it is put on-line, which is recommended, use the same parameters on both servers.</p>
@@ -93,10 +94,21 @@ Check your answers and rerun the configuration.</p>
 <p>The configuration of the database has failed with the error:</p>
 <p><?php echo htmlspecialchars($db_error); ?></p>
 <?php if (!$db_reuse): ?>
+<?php if ($db_type == 'mysql'): ?>
 <p><b>IMPORTANT</b>: Before you can retry the configuration, you must manually delete the <code><?php echo $db_name; ?></code> DB
 and the entries for the user <code><?php echo $db_user; ?></code> in the <i>user</i> and <i>db</i> tables of the <i>mysql</i> DB.</p>
+<?php elseif ($db_type == 'pgsql'): ?>
+<p><b>IMPORTANT</b>: Before you can retry the configuration, you must manually delete the <code><?php echo $db_name; ?></code> DB
+and the role <code><?php echo $db_user; ?></code>.</p>
+<?php endif; ?>
 <?php endif; ?>
 </div>
+<?php endif; ?>
+<p>Do you use MySQL or PostgreSQL?</p>
+<p><input type="radio" name="configure_db_type" title="" value="mysql"<?php if ($db_type == 'mysql'): ?> checked="checked"<?php endif; ?> />&nbsp;MySQL
+<input type="radio" name="configure_db_type" title="" value="pgsql"<?php if ($db_type == 'pgsql'): ?> checked="checked"<?php endif; ?> />&nbsp;PostgreSQL</p>
+<?php if ($bad_db_type): ?>
+<p class="error">Check the option MySQL or the option PostgreSQL.</p>
 <?php endif; ?>
 <p>What is the name of the database?</p>
 <p><input type="text" name="configure_db_name" size="30" maxlength="40" title="" value="<?php echo $db_name; ?>" /></p>

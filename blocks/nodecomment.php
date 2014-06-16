@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2010-2014 izend.org
- * @version    8
+ * @version    10
  * @link       http://www.izend.org
  */
 
@@ -199,14 +199,16 @@ function nodecomment($lang, $node_id, $node_user_id, $node_url, $nomore) {
 				break;
 			}
 
+			require_once 'serveripaddress.php';
 			require_once 'emailme.php';
 
 			global $sitename;
 
-			$timestamp=strftime('%d-%m-%Y %H:%M:%S', time());
-			$subject = 'new_comment' . '@' . $sitename;
-			$msg = $timestamp . ' ' . $user_id . ' ' . $lang . ' ' . $node_id . ' ' . $node_url;
-			emailme($subject, $msg);
+			$ip=server_ip_address();
+			$timestamp=strftime('%Y-%m-%d %H:%M:%S', time());
+			$subject = 'comment' . '@' . $sitename;
+			$msg = $ip . ' ' . $timestamp . ' ' . $user_id . ' ' . $lang . ' ' . $node_id . ' ' . $node_url;
+			@emailme($subject, $msg);
 
 			$message=false;
 
