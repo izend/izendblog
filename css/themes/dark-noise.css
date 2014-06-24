@@ -48,7 +48,7 @@ ol.tree {display:inline-block;background:#ffffff;padding:0.5em 0;}
 
 span.btn_grippie {background-color:#ffffff;}
 
-.round {border-radius:0;-webkit-border-radius:0;-moz-border-radius:0;}
+.round {border-radius:0;}
 .shadow {box-shadow:none;-webkit-box-shadow:none;-moz-box-shadow:none;}
 
 .date {background-image:none;}
