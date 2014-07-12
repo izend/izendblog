@@ -120,7 +120,7 @@ $with_toolbar=is_mobile() ? false : true;
 
 global $search_all, $search_distance, $search_closest;
 
-$search_all=true;		// true, false, 'cloud'
+$search_all=false;		// true, false, 'cloud'
 $search_distance=2;		// 0 - exact match, 1 - close, 2 - not so close, etc.
 $search_closest=true;	// true - best matches, false - all matches
 
