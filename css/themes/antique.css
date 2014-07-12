@@ -1,7 +1,7 @@
 /**
  *
  * @copyright  2012-2014 izend.org
- * @version    6
+ * @version    7
  * @link       http://www.izend.org
  */
  
@@ -39,7 +39,7 @@ h4 {color:#c0bbb9;}
 h5 {color:#a0917f;}
 h6 {color:#c0bbb9;}
 
-.topbar a:link, #topbar a:visited {color:#ffffff;}
+.topbar a:link, .topbar a:visited, .topbar span {color:#ffffff;}
 .topbar > li {box-shadow:1px 2px 5px #c0bbb9;-webkit-box-shadow:1px 2px 5px #c0bbb9;-moz-box-shadow:1px 2px 5px #c0bbb9;}
 .topbar > li {background-color:#c0bbb9;}
 .topbar ul li a {background-color:#c0bbb9;}

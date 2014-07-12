@@ -1,7 +1,7 @@
 /**
  *
  * @copyright  2012-2014 izend.org
- * @version    6
+ * @version    7
  * @link       http://www.izend.org
  */
  
@@ -16,7 +16,7 @@ a:hover #sitedomain {color:#e1c294;}
 #socialbar a {background-color:#68c2f7;}
 
 #background {background-color:#ffffff;border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
-#content, #footer {background-color:transparent;border-radius:0;box-shadow:none;-webkit-box-shadow:none;-moz-box-shadow:none;}
+#content, #footer {background-color:transparent;border-radius:0;-webkit-border-radius:0;-moz-border-radius:0;box-shadow:none;-webkit-box-shadow:none;-moz-box-shadow:none;}
 
 #footer {color:#333333;margin-bottom:10px;}
 #footer a:link, #footer a:visited {color:#333333;}
@@ -30,7 +30,7 @@ a:hover #sitedomain {color:#e1c294;}
 
 input.submit {width:100px;height:30px;background-color:#68c2f7;color:#ffffff;background-image:none;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border:none;border-radius:8px;cursor:pointer;}
 
-.topbar a:link, #topbar a:visited {color:#ffffff;}
+.topbar a:link, .topbar a:visited, .topbar span  {color:#ffffff;}
 .topbar > li {box-shadow:1px 2px 5px #e1c294;-webkit-box-shadow:1px 2px 5px #e1c294;-moz-box-shadow:1px 2px 5px #e1c294;}
 .topbar > li {background-color:#e1c294;}
 .topbar ul li a {background-color:#e1c294;}
