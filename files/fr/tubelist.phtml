@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2012-2014 qrmii.com
- * @version    8
+ * @version    9
  * @link       http://www.qrmii.com
  */
 ?>
@@ -34,7 +34,7 @@ $dir='/files/tubes/' . $lang;
 <?php head('stylesheet', 'jquery.jscrollpane', 'screen'); ?>
 <script type="text/javascript">
 $(document).ready(function() {
-    var api=$('.gallery').jScrollPane().data('jsp');
+    var api=$('.gallery').jScrollPane({contentWidth: <?php echo count($tubes) * 240; ?>}).data('jsp');
     api.scrollToPercentX(.3);
     $(window).bind('resize', function() {api.reinitialise()});
 });
