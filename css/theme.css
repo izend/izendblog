@@ -1,7 +1,7 @@
 /**
  *
  * @copyright  2010-2014 izend.org
- * @version    96
+ * @version    98
  * @link       http://www.izend.org
  */
 
@@ -308,6 +308,7 @@ a:hover #sitedomain {color:#ff9900;}
 
 #thread_image, #node_image {max-width:240px;height:auto;}
 
+#sharebar, #shareline {display:none;}
 #sharebar {background-color:#ffffff;padding:4px 6px;position:fixed;margin-top:-20px;left:0px;border-radius:0px 8px 8px 0px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;z-index:9999;}
 #sharebar > li {padding:3px 0;}
 
@@ -337,30 +338,31 @@ a:hover #sitedomain {color:#ff9900;}
 #socialbar a.youtube:hover {background-color:#e52d27;}
 
 a .icon_facebook {width:111px;height:30px;display:inline-block;background:transparent url(../images/link.png) no-repeat;text-indent:-9999px;cursor:pointer;}
-a:link .icon_facebook, a:visited span.icon_facebook {background-position:0 -30px;}
+a:link .icon_facebook, a:visited .icon_facebook {background-position:0 -30px;}
 a:hover .icon_facebook {background-position:0 0;}
 a .icon_twitter {width:114px;height:30px;display:inline-block;background:transparent url(../images/link.png) no-repeat;;text-indent:-9999px;cursor:pointer;}
-a:link .icon_twitter, a:visited span.icon_twitter {background-position:-111px -30px;}
+a:link .icon_twitter, a:visited .icon_twitter {background-position:-111px -30px;}
 a:hover .icon_twitter {background-position:-111px 0;}
 a .icon_rss {width:51px;height:30px;display:inline-block;background:transparent url(../images/link.png) no-repeat;text-indent:-9999px;cursor:pointer;}
-a:link .icon_rss, a:visited span.icon_rss {background-position:-225px -30px;}
+a:link .icon_rss, a:visited .icon_rss {background-position:-225px -30px;}
 a:hover .icon_rss {background-position:-225px 0;}
 a .icon_newsletter {width:192px;height:30px;display:inline-block;background:transparent url(../images/link.png) no-repeat;text-indent:-9999px;cursor:pointer;}
-a:link .icon_newsletter, a:visited span.icon_newsletter {background-position:-276px -30px;}
+a:link .icon_newsletter, a:visited .icon_newsletter {background-position:-276px -30px;}
 a:hover .icon_newsletter {background-position:-276px 0;}
 a .icon_buzzmii {width:90px;height:30px;display:inline-block;background:transparent url(../images/link.png) no-repeat;text-indent:-9999px;cursor:pointer;}
-a:link .icon_buzzmii, a:visited span.icon_buzzmii {background-position:-468px -30px;}
+a:link .icon_buzzmii, a:visited .icon_buzzmii {background-position:-468px -30px;}
 a:hover .icon_buzzmii {background-position:-468px 0;}
 a .icon_youtube {width:77px;height:30px;display:inline-block;background:transparent url(../images/link.png) no-repeat;text-indent:-9999px;cursor:pointer;}
-a:link .icon_youtube, a:visited span.icon_youtube {background-position:-558px -30px;}
+a:link .icon_youtube, a:visited .icon_youtube {background-position:-558px -30px;}
 a:hover .icon_youtube {background-position:-558px 0;}
 a .icon_pinterest {width:118px;height:30px;display:inline-block;background:transparent url(../images/link.png) no-repeat;text-indent:-9999px;cursor:pointer;}
-a:link .icon_pinterest, a:visited span.icon_pinterest {background-position:-635px -30px;}
+a:link .icon_pinterest, a:visited .icon_pinterest {background-position:-635px -30px;}
 a:hover .icon_pinterest {background-position:-635px 0;}
 
 #linkbar {margin:2em 0;}
 #linkbar > a {margin-right:20px;}
 #linkbar > a:last-child {margin-right:0;}
+#linkbar a span {vertical-align:text-bottom;}
 
 #connectbar a {width:24px;height:24px;display:inline-block;background:transparent url(../images/theme/social.png) no-repeat;vertical-align:top;}
 #connectbar a.facebook {background-position:0 0;}
