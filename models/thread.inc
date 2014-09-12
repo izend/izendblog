@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2010-2014 izend.org
- * @version    21
+ * @version    23
  * @link       http://www.izend.org
  */
 
@@ -478,6 +478,16 @@ function thread_set_node($lang, $thread_id, $node_id, $node_name, $node_title, $
 	return true;
 }
 
+function thread_get_node_number($thread_id, $node_id) {
+	$tabthreadnode=db_prefix_table('thread_node');
+
+	$sql="SELECT number FROM $tabthreadnode WHERE thread_id=$thread_id AND node_id=$node_id";
+
+	$r = db_query($sql);
+
+	return $r ? $r[0]['number'] : false;
+}
+
 function thread_set_node_number($thread_id, $node_id, $number) {
 	$tabthreadnode=db_prefix_table('thread_node');
 
@@ -492,12 +502,24 @@ function thread_set_node_number($thread_id, $node_id, $number) {
 	return true;
 }
 
+function thread_get_node_ignored($thread_id, $node_id) {
+	$tabthreadnode=db_prefix_table('thread_node');
+
+	$sql="SELECT ignored FROM $tabthreadnode WHERE thread_id=$thread_id AND node_id=$node_id";
+
+	$r = db_query($sql);
+
+	return $r ? $r[0]['ignored'] : false;
+}
+
 function thread_set_node_ignored($thread_id, $node_id, $ignored) {
 	$sqlignored=$ignored ? 'TRUE' : 'FALSE';
 
 	$tabthreadnode=db_prefix_table('thread_node');
 
 	$sql="UPDATE $tabthreadnode SET ignored=$sqlignored WHERE thread_id=$thread_id AND node_id=$node_id";
+
+	$r = db_update($sql);
 
 	if ($r === false) {
 		return false;
