@@ -68,7 +68,7 @@ th {background-color:#ffffe0;font-weight:bold;}
 .blogsummary {margin:2em 0;}
 .blogsummarycontent {margin:1em 0;}
 
-.blogsummary .vote {margin-top:0;}
+.blogsummary .vote, .blogsummary .visits {margin-top:0;}
 
 .blogsummary, .blogsummarycontent, .blogsummary .readmore, .blogsummary .cloud {clear:left;}
 

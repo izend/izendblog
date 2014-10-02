@@ -2,8 +2,8 @@
 
 /**
  *
- * @copyright  2010-2013 izend.org
- * @version    8
+ * @copyright  2010-2014 izend.org
+ * @version    9
  * @link       http://www.izend.org
  */
 ?>
@@ -19,6 +19,9 @@ $year = date('Y', $created);
 <div class="blogsummary">
 <?php if ($vote): ?>
 <?php echo $vote; ?>
+<?php endif; ?>
+<?php if ($visits): ?>
+<?php echo $visits; ?>
 <?php endif; ?>
 <div class="blogsummarytitle">
 <p class="date"><?php if ($uri): ?><a href="/<?php echo $uri; ?>"><?php endif; ?><span class="day"><?php echo $day; ?></span> <span class="month"><?php echo $month; ?></span> <span class="year"><?php echo $year; ?></span><?php if ($uri): ?></a><?php endif; ?></p>
