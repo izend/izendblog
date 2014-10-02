@@ -31,6 +31,13 @@ video {height:auto;}
 #logo h1 a {width:100%;}
 #bannermenu {float:right;margin-top:0;}
 #banner #searchinput {float:left;margin-top:0;margin-left:0;}
+#sidebar {width:100%;float:none;margin-left:0;margin-bottom:1em;}
+#sidebar #searchinput {max-width:100%;margin-left:0;margin-right:auto;}
+#sidebar #headline {text-align:left;}
+#sidebar #donate {float:none;}
+#sidebar .hidy {margin-left:4px;}
+#sidebar .cloud li .btn_index {float:right;margin-left:6px;margin-right:0;}
+#summary {width:200px;display:inline-block;text-align:left;}
 #linkbar a {display:block;margin:1em 0;}
 .left, .right, .vignette {max-width:50%;}
 .tagbar .tagmore {margin-left:0;}
@@ -39,14 +46,7 @@ video {height:auto;}
 
 @media screen and (max-width:360px) {
 #footer .languages {float:none;margin-left:0;}
-#sidebar {width:100%;float:none;margin-left:0;margin-bottom:1em;}
-#sidebar #searchinput {max-width:100%;margin-left:0;margin-right:auto;}
-#sidebar #headline {text-align:left;}
-#sidebar #donate {float:none;}
-#sidebar .hidy {margin-left:4px;}
 #sidebar .cloud {display:none;}
-#sidebar .cloud li .btn_index {float:right;margin-left:6px;margin-right:0;}
-#summary {width:200px;display:inline-block;text-align:left;}
 #comments .signature {float:none;}
 .bbcodebar_limiter {margin-left:0;}
 .bbcodehelp {display:none;}
