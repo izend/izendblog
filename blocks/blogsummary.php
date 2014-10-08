@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2010-2014 izend.org
- * @version    9
+ * @version    10
  * @link       http://www.izend.org
  */
 
@@ -46,7 +46,7 @@ function blogsummary($lang, $blog_id, $taglist=false, $pagesize=false, $page=1) 
 		$id=blog_node($node_name, $lang);
 		$uri=$id ? $lang . '/' . $node_name : false;
 		$vote=$id ? build('vote', $lang, $id, 'node', false) : false;
-		$visits=$id ? build('visits', $lang, $id) : false;
+		$visits=$id ? build('visits', $lang, $id, true) : false;
 		$blogsummary[]=compact('author', 'website', 'title', 'uri', 'created', 'modified', 'abstract', 'cloud', 'summary', 'vote', 'visits');
 	}
 
