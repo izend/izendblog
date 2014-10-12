@@ -3,13 +3,25 @@
 /**
  *
  * @copyright  2010-2014 izend.org
- * @version    16
+ * @version    17
  * @link       http://www.izend.org
  */
 ?>
 <?php extract($errors); ?>
 <form action="" method="post" class="compact">
 <input type="hidden" name="register_token" value="<?php echo $token; ?>" />
+<?php if ($with_timezone): ?>
+<?php if ($timezone): ?>
+<input type="hidden" name="register_timezone" value="<?php echo $timezone; ?>" />
+<?php else: ?>
+<input type="hidden" name="register_timezone" value="" />
+<?php head('javascript', 'jstz'); ?>
+<script type="text/javascript">
+var tz = jstz.determine();
+$('input[name=register_timezone]').val(tz.name());
+</script>
+<?php endif; ?>
+<?php endif; ?>
 <?php if ($with_info): ?>
 <div class="row">
 <div>
