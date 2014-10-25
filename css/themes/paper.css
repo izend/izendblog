@@ -1,0 +1,37 @@
+/**
+ *
+ * @copyright  2014 izend.org
+ * @version    1
+ * @link       http://www.izend.org
+ */
+ 
+/* paper.css */
+
+body {background-image:url(../../images/bg/paper.png);}
+
+#sitename {color:#4b4b4b;}
+#sitedomain {color:#ffffff;}
+a:hover #sitedomain {color:#ff9900;}
+
+#socialbar a {background-color:#4b4b4b;}
+             
+#footer {color:#333333;}
+#footer a:link, #footer a:visited {color:#333333;}
+#footer a:hover {color:#ff9900;}
+
+#footer .btn_mail {background-position:-120px -88px;}
+#footer .btn_login {background-position:-104px -88px;}
+#footer .btn_logout {background-position:-152px -88px;}
+#footer .btn_account {background-position:-104px -88px;}
+#footer .btn_admin {background-position:-136px -88px;}
+
+input.submit {width:100px;height:30px;background:#dfdfdf;color:#4b4b4b;background-image:none;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border:none;border-radius:8px;cursor:pointer;}
+
+.date {background:#eeeeee;}
+.date .day {color:#4b4b4b;top:0.6em;}
+.date .month {color:#4b4b4b;top:0.6em;}
+.date .year {color:#4b4b4b;top:4.5em;}
+
+@media (min-width:1320px) {
+.blogsummarytitle .date {margin-left:-80px;border-radius:8px 0px 0px 8px;}
+}
