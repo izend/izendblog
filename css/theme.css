@@ -1,7 +1,7 @@
 /**
  *
  * @copyright  2010-2014 izend.org
- * @version    99
+ * @version    101
  * @link       http://www.izend.org
  */
 
@@ -206,6 +206,7 @@ span.btn_map {background-position:-144px -32px;}
 span.btn_marker {background-position:-160px -32px;}
 span.btn_film {background-position:-144px -48px;}
 span.btn_camera {background-position:-160px -48px;}
+span.btn_cut {background-position:-112px -48px;}
 
 #standard, #editor, #viewer {max-width:1000px;margin:0 auto;}
 
@@ -385,9 +386,9 @@ a:hover .icon_pinterest {background-position:-635px 0;}
 .bbcodebar_limiter {font-size:x-small;margin-left:10px;}
 .bbcodehelp {color:#666666;font-size:x-small;font-style:normal;margin-top:0.5em;}
 
-.visits {float:right;margin-left:1em;margin-top:0.4em;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;font-size:small;font-weight:bold;background:transparent url(../images/theme/icons/visit.png) no-repeat;text-indent:24px;line-height:24px;}
+.visits {float:right;margin-left:1em;margin-top:0.4em;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;font-size:small;font-weight:bold;color:#444444;background:transparent url(../images/theme/icons/visit.png) no-repeat;text-indent:24px;line-height:24px;}
 
-.vote {float:right;margin-top:0.3em;margin-left:1em;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;}
+.vote {float:right;margin-top:0.3em;margin-left:1em;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;color:#444444;}
 .vote .count {float:left;font-size:large;font-weight:bold;line-height:24px;margin-right:0.5em;}
 .vote .plusone {width:24px;height:24px;padding:0;margin:0;border:none;background:transparent url(../images/theme/icons.png) no-repeat;background-position:-48px -24px;text-indent:-9999px;}
 .vote span.plusone {display:inline-block;cursor:default;}
