@@ -1,7 +1,7 @@
 /**
  *
  * @copyright  2014 izend.org
- * @version    1
+ * @version    2
  * @link       http://www.izend.org
  */
  
@@ -10,7 +10,7 @@
 body {background-image:url(../../images/bg/paper.png);}
 
 #sitename {color:#4b4b4b;}
-#sitedomain {color:#ffffff;}
+#sitedomain {color:#cccccc;}
 a:hover #sitedomain {color:#ff9900;}
 
 #socialbar a {background-color:#4b4b4b;}
