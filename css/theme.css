@@ -275,7 +275,7 @@ a:hover #sitedomain {color:#ff9900;}
 #sidemenu {width:240px;font-size:90%;}
 #sidemenu .qtip {font-size:90%;line-height:1.3;max-width:90%;background-color:#ffffff;border-radius:2px;box-shadow:2px 2px 3px #cccccc;-webkit-box-shadow:2px 2px 3px #cccccc;-moz-box-shadow:2px 2px 3px #cccccc;}
 
-#footer {color:#cccccc;font-size:small;margin:0;padding:10px 20px;line-height:1.5em;clear:both;}
+#footer {color:#cccccc;font-size:small;margin:0;padding:10px 20px;clear:both;}
 #footer p img {vertical-align:middle;}
 #footer a:link, #footer a:visited {color:#cccccc;}
 #footer a:hover {color:#ff9900;text-decoration:none;}
