@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2014 izend.org
- * @version    5
+ * @version    6
  * @link       http://www.izend.org
  */
 
@@ -542,8 +542,8 @@ INSERT INTO `${db_prefix}content_text` (`content_id`, `locale`, `text`, `eval`) 
 (23, 'en', '<p>Lorem ipsum dolor sit amet, vis ne nonumes tractatos neglegentur. In eam ludus constituam. Est cu dicat aliquid dissentias, ea esse possim adipiscing eam. Aliquam volumus accumsan id cum, justo vivendum senserit ex eos, ad per nulla oporteat.</p>', '0'),
 (24, 'fr', '<p>An mei solum molestie mandamus, diceret omittam te vim. Vis nemore veritus ne, no euismod consulatu pro, cu sit falli audiam integre. Cu sea habeo nonumy tamquam. An usu meis mutat bonorum, has enim iisque philosophia ut. Zril virtute sed ei.</p>', '0'),
 (24, 'en', '<p>An mei solum molestie mandamus, diceret omittam te vim. Vis nemore veritus ne, no euismod consulatu pro, cu sit falli audiam integre. Cu sea habeo nonumy tamquam. An usu meis mutat bonorum, has enim iisque philosophia ut. Zril virtute sed ei.</p>', '0'),
-(25, 'fr', '<p>\r\n<audio controls>\r\n<source src="/files/sounds/thanatos.ogg" type="audio/ogg" />\r\n<source src="/files/sounds/thanatos.m4a" type="audio/m4a" />\r\n<source src="/files/sounds/thanatos.mp3" type="audio/mpeg" />\r\n</audio>\r\n</p>', '0'),
-(25, 'en', '<p>\r\n<audio controls>\r\n<source src="/files/sounds/thanatos.ogg" type="audio/ogg" />\r\n<source src="/files/sounds/thanatos.m4a" type="audio/m4a" />\r\n<source src="/files/sounds/thanatos.mp3" type="audio/mpeg" />\r\n</audio>\r\n</p>', '0'),
+(25, 'fr', '<p style="width:320px;max-width:100%">\r\n<audio controls>\r\n<source src="/files/sounds/thanatos.ogg" type="audio/ogg" />\r\n<source src="/files/sounds/thanatos.m4a" type="audio/m4a" />\r\n<source src="/files/sounds/thanatos.mp3" type="audio/mpeg" />\r\n</audio>\r\n</p>\r\n<?php head(''javascript'', ''audioplayer''); ?>\r\n<?php head(''stylesheet'', ''audioplayer'', ''screen''); ?>\r\n<script type="text/javascript">\r\n$(document).ready(function() { $(''audio'').audioPlayer(); });\r\n</script>', '1'),
+(25, 'en', '<p style="width:320px;max-width:100%">\r\n<audio controls>\r\n<source src="/files/sounds/thanatos.ogg" type="audio/ogg" />\r\n<source src="/files/sounds/thanatos.m4a" type="audio/m4a" />\r\n<source src="/files/sounds/thanatos.mp3" type="audio/mpeg" />\r\n</audio>\r\n</p>\r\n<?php head(''javascript'', ''audioplayer''); ?>\r\n<?php head(''stylesheet'', ''audioplayer'', ''screen''); ?>\r\n<script type="text/javascript">\r\n$(document).ready(function() { $(''audio'').audioPlayer(); });\r\n</script>', '1'),
 (26, 'fr', '<h5 class="noprint">LongTail</h5>\r\n<h6 class="noprint">Audio</h6>', '0'),
 (26, 'en', '<h5 class="noprint">LongTail</h5>\r\n<h6 class="noprint">Audio</h6>', '0'),
 (27, 'fr', '<p>Per sale clita similique ex. Eum reque persecuti temporibus id. Facilis albucius ne vim, eu cum phaedrum splendide. Est ne luptatum abhorreant mnesarchum. Brute recteque splendide ei vix.</p>', '0'),
