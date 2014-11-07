@@ -41,8 +41,8 @@ video {height:auto;}
 #linkbar a {display:block;margin:1em 0;}
 .left, .right, .vignette {max-width:50%;}
 .tagbar .tagmore {margin-left:0;}
-#footermenu > * {display:block;line-height:20px;}
-#footermenu > .bullet {display:none;}
+#footer .languages {float:none;margin-left:0;}
+#footer p {display:block;margin:1em 0;}
 #content {min-height:100%;}
 }
 
@@ -60,13 +60,15 @@ video {height:auto;}
 @media screen and (max-width:320px) {
 #banner #searchinput {clear:left;}
 #bannermenu {float:left;}
+#footer #socialbar a {margin:0;}
+#footer #socialbar {float:none;margin:0;}
 }
 
 @media screen and (max-width:240px) {
 #sitename {font-size:24px;}
 #sitedomain {font-size:18px;}
 #summary {border:none;padding:0;border-radius:0;box-shadow:none;-webkit-box-shadow:none;-moz-box-shadow:none;}
-.summary {float:none;border:none;margin:1em 0;padding:0;text-align:left;border-radius:0;box-shadow:none;-webkit-box-shadow:none;-moz-box-shadow:none;	
+.summary {float:none;border:none;margin:1em 0;padding:0;text-align:left;border-radius:0;box-shadow:none;-webkit-box-shadow:none;-moz-box-shadow:none;}
 }
 
 @media screen and (max-width:220px) {
