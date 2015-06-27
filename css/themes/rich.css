@@ -1,0 +1,32 @@
+/**
+ *
+ * @copyright  2015 izend.org
+ * @version    1
+ * @link       http://www.izend.org
+ */
+ 
+/* rich.css */
+
+body {background-image:url(../../images/bg/rich.jpg);}
+
+a:link, a:visited {color:#ab9339;}
+
+#sitename {color:#4b4b4b;}
+#sitedomain {color:#ffffff;}
+a:hover #sitedomain {color:#666666;}
+
+#socialbar a {background-color:#4b4b4b;}
+             
+#footer {color:#333333;}
+#footer a:link, #footer a:visited {color:#333333;}
+#footer a:hover {color:#ffffff;}
+
+#footer .btn_mail {background-position:-120px -88px;}
+#footer .btn_login {background-position:-104px -88px;}
+#footer .btn_logout {background-position:-152px -88px;}
+#footer .btn_account {background-position:-104px -88px;}
+#footer .btn_admin {background-position:-136px -88px;}
+
+input.submit {width:100px;height:30px;background-color:#dfdfdf;color:#4b4b4b;background-image:none;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border:none;border-radius:8px;cursor:pointer;}
+
+.jspDrag {background:#ab9339;}
