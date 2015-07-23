@@ -15,8 +15,8 @@ a:hover #sitedomain {color:#443b32;}
 
 #socialbar a {background-color:#443b32;}
 
-#standard, #editor, #viewer {background-color:#ffffff;border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
-#content, #footer {border-radius:0;box-shadow:none;-webkit-box-shadow:none;-moz-box-shadow:none;}
+#standard, #editor, #viewer {background-color:#ffffff;border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;}
+#content, #footer {border-radius:0;box-shadow:none;-webkit-box-shadow:none;}
 
 #banner {margin-top:10px;}
 

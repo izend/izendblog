@@ -15,8 +15,8 @@ body {color:#333333;background:#f0f0f0 url(winter/bg.gif) repeat-x;}
 #forest {width:535px;height:114px;background:url(winter/forest.png) no-repeat left bottom;position:absolute;top:-75px;z-index:-2;}
 #grass {width:100%;height:79px;background:url(winter/grass.png) repeat-x left bottom;position:absolute;z-index:-3;}
 
-#background {background-color:#ffffff;border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
-#content, #footer {background-color:transparent;border-radius:0;box-shadow:none;-webkit-box-shadow:none;-moz-box-shadow:none;}
+#background {background-color:#ffffff;border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;}
+#content, #footer {background-color:transparent;border-radius:0;box-shadow:none;-webkit-box-shadow:none;}
 
 #footer {color:#333333;}
 #footer a:link, #footer a:visited {color:#333333;}

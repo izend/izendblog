@@ -70,8 +70,8 @@ video {height:auto;}
 @media screen and (max-width:240px) {
 #sitename {font-size:24px;}
 #sitedomain {font-size:18px;}
-#summary {border:none;padding:0;border-radius:0;box-shadow:none;-webkit-box-shadow:none;-moz-box-shadow:none;}
-.summary {float:none;border:none;margin:1em 0;padding:0;text-align:left;border-radius:0;box-shadow:none;-webkit-box-shadow:none;-moz-box-shadow:none;}
+#summary {border:none;padding:0;border-radius:0;box-shadow:none;-webkit-box-shadow:none;}
+.summary {float:none;border:none;margin:1em 0;padding:0;text-align:left;border-radius:0;box-shadow:none;-webkit-box-shadow:none;}
 }
 
 @media screen and (max-width:220px) {

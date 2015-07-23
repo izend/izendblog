@@ -11,7 +11,7 @@ body {background-image:url(../../images/bg/patchwork.jpg);}
 html, body {height:100%;}
 
 #standard, #editor, #viewer {height:100%;background-color:#ffffff;}
-#banner, #content, #footer {background-color:#ffffff;border-radius:0;-webkit-border-radius:0;-moz-border-radius:0;box-shadow:none;-webkit-box-shadow:none;-moz-box-shadow:none;}
+#banner, #content, #footer {background-color:#ffffff;border-radius:0;-webkit-border-radius:0;box-shadow:none;-webkit-box-shadow:none;}
 #bg {height:100%;}
 
 #sitename {color:#56b4aa;}
@@ -43,7 +43,7 @@ h6 {color:#b49f9a;}
 pre {background-color:#fafaa1;}
 
 .topbar a:link, .topbar a:visited, .topbar span {background-color:#4e2c29;}
-.topbar > li {box-shadow:1px 2px 5px #4e2c29;-webkit-box-shadow:1px 2px 5px #4e2c29;-moz-box-shadow:1px 2px 5px #4e2c29;}
+.topbar > li {box-shadow:1px 2px 5px #4e2c29;-webkit-box-shadow:1px 2px 5px #4e2c29;}
 .topbar > li {background-color:#4e2c29;}
 .topbar ul li a {background-color:#4e2c29;}
 
@@ -53,7 +53,7 @@ pre {background-color:#fafaa1;}
 .date .year {color:#b49f9a;top:4.5em;}
 
 @media (min-width:1320px) {
-.blogsummarytitle .date {margin-left:-80px;border-radius:8px 0px 0px 8px;-webkit-border-radius:8px 0px 0px 8px;-moz-border-radius:8px 0px 0px 8px;}
+.blogsummarytitle .date {margin-left:-80px;border-radius:8px 0px 0px 8px;-webkit-border-radius:8px 0px 0px 8px;}
 }
 
 .lang {color:#ffffff;text-indent:0;text-align:center;padding:0 0.25em;}

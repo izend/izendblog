@@ -13,7 +13,7 @@ body {background:#cccccc url(../../images/bg/papiermache.jpg);}
 #bg {min-height:100%;background:radial-gradient(circle farthest-corner at center center, transparent, rgba(0, 0, 0, 0.3));}
 #standard, #editor, #viewer {height:100%;}
 
-#banner, #content, #footer {color:#333333;background-color:transparent;border-radius:0;box-shadow:none;-webkit-box-shadow:none;-moz-box-shadow:none;}
+#banner, #content, #footer {color:#333333;background-color:transparent;border-radius:0;box-shadow:none;-webkit-box-shadow:none;}
 
 #editor #content {color:#333333;background-color:#f0f0f0;}
 
@@ -28,7 +28,7 @@ a:hover #sitedomain {color:#006699;}
 
 fieldset {background-color:transparent;}
 
-pre, .topbar, .noscript, .pagenumber, #bannerediting, #bannercontrols, #searchinput, #toolbar, #sharebar, #socialbar a, #summary, .summary, .notice, #sidemenu .qtip {border-radius:0;box-shadow:none;-webkit-box-shadow:none;-moz-box-shadow:none;}
+pre, .topbar, .noscript, .pagenumber, #bannerediting, #bannercontrols, #searchinput, #toolbar, #sharebar, #socialbar a, #summary, .summary, .notice, #sidemenu .qtip {border-radius:0;box-shadow:none;-webkit-box-shadow:none;}
 
 ol.tree {display:inline-block;background:#ffffff;padding:0.5em 0;}
 
@@ -48,8 +48,8 @@ ol.tree {display:inline-block;background:#ffffff;padding:0.5em 0;}
 
 span.btn_grippie {background-color:#ffffff;}
 
-.round {border-radius:0;-webkit-border-radius:0;-moz-border-radius:0;}
-.shadow {box-shadow:none;-webkit-box-shadow:none;-moz-box-shadow:none;}
+.round {border-radius:0;-webkit-border-radius:0;}
+.shadow {box-shadow:none;-webkit-box-shadow:none;}
 
 .date {background-image:none;}
 .date .day {color:#666666;top:0.6em;}

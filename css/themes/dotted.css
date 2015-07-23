@@ -10,7 +10,7 @@
 body {background-image:url(../../images/bg/dotted.png);}
 
 #standard, #editor, #viewer {height:100%;background-color:#ffffff;}
-#banner, #content, #footer {background-color:#ffffff;border-radius:0;box-shadow:none;-webkit-box-shadow:none;-moz-box-shadow:none;}
+#banner, #content, #footer {background-color:#ffffff;border-radius:0;box-shadow:none;-webkit-box-shadow:none;}
 #bg {height:100%;}
 
 #sitename {color:#86867b;}

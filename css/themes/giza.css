@@ -14,8 +14,8 @@ a:hover #sitedomain {color:#ffffff;}
 
 #socialbar a {background-color:#500a32;}
 
-#background {background-color:#ffffff;border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
-#content, #footer {background-color:transparent;border-radius:0;box-shadow:none;-webkit-box-shadow:none;-moz-box-shadow:none;}
+#background {background-color:#ffffff;border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;}
+#content, #footer {background-color:transparent;border-radius:0;box-shadow:none;-webkit-box-shadow:none;}
 
 #footer {color:#333333;margin-bottom:10px;}
 #footer a:link, #footer a:visited {color:#333333;}

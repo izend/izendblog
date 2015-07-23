@@ -20,7 +20,7 @@ body {background-image:url(../../images/bg/acid.jpg);}
 #footer .btn_admin {background-position:-136px -88px;}
 
 input.submit {width:100px;height:30px;background:#cccccc;color:#333333;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border-radius:8px;cursor:pointer;}
-input.submit {box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;-moz-box-shadow:1px 2px 5px #cccccc;}
+input.submit {box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;}
 input.submit {
 background-image:-webkit-linear-gradient(top, #eeeeee, #cccccc);
 background-image:   -moz-linear-gradient(top, #eeeeee, #cccccc);
@@ -29,7 +29,7 @@ background-image:     -o-linear-gradient(top, #eeeeee, #cccccc);
 background-image:        linear-gradient(top, #eeeeee, #cccccc);
 }
 
-input.submit.lang {width:24px;height:24px;display:inline-block;background:transparent url(../../images/theme/flags.png) no-repeat;border:none;vertical-align:middle;text-indent:-9999px;box-shadow:none;-webkit-box-shadow:none;-moz-box-shadow:none;}
+input.submit.lang {width:24px;height:24px;display:inline-block;background:transparent url(../../images/theme/flags.png) no-repeat;border:none;vertical-align:middle;text-indent:-9999px;box-shadow:none;-webkit-box-shadow:none;}
 input.submit.lang.fr {background-position:0 0;}
 input.submit.lang.en {background-position:-24px 0;}
 input.submit.lang.de {background-position:-48px 0;}
