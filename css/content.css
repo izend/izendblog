@@ -1,7 +1,7 @@
 /**
  *
- * @copyright  2010-2013 izend.org
- * @version    2
+ * @copyright  2010-2015 izend.org
+ * @version    3
  * @link       http://www.izend.org
  */
  
@@ -19,6 +19,6 @@
 #browser_ie {background-position:-72px 0;}
 #browser_ie:hover {background-position:-72px -18px;}
 
-.notice {display:inline-block;background:#ffffe0;padding:1em;border-radius:8px;-webkit-border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;;overflow:auto;}
+.notice {display:inline-block;background:#ffffe0;padding:1em;border-radius:8px;-webkit-border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;overflow:auto;}
 
 #tubelist {height:141px;}
