@@ -1,7 +1,7 @@
 /**
  *
  * @copyright  2010-2015 izend.org
- * @version    110
+ * @version    111
  * @link       http://www.izend.org
  */
 
@@ -337,11 +337,28 @@ a:hover #sitedomain {color:#ff9900;}
 #thread_image, #node_image {max-width:240px;height:auto;}
 
 #sharebar, #shareline {display:none;}
+
 #sharebar {background-color:#ffffff;padding:4px 6px;position:fixed;margin-top:-20px;left:0px;border-radius:0px 8px 8px 0px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;}
 #sharebar > li {padding:3px 0;}
+#sharebar > li:last-child {padding-bottom:0;}
+#sharebar.lite a {border-radius:0 5px 5px 0;}
 
 .besocial {width:100%;padding:0;margin:1em 0;}
-.besocial li {display:inline-block;height:30px;vertical-align:top;padding:0;margin:0;}
+.besocial li {display:inline-block;padding:0;margin:0;}
+.besocial.standard li {height:30px;vertical-align:top;}
+.besocial.lite li {width:50px;}
+.besocial.lite li.facebook {background-color:#3b5998;}
+.besocial.lite li.twitter {background-color:#4ad2ff;}
+.besocial.lite li.gplus {background-color:#a7291c;}
+.besocial.lite li.linkedin {background-color:#0183b3;}
+.besocial.lite li.pinterest {background-color:#cb2027;}
+
+#sharebar.lite a, .besocial.lite a  {width:30px;height:30px;display:block;margin:0 auto;background-image:url(../images/social.png);}
+#sharebar.lite a.facebook, .besocial.lite a.facebook {background-position:-30px 0;background-color:#3b5998;}
+#sharebar.lite a.twitter, .besocial.lite a.twitter {background-position:-120px 0;background-color:#4ad2ff;}
+#sharebar.lite a.gplus, .besocial.lite a.gplus {background-position:-150px 0;background-color:#a7291c;}
+#sharebar.lite a.linkedin, .besocial.lite a.linkedin {background-position:-60px 0;background-color:#0183b3;}
+#sharebar.lite a.pinterest, .besocial.lite a.pinterest {background-position:-210px 0;background-color:#cb2027;}
 
 #socialbar {margin-top:-20px;height:35px;display:block;}
 #socialbar a:first-child {margin-left:0;}
