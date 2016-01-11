@@ -1,0 +1,63 @@
+/**
+ *
+ * @copyright  2016 izend.org
+ * @version    1
+ * @link       http://www.izend.org
+ */
+ 
+/* wrapping.css */
+
+a:link, a:visited {color:#e15d3e;}
+a:hover {color:#202020;text-decoration:none;}
+
+body {background-image:url(../../images/bg/wrapping.png);}
+
+#sitename {color:#e15d3e;}
+#sitedomain {color:#e15d3e;}
+a:hover #sitedomain {color:#202020;}
+
+#socialbar a {background-color:#d7d8bf;}
+
+#footer {color:#202020;margin-bottom:10px;}
+#footer a:link, #footer a:visited {color:#202020;}
+
+#footer .btn_mail {background-position:-120px -88px;}
+#footer .btn_login {background-position:-104px -88px;}
+#footer .btn_logout {background-position:-152px -88px;}
+#footer .btn_account {background-position:-104px -88px;}
+#footer .btn_admin {background-position:-136px -88px;}
+
+.error, .errors, .inerror {color:#e15d3e;}
+
+.date {background:#d7d8bf;border-radius:2px;-webkit-box-shadow:3px 3px 4px rgba(99,99,99,.8);moz-box-shadow:3px 3px 4px rgba(99,99,99,.8);box-shadow:3px 3px 4px rgba(99,99,99,.8);text-shadow:2px 2px 5px #919191;}
+.date .day {top:0.3em;left:-0.3em;color:#666666;}
+.date .month {top:5em;color:#666666;}
+.date .year {top:2em;left:2em;color:#e15d3e;-webkit-transform:rotate(-90deg);-moz-transform:rotate(-90deg);-o-transform:rotate(-90deg);-ms-transform:rotate(-90deg);transform:rotate(-90deg);}
+
+.blogsummarytitle h4 a:hover, .blogsummarytitle .author a:hover {color:#e15d3e;}
+
+.cloud li a:link, .cloud li a:visited {color:#202020;}
+.cloud li a:hover {color:#e15d3e;}
+
+#comments .author a:hover {color:#e15d3e;}
+
+#sidemenu a:link, #sidemenu a:visited {color:#202020;}
+#sidemenu a:hover {color:#202020;}
+
+.jspDrag {background:#d7d8bf;}
+
+input.submit {width:100px;height:30px;background:#cccccc;color:#333333;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border-radius:8px;cursor:pointer;}
+input.submit {border:1px solid #cccccc;transition: all 0.3s ease-out;
+/* IE10 Consumer Preview */ 
+background-image: -ms-linear-gradient(top, #FFFFFF 0%, #999999 100%);
+/* Mozilla Firefox */ 
+background-image: -moz-linear-gradient(top, #FFFFFF 0%, #999999 100%);
+/* Opera */ 
+background-image: -o-linear-gradient(top, #FFFFFF 0%, #999999 100%);
+/* Webkit (Safari/Chrome 10) */ 
+background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(1, #999999));
+/* Webkit (Chrome 11+) */ 
+background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #999999 100%);
+/* W3C Markup, IE10 Release Preview */ 
+background-image: linear-gradient(to bottom, #FFFFFF 0%, #999999 100%);
+}
