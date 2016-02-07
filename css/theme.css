@@ -1,7 +1,7 @@
 /**
  *
- * @copyright  2010-2015 izend.org
- * @version    111
+ * @copyright  2010-2016 izend.org
+ * @version    113
  * @link       http://www.izend.org
  */
 
@@ -346,12 +346,16 @@ a:hover #sitedomain {color:#ff9900;}
 .besocial {width:100%;padding:0;margin:1em 0;}
 .besocial li {display:inline-block;padding:0;margin:0;}
 .besocial.standard li {height:30px;vertical-align:top;}
+.besocial.standard li.pinterest span {vertical-align:top !important;}
+
 .besocial.lite li {width:50px;}
 .besocial.lite li.facebook {background-color:#3b5998;}
 .besocial.lite li.twitter {background-color:#4ad2ff;}
 .besocial.lite li.gplus {background-color:#a7291c;}
 .besocial.lite li.linkedin {background-color:#0183b3;}
 .besocial.lite li.pinterest {background-color:#cb2027;}
+
+#sharebar.lite a span, .besocial.lite a span {display:none;}
 
 #sharebar.lite a, .besocial.lite a  {width:30px;height:30px;display:block;margin:0 auto;background-image:url(../images/social.png);}
 #sharebar.lite a.facebook, .besocial.lite a.facebook {background-position:-30px 0;background-color:#3b5998;}
@@ -466,7 +470,8 @@ a:hover .icon_pinterest {background-position:-635px 0;}
 
 .meter.inerror > span {background-color:#df6f6f !important;}
 
-#pinterest-board > span {box-shadow: none !important;}
+#pinterest-board > span {box-shadow:none !important;}
+#pinterest-board > span > span {overflow:hidden;}
 
 .pageselector {display:inline-block;color:#666666;font-weight:bold;margin:1em auto;}
 .pagenumber {font-size:small;padding:5px;background-color:#ffffff;border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;}
