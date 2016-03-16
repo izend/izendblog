@@ -235,6 +235,8 @@ span.btn_stop_alt {background-position:-144px -16px;}
 
 #standard, #editor, #viewer {max-width:1000px;margin:0 auto;}
 
+#editor #background, #viewer #background {margin-bottom:20px;}
+
 #background {clear:both;}
 
 #content {color:#333333;background-color:#ffffff;min-height:500px;margin:0;padding:20px;clear:both;border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;}

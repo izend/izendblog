@@ -1,7 +1,7 @@
 /**
  *
- * @copyright  2014 izend.org
- * @version    2
+ * @copyright  2014-2016 izend.org
+ * @version    3
  * @link       http://www.izend.org
  */
  
@@ -12,6 +12,8 @@ body {background-image:url(../../images/bg/dotted.png);}
 #standard, #editor, #viewer {height:100%;background-color:#ffffff;}
 #banner, #content, #footer {background-color:#ffffff;border-radius:0;box-shadow:none;-webkit-box-shadow:none;}
 #bg {height:100%;}
+
+#editor #background, #viewer #background {margin-bottom:0;}
 
 #sitename {color:#86867b;}
 #sitedomain {color:#adad96;}
