@@ -2,8 +2,8 @@
 
 /**
  *
- * @copyright  2010-2014 izend.org
- * @version    16
+ * @copyright  2010-2016 izend.org
+ * @version    17
  * @link       http://www.izend.org
  */
 
@@ -25,7 +25,7 @@ $aliases = array(
 		'homeblog'				=> 'home',
 		'suggestblog'			=> 'home/suggest',
 		'contact'				=> 'contact',
-		'user'					=> 'user',
+		'user'					=> 'identification',
 		'nobody'				=> 'disconnect',
 		'account'				=> 'account',
 		'password'				=> 'password',
@@ -61,7 +61,7 @@ $aliases = array(
 		'homeblog'				=> 'accueil',
 		'suggestblog'			=> 'accueil/suggestion',
 		'contact'				=> 'contact',
-		'user'					=> 'utilisateur',
+		'user'					=> 'identification',
 		'nobody'				=> 'deconnexion',
 		'account'				=> 'compte',
 		'password'				=> 'mot-de-passe',

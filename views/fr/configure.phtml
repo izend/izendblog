@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2010-2016 izend.org
- * @version    11
+ * @version    13
  * @link       http://www.izend.org
  */
 ?>
@@ -29,7 +29,7 @@ Dans tous les cas, utiliser un préfixe est plus prudent.</p>
 <h5 id="configuration">Configuration</h5>
 <?php if ($bad_write_permission): ?>
 <div class="alert">
-<p>Le serveur n'est pas autorisé à modifier <?php if (count($bad_write_permission) > 1): ?>les fichiers suivants<?php else: ?>le fichier suivant<?php endif; ?> dans le dossier <i><?php echo ROOT_DIR; ?></i>&nbsp;:
+<p>Le serveur n'est pas autorisé à modifier <?php if (count($bad_write_permission) > 1): ?>les dossiers ou les fichiers suivants<?php else: ?>le dossier ou le fichier suivant<?php endif; ?> dans le dossier <i><?php echo ROOT_DIR; ?></i>&nbsp;:
 </p>
 <ul>
 <?php foreach ($bad_write_permission as $file): ?>
@@ -124,7 +124,7 @@ et le rôle <code><?php echo $db_user; ?></code>.</p>
 <p>
 <input type="text" name="configure_db_user" size="30" maxlength="40" title="" value="<?php echo $db_user; ?>" />
 <span class="icon icon_user"></span>
-<input type="text" name="configure_db_password"  size="30" maxlength="40" title="" value="<?php echo $db_password; ?>" />
+<input type="text" name="configure_db_password" size="30" maxlength="40" title="" value="<?php echo $db_password; ?>" autocomplete="off" />
 <span class="icon icon_lock"></span>
 </p>
 <?php if ($missing_db_user and $missing_db_password): ?>
@@ -146,7 +146,7 @@ et le rôle <code><?php echo $db_user; ?></code>.</p>
 <p>
 <input type="text" name="configure_db_admin_user" size="30" maxlength="40" title="" value="<?php echo $db_admin_user; ?>" />
 <span class="icon icon_user"></span>
-<input type="password" name="configure_db_admin_password" size="30" maxlength="40" title="" value="<?php echo $db_admin_password; ?>" />
+<input type="password" name="configure_db_admin_password" size="30" maxlength="40" title="" value="<?php echo $db_admin_password; ?>" autocomplete="off" />
 <span class="icon icon_lock"></span>
 </p>
 <?php if ($missing_db_admin_user and $missing_db_admin_password): ?>
@@ -169,7 +169,7 @@ et le rôle <code><?php echo $db_user; ?></code>.</p>
 <p>
 <input type="text" name="configure_site_admin_user" size="30" maxlength="40" title="" value="<?php echo $site_admin_user; ?>" />
 <span class="icon icon_user"></span>
-<input type="text" name="configure_site_admin_password" size="30" maxlength="40" title="" value="<?php echo $site_admin_password; ?>" />
+<input type="text" name="configure_site_admin_password" size="30" maxlength="40" title="" value="<?php echo $site_admin_password; ?>" autocomplete="off" />
 <span class="icon icon_lock"></span>
 </p>
 <?php if ($missing_site_admin_user and $missing_site_admin_password): ?>
