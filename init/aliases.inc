@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2010-2016 izend.org
- * @version    17
+ * @version    18
  * @link       http://www.izend.org
  */
 
@@ -47,7 +47,8 @@ $aliases = array(
 		'newsletter'			=> 'newsletter',
 		'newsletteredit'		=> 'edit/newsletter',
 		'newslettersubscribe' 	=> 'newsletter/subscribe',
-		'newsletterunsubscribe' => 'newsletter/unsubscribe',
+		'newsletterunsubscribe'	=> 'newsletter/unsubscribe',
+		'traffic'				=> 'traffic',
 		'thread'				=> 'thread',
 		'threadedit'			=> 'edit/thread',
 		'node'					=> 'node',
@@ -83,7 +84,8 @@ $aliases = array(
 		'newsletter'			=> 'infolettre',
 		'newsletteredit'		=> 'edition/infolettre',
 		'newslettersubscribe' 	=> 'infolettre/abonnement',
-		'newsletterunsubscribe' => 'infolettre/desabonnement',
+		'newsletterunsubscribe'	=> 'infolettre/desabonnement',
+		'traffic'				=> 'trafic',
 		'thread'				=> 'fil',
 		'threadedit'			=> 'edition/fil',
 		'node'					=> 'noeud',
