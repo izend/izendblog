@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2016 izend.org
- * @version    1
+ * @version    3
  * @link       http://www.izend.org
  */
 ?>
@@ -28,9 +28,20 @@
 </form>
 <div class="infos">
 <?php if ($internal_error): ?>
-<p>An internal error has occurred.
+<p>An internal error has occurred.</p>
 <?php endif; ?>
 </div>
+<?php
+$focus=false;
+if ($missing_url or $bad_url) {
+	$focus='#analytics_url';
+}
+?>
+<?php if ($focus): ?>
+<script type="text/javascript">
+$(function() {$('<?php echo $focus; ?>').focus();});
+</script>
+<?php endif; ?>
 <?php if ($data): ?>
 <div id="traffic"></div>
 <?php head('javascript', 'https://www.gstatic.com/charts/loader.js'); ?>
