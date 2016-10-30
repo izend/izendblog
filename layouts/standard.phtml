@@ -37,6 +37,11 @@
 <?php endif; ?>
 </head>
 <body>
+<?php if (!empty($trace)): ?>
+<?php foreach ($trace as $s): ?>
+<?php echo $s; ?>
+<?php endforeach; ?>
+<?php endif; ?>
 <?php global $facebookjssdk; ?>
 <?php if ($facebookjssdk): ?>
 <?php global $facebookid; ?>
