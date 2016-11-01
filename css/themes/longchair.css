@@ -1,7 +1,7 @@
 /**
  *
  * @copyright  2012-2016 izend.org
- * @version    6
+ * @version    7
  * @link       http://www.izend.org
  */
  
@@ -11,7 +11,8 @@ body {background-image:url(../../images/bg/longchair.png);}
 html, body {height:100%;}
 
 #standard, #editor, #viewer {height:100%;background-color:#ffffff;}
-#banner, #content, #footer {background-color:#ffffff;border-radius:0;box-shadow:none;-webkit-box-shadow:none;}
+#consent, #banner, #content, #footer {background-color:#ffffff;border-radius:0;box-shadow:none;-webkit-box-shadow:none;}
+#consent {margin-top:0;}
 #bg {height:100%;}
 
 #editor #background, #viewer #background {margin-bottom:0;}

@@ -1,7 +1,7 @@
 /**
  *
- * @copyright  2013-2014 izend.org
- * @version    4
+ * @copyright  2013-2016 izend.org
+ * @version    5
  * @link       http://www.izend.org
  */
  
@@ -13,7 +13,8 @@ body {background:#cccccc url(../../images/bg/papiermache.jpg);}
 #bg {min-height:100%;background:radial-gradient(circle farthest-corner at center center, transparent, rgba(0, 0, 0, 0.3));}
 #standard, #editor, #viewer {height:100%;}
 
-#banner, #content, #footer {color:#333333;background-color:transparent;border-radius:0;box-shadow:none;-webkit-box-shadow:none;}
+#consent, #banner, #content, #footer {color:#333333;background-color:transparent;border-radius:0;box-shadow:none;-webkit-box-shadow:none;}
+#consent {margin-top:0;}
 
 #editor #content {color:#333333;background-color:#f0f0f0;}
 

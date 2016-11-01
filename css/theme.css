@@ -240,6 +240,8 @@ span.btn_stop_alt {background-position:-144px -16px;}
 
 #background {clear:both;}
 
+#consent {color:#333333;background-color:#ffffff;margin-top:10px;padding:10px 20px;clear:both;border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;}
+
 #content {color:#333333;background-color:#ffffff;min-height:500px;margin:0;padding:20px;clear:both;border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;}
 
 #banner {color:#333333;margin:0;padding:10px 20px;clear:both;}
