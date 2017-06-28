@@ -2,8 +2,8 @@
 
 /**
  *
- * @copyright  2010-2015 izend.org
- * @version    24
+ * @copyright  2010-2017 izend.org
+ * @version    27
  * @link       http://www.izend.org
  */
 
@@ -17,7 +17,7 @@ function thread_list($lang, $type=false, $strict=true) {
 	$tabthread=db_prefix_table('thread');
 	$tabthreadlocale=db_prefix_table('thread_locale');
 
-	$sql="SELECT t.thread_id, tloc.name AS thread_name, tloc.title AS thread_title, tloc.abstract AS thread_abstract, tloc.cloud AS thread_cloud, t.number AS thread_number FROM $tabthread t $join $tabthreadlocale tloc ON tloc.thread_id=t.thread_id AND tloc.locale=$sqllang";
+	$sql="SELECT t.thread_id, t.thread_type, tloc.name AS thread_name, tloc.title AS thread_title, tloc.abstract AS thread_abstract, tloc.cloud AS thread_cloud, t.number AS thread_number FROM $tabthread t $join $tabthreadlocale tloc ON tloc.thread_id=t.thread_id AND tloc.locale=$sqllang";
 
 	if ($type) {
 		$sqltype=db_sql_arg($type, false);
@@ -74,6 +74,16 @@ function thread_node_id($thread_id, $node, $lang=false) {
 	$r = db_query($sql);
 
 	return $r ? $r[0]['node_id'] : false;
+}
+
+function thread_type($thread_id) {
+	$tabthread=db_prefix_table('thread');
+
+	$sql="SELECT thread_type FROM $tabthread WHERE thread_id=$thread_id";
+
+	$r = db_query($sql);
+
+	return $r ? $r[0]['thread_type'] : false;
 }
 
 function thread_user_id($thread_id) {
@@ -467,17 +477,17 @@ function thread_set_node($lang, $thread_id, $node_id, $node_name, $node_title, $
 }
 
 function thread_copy_node($lang, $user_id, $thread_id, $node_id, $node_name, $node_title, $node_number=0) {
-	$node_contents = node_get_contents($lang, $node_id);
-
-	if (!$node_contents) {
-		return false;
-	}
-
 	$np = thread_create_node($lang, $user_id, $thread_id, $node_name, $node_title, $node_number);
 	if (!$np) {
 		return false;
 	}
 	extract($np);   /* node_id node_number */
+
+	$node_contents = node_get_contents($lang, $node_id);
+
+	if (!$node_contents) {
+		return $np;
+	}
 
 	foreach ($node_contents as &$c) {
 		$content_type=$c['content_type'];
