@@ -2,55 +2,12 @@
 
 /**
  *
- * @copyright  2012-2015 qrmii.com
- * @version    5
- * @link       http://www.qrmii.com
+ * @copyright  2012-2017 izend.org
+ * @version    6
+ * @link       http://www.izend.org
  */
 ?>
-<?php $lang ='fr'; ?>
 <?php
-$dir=ROOT_DIR . DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR . 'tubes' . DIRECTORY_SEPARATOR . $lang;
-
-$thumbs=glob($dir . DIRECTORY_SEPARATOR . '*.jpg');
-
-if (!$thumbs) {
-	return false;
-}
-
-shuffle($thumbs);
-
-$tubes=array();
-foreach ($thumbs as $file) {
-	$tubes[]=basename($file, '.jpg');
-}
-$dir='/files/tubes/' . $lang;
-?>
-<div id="tubelist" class="gallery compact">
-<?php foreach ($tubes as $name): ?>
-<a class="yt" href="http://www.youtube.com/embed/<?php echo $name; ?>?wmode=transparent&amp;autoplay=1&amp;autohide=2&amp;controls=1&amp;fs=0&amp;modestbranding=0&amp;showinfo=0&amp;rel=1&amp;theme=light&amp;color=white"><img src="<?php echo $dir; ?>/<?php echo $name; ?>.jpg" alt="" width="240" height="135" /></a>
-<?php endforeach; ?>
-</div>
-<?php head('javascript', 'jquery.jscrollpane'); ?>
-<?php head('stylesheet', 'jquery.jscrollpane', 'screen'); ?>
-<script type="text/javascript">
-$(document).ready(function() {
-    var api=$('.gallery').jScrollPane({contentWidth: <?php echo count($tubes) * 240; ?>}).data('jsp');
-    api.scrollToPercentX(.3);
-    $(window).bind('resize', function() {api.reinitialise()});
-});
-</script>
-<?php head('javascript', 'jquery.colorbox'); ?>
-<?php head('stylesheet', 'jquery.colorbox', 'screen'); ?>
-<script type="text/javascript">
-//<![CDATA[
-$(document).ready(function() {
-    var ytch=0, bw=4, w=640, h=360, maxw=$(window).innerWidth()-2*bw;
-    if (maxw < w) {
-        h=Math.floor(h*maxw/w);
-        w=maxw;
-    }
-    $('.yt').colorbox({iframe:true, opacity: 0.8, transition: 'none', innerWidth:w, innerHeight:h+ytch});
-});
-//]]>
-</script>
-<div class="clear"></div>
+$lang='fr';
+$file=ROOT_DIR . DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR . 'tubelist.phtml';
+include $file;
