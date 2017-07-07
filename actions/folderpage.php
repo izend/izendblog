@@ -2,8 +2,8 @@
 
 /**
  *
- * @copyright  2010-2016 izend.org
- * @version    27
+ * @copyright  2010-2017 izend.org
+ * @version    28
  * @link       http://www.izend.org
  */
 
@@ -126,10 +126,13 @@ function folderpage($lang, $folder, $page) {
 
 	$content = view('folderpage', false, compact('page_title', 'page_contents', 'page_comment', 'besocial', 'vote', 'visits'));
 
-	$search_text='';
-	$search_url= url('homeblog', $lang);
-	$suggest_url= url('suggestblog', $lang);
-	$search=compact('search_url', 'search_text', 'suggest_url');
+	$search=false;
+	if (!$thread_nosearch) {
+		$search_text='';
+		$search_url= url('homeblog', $lang);
+		$suggest_url= url('suggestblog', $lang);
+		$search=compact('search_url', 'search_text', 'suggest_url');
+	}
 	$edit=user_has_role('writer') ? url('folderedit', $_SESSION['user']['locale']) . '/'. $folder_id . '/'. $page_id . '?' . 'clang=' . $lang : false;
 	$validate=url('folder', $lang) . '/'. $folder_name . '/' . $page_name;
 
