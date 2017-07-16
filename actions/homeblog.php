@@ -2,8 +2,8 @@
 
 /**
  *
- * @copyright  2010-2013 izend.org
- * @version    15
+ * @copyright  2010-2017 izend.org
+ * @version    16
  * @link       http://www.izend.org
  */
 
@@ -56,27 +56,29 @@ function homeblog($lang, $arglist=false) {
 	}
 
 	$searchtext=$taglist=false;
-	$rsearch=false;
-	switch($action) {
-		case 'none':
-			if (!empty($arglist['q'])) {
-				$searchtext=$arglist['q'];
-				$taglist=explode(' ', $searchtext);
-			}
-			break;
-		case 'search':
-			if (isset($_POST['searchtext'])) {
-				$searchtext=readarg($_POST['searchtext'], true, false);	// trim but DON'T strip!
 
-				if ($searchtext) {
-					global $search_distance, $search_closest;
-
-					$taglist=cloud_match($lang, $blog_thread, $searchtext, $search_distance, $search_closest);
+	if (!$thread_nosearch) {
+		switch($action) {
+			case 'none':
+				if (!empty($arglist['q'])) {
+					$searchtext=$arglist['q'];
+					$taglist=explode(' ', $searchtext);
 				}
-			}
-			break;
-		default:
-			break;
+				break;
+			case 'search':
+				if (isset($_POST['searchtext'])) {
+					$searchtext=readarg($_POST['searchtext'], true, false);	// trim but DON'T strip!
+
+					if ($searchtext) {
+						global $search_distance, $search_closest;
+
+						$taglist=cloud_match($lang, $blog_thread, $searchtext, $search_distance, $search_closest);
+					}
+				}
+				break;
+			default:
+				break;
+		}
 	}
 
 	$page_contents=build('blogsummary', $lang, $blog_thread, $taglist, $blog_pagesize, $page);
@@ -103,20 +105,28 @@ function homeblog($lang, $arglist=false) {
 
 	$content = view('homeblog', false, compact('page_header', 'page_footer', 'page_contents', 'besocial'));
 
-	$cloud_url= url('homeblog', $lang);
-	$byname=$bycount=true;
-	$index=false;
-	$cloud = build('cloud', $lang, $cloud_url, $blog_thread, false, 10, compact('byname', 'bycount', 'index'));
+	$cloud=false;
+
+	if (!$thread_nocloud) {
+		$cloud_url= url('homeblog', $lang);
+		$byname=$bycount=true;
+		$index=false;
+		$cloud = build('cloud', $lang, $cloud_url, $blog_thread, false, 10, compact('byname', 'bycount', 'index'));
+	}
 
 	$social = view('social', $lang);
 	$donate = build('donate', $lang);
 
 	$sidebar = view('sidebar', false, compact('social', 'cloud', 'donate'));
 
-	$search_text=$searchtext;
-	$search_url=url('homeblog', $lang);
-	$suggest_url=url('suggestblog', $lang);
-	$search=compact('search_url', 'search_text', 'suggest_url');
+	$search=false;
+
+	if (!$thread_nosearch) {
+		$search_text=$searchtext;
+		$search_url=url('homeblog', $lang);
+		$suggest_url=url('suggestblog', $lang);
+		$search=compact('search_url', 'search_text', 'suggest_url');
+	}
 	$edit=user_has_role('writer') ? url('threadedit', $_SESSION['user']['locale']) . '/'. $blog_thread . '?' . 'clang=' . $lang : false;
 	$validate=url('homeblog', $lang);
 
