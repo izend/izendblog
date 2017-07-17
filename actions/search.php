@@ -14,6 +14,7 @@ require_once 'models/thread.inc';
 
 function search($lang, $arglist=false) {
 	global $search_all, $search_pertinence, $limited_languages;
+	global $blog_thread;
 
 	$cloud=false;
 
@@ -131,12 +132,18 @@ function search($lang, $arglist=false) {
 		$content = build('searchlist', $lang, $rsearch, $taglist);
 	}
 	else {
-		$url=url('search', $lang, $cloud_name);
+		if ($cloud_id == $blog_thread) {
+			$url=url('homeblog', $lang);
+			$headline_text=$search_title;
+		}
+		else {
+			$url=url('search', $lang, $cloud_name);
+			$headline_text=$cloud_id ? $cloud_title : $search_title;
+		}
 		if (!$thread_nosearch) {
 			$search_url=$url;
 		}
 		$cloud_url=$url;
-		$headline_text=$cloud_id ? $cloud_title : $search_title;
 		$headline_url=false;
 		$headline = compact('headline_text', 'headline_url');
 		$title = view('headline', false, $headline);
