@@ -62,6 +62,10 @@ function search($lang, $arglist=false) {
 		if ($thread_type == 'thread' or ($thread_nosearch and $thread_nocloud)) {
 			return run('error/notfound', $lang);
 		}
+
+		if ($cloud_id == $blog_thread) {
+			$thread_nosearch=true;
+		}
 	}
 	else {
 		if ($search_all === false) {
