@@ -30,7 +30,7 @@ function folderpage($lang, $folder, $page) {
 	}
 	extract($r); /* thread_type thread_name thread_title thread_abstract thread_cloud thread_image */
 
-	if (! ($thread_type == 'folder' or $thread_type == 'book' or $thread_type == 'story')) {
+	if ($thread_type != 'folder') {
 		return run('error/notfound', $lang);
 	}
 
