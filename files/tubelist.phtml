@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2012-2017 izend.org
- * @version    6
+ * @version    7
  * @link       http://www.izend.org
  */
 ?>
@@ -26,7 +26,7 @@ $dir='/files/tubes/' . $lang;
 ?>
 <div id="tubelist" class="gallery compact">
 <?php foreach ($tubes as $name): ?>
-<a class="yt" href="http://www.youtube.com/embed/<?php echo $name; ?>?wmode=transparent&amp;autoplay=1&amp;autohide=2&amp;controls=1&amp;fs=0&amp;modestbranding=0&amp;showinfo=0&amp;rel=1&amp;theme=light&amp;color=white"><img src="<?php echo $dir; ?>/<?php echo $name; ?>.jpg" alt="" width="240" height="135" /></a>
+<a class="yt" href="https://www.youtube.com/embed/<?php echo $name; ?>?wmode=transparent&amp;autoplay=1&amp;autohide=2&amp;controls=1&amp;fs=0&amp;modestbranding=0&amp;showinfo=0&amp;rel=1&amp;theme=light&amp;color=white"><img src="<?php echo $dir; ?>/<?php echo $name; ?>.jpg" alt="" width="240" height="135" /></a>
 <?php endforeach; ?>
 </div>
 <?php head('javascript', 'jquery.jscrollpane'); ?>
@@ -48,7 +48,7 @@ $(document).ready(function() {
         h=Math.floor(h*maxw/w);
         w=maxw;
     }
-    $('.yt').colorbox({iframe:true, opacity: 0.8, transition: 'none', innerWidth:w, innerHeight:h+ytch});
+    $('.yt').colorbox({iframe:true, opacity: 0.8, transition: 'none', innerWidth: w, innerHeight: h+ytch});
 });
 //]]>
 </script>
