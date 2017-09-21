@@ -1,7 +1,7 @@
 /**
  *
  * @copyright  2010-2017 izend.org
- * @version    83
+ * @version    85
  * @link       http://www.izend.org
  */
  
@@ -71,9 +71,9 @@ ul {list-style-type:disc;}
 .menubar li {display:inline;}
 .iconbar li {display:inline-block;}
 
-.topbar {display:inline-block;margin:1em 0;}
+.topbar {display:inline-block;}
 .topbar > li {float:left;width:7em;padding:5px 0;overflow:hidden;}
-.topbar li a, .topbar li span {display:block;padding:0.5em 1em;overflow:hidden;}
+.topbar li a, .topbar li span {display:block;padding:0.5em 1em;overflow:hidden;cursor:pointer;}
 .topbar ul {position:absolute;margin:0;padding:0.5em 0;left:-9999px;z-index:1000;}
 .topbar ul li a {width:7em;padding:0.5em 1em;}
 .topbar li:hover ul {left:auto;}
@@ -107,10 +107,12 @@ div.row > *:first-child {margin-left:0;}
 div.row > *:last-child {margin-right:0;}
 div.row.compact > * {margin-left:0;margin-right:0;}
 div.row.tight {margin:0;}
-
-div.bytwo > * {width:49%;}
-div.bythree > * {width:32%;}
-div.byfour > * {width:23%;}
+div.row.bytwo > * {width:49%;}
+div.row.bythree > * {width:32%;}
+div.row.byfour > * {width:23%;}
+div.row.compact.bytwo > * {width:50%;}
+div.row.compact.bythree > * {width:33.333333%;}
+div.row.compact.byfour > * {width:25%;}
 
 div.labeled > span {float:left;width:10em;margin-right:1em;text-align:right;}
 
