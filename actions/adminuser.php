@@ -2,8 +2,8 @@
 
 /**
  *
- * @copyright  2011 izend.org
- * @version    1
+ * @copyright  2011-2017 izend.org
+ * @version    2
  * @link       http://www.izend.org
  */
 
@@ -11,6 +11,8 @@ require_once 'userhasrole.php';
 require_once 'models/user.inc';
 
 function adminuser($lang, $arglist=false) {
+	global $with_toolbar;
+
 	if (!user_has_role('administrator')) {
 		return run('error/unauthorized', $lang);
 	}
@@ -43,14 +45,16 @@ function adminuser($lang, $arglist=false) {
 	head('keywords', false);
 	head('robots', 'noindex, nofollow');
 
+	$admin=true;
 	$banner = build('banner', $lang);
+	$toolbar = $with_toolbar ? build('toolbar', $lang, compact('admin')) : false;
 
 	$content = view('adminuser', $lang, compact('useredit'));
 
 	$admin=true;
 	$footer = build('footer', $lang, compact('admin'));
 
-	$output = layout('standard', compact('footer', 'banner', 'content'));
+	$output = layout('standard', compact('toolbar', 'footer', 'banner', 'content'));
 
 	return $output;
 }
