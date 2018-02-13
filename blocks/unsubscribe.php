@@ -2,8 +2,8 @@
 
 /**
  *
- * @copyright  2013-2014 izend.org
- * @version    3
+ * @copyright  2013-2018 izend.org
+ * @version    4
  * @link       http://www.izend.org
  */
 
@@ -19,6 +19,10 @@ require_once 'models/newsletter.inc';
 function unsubscribe($lang) {
 	$with_captcha=true;
 
+	$with_confirmation=true;
+
+	$with_validation=true;
+
 	$action='init';
 	if (isset($_POST['unsubscribe_send'])) {
 		$action='unsubscribe';
@@ -29,6 +33,7 @@ function unsubscribe($lang) {
 	$user_mail=user_profile('mail');
 
 	$subscribe_page=false;
+
 	switch($action) {
 		case 'init':
 			$subscribe_page=url('newslettersubscribe', $lang);
@@ -38,8 +43,10 @@ function unsubscribe($lang) {
 			if (isset($_POST['unsubscribe_mail'])) {
 				$user_mail=strtolower(strflat(readarg($_POST['unsubscribe_mail'])));
 			}
-			if (isset($_POST['unsubscribe_confirmed'])) {
-				$confirmed=readarg($_POST['unsubscribe_confirmed']) == 'on' ? true : false;
+			if ($with_confirmation) {
+				if (isset($_POST['unsubscribe_confirmed'])) {
+					$confirmed=readarg($_POST['unsubscribe_confirmed']) == 'on' ? true : false;
+				}
 			}
 			if (isset($_POST['unsubscribe_code'])) {
 				$code=readarg($_POST['unsubscribe_code']);
@@ -64,7 +71,8 @@ function unsubscribe($lang) {
 
 	$missing_confirmation=false;
 
-	$mail_unsubscribed=false;
+	$email_unregistered=false;
+	$validation_mail=false;
 
 	$internal_error=false;
 	$contact_page=false;
@@ -96,8 +104,10 @@ function unsubscribe($lang) {
 			else if (!newsletter_get_user($user_mail)) {
 				$unknown_mail=true;
 			}
-			if (!$confirmed) {
-				$missing_confirmation=true;
+			if ($with_confirmation) {
+				if (!$confirmed) {
+					$missing_confirmation=true;
+				}
 			}
 
 			break;
@@ -112,39 +122,45 @@ function unsubscribe($lang) {
 				break;
 			}
 
-			require_once 'urlencodeaction.php';
+			if ($with_validation) {
+				require_once 'emailconfirmunsubscribe.php';
 
-			$id=1;	// confirmnewsletterunsubscribe, see saction
-			$param=$user_mail;
+				$r = emailconfirmunsubscribe($user_mail, $lang);
 
-			$s64=urlencodeaction($id, $param);
+				if (!$r) {
+					$internal_error=true;
+				}
+				else {
+					$validation_mail=$user_mail;
 
-			if (!$s64) {
-				$internal_error=true;
-				break;
+					$user_mail=false;
+				}
 			}
+			else {
+				$r = newsletter_delete_user($user_mail);
 
-			$saction_page=url('saction', $lang);
+				if (!$r) {
+					$internal_error=true;
+				}
+				else {
+					require_once 'serveripaddress.php';
+					require_once 'emailme.php';
 
-			if (!$saction_page) {
-				$internal_error=true;
-				break;
+					global $sitename;
+
+					$ip=server_ip_address();
+					$timestamp=strftime('%Y-%m-%d %H:%M:%S', time());
+					$subject = 'unsubscribe' . '@' . $sitename;
+					$msg = $ip . ' ' . $timestamp . ' ' . $lang . ' ' . $user_mail;
+					@emailme($subject, $msg);
+
+					$email_unregistered=$user_mail;
+
+					$user_mail=false;
+
+					$subscribe_page=url('newslettersubscribe', $lang);
+				}
 			}
-
-			global $base_url;
-
-			$url = $base_url . $saction_page . '/' . $s64;
-
-			require_once 'emailtext.php';
-
-			$to=$user_mail;
-			$subject = translate('newsletter:unregister_subject', $lang);
-			$f=translate('newsletter:unregister_text', $lang);
-			$s=sprintf($f, $url);
-			$msg = $s . "\n\n" . translate('email:salutations', $lang);
-			emailtext($msg, $to, $subject, false);
-
-			$mail_unsubscribed=$user_mail;
 
 			$confirmed=false;
 
@@ -161,9 +177,9 @@ function unsubscribe($lang) {
 	$_SESSION['unsubscribe_token'] = $token = token_id();
 
 	$errors = compact('missing_mail', 'bad_mail', 'unknown_mail', 'missing_confirmation', 'missing_code', 'bad_code', 'internal_error', 'contact_page');
-	$infos = compact('mail_unsubscribed');
+	$infos = compact('email_unregistered', 'validation_mail');
 
-	$output = view('unsubscribe', $lang, compact('token', 'with_captcha', 'user_mail', 'confirmed', 'subscribe_page', 'errors', 'infos'));
+	$output = view('unsubscribe', $lang, compact('token', 'with_captcha', 'user_mail', 'with_confirmation', 'confirmed', 'subscribe_page', 'errors', 'infos'));
 
 	return $output;
 }
