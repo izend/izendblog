@@ -2,8 +2,8 @@
 
 /**
  *
- * @copyright  2010-2017 izend.org
- * @version    7
+ * @copyright  2010-2018 izend.org
+ * @version    8
  * @link       http://www.izend.org
  */
 
@@ -65,7 +65,14 @@ function banner($lang, $components=false) {
 					break;
 				case 'languages':
 					if ($param) {
-						$languages = build('languages', $lang, $param);
+						if (is_array($param)) {
+							list($action, $arg)=$param;
+						}
+						else {
+							$action=$param;
+							$arg=false;
+						}
+						$languages = build('languages', $lang, $action, $arg);
 					}
 					break;
 				case 'donate':
