@@ -2,8 +2,8 @@
 
 /**
  *
- * @copyright  2010-2017 izend.org
- * @version    19
+ * @copyright  2010-2018 izend.org
+ * @version    20
  * @link       http://www.izend.org
  */
 
@@ -13,10 +13,10 @@ require_once 'models/cloud.inc';
 require_once 'models/thread.inc';
 
 function search($lang, $arglist=false) {
-	global $search_all, $search_pertinence, $limited_languages;
+	global $search_default, $search_all, $search_pertinence, $limited_languages;
 	global $blog_thread;
 
-	$cloud=false;
+	$cloud=$search_default;
 
 	if (is_array($arglist)) {
 		if (isset($arglist[0])) {
@@ -61,6 +61,10 @@ function search($lang, $arglist=false) {
 
 		if ($thread_type == 'thread' or ($thread_nosearch and $thread_nocloud)) {
 			return run('error/notfound', $lang);
+		}
+
+		if ($cloud_id == $search_default) {
+			$cloud_name=false;
 		}
 
 		if ($cloud_id == $blog_thread) {
