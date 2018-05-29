@@ -29,7 +29,7 @@ function banner($lang, $components=false) {
 	}
 
 	$home_page=url($home_action, $lang);
-	$logo = view('logo', $lang, compact('home_page'));
+	$logo = view('logo', false, compact('home_page'));
 
 	$menu=$languages=$headline=$search=$donate=false;
 
