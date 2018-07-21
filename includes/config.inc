@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2010-2018 izend.org
- * @version    51
+ * @version    53
  * @link       http://www.izend.org
  */
 
@@ -42,7 +42,7 @@ $signature='izendblog.org - http://www.izendblog.org';
 global $socializing, $socializingmode;
 
 $socializing='either';	// false, 'inline', 'bar', 'either', 'both'
-$socializingmode='standard';       // 'standard', 'lite', 'awesome'
+$socializingmode='standard';	// 'standard', 'lite', 'awesome'
 
 global $cookieconsent, $cookieconsentauto;
 
@@ -96,7 +96,7 @@ $supported_languages=array('en', 'fr');	// 'en', 'fr'
 
 global $supported_currencies;
 
-$supported_currencies=array('EUR', 'USD', 'GBP');      // 'EUR', 'USD', 'GBP'
+$supported_currencies=array('EUR', 'USD', 'GBP');	// 'EUR', 'USD', 'GBP'
 
 global $supported_roles;
 
@@ -172,18 +172,19 @@ $home_action = 'install';		// 'home' or 'install'
 $default_action = 'install';	// 'page' or 'install' or false
 $default_folder = 1;			// can be an array
 
-global $content_folder;
-
-$content_folder = 7;			// can be an array
-
-global $rss_thread;
-
-$rss_thread = 5;
-
 global $blog_thread, $blog_pagesize;
 
 $blog_thread = 3;
 $blog_pagesize = 3;
+
+global $content_folder;
+
+$content_folder = 7;		// can be an array
+
+global $rss_thread, $rss_feed_description;
+
+$rss_thread = 5;			// can be an array
+$rss_description = 'content';	// 'content or 'abstract'
 
 global $newsletter_thread;
 
