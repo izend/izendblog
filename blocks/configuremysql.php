@@ -2,7 +2,7 @@
 
 /**
  *
- * @copyright  2014-2017 izend.org
+ * @copyright  2014-2018 izend.org
  * @version    9
  * @link       http://www.izend.org
  */
@@ -80,6 +80,7 @@ CREATE TABLE `${db_prefix}comment` (
   `user_mail` varchar(100) DEFAULT NULL,
   `ip_address` int(10) unsigned NOT NULL,
   `text` text NOT NULL,
+  `confirmed` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`comment_id`),
   KEY `node` (`node_id`,`locale`)
 ) DEFAULT CHARSET=utf8;
@@ -431,11 +432,11 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-INSERT INTO `${db_prefix}comment` (`comment_id`, `node_id`, `locale`, `created`, `edited`, `user_id`, `user_mail`, `ip_address`, `text`) VALUES
-(1, 3, 'fr', NOW(), NOW(), 1, NULL, 2130706433, '[p]J''essaye un commentaire avec une url : [url=http://www.izend.org]iZend[/url] ![/p]'),
-(2, 3, 'fr', NOW(), NOW(), 1, NULL, 2130706433, '[p][u]Citation[/u] :[/p][quote]J''essaye un commentaire avec une url : [url=http://www.izend.org]iZend[/url] ![/quote]\r\n[p]Non ! On peut mettre une [b]url[/b] dans un commentaire ?\r\n[br]Dis-moi pas que c''est pas vrai ![/p]'),
-(3, 3, 'en', NOW(), NOW(), 1, NULL, 2130706433, '[p]Let me try a comment with a url: [url=http://www.izend.org]iZend[/url]![/p]'),
-(4, 3, 'en', NOW(), NOW(), 1, NULL, 2130706433, '[p][u]Quote[/u]:[/p][quote]Let me try a comment with a url: [url=http://www.izend.org]iZend[/url]![/quote]\r\n[p]No! One can put a [b]url[/b] in a comment?\r\n[br]Don''t tell me it''s not true![/p]');
+INSERT INTO `${db_prefix}comment` (`comment_id`, `node_id`, `locale`, `created`, `edited`, `user_id`, `user_mail`, `ip_address`, `text`, `confirmed`) VALUES
+(1, 3, 'fr', NOW(), NOW(), 1, NULL, 2130706433, '[p]J''essaye un commentaire avec une url : [url=http://www.izend.org]iZend[/url] ![/p]', '1'),
+(2, 3, 'fr', NOW(), NOW(), 1, NULL, 2130706433, '[p][u]Citation[/u] :[/p][quote]J''essaye un commentaire avec une url : [url=http://www.izend.org]iZend[/url] ![/quote]\r\n[p]Non ! On peut mettre une [b]url[/b] dans un commentaire ?\r\n[br]Dis-moi pas que c''est pas vrai ![/p]', '1'),
+(3, 3, 'en', NOW(), NOW(), 1, NULL, 2130706433, '[p]Let me try a comment with a url: [url=http://www.izend.org]iZend[/url]![/p]', '1'),
+(4, 3, 'en', NOW(), NOW(), 1, NULL, 2130706433, '[p][u]Quote[/u]:[/p][quote]Let me try a comment with a url: [url=http://www.izend.org]iZend[/url]![/quote]\r\n[p]No! One can put a [b]url[/b] in a comment?\r\n[br]Don''t tell me it''s not true![/p]', '1');
 _SEP_;
 		$db_conn->exec($sql);
 
