@@ -13,8 +13,8 @@ $strings = array(
 	array(
 	),
 	'en' => array(
-		'description'			=> '',
-		'keywords'				=> 'iZend',
+		'description'			=> 'Your blog by iZend',
+		'keywords'			=> 'iZend',
 		'http_bad_request:title'			=> 'Bad Request',
 		'http_forbidden:title'				=> 'Forbidden',
 		'http_internal_error:title'			=> 'Internal Error',
@@ -56,8 +56,8 @@ $strings = array(
 		'donate:name'			=> 'Donation to ' . $sitename,
 	),
 	'fr' => array(
-		'description'			=> '',
-		'keywords'				=> 'iZend',
+		'description'			=> 'Votre blog par iZend',
+		'keywords'			=> 'iZend',
 		'http_bad_request:title'			=> 'Mauvaise requête',
 		'http_forbidden:title'				=> 'Interdit',
 		'http_internal_error:title'			=> 'Erreur interne',
