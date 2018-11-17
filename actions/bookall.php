@@ -2,8 +2,8 @@
 
 /**
  *
- * @copyright  2010-2011 izend.org
- * @version    2
+ * @copyright  2010-2018 izend.org
+ * @version    3
  * @link       http://www.izend.org
  */
 
@@ -27,7 +27,7 @@ function bookall($lang) {
 	$contact=true;
 	$footer = build('footer', $lang, compact('contact'));
 
-	$output = layout('standard', compact('toolbar', 'banner', 'footer', 'content'));
+	$output = layout('standard', compact('lang', 'toolbar', 'banner', 'footer', 'content'));
 
 	return $output;
 }

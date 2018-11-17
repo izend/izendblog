@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2010-2018 izend.org
- * @version    2
+ * @version    3
  * @link       http://www.izend.org
  */
 
@@ -22,7 +22,7 @@ function password($lang) {
 	$contact=true;
 	$footer = build('footer', $lang, compact('contact'));
 
-	$output = layout('standard', compact('footer', 'banner', 'content'));
+	$output = layout('standard', compact('lang', 'footer', 'banner', 'content'));
 
 	return $output;
 }

@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2010-2018 izend.org
- * @version    4
+ * @version    5
  * @link       http://www.izend.org
  */
 
@@ -18,7 +18,7 @@ function paymentaccepted($lang, $amount, $currency, $context) {
 	$contact=true;
 	$footer = build('footer', $lang, compact('contact'));
 
-	$output = layout('standard', compact('footer', 'banner', 'content'));
+	$output = layout('standard', compact('lang', 'footer', 'banner', 'content'));
 
 	return $output;
 }

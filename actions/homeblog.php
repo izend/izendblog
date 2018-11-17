@@ -2,8 +2,8 @@
 
 /**
  *
- * @copyright  2010-2017 izend.org
- * @version    16
+ * @copyright  2010-2018 izend.org
+ * @version    17
  * @link       http://www.izend.org
  */
 
@@ -137,7 +137,7 @@ function homeblog($lang, $arglist=false) {
 	$legal=$contact=$account=$admin=true;
 	$footer = build('footer', $lang, compact('legal', 'contact', 'account', 'admin', 'languages'));
 
-	$output = layout('standard', compact('sharebar', 'toolbar', 'footer', 'banner', 'content', 'sidebar'));
+	$output = layout('standard', compact('lang', 'sharebar', 'toolbar', 'footer', 'banner', 'content', 'sidebar'));
 
 	return $output;
 }

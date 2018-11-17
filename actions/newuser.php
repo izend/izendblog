@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2010-2018 izend.org
- * @version    3
+ * @version    4
  * @link       http://www.izend.org
  */
 
@@ -26,7 +26,7 @@ function newuser($lang) {
 	$admin=$contact=true;
 	$footer = build('footer', $lang, compact('contact', 'admin'));
 
-	$output = layout('standard', compact('toolbar', 'footer', 'banner', 'content'));
+	$output = layout('standard', compact('lang', 'toolbar', 'footer', 'banner', 'content'));
 
 	return $output;
 }

@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2010-2018 izend.org
- * @version    2
+ * @version    3
  * @link       http://www.izend.org
  */
 
@@ -19,7 +19,7 @@ function forbidden($lang) {
 
 	$footer = build('footer', $lang);
 
-	$output = layout('standard', compact('footer', 'banner', 'content'));
+	$output = layout('standard', compact('lang', 'footer', 'banner', 'content'));
 
 	header('HTTP/1.1 403 Forbidden');
 

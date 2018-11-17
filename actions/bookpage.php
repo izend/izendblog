@@ -2,8 +2,8 @@
 
 /**
  *
- * @copyright  2010-2017 izend.org
- * @version    26
+ * @copyright  2010-2018 izend.org
+ * @version    27
  * @link       http://www.izend.org
  */
 
@@ -180,7 +180,7 @@ function bookpage($lang, $book, $page) {
 	$contact=true;
 	$footer = build('footer', $lang, compact('contact'));
 
-	$output = layout('standard', compact('sharebar', 'toolbar', 'banner', 'footer', 'content', 'sidebar'));
+	$output = layout('standard', compact('lang', 'sharebar', 'toolbar', 'banner', 'footer', 'content', 'sidebar'));
 
 	return $output;
 }

@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2010-2018 izend.org
- * @version    2
+ * @version    3
  * @link       http://www.izend.org
  */
 
@@ -22,7 +22,7 @@ function contact($lang) {
 	$languages='contact';
 	$footer = build('footer', $lang, compact('languages'));
 
-	$output = layout('standard', compact('footer', 'banner', 'content'));
+	$output = layout('standard', compact('lang', 'footer', 'banner', 'content'));
 
 	return $output;
 }

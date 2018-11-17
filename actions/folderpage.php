@@ -2,8 +2,8 @@
 
 /**
  *
- * @copyright  2010-2017 izend.org
- * @version    29
+ * @copyright  2010-2018 izend.org
+ * @version    30
  * @link       http://www.izend.org
  */
 
@@ -142,7 +142,7 @@ function folderpage($lang, $folder, $page) {
 	$contact=true;
 	$footer = build('footer', $lang, compact('contact'));
 
-	$output = layout('standard', compact('sharebar', 'toolbar', 'footer', 'banner', 'content'));
+	$output = layout('standard', compact('lang', 'sharebar', 'toolbar', 'footer', 'banner', 'content'));
 
 	return $output;
 }

@@ -2,8 +2,8 @@
 
 /**
  *
- * @copyright  2010-2017 izend.org
- * @version    7
+ * @copyright  2010-2018 izend.org
+ * @version    8
  * @link       http://www.izend.org
  */
 
@@ -46,7 +46,7 @@ function homepage($lang) {
 
 	$social = view('social', $lang);
 
-	$output = layout('standard', compact('sharebar', 'banner', 'footer', 'content', 'social'));
+	$output = layout('standard', compact('lang', 'sharebar', 'banner', 'footer', 'content', 'social'));
 
 	return $output;
 }

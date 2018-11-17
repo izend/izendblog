@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2010-2018 izend.org
- * @version    21
+ * @version    22
  * @link       http://www.izend.org
  */
 
@@ -182,7 +182,7 @@ function search($lang, $arglist=false) {
 	$contact=true;
 	$footer = build('footer', $lang, compact('contact'));
 
-	$output = layout('standard', compact('banner', 'footer', 'content', 'sidebar'));
+	$output = layout('standard', compact('lang', 'banner', 'footer', 'content', 'sidebar'));
 
 	return $output;
 }
