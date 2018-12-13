@@ -1,7 +1,7 @@
 /**
  *
  * @copyright  2010-2018 izend.org
- * @version    138
+ * @version    140
  * @link       http://www.izend.org
  */
 
@@ -28,6 +28,8 @@ hr {background:#ffffff;color:#666666;width:100%;height:0;padding:0;margin:1em 0;
 label, legend {color:#666666;}
 
 pre {color:#333333;background:#ffffe0;padding:0.5em;border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;overflow:auto;}
+
+pre.dump {margin:0 auto;border-radius:0;box-shadow:none;-webkit-box-shadow:none;}
 
 ol.tree li.dirnode {color:#666666;}
 ol.tree li.filenode {color:#333333;}
@@ -338,6 +340,7 @@ a:hover #sitedomain {color:#ff9900;}
 .navigation .next {width:16px;height:16px;display:inline-block;background:transparent url(../images/theme/icons.png) no-repeat;background-position:-48px -88px;vertical-align:text-bottom;}
 
 #thread_image, #node_image {max-width:240px;height:auto;}
+#new_thread_title, #new_node_title {max-width:70%;}
 
 #sharebar, #shareline {display:none;}
 
