@@ -14,7 +14,7 @@
 <input type="hidden" name="useredit_accessed" value="<?php echo $user_accessed; ?>" />
 <?php endif; ?>
 <?php if ($with_info): ?>
-<div class="row">
+<div class="row fixed">
 <div>
 <p class="top inlabel<?php if ($missing_firstname): ?> inerror<?php endif; ?>">Prénom</p>
 <p class="bottom"><input type="text" name="useredit_firstname" id="useredit_firstname" size="25" maxlength="100" title="Prénom" onkeypress="return focusonenter(event, 'useredit_lastname')" value="<?php echo htmlspecialchars($user_firstname, ENT_COMPAT, 'UTF-8'); ?>" /></p>

@@ -23,7 +23,7 @@ $('input[name=register_timezone]').val(tz.name());
 <?php endif; ?>
 <?php endif; ?>
 <?php if ($with_info): ?>
-<div class="row">
+<div class="row fixed">
 <div>
 <p class="top inlabel<?php if ($missing_firstname): ?> inerror<?php endif; ?>">First name</p>
 <p class="bottom"><input type="text" name="register_firstname" id="register_firstname" size="25" maxlength="100" title="First name" onkeypress="return focusonenter(event, 'register_lastname')" value="<?php echo htmlspecialchars($firstname, ENT_COMPAT, 'UTF-8'); ?>" /></p>
