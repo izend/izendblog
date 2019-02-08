@@ -1,7 +1,7 @@
 /**
  *
  * @copyright  2010-2019 izend.org
- * @version    142
+ * @version    143
  * @link       http://www.izend.org
  */
 
@@ -367,7 +367,7 @@ a:hover #sitedomain {color:#ff9900;}
 #sharebar.lite li.pinterest a, .besocial.lite li.pinterest a {background-position:-168px 0;}
 
 #sharebar.awesome {padding:5px;}
-#sharebar.awesome a, .besocial.awesome a {color:#ffffff;font-size:24px;line-height:24px;width:44px;display:list-item;list-style:none;text-align:center;padding:8px 0;}
+#sharebar.awesome a, .besocial.awesome a {color:#ffffff;font-size:24px;line-height:24px;width:44px;display:list-item;list-style:none;text-align:center;padding:8px 0;cursor:pointer;}
 #sharebar.awesome a .fab, .besocial.awesome a .fab {color:#ffffff;}
 #sharebar.awesome .facebook, .besocial.awesome .facebook {background-color:#3b5998;}
 #sharebar.awesome .twitter, .besocial.awesome .twitter {background-color:#4ad2ff;}
