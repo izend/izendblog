@@ -1,7 +1,7 @@
 /**
  *
  * @copyright  2010-2019 izend.org
- * @version    143
+ * @version    145
  * @link       http://www.izend.org
  */
 
@@ -205,6 +205,7 @@ span.btn_tweet {background-position:-16px -48px;}
 span.btn_plusone {background-position:-32px -48px;}
 span.btn_linkedin {background-position:-48px -48px;}
 span.btn_pinit {background-position:-64px -48px;}
+span.btn_whatsapp {background-position:-80px -48px;}
 span.btn_world {background-position:-240px -16px;}
 span.btn_map {background-position:-144px -32px;}
 span.btn_marker {background-position:-160px -32px;}
@@ -365,6 +366,7 @@ a:hover #sitedomain {color:#ff9900;}
 #sharebar.lite li.gplus a, .besocial.lite li.gplus a {background-position:-48px 0;}
 #sharebar.lite li.linkedin a, .besocial.lite li.linkedin a {background-position:-72px 0;}
 #sharebar.lite li.pinterest a, .besocial.lite li.pinterest a {background-position:-168px 0;}
+#sharebar.lite li.whatsapp a, .besocial.lite li.whatsapp a {background-position:-288px 0;}
 
 #sharebar.awesome {padding:5px;}
 #sharebar.awesome a, .besocial.awesome a {color:#ffffff;font-size:24px;line-height:24px;width:44px;display:list-item;list-style:none;text-align:center;padding:8px 0;cursor:pointer;}
@@ -374,6 +376,7 @@ a:hover #sitedomain {color:#ff9900;}
 #sharebar.awesome .gplus, .besocial.awesome .gplus {background-color:#a7291c;}
 #sharebar.awesome .linkedin, .besocial.awesome .linkedin {background-color:#0183b3;}
 #sharebar.awesome .pinterest, .besocial.awesome .pinterest {background-color:#cb2027;}
+#sharebar.awesome .whatsapp, .besocial.awesome .whatsapp {background-color:#25d366;}
 
 #socialbar {margin-top:-20px;height:35px;display:block;}
 #socialbar a:first-child {margin-left:0;}
@@ -396,6 +399,8 @@ a:hover #sitedomain {color:#ff9900;}
 #socialbar a.pinterest:hover {background-color:#cb2027;}
 #socialbar a.youtube {background-position:-270px 0;}
 #socialbar a.youtube:hover {background-color:#e52d27;}
+#socialbar a.whatsapp {background-position:-300px 0;}
+#socialbar a.whatsapp:hover {background-color:#25d366;}
 
 a .icon_facebook {width:111px;height:30px;display:inline-block;background:transparent url(../images/link.png) no-repeat;text-indent:-9999px;cursor:pointer;}
 a:link .icon_facebook, a:visited .icon_facebook {background-position:0 -30px;}

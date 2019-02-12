@@ -2,8 +2,8 @@
 
 /**
  *
- * @copyright  2014-2018 izend.org
- * @version    9
+ * @copyright  2014-2019 izend.org
+ * @version    10
  * @link       http://www.izend.org
  */
 
@@ -207,9 +207,10 @@ CREATE TABLE `${db_prefix}node` (
   `nomorevote` tinyint(1) NOT NULL DEFAULT '0',
   `ilike` tinyint(1) NOT NULL DEFAULT '1',
   `tweet` tinyint(1) NOT NULL DEFAULT '1',
-  `plusone` tinyint(1) NOT NULL DEFAULT '1',
+  `plusone` tinyint(1) NOT NULL DEFAULT '0',
   `linkedin` tinyint(1) NOT NULL DEFAULT '1',
   `pinit` tinyint(1) NOT NULL DEFAULT '0',
+  `whatsapp` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`node_id`)
 ) DEFAULT CHARSET=utf8;
 _SEP_;
@@ -259,9 +260,10 @@ CREATE TABLE `${db_prefix}thread` (
   `nomorevote` tinyint(1) NOT NULL DEFAULT '0',
   `ilike` tinyint(1) NOT NULL DEFAULT '1',
   `tweet` tinyint(1) NOT NULL DEFAULT '1',
-  `plusone` tinyint(1) NOT NULL DEFAULT '1',
+  `plusone` tinyint(1) NOT NULL DEFAULT '0',
   `linkedin` tinyint(1) NOT NULL DEFAULT '1',
   `pinit` tinyint(1) NOT NULL DEFAULT '1',
+  `whatsapp` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`thread_id`)
 ) DEFAULT CHARSET=utf8;
 _SEP_;
@@ -581,26 +583,26 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-INSERT INTO `${db_prefix}node` (`node_id`, `user_id`, `created`, `modified`, `visits`, `nocomment`, `nomorecomment`, `novote`, `nomorevote`, `ilike`, `tweet`, `plusone`, `linkedin`, `pinit`) VALUES
-(1, 1, NOW(), NOW(), '0', '1', '1', '1', '1', '1', '1', '1', '1', '0'),
-(2, 1, NOW(), NOW(), '0', '1', '1', '1', '1', '0', '0', '0', '0', '0'),
-(3, 1, NOW(), NOW(), '1', '0', '1', '0', '0', '1', '1', '1', '1', '0'),
-(4, 1, NOW(), NOW(), '1', '0', '0', '0', '0', '0', '0', '0', '0', '0'),
-(5, 1, NOW(), NOW(), '1', '0', '0', '0', '0', '0', '0', '0', '0', '0'),
-(6, 1, NOW(), NOW(), '1', '0', '0', '0', '0', '1', '1', '1', '1', '0'),
-(7, 1, NOW(), NOW(), '1', '0', '0', '0', '0', '1', '1', '1', '1', '0'),
-(8, 1, NOW(), NOW(), '1', '0', '0', '0', '0', '1', '1', '1', '1', '0'),
-(9, 1, NOW(), NOW(), '1', '0', '0', '0', '0', '1', '1', '1', '1', '0'),
-(10, 1, NOW(), NOW(), '1', '0', '0', '0', '0', '1', '1', '1', '1', '0'),
-(11, 1, NOW(), NOW(), '1', '0', '0', '0', '0', '1', '1', '1', '1', '0'),
-(12, 1, NOW(), NOW(), '1', '0', '0', '0', '0', '1', '1', '1', '1', '0'),
-(13, 1, NOW(), NOW(), '1', '0', '0', '0', '0', '1', '1', '1', '1', '0'),
-(14, 1, NOW(), NOW(), '0', '1', '1', '1', '1', '1', '1', '1', '1', '0'),
-(15, 1, NOW(), NOW(), '0', '1', '1', '1', '1', '1', '1', '1', '1', '0'),
-(16, 1, NOW(), NOW(), '1', '0', '0', '0', '0', '1', '1', '1', '1', '0'),
-(17, 1, NOW(), NOW(), '0', '0', '0', '0', '0', '1', '1', '1', '1', '0'),
-(18, 1, NOW(), NOW(), '0', '0', '0', '0', '0', '1', '1', '1', '1', '0'),
-(19, 1, NOW(), NOW(), '0', '0', '0', '0', '0', '1', '1', '1', '1', '0');
+INSERT INTO `${db_prefix}node` (`node_id`, `user_id`, `created`, `modified`, `visits`, `nocomment`, `nomorecomment`, `novote`, `nomorevote`, `ilike`, `tweet`, `plusone`, `linkedin`, `pinit`, `whatsapp`) VALUES
+(1, 1, NOW(), NOW(), '0', '1', '1', '1', '1', '1', '1', '1', '1', '0', '0'),
+(2, 1, NOW(), NOW(), '0', '1', '1', '1', '1', '0', '0', '0', '0', '0', '0'),
+(3, 1, NOW(), NOW(), '1', '0', '1', '0', '0', '1', '1', '1', '1', '0', '0'),
+(4, 1, NOW(), NOW(), '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'),
+(5, 1, NOW(), NOW(), '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'),
+(6, 1, NOW(), NOW(), '1', '0', '0', '0', '0', '1', '1', '1', '1', '0', '0'),
+(7, 1, NOW(), NOW(), '1', '0', '0', '0', '0', '1', '1', '1', '1', '0', '0'),
+(8, 1, NOW(), NOW(), '1', '0', '0', '0', '0', '1', '1', '1', '1', '0', '0'),
+(9, 1, NOW(), NOW(), '1', '0', '0', '0', '0', '1', '1', '1', '1', '0', '0'),
+(10, 1, NOW(), NOW(), '1', '0', '0', '0', '0', '1', '1', '1', '1', '0', '0'),
+(11, 1, NOW(), NOW(), '1', '0', '0', '0', '0', '1', '1', '1', '1', '0', '0'),
+(12, 1, NOW(), NOW(), '1', '0', '0', '0', '0', '1', '1', '1', '1', '0', '0'),
+(13, 1, NOW(), NOW(), '1', '0', '0', '0', '0', '1', '1', '1', '1', '0', '0'),
+(14, 1, NOW(), NOW(), '0', '1', '1', '1', '1', '1', '1', '1', '1', '0', '0'),
+(15, 1, NOW(), NOW(), '0', '1', '1', '1', '1', '1', '1', '1', '1', '0', '0'),
+(16, 1, NOW(), NOW(), '1', '0', '0', '0', '0', '1', '1', '1', '1', '0', '0'),
+(17, 1, NOW(), NOW(), '0', '0', '0', '0', '0', '1', '1', '1', '1', '0', '0'),
+(18, 1, NOW(), NOW(), '0', '0', '0', '0', '0', '1', '1', '1', '1', '0', '0'),
+(19, 1, NOW(), NOW(), '0', '0', '0', '0', '0', '1', '1', '1', '1', '0', '0');
 _SEP_;
 		$db_conn->exec($sql);
 
@@ -904,14 +906,14 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-INSERT INTO `${db_prefix}thread` (`thread_id`, `user_id`, `thread_type`, `created`, `modified`, `number`, `visits`, `nosearch`, `nocloud`, `nocomment`, `nomorecomment`, `novote`, `nomorevote`, `ilike`, `tweet`, `plusone`, `linkedin`, `pinit`) VALUES
-(1, 1, 'thread', NOW(), NOW(), 1, '0', '0', '0', '0', '0', '0', '0', '1', '1', '1', '1', '0'),
-(2, 1, 'story', NOW(), NOW(), 2, '1', '0', '0', '0', '0', '0', '0', '1', '1', '1', '1', '0'),
-(3, 1, 'folder', NOW(), NOW(), 3, '1', '0', '0', '1', '1', '1', '1', '1', '1', '1', '1', '0'),
-(4, 1, 'folder', NOW(), NOW(), 4, '1', '0', '0', '0', '0', '0', '0', '1', '1', '1', '1', '0'),
-(5, 1, 'rss', NOW(), NOW(), 5, '0', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0'),
-(6, 1, 'newsletter', NOW(), NOW(), 6, '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0'),
-(7, 1, 'folder', NOW(), NOW(), 7, '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `${db_prefix}thread` (`thread_id`, `user_id`, `thread_type`, `created`, `modified`, `number`, `visits`, `nosearch`, `nocloud`, `nocomment`, `nomorecomment`, `novote`, `nomorevote`, `ilike`, `tweet`, `plusone`, `linkedin`, `pinit`, `whatsapp`) VALUES
+(1, 1, 'thread', NOW(), NOW(), 1, '0', '0', '0', '0', '0', '0', '0', '1', '1', '1', '1', '0', '0'),
+(2, 1, 'story', NOW(), NOW(), 2, '1', '0', '0', '0', '0', '0', '0', '1', '1', '1', '1', '0', '0'),
+(3, 1, 'folder', NOW(), NOW(), 3, '1', '0', '0', '1', '1', '1', '1', '1', '1', '1', '1', '0', '0'),
+(4, 1, 'folder', NOW(), NOW(), 4, '1', '0', '0', '0', '0', '0', '0', '1', '1', '1', '1', '0', '0'),
+(5, 1, 'rss', NOW(), NOW(), 5, '0', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'),
+(6, 1, 'newsletter', NOW(), NOW(), 6, '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'),
+(7, 1, 'folder', NOW(), NOW(), 7, '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
 _SEP_;
 		$db_conn->exec($sql);
 
