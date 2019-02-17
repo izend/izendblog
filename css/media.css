@@ -1,7 +1,7 @@
 /**
  *
- * @copyright  2013-2018 izend.org
- * @version    29
+ * @copyright  2013-2019 izend.org
+ * @version    30
  * @link       http://www.izend.org
  */
  
@@ -42,6 +42,7 @@ video {height:auto;}
 #summary {width:200px;display:inline-block;text-align:left;}
 #linkbar a {display:block;margin:1em 0;}
 #linkbar a span {margin:0;}
+.besocial.awesome a {width:44px;};
 .left, .right, .vignette {max-width:50%;}
 .tagbar .tagmore {margin-left:0;}
 #footer .languages {float:none;margin-left:0;}
