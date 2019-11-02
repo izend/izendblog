@@ -22,7 +22,7 @@ function homeblog($lang, $arglist=false) {
 	if (!$r) {
 		return run('error/internalerror', $lang);
 	}
-	extract($r); /* thread_abstract thread_cloud thread_image thread_ilike thread_tweet thread_linkedin thread_pinit */
+	extract($r); /* thread_abstract thread_cloud thread_image thread_ilike thread_tweet thread_linkedin thread_pinit thread_whatsapp */
 
 	head('title', translate('home:title', $lang));
 	if ($thread_abstract) {
@@ -88,6 +88,7 @@ function homeblog($lang, $arglist=false) {
 	$tweetit=$thread_tweet;
 	$linkedin=$thread_linkedin;
 	$pinit=$thread_pinit;
+	$whatsapp=$thread_whatsapp;
 	if ($tweetit or $pinit) {
 		$description=translate('description', $lang);
 		if ($tweetit) {
@@ -100,7 +101,7 @@ function homeblog($lang, $arglist=false) {
 			$pinit=$pinit_text && $pinit_image ? compact('pinit_text', 'pinit_image') : false;
 		}
 	}
-	list($besocial, $sharebar) = socialize($lang, compact('ilike', 'tweetit', 'linkedin', 'pinit'));
+	list($besocial, $sharebar) = socialize($lang, compact('ilike', 'tweetit', 'linkedin', 'pinit', 'whatsapp'));
 
 	$content = view('homeblog', false, compact('page_header', 'page_footer', 'page_contents', 'besocial'));
 
