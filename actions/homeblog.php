@@ -2,8 +2,8 @@
 
 /**
  *
- * @copyright  2010-2018 izend.org
- * @version    17
+ * @copyright  2010-2019 izend.org
+ * @version    18
  * @link       http://www.izend.org
  */
 
@@ -22,7 +22,7 @@ function homeblog($lang, $arglist=false) {
 	if (!$r) {
 		return run('error/internalerror', $lang);
 	}
-	extract($r); /* thread_abstract thread_cloud thread_image thread_ilike thread_tweet thread_plusone thread_linkedin thread_pinit */
+	extract($r); /* thread_abstract thread_cloud thread_image thread_ilike thread_tweet thread_linkedin thread_pinit */
 
 	head('title', translate('home:title', $lang));
 	if ($thread_abstract) {
@@ -86,7 +86,6 @@ function homeblog($lang, $arglist=false) {
 	$besocial=$sharebar=false;
 	$ilike=$thread_ilike;
 	$tweetit=$thread_tweet;
-	$plusone=$thread_plusone;
 	$linkedin=$thread_linkedin;
 	$pinit=$thread_pinit;
 	if ($tweetit or $pinit) {
@@ -101,7 +100,7 @@ function homeblog($lang, $arglist=false) {
 			$pinit=$pinit_text && $pinit_image ? compact('pinit_text', 'pinit_image') : false;
 		}
 	}
-	list($besocial, $sharebar) = socialize($lang, compact('ilike', 'tweetit', 'plusone', 'linkedin', 'pinit'));
+	list($besocial, $sharebar) = socialize($lang, compact('ilike', 'tweetit', 'linkedin', 'pinit'));
 
 	$content = view('homeblog', false, compact('page_header', 'page_footer', 'page_contents', 'besocial'));
 
