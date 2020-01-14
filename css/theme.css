@@ -1,7 +1,7 @@
 /**
  *
- * @copyright  2010-2019 izend.org
- * @version    150
+ * @copyright  2010-2020 izend.org
+ * @version    151
  * @link       http://www.izend.org
  */
 
@@ -398,6 +398,8 @@ a:hover #sitedomain {color:#ff9900;}
 #socialbar a.youtube:hover {background-color:#e52d27;}
 #socialbar a.whatsapp {background-position:-300px 0;}
 #socialbar a.whatsapp:hover {background-color:#25d366;}
+#socialbar a.email {background-position:-330px 0;}
+#socialbar a.email:hover {background-color:#d44638;}
 
 a .icon_facebook {width:111px;height:30px;display:inline-block;background:transparent url(../images/link.png) no-repeat;text-indent:-9999px;cursor:pointer;}
 a:link .icon_facebook, a:visited .icon_facebook {background-position:0 -30px;}
