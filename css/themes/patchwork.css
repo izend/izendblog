@@ -1,7 +1,7 @@
 /**
  *
- * @copyright  2012-2016 izend.org
- * @version    10
+ * @copyright  2012-2021 izend.org
+ * @version    11
  * @link       http://www.izend.org
  */
  
@@ -59,9 +59,9 @@ pre {background-color:#fafaa1;}
 .blogsummarytitle .date {margin-left:-80px;border-radius:8px 0px 0px 8px;-webkit-border-radius:8px 0px 0px 8px;}
 }
 
-.lang {color:#ffffff;text-indent:0;text-align:center;padding:0 0.25em;}
-.lang.fr {background:#56b4aa;}
-.lang.en {background:#e7504c;}
+.lang {text-indent:0;text-align:center;padding:0 0.25em;}
+.lang.fr {background:#56b4aa;color:#ffffff;}
+.lang.en {background:#e7504c;color:#ffffff;}
 
 input[type="submit"]#fr {width:auto;height:auto;color:#ffffff;background:#56b4aa;text-indent:0;text-align:center;padding:0.25em;}
 input[type="submit"]#en {width:auto;height:auto;color:#ffffff;background:#e7504c;text-indent:0;text-align:center;padding:0.25em;}
