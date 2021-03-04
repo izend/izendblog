@@ -19,7 +19,7 @@ function internalerror($lang) {
 
 	$footer = build('footer', $lang);
 
-	$output = layout('standard', compact('lang', footer', 'banner', 'content'));
+	$output = layout('standard', compact('lang', 'footer', 'banner', 'content'));
 
 	header('HTTP/1.1 500 Internal Error');
 
