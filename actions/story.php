@@ -2,13 +2,14 @@
 
 /**
  *
- * @copyright  2010-2019 izend.org
- * @version    31
+ * @copyright  2010-2021 izend.org
+ * @version    33
  * @link       http://www.izend.org
  */
 
 require_once 'socialize.php';
 require_once 'userhasrole.php';
+require_once 'userhasaccess.php';
 require_once 'models/thread.inc';
 
 function story($lang, $arglist=false) {
@@ -32,6 +33,10 @@ function story($lang, $arglist=false) {
 	$story_id = thread_id($story);
 	if (!$story_id) {
 		return run('error/notfound', $lang);
+	}
+
+	if (!user_can_read($story_id)) {
+		return run('error/unauthorized', $lang);
 	}
 
 	$page_id = thread_node_id($story_id, $page, $lang);
@@ -157,7 +162,7 @@ function story($lang, $arglist=false) {
 	if (!$story_nocloud) {
 		$cloud_url= url('search', $lang, $story_name);
 		$byname=$bycount=$index=true;
-		$cloud = build('cloud', $lang, $cloud_url, $story_id, false, $search_cloud, compact('byname', 'bycount', 'index'));
+		$cloud = build('cloud', $lang, $cloud_url, $story_id, false, false, $search_cloud, compact('byname', 'bycount', 'index'));
 	}
 
 	$summary=array();

@@ -2,13 +2,14 @@
 
 /**
  *
- * @copyright  2010-2019 izend.org
- * @version    23
+ * @copyright  2010-2021 izend.org
+ * @version    24
  * @link       http://www.izend.org
  */
 
 require_once 'readarg.php';
 require_once 'userhasrole.php';
+require_once 'userhasaccess.php';
 require_once 'models/cloud.inc';
 require_once 'models/thread.inc';
 
@@ -26,6 +27,7 @@ function search($lang, $arglist=false) {
 
 	$cloud_id=$cloud_name=false;
 	$thread_nocloud=$thread_nosearch=false;
+	$not_in=false;
 
 	$clang=$lang;
 
@@ -33,6 +35,10 @@ function search($lang, $arglist=false) {
 		$cloud_id = cloud_id($cloud);
 		if (!$cloud_id) {
 			return run('error/notfound', $lang);
+		}
+
+		if (!user_can_read($cloud_id)) {
+			return run('error/unauthorized', $lang);
 		}
 
 		$thread_type = thread_type($cloud_id);
@@ -78,6 +84,8 @@ function search($lang, $arglist=false) {
 		if ($search_all !== true) {
 			$thread_nosearch=true;
 		}
+
+		$not_in=user_noread_list();
 	}
 
 	$searchtext=$rsearch=false;
@@ -105,7 +113,7 @@ function search($lang, $arglist=false) {
 				if ($searchtext) {
 					global $search_distance, $search_closest;
 
-					$taglist=cloud_match($clang, $cloud_id, $searchtext, $search_distance, $search_closest);
+					$taglist=cloud_match($clang, $cloud_id, $not_in, $searchtext, $search_distance, $search_closest);
 				}
 			}
 			break;
@@ -114,7 +122,7 @@ function search($lang, $arglist=false) {
 	}
 
 	if ($taglist) {
-		$rsearch=cloud_search($clang, $cloud_id, $taglist, $search_pertinence);
+		$rsearch=cloud_search($clang, $cloud_id, $not_in, $taglist, $search_pertinence);
 	}
 
 	$search_title=translate('search:title', $lang);
@@ -130,7 +138,7 @@ function search($lang, $arglist=false) {
 		if (!$thread_nocloud) {
 			$cloud_url=url('search', $lang, $cloud_name);
 			$byname=$bycount=$index=true;
-			$cloud = build('cloud', $clang, $cloud_url, $cloud_id, false, $search_cloud, compact('byname', 'bycount', 'index'));
+			$cloud = build('cloud', $clang, $cloud_url, $cloud_id, $not_in, false, $search_cloud, compact('byname', 'bycount', 'index'));
 		}
 		$headline_text=$search_title;
 		$headline_url=false;
@@ -158,7 +166,7 @@ function search($lang, $arglist=false) {
 
 		$byname=true;
 		$bycount=$index=false;
-		$content = build('cloud', $clang, $cloud_url, $cloud_id, false, false, compact('byname', 'bycount', 'index'));
+		$content = build('cloud', $clang, $cloud_url, $cloud_id, $not_in, false, false, compact('byname', 'bycount', 'index'));
 	}
 
 	if ($search_url) {
@@ -186,4 +194,3 @@ function search($lang, $arglist=false) {
 
 	return $output;
 }
-

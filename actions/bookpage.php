@@ -2,13 +2,14 @@
 
 /**
  *
- * @copyright  2010-2019 izend.org
- * @version    30
+ * @copyright  2010-2021 izend.org
+ * @version    32
  * @link       http://www.izend.org
  */
 
 require_once 'socialize.php';
 require_once 'userhasrole.php';
+require_once 'userhasaccess.php';
 require_once 'models/thread.inc';
 
 function bookpage($lang, $book, $page) {
@@ -17,6 +18,10 @@ function bookpage($lang, $book, $page) {
 	$book_id = thread_id($book);
 	if (!$book_id) {
 		return run('error/notfound', $lang);
+	}
+
+	if (!user_can_read($book_id)) {
+		return run('error/unauthorized', $lang);
 	}
 
 	$page_id = thread_node_id($book_id, $page, $lang);
@@ -160,7 +165,7 @@ function bookpage($lang, $book, $page) {
 	if (!$book_nocloud) {
 		$cloud_url= url('search', $lang, $book_name);
 		$byname=$bycount=$index=true;
-		$cloud = build('cloud', $lang, $cloud_url, $book_id, false, $search_cloud, compact('byname', 'bycount', 'index'));
+		$cloud = build('cloud', $lang, $cloud_url, $book_id, false, false, $search_cloud, compact('byname', 'bycount', 'index'));
 	}
 
 	$headline_text=$book_title ? $book_title : $book_id;

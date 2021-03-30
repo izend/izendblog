@@ -42,7 +42,7 @@ function blogsummary($lang, $blog_id, $taglist=false, $pagesize=false, $page=1) 
 		$modified=$node_modified;
 		$abstract=$node_abstract;
 		$summary=build('nodecontent', $lang, $node_id);
-		$cloud=build('cloud', $lang, $cloud_url, $blog_id, $node_id, 10, compact('inclusive', 'byname', 'bycount', 'index', 'flat'));
+		$cloud=build('cloud', $lang, $cloud_url, $blog_id, $node_id, false, 10, compact('inclusive', 'byname', 'bycount', 'index', 'flat'));
 		$id=blog_node($node_name, $lang);
 		$uri=$id ? $lang . '/' . $node_name : false;
 		$vote=$id ? build('vote', $lang, $id, 'node', false) : false;

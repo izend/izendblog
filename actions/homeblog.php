@@ -2,8 +2,8 @@
 
 /**
  *
- * @copyright  2010-2019 izend.org
- * @version    18
+ * @copyright  2010-2021 izend.org
+ * @version    19
  * @link       http://www.izend.org
  */
 
@@ -111,7 +111,7 @@ function homeblog($lang, $arglist=false) {
 		$cloud_url= url('homeblog', $lang);
 		$byname=$bycount=true;
 		$index=false;
-		$cloud = build('cloud', $lang, $cloud_url, $blog_thread, false, 10, compact('byname', 'bycount', 'index'));
+		$cloud = build('cloud', $lang, $cloud_url, $blog_thread, false, false, 10, compact('byname', 'bycount', 'index'));
 	}
 
 	$social = view('social', $lang);
