@@ -33,7 +33,7 @@ a:hover #sitedomain {color:#738d9e;}
 
 h1,h2,h3 {color:#738d9e;}
 
-input.submit {width:100px;height:30px;background:#738d9e;color:#ffffff;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border-radius:3px;cursor:pointer;}
+input.submit {width:100px;height:30px;background:#738d9e;color:#ffffff;font-family:Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border-radius:3px;cursor:pointer;}
 input.submit {box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;}
 input.submit {
 background-image:-webkit-linear-gradient(top, #b7bfc2, #738d9e);

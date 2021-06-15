@@ -32,7 +32,7 @@ body {color:#333333;background:#f0f0f0 url(winter/bg.gif) repeat-x;}
 
 .error, .errors, .inerror {color:#99cccc;}
 
-input.submit {width:100px;height:30px;background:#cccccc;color:#333333;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border-radius:8px;cursor:pointer;}
+input.submit {width:100px;height:30px;background:#cccccc;color:#333333;font-family:Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border-radius:8px;cursor:pointer;}
 input.submit {border:1px solid #cccccc;transition: all 0.3s ease-out;
 /* IE10 Consumer Preview */ 
 background-image: -ms-linear-gradient(top, #FFFFFF 0%, #999999 100%);

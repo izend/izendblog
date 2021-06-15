@@ -32,7 +32,7 @@ a:hover #sitedomain {color:#ffffff;}
 #footer .btn_account {background-position:-104px -88px;}
 #footer .btn_admin {background-position:-136px -88px;}
 
-input.submit {width:100px;height:30px;background-color:#cec5b1;color:#ffffff;background-image:none;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border:none;border-radius:8px;cursor:pointer;}
+input.submit {width:100px;height:30px;background-color:#cec5b1;color:#ffffff;background-image:none;font-family:Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border:none;border-radius:8px;cursor:pointer;}
 input.submit:hover, input.submit.selected {color:#817151;}
 
 h1,h2,h3 {color:#817151;}
@@ -47,7 +47,7 @@ h6 {color:#333333;}
 
 .date {width:80px;height:80px;background:#cec5b1;border-radius:40px;-webkit-border-radius:40px;}
 .date span {color:#817151;font-weight:bold;}
-.date .day {color:#817151;font-size:24px;top:28px;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;}
+.date .day {color:#817151;font-size:24px;top:28px;font-family:Arial, sans-serif;}
 .date .month {color:#817151;font-size:18px;top:10px;text-transform:capitalize;}
 .date .year {color:#817151;font-size:12px;top:55px;}
 

@@ -46,7 +46,7 @@ a:hover #sitedomain {color:#202020;}
 
 .jspDrag {background:#d7d8bf;}
 
-input.submit {width:100px;height:30px;background:#cccccc;color:#333333;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border-radius:8px;cursor:pointer;}
+input.submit {width:100px;height:30px;background:#cccccc;color:#333333;font-family:Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border-radius:8px;cursor:pointer;}
 input.submit {border:1px solid #cccccc;transition: all 0.3s ease-out;
 /* IE10 Consumer Preview */ 
 background-image: -ms-linear-gradient(top, #FFFFFF 0%, #999999 100%);

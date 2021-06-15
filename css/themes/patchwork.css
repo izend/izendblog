@@ -33,7 +33,7 @@ a:hover #sitedomain {color:#e7504c;}
 #footer .btn_account {background-position:-104px -88px;}
 #footer .btn_admin {background-position:-136px -88px;}
 
-input.submit {width:100px;height:30px;background-color:#99b559;color:#ffffff;background-image:none;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border:none;cursor:pointer;}
+input.submit {width:100px;height:30px;background-color:#99b559;color:#ffffff;background-image:none;font-family:Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border:none;cursor:pointer;}
 
 a:link, a:visited {color:#e7504c;}
 a:hover {color:#99b559;}

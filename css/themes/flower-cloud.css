@@ -20,4 +20,4 @@ body {background-image:url(../../images/bg/flower-cloud.gif);}
 #footer .btn_logout {background:url(../../images/light/small/cancel.png) no-repeat;}
 #footer .btn_admin {background:url(../../images/light/small/work.png) no-repeat;}
 
-input.submit {width:100px;height:30px;background-color:#e2f0ff;color:#666666;background-image:none;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border:none;border-radius:8px;cursor:pointer;}
+input.submit {width:100px;height:30px;background-color:#e2f0ff;color:#666666;background-image:none;font-family:Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border:none;border-radius:8px;cursor:pointer;}

@@ -25,7 +25,7 @@ a:hover #sitedomain {color:#ff9900;}
 #footer .btn_account {background-position:-104px -88px;}
 #footer .btn_admin {background-position:-136px -88px;}
 
-input.submit {width:100px;height:30px;background:#dfdfdf;color:#4b4b4b;background-image:none;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border:none;border-radius:8px;cursor:pointer;}
+input.submit {width:100px;height:30px;background:#dfdfdf;color:#4b4b4b;background-image:none;font-family:Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border:none;border-radius:8px;cursor:pointer;}
 
 .date {background:#eeeeee;}
 .date .day {color:#4b4b4b;top:0.6em;}

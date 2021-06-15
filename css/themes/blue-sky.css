@@ -23,7 +23,7 @@ body {background:#e3ecf1 url(../../images/bg/blue-sky.jpg) repeat-x;}
 #footer .btn_account {background-position:-104px -88px;}
 #footer .btn_admin {background-position:-136px -88px;}
 
-input.submit {width:100px;height:30px;background:#4284a6;color:#e3ecf1;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border-radius:3px;cursor:pointer;}
+input.submit {width:100px;height:30px;background:#4284a6;color:#e3ecf1;font-family:Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border-radius:3px;cursor:pointer;}
 input.submit {box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;}
 input.submit {
 background-image:-webkit-linear-gradient(top, #4284a6, #e3ecf1);
@@ -46,7 +46,7 @@ h6 {color:#1c4e67;}
 
 .date {width:80px;height:80px;background:#4284a6;border-radius:40px;-webkit-border-radius:40px;}
 .date span {color:#e3ecf1;font-weight:bold;}
-.date .day {color:#e3ecf1;font-size:24px;top:28px;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;}
+.date .day {color:#e3ecf1;font-size:24px;top:28px;font-family:Arial, sans-serif;}
 .date .month {color:#e3ecf1;font-size:18px;top:10px;text-transform:capitalize;}
 .date .year {color:#1c4e67;font-size:12px;top:55px;}
 

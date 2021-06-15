@@ -9,5 +9,5 @@
 
 body {background-image:url(../../images/bg/dark-grid.png);background-color:#eeeeee;}
 
-input.submit {width:100px;height:30px;background:transparent url(../../images/bg/dark-grid.png) repeat;color:#ffffff;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border:none;border-radius:8px;cursor:pointer;}
+input.submit {width:100px;height:30px;background:transparent url(../../images/bg/dark-grid.png) repeat;color:#ffffff;font-family:Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border:none;border-radius:8px;cursor:pointer;}
 input.submit.selected {color:#ff9900;}
