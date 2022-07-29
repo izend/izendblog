@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2010-2022 izend.org
- * @version    27
+ * @version    28
  * @link       http://www.izend.org
  */
 ?>
@@ -45,7 +45,7 @@ $('input[name=register_timezone]').val(tz.name());
 <?php echo $connectbar; ?>
 <?php endif; ?>
 </p>
-<p class="info">Your password will be sent to this address.</p>
+<p class="info"><?php echo $is_admin ? 'The' : 'Your'; ?> password will be sent to this address.</p>
 <?php if ($with_website): ?>
 <p class="inlabel<?php if ($bad_website): ?> inerror<?php endif; ?>">Website</p>
 <p><input type="text" name="register_website" id="register_website" size="30" maxlength="100" title="www.domain.com" onkeypress="return focusonenter(event, '<?php echo $with_password ? 'register_password' : 'register_code'; ?>')" value="<?php if ($website): ?><?php echo htmlspecialchars($website, ENT_COMPAT, 'UTF-8'); ?><?php endif; ?>" /></p>
@@ -56,7 +56,7 @@ $('input[name=register_timezone]').val(tz.name());
 <p class="info">Enter at least 6 characters including 1 digit.</p>
 <?php endif; ?>
 <?php if ($with_newsletter): ?>
-<p><input type="checkbox" name="register_newsletter" id="register_newsletter" title="Newsletter"<?php if ($newsletter): ?> checked="checked"<?php endif; ?> />&nbsp;I want to receive the newsletter by email</p>
+<p><input type="checkbox" name="register_newsletter" id="register_newsletter" title="Newsletter"<?php if ($newsletter): ?> checked="checked"<?php endif; ?> />&nbsp;I want to <?php echo ($is_admin) ? 'send' : 'receive'; ?> the newsletter by email</p>
 <?php endif; ?>
 <?php if ($with_confirmation): ?>
 <p><input type="checkbox" name="register_confirmed" id="register_confirmed" title="Confirmation"<?php if ($confirmed): ?> checked="checked"<?php endif; ?> />&nbsp;I wish to create an account</p>
@@ -87,14 +87,14 @@ $('input[name=register_timezone]').val(tz.name());
 <?php endif; ?>
 <?php endif; ?>
 <?php if ($missing_name): ?>
-<p>You haven't typed your identifier.</p>
+<p>You haven't typed an identifier.</p>
 <?php elseif ($bad_name): ?>
 <p>An identifier must contain between 2 and 20 letters.</p>
 <?php elseif ($duplicated_name): ?>
 <p>This identifier is already taken.</p>
 <?php endif; ?>
 <?php if ($missing_mail): ?>
-<p>Enter a valid email address.</p>
+<p>Don't forget the email address.</p>
 <?php elseif ($bad_mail): ?>
 <p>The email address is incorrect.</p>
 <?php elseif ($duplicated_mail): ?>
@@ -116,8 +116,12 @@ $('input[name=register_timezone]').val(tz.name());
 <?php if ($contact_page): ?>If you can describe the problem, please <a href="<?php echo $contact_page; ?>" rel="nofollow">contact us</a>.<?php endif; ?></p>
 <?php endif; ?>
 <?php if ($account_created): ?>
+<?php if ($is_admin): ?>
+<p>The account has been created.</p>
+<?php else: ?>
 <p>Your account has been created. Your password has been emailed to your address<?php if ($with_validation): ?> as well as a confirmation link<?php endif; ?>.
 To identify yourself, <a class="clickhere" href="<?php echo $user_page; ?>">click here</a>.</p>
+<?php endif; ?>
 <?php endif; ?>
 </div>
 <?php
