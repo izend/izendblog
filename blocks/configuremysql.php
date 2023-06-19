@@ -342,6 +342,7 @@ CREATE TABLE IF NOT EXISTS `${db_prefix}user_info` (
   `user_id` int(10) unsigned NOT NULL,
   `lastname` varchar(100) DEFAULT NULL,
   `firstname` varchar(100) DEFAULT NULL,
+  `help` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`user_id`)
 ) DEFAULT CHARSET=utf8;
 _SEP_;
