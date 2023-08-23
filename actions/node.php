@@ -2,8 +2,8 @@
 
 /**
  *
- * @copyright  2010-2019 izend.org
- * @version    16
+ * @copyright  2010-2023 izend.org
+ * @version    17
  * @link       http://www.izend.org
  */
 
@@ -59,7 +59,7 @@ function node($lang, $arglist=false) {
 	$edit=user_has_role('writer') ? url('editnode', $_SESSION['user']['locale']) . '/'. $node_id . '?' . 'clang=' . $clang : false;
 
 	$logout=true;
-	$banner = build('banner', $lang, $with_toolbar ? compact('headline') : compact('headline', 'edit', 'logout'));
+	$banner = build('banner', $lang, $with_toolbar ? false : compact('edit', 'logout'));
 
 	$scroll=true;
 	$toolbar = $with_toolbar ? build('toolbar', $lang, compact('edit', 'scroll')) : false;
