@@ -2,8 +2,8 @@
 
 /**
  *
- * @copyright  2012-2014 izend.org
- * @version    6
+ * @copyright  2012-2025 izend.org
+ * @version    7
  * @link       http://www.izend.org
  */
 
@@ -51,7 +51,7 @@ function blog_summary($lang, $blog_id, $pagesize=false, $page=1) {
 }
 
 function blog_search($lang, $blog_id, $taglist, $pagesize=false, $page=1) {
-	$r=cloud_search($lang, $blog_id, $taglist);
+	$r=cloud_search($lang, $blog_id, false, $taglist);
 
 	if (!$r) {
 		return false;
