@@ -69,25 +69,25 @@ function init_db($db_host, $db_name, $db_user, $db_password, $db_prefix, $site_a
 		$db_conn->exec("CREATE OR REPLACE FUNCTION STRFLAT(text) RETURNS text AS 'SELECT TRANSLATE($1, ''ŠšŽžÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÑÒÓÔÕÖØÙÚÛÜÝŸÞàáâãäåæçèéêëìíîïñòóôõöøùúûüýÿþƒ'', ''SsZzAAAAAAACEEEEIIIINOOOOOOUUUUYYBaaaaaaaceeeeiiiinoooooouuuuyybf'');' LANGUAGE 'SQL';");
 
 		$sql= <<<_SEP_
-CREATE TYPE "${db_prefix}type_locale" AS ENUM('en','fr');
+CREATE TYPE "{$db_prefix}type_locale" AS ENUM('en','fr');
 _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE FUNCTION ${db_prefix}type_locale(unknown) RETURNS ${db_prefix}type_locale AS 'SELECT $1::text::${db_prefix}type_locale;' LANGUAGE 'SQL';
+CREATE FUNCTION {$db_prefix}type_locale(unknown) RETURNS {$db_prefix}type_locale AS 'SELECT $1::text::{$db_prefix}type_locale;' LANGUAGE 'SQL';
 _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE CAST (unknown as ${db_prefix}type_locale) WITH FUNCTION ${db_prefix}type_locale(unknown) AS ASSIGNMENT;
+CREATE CAST (unknown as {$db_prefix}type_locale) WITH FUNCTION {$db_prefix}type_locale(unknown) AS ASSIGNMENT;
 _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE TABLE "${db_prefix}comment" (
+CREATE TABLE "{$db_prefix}comment" (
   "comment_id" SERIAL,
   "node_id" integer NOT NULL,
-  "locale" ${db_prefix}type_locale NOT NULL DEFAULT '$default_language',
+  "locale" {$db_prefix}type_locale NOT NULL DEFAULT '$default_language',
   "created" timestamp NOT NULL,
   "edited" timestamp NOT NULL,
   "user_id" integer NOT NULL DEFAULT '0',
@@ -101,14 +101,14 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE INDEX "${db_prefix}comment_index_node" ON "${db_prefix}comment" ("node_id", "locale");
+CREATE INDEX "{$db_prefix}comment_index_node" ON "{$db_prefix}comment" ("node_id", "locale");
 _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE TABLE "${db_prefix}content_download" (
+CREATE TABLE "{$db_prefix}content_download" (
   "content_id" SERIAL,
-  "locale" ${db_prefix}type_locale NOT NULL DEFAULT '$default_language',
+  "locale" {$db_prefix}type_locale NOT NULL DEFAULT '$default_language',
   "name" varchar(50) DEFAULT NULL,
   "path" varchar(200) DEFAULT NULL,
   PRIMARY KEY ("content_id","locale")
@@ -117,9 +117,9 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE TABLE "${db_prefix}content_file" (
+CREATE TABLE "{$db_prefix}content_file" (
   "content_id" SERIAL,
-  "locale" ${db_prefix}type_locale NOT NULL DEFAULT '$default_language',
+  "locale" {$db_prefix}type_locale NOT NULL DEFAULT '$default_language',
   "path" varchar(200) DEFAULT NULL,
   "start" integer NOT NULL DEFAULT '0',
   "end" integer NOT NULL DEFAULT '0',
@@ -131,9 +131,9 @@ _SEP_;
 		$db_conn->exec($sql);
 
 			$sql= <<<_SEP_
-CREATE TABLE "${db_prefix}content_infile" (
+CREATE TABLE "{$db_prefix}content_infile" (
   "content_id" SERIAL,
-  "locale" ${db_prefix}type_locale NOT NULL DEFAULT '$default_language',
+  "locale" {$db_prefix}type_locale NOT NULL DEFAULT '$default_language',
   "path" varchar(200) DEFAULT NULL,
   PRIMARY KEY ("content_id","locale")
 );
@@ -141,31 +141,31 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE TYPE "${db_prefix}type_content_longtail_controlbar" AS ENUM('none','bottom','top','over');
+CREATE TYPE "{$db_prefix}type_content_longtail_controlbar" AS ENUM('none','bottom','top','over');
 _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE FUNCTION ${db_prefix}type_content_longtail_controlbar(unknown) RETURNS ${db_prefix}type_content_longtail_controlbar AS 'SELECT $1::text::${db_prefix}type_content_longtail_controlbar;' LANGUAGE 'SQL';
+CREATE FUNCTION {$db_prefix}type_content_longtail_controlbar(unknown) RETURNS {$db_prefix}type_content_longtail_controlbar AS 'SELECT $1::text::{$db_prefix}type_content_longtail_controlbar;' LANGUAGE 'SQL';
 _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE CAST (unknown as ${db_prefix}type_content_longtail_controlbar) WITH FUNCTION ${db_prefix}type_content_longtail_controlbar(unknown) AS ASSIGNMENT;
+CREATE CAST (unknown as {$db_prefix}type_content_longtail_controlbar) WITH FUNCTION {$db_prefix}type_content_longtail_controlbar(unknown) AS ASSIGNMENT;
 _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE TABLE "${db_prefix}content_longtail" (
+CREATE TABLE "{$db_prefix}content_longtail" (
   "content_id" SERIAL,
-  "locale" ${db_prefix}type_locale NOT NULL DEFAULT '$default_language',
+  "locale" {$db_prefix}type_locale NOT NULL DEFAULT '$default_language',
   "file" varchar(200) DEFAULT NULL,
   "image" varchar(200) DEFAULT NULL,
   "width" integer NOT NULL DEFAULT '0',
   "height" integer NOT NULL DEFAULT '0',
   "icons" boolean NOT NULL DEFAULT '0',
   "skin" varchar(200) DEFAULT NULL,
-  "controlbar" ${db_prefix}type_content_longtail_controlbar NOT NULL DEFAULT 'none',
+  "controlbar" {$db_prefix}type_content_longtail_controlbar NOT NULL DEFAULT 'none',
   "duration" integer NOT NULL DEFAULT '0',
   "autostart" boolean NOT NULL DEFAULT '0',
   "repeat" boolean NOT NULL DEFAULT '0',
@@ -175,9 +175,9 @@ _SEP_;
 		$db_conn->exec($sql);
 
 			$sql= <<<_SEP_
-CREATE TABLE "${db_prefix}content_text" (
+CREATE TABLE "{$db_prefix}content_text" (
   "content_id" SERIAL,
-  "locale" ${db_prefix}type_locale NOT NULL DEFAULT '$default_language',
+  "locale" {$db_prefix}type_locale NOT NULL DEFAULT '$default_language',
   "text" text,
   "eval" boolean NOT NULL DEFAULT '0',
   PRIMARY KEY ("content_id","locale")
@@ -186,24 +186,24 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE TYPE "${db_prefix}type_content_youtube_theme" AS ENUM('light','dark');
+CREATE TYPE "{$db_prefix}type_content_youtube_theme" AS ENUM('light','dark');
 _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE FUNCTION ${db_prefix}type_content_youtube_theme(unknown) RETURNS ${db_prefix}type_content_youtube_theme AS 'SELECT $1::text::${db_prefix}type_content_youtube_theme;' LANGUAGE 'SQL';
+CREATE FUNCTION {$db_prefix}type_content_youtube_theme(unknown) RETURNS {$db_prefix}type_content_youtube_theme AS 'SELECT $1::text::{$db_prefix}type_content_youtube_theme;' LANGUAGE 'SQL';
 _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE CAST (unknown as ${db_prefix}type_content_youtube_theme) WITH FUNCTION ${db_prefix}type_content_youtube_theme(unknown) AS ASSIGNMENT;
+CREATE CAST (unknown as {$db_prefix}type_content_youtube_theme) WITH FUNCTION {$db_prefix}type_content_youtube_theme(unknown) AS ASSIGNMENT;
 _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE TABLE "${db_prefix}content_youtube" (
+CREATE TABLE "{$db_prefix}content_youtube" (
   "content_id" SERIAL,
-  "locale" ${db_prefix}type_locale NOT NULL DEFAULT '$default_language',
+  "locale" {$db_prefix}type_locale NOT NULL DEFAULT '$default_language',
   "id" varchar(20) DEFAULT NULL,
   "width" integer NOT NULL DEFAULT '0',
   "height" integer NOT NULL DEFAULT '0',
@@ -212,7 +212,7 @@ CREATE TABLE "${db_prefix}content_youtube" (
   "autoplay" boolean NOT NULL DEFAULT '0',
   "controls" boolean NOT NULL DEFAULT '0',
   "fs" boolean NOT NULL DEFAULT '0',
-  "theme" ${db_prefix}type_content_youtube_theme NOT NULL DEFAULT 'dark',
+  "theme" {$db_prefix}type_content_youtube_theme NOT NULL DEFAULT 'dark',
   "rel" boolean NOT NULL DEFAULT '0',
   PRIMARY KEY ("content_id","locale")
 );
@@ -220,10 +220,10 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE TABLE "${db_prefix}newsletter_post" (
+CREATE TABLE "{$db_prefix}newsletter_post" (
   "thread_id" integer NOT NULL,
   "node_id" integer NOT NULL,
-  "locale" ${db_prefix}type_locale NOT NULL DEFAULT '$default_language',
+  "locale" {$db_prefix}type_locale NOT NULL DEFAULT '$default_language',
   "scheduled" timestamp NOT NULL,
   "mailed" timestamp DEFAULT NULL,
   PRIMARY KEY ("thread_id","node_id","locale")
@@ -232,9 +232,9 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE TABLE "${db_prefix}newsletter_user" (
+CREATE TABLE "{$db_prefix}newsletter_user" (
   "mail" varchar(100) NOT NULL,
-  "locale" ${db_prefix}type_locale NOT NULL DEFAULT '$default_language',
+  "locale" {$db_prefix}type_locale NOT NULL DEFAULT '$default_language',
   "created" timestamp NOT NULL,
   PRIMARY KEY ("mail")
 );
@@ -242,12 +242,12 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE INDEX "${db_prefix}newsletter_user_locale" ON "${db_prefix}newsletter_user" ("locale");
+CREATE INDEX "{$db_prefix}newsletter_user_locale" ON "{$db_prefix}newsletter_user" ("locale");
 _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE TABLE "${db_prefix}node" (
+CREATE TABLE "{$db_prefix}node" (
   "node_id" SERIAL,
   "user_id" integer NOT NULL,
   "created" timestamp NOT NULL,
@@ -268,9 +268,9 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE TABLE "${db_prefix}node_locale" (
+CREATE TABLE "{$db_prefix}node_locale" (
   "node_id" integer NOT NULL,
-  "locale" ${db_prefix}type_locale NOT NULL DEFAULT '$default_language',
+  "locale" {$db_prefix}type_locale NOT NULL DEFAULT '$default_language',
   "name" varchar(100) NOT NULL,
   "title" varchar(100) NULL default NULL,
   "abstract" text,
@@ -283,25 +283,25 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE TYPE "${db_prefix}type_content_type" AS ENUM('text','file','download','infile','youtube','longtail');
+CREATE TYPE "{$db_prefix}type_content_type" AS ENUM('text','file','download','infile','youtube','longtail');
 _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE FUNCTION ${db_prefix}type_content_type(unknown) RETURNS ${db_prefix}type_content_type AS 'SELECT $1::text::${db_prefix}type_content_type;' LANGUAGE 'SQL';
+CREATE FUNCTION {$db_prefix}type_content_type(unknown) RETURNS {$db_prefix}type_content_type AS 'SELECT $1::text::{$db_prefix}type_content_type;' LANGUAGE 'SQL';
 _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE CAST (unknown as ${db_prefix}type_content_type) WITH FUNCTION ${db_prefix}type_content_type(unknown) AS ASSIGNMENT;
+CREATE CAST (unknown as {$db_prefix}type_content_type) WITH FUNCTION {$db_prefix}type_content_type(unknown) AS ASSIGNMENT;
 _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE TABLE "${db_prefix}node_content" (
+CREATE TABLE "{$db_prefix}node_content" (
   "node_id" integer NOT NULL,
   "content_id" integer NOT NULL,
-  "content_type" ${db_prefix}type_content_type NOT NULL DEFAULT 'text',
+  "content_type" {$db_prefix}type_content_type NOT NULL DEFAULT 'text',
   "number" integer NOT NULL,
   "ignored" boolean NOT NULL DEFAULT '0',
   PRIMARY KEY ("node_id","content_id","content_type")
@@ -310,25 +310,25 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE TYPE "${db_prefix}type_thread_thread_type" AS ENUM('thread','folder','story','book','rss','newsletter');
+CREATE TYPE "{$db_prefix}type_thread_thread_type" AS ENUM('thread','folder','story','book','rss','newsletter');
 _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE FUNCTION ${db_prefix}type_thread_thread_type(unknown) RETURNS ${db_prefix}type_thread_thread_type AS 'SELECT $1::text::${db_prefix}type_thread_thread_type;' LANGUAGE 'SQL';
+CREATE FUNCTION {$db_prefix}type_thread_thread_type(unknown) RETURNS {$db_prefix}type_thread_thread_type AS 'SELECT $1::text::{$db_prefix}type_thread_thread_type;' LANGUAGE 'SQL';
 _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE CAST (unknown as ${db_prefix}type_thread_thread_type) WITH FUNCTION ${db_prefix}type_thread_thread_type(unknown) AS ASSIGNMENT;
+CREATE CAST (unknown as {$db_prefix}type_thread_thread_type) WITH FUNCTION {$db_prefix}type_thread_thread_type(unknown) AS ASSIGNMENT;
 _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE TABLE "${db_prefix}thread" (
+CREATE TABLE "{$db_prefix}thread" (
   "thread_id" SERIAL,
   "user_id" integer NOT NULL DEFAULT '1',
-  "thread_type" ${db_prefix}type_thread_thread_type NOT NULL DEFAULT 'thread',
+  "thread_type" {$db_prefix}type_thread_thread_type NOT NULL DEFAULT 'thread',
   "created" timestamp NOT NULL,
   "modified" timestamp NOT NULL,
   "number" integer NOT NULL,
@@ -350,9 +350,9 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE TABLE "${db_prefix}thread_locale" (
+CREATE TABLE "{$db_prefix}thread_locale" (
   "thread_id" integer NOT NULL,
-  "locale" ${db_prefix}type_locale NOT NULL DEFAULT '$default_language',
+  "locale" {$db_prefix}type_locale NOT NULL DEFAULT '$default_language',
   "name" varchar(100) NOT NULL,
   "title" varchar(100) DEFAULT NULL,
   "abstract" text,
@@ -364,7 +364,7 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE TABLE "${db_prefix}thread_node" (
+CREATE TABLE "{$db_prefix}thread_node" (
   "thread_id" integer NOT NULL,
   "node_id" integer NOT NULL,
   "number" integer NOT NULL,
@@ -375,9 +375,9 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE TABLE "${db_prefix}tag" (
+CREATE TABLE "{$db_prefix}tag" (
   "tag_id" SERIAL,
-  "locale" ${db_prefix}type_locale NOT NULL DEFAULT '$default_language',
+  "locale" {$db_prefix}type_locale NOT NULL DEFAULT '$default_language',
   "name" varchar(100) NOT NULL,
   PRIMARY KEY ("tag_id","locale"),
   UNIQUE ("locale","name")
@@ -386,7 +386,7 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE TABLE "${db_prefix}tag_index" (
+CREATE TABLE "{$db_prefix}tag_index" (
   "tag_id" integer NOT NULL,
   "node_id" integer NOT NULL,
   PRIMARY KEY ("tag_id","node_id")
@@ -395,7 +395,7 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE TABLE "${db_prefix}user" (
+CREATE TABLE "{$db_prefix}user" (
   "user_id" SERIAL,
   "name" varchar(40) DEFAULT NULL,
   "password" char(32) NOT NULL,
@@ -408,7 +408,7 @@ CREATE TABLE "${db_prefix}user" (
   "modified" timestamp DEFAULT NULL,
   "accessed" timestamp DEFAULT NULL,
   "logged" integer NOT NULL DEFAULT '0',
-  "locale" ${db_prefix}type_locale NOT NULL DEFAULT '$default_language',
+  "locale" {$db_prefix}type_locale NOT NULL DEFAULT '$default_language',
   "active" boolean NOT NULL DEFAULT '1',
   "banned" boolean NOT NULL DEFAULT '0',
   "confirmed" boolean NOT NULL DEFAULT '1',
@@ -420,7 +420,7 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE TABLE IF NOT EXISTS "${db_prefix}user_info" (
+CREATE TABLE IF NOT EXISTS "{$db_prefix}user_info" (
   "user_id" integer NOT NULL,
   "lastname" varchar(100) DEFAULT NULL,
   "firstname" varchar(100) DEFAULT NULL,
@@ -431,7 +431,7 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE TABLE "${db_prefix}role" (
+CREATE TABLE "{$db_prefix}role" (
   "role_id" SERIAL,
   "name" varchar(40) NOT NULL,
   PRIMARY KEY ("role_id"),
@@ -441,7 +441,7 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE TABLE "${db_prefix}user_role" (
+CREATE TABLE "{$db_prefix}user_role" (
   "user_id" integer NOT NULL,
   "role_id" integer NOT NULL,
   PRIMARY KEY ("user_id","role_id")
@@ -450,12 +450,12 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE INDEX "${db_prefix}user_role_role" ON "${db_prefix}user_role" ("role_id");
+CREATE INDEX "{$db_prefix}user_role_role" ON "{$db_prefix}user_role" ("role_id");
 _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE TABLE "${db_prefix}registry" (
+CREATE TABLE "{$db_prefix}registry" (
   "name" varchar(100) NOT NULL,
   "value" text NOT NULL,
   PRIMARY KEY ("name")
@@ -464,7 +464,7 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE TABLE "${db_prefix}track" (
+CREATE TABLE "{$db_prefix}track" (
   "track_id" SERIAL,
   "time_stamp" timestamp NOT NULL DEFAULT NOW(),
   "ip_address" bigint NOT NULL,
@@ -476,26 +476,26 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE TYPE "${db_prefix}type_vote_content_type" AS ENUM('node','thread','comment');
+CREATE TYPE "{$db_prefix}type_vote_content_type" AS ENUM('node','thread','comment');
 _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE FUNCTION ${db_prefix}type_vote_content_type(unknown) RETURNS ${db_prefix}type_vote_content_type AS 'SELECT $1::text::${db_prefix}type_vote_content_type;' LANGUAGE 'SQL';
+CREATE FUNCTION {$db_prefix}type_vote_content_type(unknown) RETURNS {$db_prefix}type_vote_content_type AS 'SELECT $1::text::{$db_prefix}type_vote_content_type;' LANGUAGE 'SQL';
 _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE CAST (unknown as ${db_prefix}type_vote_content_type) WITH FUNCTION ${db_prefix}type_vote_content_type(unknown) AS ASSIGNMENT;
+CREATE CAST (unknown as {$db_prefix}type_vote_content_type) WITH FUNCTION {$db_prefix}type_vote_content_type(unknown) AS ASSIGNMENT;
 _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE TABLE "${db_prefix}vote" (
+CREATE TABLE "{$db_prefix}vote" (
   "vote_id" SERIAL,
   "content_id" integer NOT NULL,
-  "content_type" ${db_prefix}type_vote_content_type NOT NULL DEFAULT 'node',
-  "content_locale" ${db_prefix}type_locale NOT NULL DEFAULT '$default_language',
+  "content_type" {$db_prefix}type_vote_content_type NOT NULL DEFAULT 'node',
+  "content_locale" {$db_prefix}type_locale NOT NULL DEFAULT '$default_language',
   "created" timestamp NOT NULL,
   "user_id" integer NOT NULL DEFAULT '0',
   "ip_address" bigint NOT NULL,
@@ -507,7 +507,7 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-INSERT INTO "${db_prefix}role" ("role_id", "name") VALUES
+INSERT INTO "{$db_prefix}role" ("role_id", "name") VALUES
 (1, 'administrator'),
 (2, 'writer'),
 (3, 'reader'),
@@ -517,25 +517,25 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-SELECT setval('${db_prefix}role_role_id_seq', (SELECT MAX("role_id") FROM "${db_prefix}role"));
+SELECT setval('{$db_prefix}role_role_id_seq', (SELECT MAX("role_id") FROM "{$db_prefix}role"));
 _SEP_;
 		$db_conn->exec($sql);
 
 		$seed=substr(md5(uniqid()), 1, 8);
 
 		$sql= <<<_SEP_
-INSERT INTO "${db_prefix}user" ("user_id", "name", "password", "seed", "mail", "created", "locale", "active", "banned", "confirmed") VALUES
+INSERT INTO "{$db_prefix}user" ("user_id", "name", "password", "seed", "mail", "created", "locale", "active", "banned", "confirmed") VALUES
 (1, '$site_admin_user', MD5(CONCAT('$seed', '$site_admin_password')), '$seed', '$site_admin_mail', NOW(), '$default_language', '1', '0', '1');
 _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-SELECT setval('${db_prefix}user_user_id_seq', (SELECT MAX("user_id") FROM "${db_prefix}user"));
+SELECT setval('{$db_prefix}user_user_id_seq', (SELECT MAX("user_id") FROM "{$db_prefix}user"));
 _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-INSERT INTO "${db_prefix}user_role" ("user_id", "role_id") VALUES
+INSERT INTO "{$db_prefix}user_role" ("user_id", "role_id") VALUES
 (1, 1),
 (1, 2),
 (1, 3),
@@ -544,7 +544,7 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-INSERT INTO "${db_prefix}comment" ("comment_id", "node_id", "locale", "created", "edited", "user_id", "user_mail", "ip_address", "text", "confirmed") VALUES
+INSERT INTO "{$db_prefix}comment" ("comment_id", "node_id", "locale", "created", "edited", "user_id", "user_mail", "ip_address", "text", "confirmed") VALUES
 (1, 3, 'fr', '2011-12-27 09:39:02', '2011-12-27 09:39:02', 1, NULL, 2130706433, '[p]J''essaye un commentaire avec une url : [url=http://www.izend.org]iZend[/url] ![/p]', '1'),
 (2, 3, 'fr', '2011-12-27 09:41:29', '2011-12-27 09:41:29', 1, NULL, 2130706433, '[p][u]Citation[/u] :[/p][quote]J''essaye un commentaire avec une url : [url=http://www.izend.org]iZend[/url] ![/quote]\r\n[p]Non ! On peut mettre une [b]url[/b] dans un commentaire ?\r\n[br]Dis-moi pas que c''est pas vrai ![/p]', '1'),
 (3, 3, 'en', '2011-12-27 09:53:47', '2011-12-27 09:53:47', 1, NULL, 2130706433, '[p]Let me try a comment with a url: [url=http://www.izend.org]iZend[/url]![/p]', '1'),
@@ -553,36 +553,36 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-SELECT setval('${db_prefix}comment_comment_id_seq', (SELECT MAX("comment_id") FROM "${db_prefix}comment"));
+SELECT setval('{$db_prefix}comment_comment_id_seq', (SELECT MAX("comment_id") FROM "{$db_prefix}comment"));
 _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-INSERT INTO "${db_prefix}content_download" ("content_id", "locale", "name", "path") VALUES
+INSERT INTO "{$db_prefix}content_download" ("content_id", "locale", "name", "path") VALUES
 (1, 'fr', 'sysinfo.php', 'files/sysinfo.php'),
 (1, 'en', 'sysinfo.php', 'files/sysinfo.php');
 _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-SELECT setval('${db_prefix}content_download_content_id_seq', (SELECT MAX("content_id") FROM "${db_prefix}content_download"));
+SELECT setval('{$db_prefix}content_download_content_id_seq', (SELECT MAX("content_id") FROM "{$db_prefix}content_download"));
 _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-INSERT INTO "${db_prefix}content_file" ("content_id", "locale", "path", "start", "end", "format", "lineno") VALUES
+INSERT INTO "{$db_prefix}content_file" ("content_id", "locale", "path", "start", "end", "format", "lineno") VALUES
 (1, 'fr', 'files/sysinfo.php', 0, 0, 'html5', '1'),
 (1, 'en', 'files/sysinfo.php', 0, 0, 'html5', '1');
 _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-SELECT setval('${db_prefix}content_file_content_id_seq', (SELECT MAX("content_id") FROM "${db_prefix}content_file"));
+SELECT setval('{$db_prefix}content_file_content_id_seq', (SELECT MAX("content_id") FROM "{$db_prefix}content_file"));
 _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-INSERT INTO "${db_prefix}content_infile" ("content_id", "locale", "path") VALUES
+INSERT INTO "{$db_prefix}content_infile" ("content_id", "locale", "path") VALUES
 (1, 'fr', 'files/sysinfo.php'),
 (1, 'en', 'files/sysinfo.php'),
 (2, 'fr', 'files/fr/tubelist.phtml'),
@@ -593,12 +593,12 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-SELECT setval('${db_prefix}content_infile_content_id_seq', (SELECT MAX("content_id") FROM "${db_prefix}content_infile"));
+SELECT setval('{$db_prefix}content_infile_content_id_seq', (SELECT MAX("content_id") FROM "{$db_prefix}content_infile"));
 _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-INSERT INTO "${db_prefix}content_longtail" ("content_id", "locale", "file", "image", "width", "height", "icons", "skin", "controlbar", "duration", "autostart", "repeat") VALUES
+INSERT INTO "{$db_prefix}content_longtail" ("content_id", "locale", "file", "image", "width", "height", "icons", "skin", "controlbar", "duration", "autostart", "repeat") VALUES
 (1, 'fr', '/files/sounds/smoke.mp3 /files/sounds/smoke.ogg /files/sounds/smoke.m4a', NULL, 200, 24, '0', '/longtail/simple.zip', 'bottom', 0, '0', '1'),
 (1, 'en', '/files/sounds/smoke.mp3 /files/sounds/smoke.ogg /files/sounds/smoke.m4a', NULL, 200, 24, '0', '/longtail/simple.zip', 'bottom', 0, '0', '1'),
 (2, 'fr', 'http://www.youtube.com/watch?v=BeP80btBxIE', NULL, 320, 240, '1', '/longtail/modieus.zip', 'over', 0, '0', '0'),
@@ -611,12 +611,12 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-SELECT setval('${db_prefix}content_longtail_content_id_seq', (SELECT MAX("content_id") FROM "${db_prefix}content_longtail"));
+SELECT setval('{$db_prefix}content_longtail_content_id_seq', (SELECT MAX("content_id") FROM "{$db_prefix}content_longtail"));
 _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-INSERT INTO "${db_prefix}content_youtube" ("content_id", "locale", "id", "width", "height", "autoplay", "controls", "fs", "theme", "rel") VALUES
+INSERT INTO "{$db_prefix}content_youtube" ("content_id", "locale", "id", "width", "height", "autoplay", "controls", "fs", "theme", "rel") VALUES
 (1, 'fr', 'b3txQs7jEJ4', 267, 200, '0', '1', '0', 'dark', '0'),
 (1, 'en', 'b3txQs7jEJ4', 267, 200, '0', '1', '0', 'dark', '0'),
 (2, 'fr', 'b3txQs7jEJ4', 267, 200, '0', '1', '0', 'dark', '0'),
@@ -627,12 +627,12 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-SELECT setval('${db_prefix}content_youtube_content_id_seq', (SELECT MAX("content_id") FROM "${db_prefix}content_youtube"));
+SELECT setval('{$db_prefix}content_youtube_content_id_seq', (SELECT MAX("content_id") FROM "{$db_prefix}content_youtube"));
 _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-INSERT INTO "${db_prefix}content_text" ("content_id", "locale", "text", "eval") VALUES
+INSERT INTO "{$db_prefix}content_text" ("content_id", "locale", "text", "eval") VALUES
 (1, 'fr', '<h3>Bienvenue</h3>\r\n<p>Lorem ipsum dolor sit amet, quaeque fabellas indoctum et vel, ut graecis urbanitas eum. Et vix assum assentior. Duo eu inermis propriae labore feugiat.</p>\r\n<p class="readmore"><a href="/fr/article/test">Voir les pages de test</a></p>\r\n<p class="left"><a href="http://www.izend.org"><img src="/logos/izend.png" alt="www.izend.org" title="iZend - Le moteur web" /></a></p>\r\n<p>Perfecto intellegat moderatius ei est. Quod consetetur has ea, id viderer delectus dignissim vel. Et sed homero gubergren.</p>\r\n<div class="clear"></div>\r\n<ol class="summary">\r\n<li><a href="#">Duo ridens</a></li>\r\n<li><a href="#">Commodo quaestio</a></li>\r\n<li><a href="#">Tale posidonium</a></li>\r\n</ol>\r\n<h6>Aliquam feugait</h6>\r\n<p>Stet choro inimicus eum ea. Nulla utinam semper an has, ex qui ferri dissentias. Ut laboramus assentior nam.</p>', '0'),
 (1, 'en', '<h3>Welcome</h3>\r\n<p>Lorem ipsum dolor sit amet, quaeque fabellas indoctum et vel, ut graecis urbanitas eum. Et vix assum assentior. Duo eu inermis propriae labore feugiat.</p>\r\n<p class="readmore"><a href="/en/article/test">View the test pages</a></p><p class="left"><a href="http://www.izend.org"><img src="/logos/izend.png" alt="www.izend.org" title="iZend - The web engine" /></a></p>\r\n<p>Perfecto intellegat moderatius ei est. Quod consetetur has ea, id viderer delectus dignissim vel. Et sed homero gubergren.</p>\r\n<div class="clear"></div>\r\n<ol class="summary">\r\n<li><a href="#">Duo ridens</a></li>\r\n<li><a href="#">Commodo quaestio</a></li>\r\n<li><a href="#">Tale posidonium</a></li>\r\n</ol>\r\n<h6>Aliquam feugait</h6>\r\n<p>Stet choro inimicus eum ea. Nulla utinam semper an has, ex qui ferri dissentias. Ut laboramus assentior nam.</p>', '0'),
 (2, 'fr', '<div class="vignette"><a href="http://www.izend.org"><img src="/logos/izend.png" alt="" title="" /></a></div>\r\n<p>Lorem ipsum dolor sit amet, alterum antiopam maluisset vis eu, et brute expetenda iracundia has. Eos animal nusquam delicata ad. Cetero legendos in pri, no usu quidam utamur. Vel quodsi voluptua cu, eam ex reque audire vidisse. Te modo omnes sea, ad detracto praesent cotidieque vim, eam quando intellegat an. Aeque erroribus mei te, ei est possit iriure.</p>\r\n<p>Texte en <b>gras</b>, en <i>italique</i>, <u>souligné</u> et <s>barré</s>.</p>\r\n<h4>H4</h4>\r\n<p>Paragraphe avec du <code>code inséré</code> dans le texte.</p>\r\n<h5>H5</h5>\r\n<p>Une série de commandes&nbsp;:</p>\r\n<pre><code>$ ls -l\r\n$ pwd</code></pre>\r\n<h6>H6</h6>\r\n<ol class="summary">\r\n<li><a href="#">Duo ridens</a></li>\r\n<li><a href="#">Tale posidonium</a></li>\r\n<li><a href="#">Cu mea ferri</a></li>\r\n</ol>\r\n<blockquote>Et scaevola principes elaboraret mea. At usu docendi epicurei, et ferri sensibus deterruisset nec, mei solet persius dignissim te. Vix velit rationibus at. Ei eum simul suscipit, assum munere recusabo vix no.</blockquote>\r\n<h6>Image</h6>\r\n<p><img src="/logos/izend.png" alt="" title="www.izend.org" /></p>\r\n<h6>Tableau</h6>\r\n<table>\r\n<thead>\r\n<tr><th>Français</th><th>Anglais</th></tr>\r\n</thead>\r\n<tbody>\r\n<tr><td>Un</td><td>One</td></tr>\r\n<tr><td>Deux</td><td>Two</td></tr>\r\n</tbody>\r\n</table>\r\n<h6>Arbre</h6>\r\n<ol class="tree">\r\n<li class="dirnode firstnode">/dossier\r\n  <ol>\r\n  <li class="dirnode">dossier</li>\r\n  <li class="dirnode">dossier\r\n    <ol>\r\n    <li class="filenode lastnode">fichier</li>\r\n    </ol>\r\n  </li>\r\n  <li class="filenode lastnode">fichier</li>\r\n  </ol>\r\n</li>\r\n</ol>\r\n<h6>Colonnes</h6>\r\n<div class="row bythree">\r\n<p>No dolor invenire adversarium nam, erat suscipit per no. Id duo summo mollis.</p>\r\n<p>Per ut illud tempor. Ut vis laboramus voluptatibus. Vel oporteat ullamcorper id, modus decore luptatum vim ea. Nec ex brute placerat, feugiat percipitur eos ea, fabulas principes ea sit.</p>\r\n<p><img class="left" src="/logos/izend.png" alt="" title="www.izend.org" />Ad eam odio evertitur neglegentur, verterem disputationi eam ex. Sed no solet homero voluptua.</p>\r\n</div>', '0'),
@@ -699,8 +699,8 @@ INSERT INTO "${db_prefix}content_text" ("content_id", "locale", "text", "eval") 
 (32, 'en', '<div class="row bythree">\r\n<p>No dolor invenire adversarium nam, erat suscipit per no. Id duo summo mollis.</p>\r\n<p>Per ut illud tempor. Ut vis laboramus voluptatibus. Vel oporteat ullamcorper id, modus decore luptatum vim ea. Nec ex brute placerat, feugiat percipitur eos ea, fabulas principes ea sit.</p>\r\n<p><img class="left" src="/logos/izend.png" alt="" title="www.izend.org" />Ad eam odio evertitur neglegentur, verterem disputationi eam ex. Sed no solet homero voluptua.</p>\r\n</div>', '0'),
 (33, 'fr', '<p>Un QRmii est un code QR qui contient une URL courte qui est automatiquement redirigée vers une URL complète. Flasher un QRmii avec un smartphone affiche directement la page de l''URL d''origine.</p>', '0'),
 (33, 'en', '<p>A QRmii is QR code which contains a short URL which is automatically redirected to a complete URL.\r\nScanning a QRmii with a smartphone directly displays the page of the original URL.</p>', '0'),
-(34, 'fr', '<p><a href="http://www.${sitename}"><img src="/logos/sitelogo.png" alt="" title="" /></a></p>\r\n<p><a href="http://www.qrmii.com/"><img src="/files/images/qrmii.png" alt="" title="qrmii - 1 URL 1 QR" /></a></p>\r\n<p>Un QRmii est un code QR qui contient une URL courte qui est automatiquement redirigée vers une URL complète.\r\nFlasher un QRmii avec un smartphone affiche directement la page de l''URL d''origine.</p>\r\n<p><a href="http://www.${sitename}/fr/qrmii">Lire l''article</a></p>\r\n<div class="acenter"><a href="http://qrmii.com/a944d525"><img src="/files/images/qr50.png" width="50" height="50" alt="" title="http://qrmii.com/a944d525" /></a> Flashez-moi&nbsp;!</div>', '0'),
-(34, 'en', '<p><a href="http://www.${sitename}"><img src="/logos/sitelogo.png" alt="" title="" /></a></p>\r\n<p><a href="http://www.qrmii.com/"><img src="/files/images/qrmii.png" alt="" title="qrmii - 1 URL 1 QR" /></a></p>\r\n<p>A QRmii is QR code which contains a short URL which is automatically redirected to a complete URL.\r\nScanning a QRmii with a smartphone directly displays the page of the original URL.</p>\r\n<p><a href="http://www.${sitename}/en/qrmii">Read the article</a></p>\r\n<div class="acenter"><a href="http://qrmii.com/a944d525"><img src="/files/images/qr50.png" width="50" height="50" alt="" title="http://qrmii.com/a944d525" /></a> Scan me!</div>', '0'),
+(34, 'fr', '<p><a href="http://www.{$sitename}"><img src="/logos/sitelogo.png" alt="" title="" /></a></p>\r\n<p><a href="http://www.qrmii.com/"><img src="/files/images/qrmii.png" alt="" title="qrmii - 1 URL 1 QR" /></a></p>\r\n<p>Un QRmii est un code QR qui contient une URL courte qui est automatiquement redirigée vers une URL complète.\r\nFlasher un QRmii avec un smartphone affiche directement la page de l''URL d''origine.</p>\r\n<p><a href="http://www.{$sitename}/fr/qrmii">Lire l''article</a></p>\r\n<div class="acenter"><a href="http://qrmii.com/a944d525"><img src="/files/images/qr50.png" width="50" height="50" alt="" title="http://qrmii.com/a944d525" /></a> Flashez-moi&nbsp;!</div>', '0'),
+(34, 'en', '<p><a href="http://www.{$sitename}"><img src="/logos/sitelogo.png" alt="" title="" /></a></p>\r\n<p><a href="http://www.qrmii.com/"><img src="/files/images/qrmii.png" alt="" title="qrmii - 1 URL 1 QR" /></a></p>\r\n<p>A QRmii is QR code which contains a short URL which is automatically redirected to a complete URL.\r\nScanning a QRmii with a smartphone directly displays the page of the original URL.</p>\r\n<p><a href="http://www.{$sitename}/en/qrmii">Read the article</a></p>\r\n<div class="acenter"><a href="http://qrmii.com/a944d525"><img src="/files/images/qr50.png" width="50" height="50" alt="" title="http://qrmii.com/a944d525" /></a> Scan me!</div>', '0'),
 (36, 'fr', '<?php head(''javascript'', ''jquery-ui''); ?>\r\n<?php head(''stylesheet'', ''jquery-ui'', ''screen''); ?>\r\n<?php head(''javascript'', ''jquery.qtip''); ?>\r\n<?php head(''stylesheet'', ''jquery.qtip'', ''screen''); ?>', '1'),
 (36, 'en', '<?php head(''javascript'', ''jquery-ui''); ?>\r\n<?php head(''stylesheet'', ''jquery-ui'', ''screen''); ?>\r\n<?php head(''javascript'', ''jquery.qtip''); ?>\r\n<?php head(''stylesheet'', ''jquery.qtip'', ''screen''); ?>', '1'),
 (37, 'fr', '<div id="sidemenu" class="sidemenu">\r\n<div class="sidemenu-tabs">\r\n<ul>\r\n<li><a href="#sidemenu-tabs-1">Blog</a></li>\r\n<li><a href="#sidemenu-tabs-2">Dolor</a></li>\r\n<li><a href="#sidemenu-tabs-3">Lacinia</a></li>\r\n</ul>', '0'),
@@ -723,12 +723,12 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-SELECT setval('${db_prefix}content_text_content_id_seq', (SELECT MAX("content_id") FROM "${db_prefix}content_text"));
+SELECT setval('{$db_prefix}content_text_content_id_seq', (SELECT MAX("content_id") FROM "{$db_prefix}content_text"));
 _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-INSERT INTO "${db_prefix}node" ("node_id", "user_id", "created", "modified", "visits", "nocomment", "nomorecomment", "novote", "nomorevote", "ilike", "tweet", "linkedin", "pinit", "whatsapp") VALUES
+INSERT INTO "{$db_prefix}node" ("node_id", "user_id", "created", "modified", "visits", "nocomment", "nomorecomment", "novote", "nomorevote", "ilike", "tweet", "linkedin", "pinit", "whatsapp") VALUES
 (1, 1, '2011-11-18 15:44:55', '2012-06-06 17:13:12', '0', '1', '1', '1', '1', '1', '1', '1', '0', '0'),
 (2, 1, '2011-12-03 11:04:32', '2012-06-06 19:15:02', '0', '1', '1', '1', '1', '0', '0', '0', '0', '0'),
 (3, 1, '2011-12-26 22:52:00', '2012-04-10 17:01:55', '1', '0', '1', '0', '0', '1', '1', '1', '0', '0'),
@@ -752,12 +752,12 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-SELECT setval('${db_prefix}node_node_id_seq', (SELECT MAX("node_id") FROM "${db_prefix}node"));
+SELECT setval('{$db_prefix}node_node_id_seq', (SELECT MAX("node_id") FROM "{$db_prefix}node"));
 _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-INSERT INTO "${db_prefix}node_content" ("node_id", "content_id", "content_type", "number", "ignored") VALUES
+INSERT INTO "{$db_prefix}node_content" ("node_id", "content_id", "content_type", "number", "ignored") VALUES
 (1, 1, 'text', 1, '0'),
 (1, 25, 'text', 2, '0'),
 (2, 15, 'text', 1, '0'),
@@ -817,7 +817,7 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-INSERT INTO "${db_prefix}node_locale" ("node_id", "locale", "name", "title", "abstract", "cloud") VALUES
+INSERT INTO "{$db_prefix}node_locale" ("node_id", "locale", "name", "title", "abstract", "cloud") VALUES
 (1, 'fr', 'haut', 'Haut', 'La version spécialisée d''iZend pour écrire un blog.', 'iZend blog moteur web'),
 (1, 'en', 'top', 'Top', 'The specialized version of iZend for writing a blog.', 'iZend blog web engine'),
 (2, 'fr', 'bas', 'Bas', NULL, 'identification édition'),
@@ -860,7 +860,7 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-INSERT INTO "${db_prefix}tag" ("tag_id", "locale", "name") VALUES
+INSERT INTO "{$db_prefix}tag" ("tag_id", "locale", "name") VALUES
 (1, 'en', 'iZend'),
 (2, 'en', 'blog'),
 (3, 'en', 'web'),
@@ -931,12 +931,12 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-SELECT setval('${db_prefix}tag_tag_id_seq', (SELECT MAX("tag_id") FROM "${db_prefix}tag"));
+SELECT setval('{$db_prefix}tag_tag_id_seq', (SELECT MAX("tag_id") FROM "{$db_prefix}tag"));
 _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-INSERT INTO "${db_prefix}tag_index" ("tag_id", "node_id") VALUES
+INSERT INTO "{$db_prefix}tag_index" ("tag_id", "node_id") VALUES
 (1, 1),
 (2, 1),
 (3, 1),
@@ -1061,7 +1061,7 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-INSERT INTO "${db_prefix}thread" ("thread_id", "user_id", "thread_type", "created", "modified", "number", "visits", "nosearch", "nocloud", "nocomment", "nomorecomment", "novote", "nomorevote", "ilike", "tweet", "linkedin", "pinit", "whatsapp") VALUES
+INSERT INTO "{$db_prefix}thread" ("thread_id", "user_id", "thread_type", "created", "modified", "number", "visits", "nosearch", "nocloud", "nocomment", "nomorecomment", "novote", "nomorevote", "ilike", "tweet", "linkedin", "pinit", "whatsapp") VALUES
 (1, 1, 'thread', '2011-12-26 15:44:55', '2012-06-06 17:14:17', 1, '0', '0', '0', '0', '0', '0', '0', '1', '1', '1', '0', '0'),
 (2, 1, 'story', '2011-12-26 21:32:47', '2012-01-24 21:57:34', 2, '1', '0', '0', '0', '0', '0', '0', '1', '1', '1', '0', '0'),
 (3, 1, 'folder', '2012-05-13 17:14:32', '2012-06-06 17:14:39', 3, '1', '0', '0', '1', '1', '1', '1', '1', '1', '1', '0', '0'),
@@ -1073,12 +1073,12 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-SELECT setval('${db_prefix}thread_thread_id_seq', (SELECT MAX("thread_id") FROM "${db_prefix}thread"));
+SELECT setval('{$db_prefix}thread_thread_id_seq', (SELECT MAX("thread_id") FROM "{$db_prefix}thread"));
 _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-INSERT INTO "${db_prefix}thread_locale" ("thread_id", "locale", "name", "title", "abstract", "cloud") VALUES
+INSERT INTO "{$db_prefix}thread_locale" ("thread_id", "locale", "name", "title", "abstract", "cloud") VALUES
 (1, 'fr', 'classeur', 'Classeur', NULL, NULL),
 (1, 'en', 'binder', 'Binder', NULL, NULL),
 (2, 'fr', 'test', 'Test', NULL, NULL),
@@ -1097,7 +1097,7 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-INSERT INTO "${db_prefix}thread_node" ("thread_id", "node_id", "number", "ignored") VALUES
+INSERT INTO "{$db_prefix}thread_node" ("thread_id", "node_id", "number", "ignored") VALUES
 (1, 1, 1, '0'),
 (1, 2, 2, '0'),
 (2, 3, 1, '0'),
