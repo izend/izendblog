@@ -2,8 +2,8 @@
 
 /**
  *
- * @copyright  2014-2023 izend.org
- * @version    14
+ * @copyright  2014-2025 izend.org
+ * @version    15
  * @link       http://www.izend.org
  */
 
@@ -70,7 +70,7 @@ function init_db($db_host, $db_name, $db_user, $db_password, $db_prefix, $site_a
 		$db_conn->exec("SET NAMES 'utf8'");
 
 		$sql= <<<_SEP_
-CREATE TABLE `${db_prefix}comment` (
+CREATE TABLE `{$db_prefix}comment` (
   `comment_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `node_id` int(10) unsigned NOT NULL,
   `locale` enum('en','fr') NOT NULL DEFAULT '$default_language',
@@ -88,7 +88,7 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE TABLE `${db_prefix}content_download` (
+CREATE TABLE `{$db_prefix}content_download` (
   `content_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `locale` enum('en','fr') NOT NULL DEFAULT '$default_language',
   `name` varchar(50) DEFAULT NULL,
@@ -99,7 +99,7 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE TABLE `${db_prefix}content_file` (
+CREATE TABLE `{$db_prefix}content_file` (
   `content_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `locale` enum('en','fr') NOT NULL DEFAULT '$default_language',
   `path` varchar(200) DEFAULT NULL,
@@ -113,7 +113,7 @@ _SEP_;
 		$db_conn->exec($sql);
 
 			$sql= <<<_SEP_
-CREATE TABLE `${db_prefix}content_infile` (
+CREATE TABLE `{$db_prefix}content_infile` (
   `content_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `locale` enum('en','fr') NOT NULL DEFAULT '$default_language',
   `path` varchar(200) DEFAULT NULL,
@@ -123,7 +123,7 @@ _SEP_;
 		$db_conn->exec($sql);
 
 			$sql= <<<_SEP_
-CREATE TABLE `${db_prefix}content_longtail` (
+CREATE TABLE `{$db_prefix}content_longtail` (
   `content_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `locale` enum('en','fr') NOT NULL DEFAULT '$default_language',
   `file` varchar(200) DEFAULT NULL,
@@ -142,7 +142,7 @@ _SEP_;
 		$db_conn->exec($sql);
 
 			$sql= <<<_SEP_
-CREATE TABLE `${db_prefix}content_text` (
+CREATE TABLE `{$db_prefix}content_text` (
   `content_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `locale` enum('en','fr') NOT NULL DEFAULT '$default_language',
   `text` text,
@@ -153,7 +153,7 @@ _SEP_;
 		$db_conn->exec($sql);
 
 			$sql= <<<_SEP_
-CREATE TABLE `${db_prefix}content_youtube` (
+CREATE TABLE `{$db_prefix}content_youtube` (
   `content_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `locale` enum('en','fr') NOT NULL DEFAULT '$default_language',
   `id` varchar(20) CHARACTER SET ascii COLLATE ascii_bin DEFAULT NULL,
@@ -172,7 +172,7 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE TABLE `${db_prefix}newsletter_post` (
+CREATE TABLE `{$db_prefix}newsletter_post` (
   `thread_id` int(10) unsigned NOT NULL,
   `node_id` int(10) unsigned NOT NULL,
   `locale` enum('en','fr') NOT NULL DEFAULT '$default_language',
@@ -184,7 +184,7 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE TABLE `${db_prefix}newsletter_user` (
+CREATE TABLE `{$db_prefix}newsletter_user` (
   `mail` varchar(100) NOT NULL,
   `locale` enum('en','fr') NOT NULL DEFAULT '$default_language',
   `created` datetime NOT NULL,
@@ -195,7 +195,7 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE TABLE `${db_prefix}node` (
+CREATE TABLE `{$db_prefix}node` (
   `node_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` int(10) unsigned NOT NULL,
   `created` datetime NOT NULL,
@@ -216,7 +216,7 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE TABLE `${db_prefix}node_locale` (
+CREATE TABLE `{$db_prefix}node_locale` (
   `node_id` int(10) unsigned NOT NULL,
   `locale` enum('en','fr') NOT NULL DEFAULT '$default_language',
   `name` varchar(100) NOT NULL,
@@ -231,7 +231,7 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE TABLE `${db_prefix}node_content` (
+CREATE TABLE `{$db_prefix}node_content` (
   `node_id` int(10) unsigned NOT NULL,
   `content_id` int(10) unsigned NOT NULL,
   `content_type` enum('text','file','download','infile','youtube','longtail') NOT NULL DEFAULT 'text',
@@ -243,7 +243,7 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE TABLE `${db_prefix}thread` (
+CREATE TABLE `{$db_prefix}thread` (
   `thread_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` int(10) unsigned NOT NULL DEFAULT '1',
   `thread_type` enum('thread','folder','story','book','rss','newsletter') NOT NULL DEFAULT 'thread',
@@ -268,7 +268,7 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE TABLE `${db_prefix}thread_locale` (
+CREATE TABLE `{$db_prefix}thread_locale` (
   `thread_id` int(10) unsigned NOT NULL,
   `locale` enum('en','fr') NOT NULL DEFAULT '$default_language',
   `name` varchar(100) NOT NULL,
@@ -282,7 +282,7 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE TABLE `${db_prefix}thread_node` (
+CREATE TABLE `{$db_prefix}thread_node` (
   `thread_id` int(10) unsigned NOT NULL,
   `node_id` int(10) unsigned NOT NULL,
   `number` int(4) unsigned NOT NULL,
@@ -293,7 +293,7 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE TABLE `${db_prefix}tag` (
+CREATE TABLE `{$db_prefix}tag` (
   `tag_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `locale` enum('en','fr') NOT NULL DEFAULT '$default_language',
   `name` varchar(100) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
@@ -304,7 +304,7 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE TABLE `${db_prefix}tag_index` (
+CREATE TABLE `{$db_prefix}tag_index` (
   `tag_id` int(10) unsigned NOT NULL,
   `node_id` int(10) unsigned NOT NULL,
   PRIMARY KEY (`tag_id`,`node_id`)
@@ -313,7 +313,7 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE TABLE `${db_prefix}user` (
+CREATE TABLE `{$db_prefix}user` (
   `user_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(40) DEFAULT NULL,
   `password` char(32) CHARACTER SET ascii NOT NULL,
@@ -338,7 +338,7 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE TABLE IF NOT EXISTS `${db_prefix}user_info` (
+CREATE TABLE IF NOT EXISTS `{$db_prefix}user_info` (
   `user_id` int(10) unsigned NOT NULL,
   `lastname` varchar(100) DEFAULT NULL,
   `firstname` varchar(100) DEFAULT NULL,
@@ -349,7 +349,7 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE TABLE `${db_prefix}role` (
+CREATE TABLE `{$db_prefix}role` (
   `role_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(40) NOT NULL,
   PRIMARY KEY (`role_id`),
@@ -359,7 +359,7 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE TABLE `${db_prefix}user_role` (
+CREATE TABLE `{$db_prefix}user_role` (
   `user_id` int(10) unsigned NOT NULL,
   `role_id` int(10) unsigned NOT NULL,
   PRIMARY KEY (`user_id`,`role_id`),
@@ -369,7 +369,7 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE TABLE `${db_prefix}registry` (
+CREATE TABLE `{$db_prefix}registry` (
   `name` varchar(100) NOT NULL,
   `value` longtext NOT NULL,
   PRIMARY KEY (`name`)
@@ -378,7 +378,7 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE TABLE `${db_prefix}track` (
+CREATE TABLE `{$db_prefix}track` (
   `track_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `time_stamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `ip_address` int(10) unsigned NOT NULL,
@@ -390,7 +390,7 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE TABLE `${db_prefix}vote` (
+CREATE TABLE `{$db_prefix}vote` (
   `vote_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `content_id` int(10) unsigned NOT NULL,
   `content_type` enum('node','thread','comment') NOT NULL DEFAULT 'node',
@@ -406,7 +406,7 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-INSERT INTO `${db_prefix}role` (`role_id`, `name`) VALUES
+INSERT INTO `{$db_prefix}role` (`role_id`, `name`) VALUES
 (1, 'administrator'),
 (2, 'writer'),
 (3, 'reader'),
@@ -418,13 +418,13 @@ _SEP_;
 		$seed=substr(md5(uniqid()), 1, 8);
 
 		$sql= <<<_SEP_
-INSERT INTO `${db_prefix}user` (`user_id`, `name`, `password`, `seed`, `mail`, `created`, `locale`, `active`, `banned`, `confirmed`) VALUES
+INSERT INTO `{$db_prefix}user` (`user_id`, `name`, `password`, `seed`, `mail`, `created`, `locale`, `active`, `banned`, `confirmed`) VALUES
 (1, '$site_admin_user', MD5(CONCAT('$seed', '$site_admin_password')), '$seed', '$site_admin_mail', NOW(), '$default_language', '1', '0', '1');
 _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-INSERT INTO `${db_prefix}user_role` (`user_id`, `role_id`) VALUES
+INSERT INTO `{$db_prefix}user_role` (`user_id`, `role_id`) VALUES
 (1, 1),
 (1, 2),
 (1, 3),
@@ -433,7 +433,7 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-INSERT INTO `${db_prefix}comment` (`comment_id`, `node_id`, `locale`, `created`, `edited`, `user_id`, `user_mail`, `ip_address`, `text`, `confirmed`) VALUES
+INSERT INTO `{$db_prefix}comment` (`comment_id`, `node_id`, `locale`, `created`, `edited`, `user_id`, `user_mail`, `ip_address`, `text`, `confirmed`) VALUES
 (1, 3, 'fr', NOW(), NOW(), 1, NULL, 2130706433, '[p]J''essaye un commentaire avec une url : [url=http://www.izend.org]iZend[/url] ![/p]', '1'),
 (2, 3, 'fr', NOW(), NOW(), 1, NULL, 2130706433, '[p][u]Citation[/u] :[/p][quote]J''essaye un commentaire avec une url : [url=http://www.izend.org]iZend[/url] ![/quote]\r\n[p]Non ! On peut mettre une [b]url[/b] dans un commentaire ?\r\n[br]Dis-moi pas que c''est pas vrai ![/p]', '1'),
 (3, 3, 'en', NOW(), NOW(), 1, NULL, 2130706433, '[p]Let me try a comment with a url: [url=http://www.izend.org]iZend[/url]![/p]', '1'),
@@ -442,21 +442,21 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-INSERT INTO `${db_prefix}content_download` (`content_id`, `locale`, `name`, `path`) VALUES
+INSERT INTO `{$db_prefix}content_download` (`content_id`, `locale`, `name`, `path`) VALUES
 (1, 'fr', 'sysinfo.php', 'files/sysinfo.php'),
 (1, 'en', 'sysinfo.php', 'files/sysinfo.php');
 _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-INSERT INTO `${db_prefix}content_file` (`content_id`, `locale`, `path`, `start`, `end`, `format`, `lineno`) VALUES
+INSERT INTO `{$db_prefix}content_file` (`content_id`, `locale`, `path`, `start`, `end`, `format`, `lineno`) VALUES
 (1, 'fr', 'files/sysinfo.php', 0, 0, 'html5', '1'),
 (1, 'en', 'files/sysinfo.php', 0, 0, 'html5', '1');
 _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-INSERT INTO `${db_prefix}content_infile` (`content_id`, `locale`, `path`) VALUES
+INSERT INTO `{$db_prefix}content_infile` (`content_id`, `locale`, `path`) VALUES
 (1, 'fr', 'files/sysinfo.php'),
 (1, 'en', 'files/sysinfo.php'),
 (2, 'fr', 'files/fr/tubelist.phtml'),
@@ -467,7 +467,7 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-INSERT INTO `${db_prefix}content_longtail` (`content_id`, `locale`, `file`, `image`, `width`, `height`, `icons`, `skin`, `controlbar`, `duration`, `autostart`, `repeat`) VALUES
+INSERT INTO `{$db_prefix}content_longtail` (`content_id`, `locale`, `file`, `image`, `width`, `height`, `icons`, `skin`, `controlbar`, `duration`, `autostart`, `repeat`) VALUES
 (1, 'fr', '/files/sounds/smoke.mp3 /files/sounds/smoke.ogg /files/sounds/smoke.m4a', NULL, 200, 24, '0', '/longtail/simple.zip', 'bottom', 0, '0', '1'),
 (1, 'en', '/files/sounds/smoke.mp3 /files/sounds/smoke.ogg /files/sounds/smoke.m4a', NULL, 200, 24, '0', '/longtail/simple.zip', 'bottom', 0, '0', '1'),
 (2, 'fr', 'http://www.youtube.com/watch?v=BeP80btBxIE', NULL, 320, 240, '1', '/longtail/modieus.zip', 'over', 0, '0', '0'),
@@ -480,7 +480,7 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-INSERT INTO `${db_prefix}content_youtube` (`content_id`, `locale`, `id`, `width`, `height`, `autoplay`, `controls`, `fs`, `theme`, `rel`) VALUES
+INSERT INTO `{$db_prefix}content_youtube` (`content_id`, `locale`, `id`, `width`, `height`, `autoplay`, `controls`, `fs`, `theme`, `rel`) VALUES
 (1, 'fr', 'b3txQs7jEJ4', 267, 200, '0', '1', '0', 'dark', '0'),
 (1, 'en', 'b3txQs7jEJ4', 267, 200, '0', '1', '0', 'dark', '0'),
 (2, 'fr', 'b3txQs7jEJ4', 267, 200, '0', '1', '0', 'dark', '0'),
@@ -491,7 +491,7 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-INSERT INTO `${db_prefix}content_text` (`content_id`, `locale`, `text`, `eval`) VALUES
+INSERT INTO `{$db_prefix}content_text` (`content_id`, `locale`, `text`, `eval`) VALUES
 (1, 'fr', '<h3>Bienvenue</h3>\r\n<p>Lorem ipsum dolor sit amet, quaeque fabellas indoctum et vel, ut graecis urbanitas eum. Et vix assum assentior. Duo eu inermis propriae labore feugiat.</p>\r\n<p class="readmore"><a href="/fr/article/test">Voir les pages de test</a></p>\r\n<p class="left"><a href="http://www.izend.org"><img src="/logos/izend.png" alt="www.izend.org" title="iZend - Le moteur web" /></a></p>\r\n<p>Perfecto intellegat moderatius ei est. Quod consetetur has ea, id viderer delectus dignissim vel. Et sed homero gubergren.</p>\r\n<div class="clear"></div>\r\n<ol class="summary">\r\n<li><a href="#">Duo ridens</a></li>\r\n<li><a href="#">Commodo quaestio</a></li>\r\n<li><a href="#">Tale posidonium</a></li>\r\n</ol>\r\n<h6>Aliquam feugait</h6>\r\n<p>Stet choro inimicus eum ea. Nulla utinam semper an has, ex qui ferri dissentias. Ut laboramus assentior nam.</p>', '0'),
 (1, 'en', '<h3>Welcome</h3>\r\n<p>Lorem ipsum dolor sit amet, quaeque fabellas indoctum et vel, ut graecis urbanitas eum. Et vix assum assentior. Duo eu inermis propriae labore feugiat.</p>\r\n<p class="readmore"><a href="/en/article/test">View the test pages</a></p><p class="left"><a href="http://www.izend.org"><img src="/logos/izend.png" alt="www.izend.org" title="iZend - The web engine" /></a></p>\r\n<p>Perfecto intellegat moderatius ei est. Quod consetetur has ea, id viderer delectus dignissim vel. Et sed homero gubergren.</p>\r\n<div class="clear"></div>\r\n<ol class="summary">\r\n<li><a href="#">Duo ridens</a></li>\r\n<li><a href="#">Commodo quaestio</a></li>\r\n<li><a href="#">Tale posidonium</a></li>\r\n</ol>\r\n<h6>Aliquam feugait</h6>\r\n<p>Stet choro inimicus eum ea. Nulla utinam semper an has, ex qui ferri dissentias. Ut laboramus assentior nam.</p>', '0'),
 (2, 'fr', '<div class="vignette"><a href="http://www.izend.org"><img src="/logos/izend.png" alt="" title="" /></a></div>\r\n<p>Lorem ipsum dolor sit amet, alterum antiopam maluisset vis eu, et brute expetenda iracundia has. Eos animal nusquam delicata ad. Cetero legendos in pri, no usu quidam utamur. Vel quodsi voluptua cu, eam ex reque audire vidisse. Te modo omnes sea, ad detracto praesent cotidieque vim, eam quando intellegat an. Aeque erroribus mei te, ei est possit iriure.</p>\r\n<p>Texte en <b>gras</b>, en <i>italique</i>, <u>souligné</u> et <s>barré</s>.</p>\r\n<h4>H4</h4>\r\n<p>Paragraphe avec du <code>code inséré</code> dans le texte.</p>\r\n<h5>H5</h5>\r\n<p>Une série de commandes&nbsp;:</p>\r\n<pre><code>$ ls -l\r\n$ pwd</code></pre>\r\n<h6>H6</h6>\r\n<ol class="summary">\r\n<li><a href="#">Duo ridens</a></li>\r\n<li><a href="#">Tale posidonium</a></li>\r\n<li><a href="#">Cu mea ferri</a></li>\r\n</ol>\r\n<blockquote>Et scaevola principes elaboraret mea. At usu docendi epicurei, et ferri sensibus deterruisset nec, mei solet persius dignissim te. Vix velit rationibus at. Ei eum simul suscipit, assum munere recusabo vix no.</blockquote>\r\n<h6>Image</h6>\r\n<p><img src="/logos/izend.png" alt="" title="www.izend.org" /></p>\r\n<h6>Tableau</h6>\r\n<table>\r\n<thead>\r\n<tr><th>Français</th><th>Anglais</th></tr>\r\n</thead>\r\n<tbody>\r\n<tr><td>Un</td><td>One</td></tr>\r\n<tr><td>Deux</td><td>Two</td></tr>\r\n</tbody>\r\n</table>\r\n<h6>Arbre</h6>\r\n<ol class="tree">\r\n<li class="dirnode firstnode">/dossier\r\n  <ol>\r\n  <li class="dirnode">dossier</li>\r\n  <li class="dirnode">dossier\r\n    <ol>\r\n    <li class="filenode lastnode">fichier</li>\r\n    </ol>\r\n  </li>\r\n  <li class="filenode lastnode">fichier</li>\r\n  </ol>\r\n</li>\r\n</ol>\r\n<h6>Colonnes</h6>\r\n<div class="row bythree">\r\n<p>No dolor invenire adversarium nam, erat suscipit per no. Id duo summo mollis.</p>\r\n<p>Per ut illud tempor. Ut vis laboramus voluptatibus. Vel oporteat ullamcorper id, modus decore luptatum vim ea. Nec ex brute placerat, feugiat percipitur eos ea, fabulas principes ea sit.</p>\r\n<p><img class="left" src="/logos/izend.png" alt="" title="www.izend.org" />Ad eam odio evertitur neglegentur, verterem disputationi eam ex. Sed no solet homero voluptua.</p>\r\n</div>', '0'),
@@ -558,8 +558,8 @@ INSERT INTO `${db_prefix}content_text` (`content_id`, `locale`, `text`, `eval`) 
 (32, 'en', '<div class="row bythree">\r\n<p>No dolor invenire adversarium nam, erat suscipit per no. Id duo summo mollis.</p>\r\n<p>Per ut illud tempor. Ut vis laboramus voluptatibus. Vel oporteat ullamcorper id, modus decore luptatum vim ea. Nec ex brute placerat, feugiat percipitur eos ea, fabulas principes ea sit.</p>\r\n<p><img class="left" src="/logos/izend.png" alt="" title="www.izend.org" />Ad eam odio evertitur neglegentur, verterem disputationi eam ex. Sed no solet homero voluptua.</p>\r\n</div>', '0'),
 (33, 'fr', '<p>Un QRmii est un code QR qui contient une URL courte qui est automatiquement redirigée vers une URL complète. Flasher un QRmii avec un smartphone affiche directement la page de l''URL d''origine.</p>', '0'),
 (33, 'en', '<p>A QRmii is QR code which contains a short URL which is automatically redirected to a complete URL.\r\nScanning a QRmii with a smartphone directly displays the page of the original URL.</p>', '0'),
-(34, 'fr', '<p><a href="http://www.${sitename}"><img src="/logos/sitelogo.png" alt="" title="" /></a></p>\r\n<p><a href="http://www.qrmii.com/"><img src="/files/images/qrmii.png" alt="" title="qrmii - 1 URL 1 QR" /></a></p>\r\n<p>Un QRmii est un code QR qui contient une URL courte qui est automatiquement redirigée vers une URL complète.\r\nFlasher un QRmii avec un smartphone affiche directement la page de l''URL d''origine.</p>\r\n<p><a href="http://www.${sitename}/fr/qrmii">Lire l''article</a></p>\r\n<div class="acenter"><a href="http://qrmii.com/a944d525"><img src="/files/images/qr50.png" width="50" height="50" alt="" title="http://qrmii.com/a944d525" /></a> Flashez-moi&nbsp;!</div>', '0'),
-(34, 'en', '<p><a href="http://www.${sitename}"><img src="/logos/sitelogo.png" alt="" title="" /></a></p>\r\n<p><a href="http://www.qrmii.com/"><img src="/files/images/qrmii.png" alt="" title="qrmii - 1 URL 1 QR" /></a></p>\r\n<p>A QRmii is QR code which contains a short URL which is automatically redirected to a complete URL.\r\nScanning a QRmii with a smartphone directly displays the page of the original URL.</p>\r\n<p><a href="http://www.${sitename}/en/qrmii">Read the article</a></p>\r\n<div class="acenter"><a href="http://qrmii.com/a944d525"><img src="/files/images/qr50.png" width="50" height="50" alt="" title="http://qrmii.com/a944d525" /></a> Scan me!</div>', '0'),
+(34, 'fr', '<p><a href="http://www.{$sitename}"><img src="/logos/sitelogo.png" alt="" title="" /></a></p>\r\n<p><a href="http://www.qrmii.com/"><img src="/files/images/qrmii.png" alt="" title="qrmii - 1 URL 1 QR" /></a></p>\r\n<p>Un QRmii est un code QR qui contient une URL courte qui est automatiquement redirigée vers une URL complète.\r\nFlasher un QRmii avec un smartphone affiche directement la page de l''URL d''origine.</p>\r\n<p><a href="http://www.{$sitename}/fr/qrmii">Lire l''article</a></p>\r\n<div class="acenter"><a href="http://qrmii.com/a944d525"><img src="/files/images/qr50.png" width="50" height="50" alt="" title="http://qrmii.com/a944d525" /></a> Flashez-moi&nbsp;!</div>', '0'),
+(34, 'en', '<p><a href="http://www.{$sitename}"><img src="/logos/sitelogo.png" alt="" title="" /></a></p>\r\n<p><a href="http://www.qrmii.com/"><img src="/files/images/qrmii.png" alt="" title="qrmii - 1 URL 1 QR" /></a></p>\r\n<p>A QRmii is QR code which contains a short URL which is automatically redirected to a complete URL.\r\nScanning a QRmii with a smartphone directly displays the page of the original URL.</p>\r\n<p><a href="http://www.{$sitename}/en/qrmii">Read the article</a></p>\r\n<div class="acenter"><a href="http://qrmii.com/a944d525"><img src="/files/images/qr50.png" width="50" height="50" alt="" title="http://qrmii.com/a944d525" /></a> Scan me!</div>', '0'),
 (36, 'fr', '<?php head(''javascript'', ''jquery-ui''); ?>\r\n<?php head(''stylesheet'', ''jquery-ui'', ''screen''); ?>\r\n<?php head(''javascript'', ''jquery.qtip''); ?>\r\n<?php head(''stylesheet'', ''jquery.qtip'', ''screen''); ?>', '1'),
 (36, 'en', '<?php head(''javascript'', ''jquery-ui''); ?>\r\n<?php head(''stylesheet'', ''jquery-ui'', ''screen''); ?>\r\n<?php head(''javascript'', ''jquery.qtip''); ?>\r\n<?php head(''stylesheet'', ''jquery.qtip'', ''screen''); ?>', '1'),
 (37, 'fr', '<div id="sidemenu" class="sidemenu">\r\n<div class="sidemenu-tabs">\r\n<ul>\r\n<li><a href="#sidemenu-tabs-1">Blog</a></li>\r\n<li><a href="#sidemenu-tabs-2">Dolor</a></li>\r\n<li><a href="#sidemenu-tabs-3">Lacinia</a></li>\r\n</ul>', '0'),
@@ -582,7 +582,7 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-INSERT INTO `${db_prefix}node` (`node_id`, `user_id`, `created`, `modified`, `visits`, `nocomment`, `nomorecomment`, `novote`, `nomorevote`, `ilike`, `tweet`, `linkedin`, `pinit`, `whatsapp`) VALUES
+INSERT INTO `{$db_prefix}node` (`node_id`, `user_id`, `created`, `modified`, `visits`, `nocomment`, `nomorecomment`, `novote`, `nomorevote`, `ilike`, `tweet`, `linkedin`, `pinit`, `whatsapp`) VALUES
 (1, 1, NOW(), NOW(), '0', '1', '1', '1', '1', '1', '1', '1', '0', '0'),
 (2, 1, NOW(), NOW(), '0', '1', '1', '1', '1', '0', '0', '0', '0', '0'),
 (3, 1, NOW(), NOW(), '1', '0', '1', '0', '0', '1', '1', '1', '0', '0'),
@@ -606,7 +606,7 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-INSERT INTO `${db_prefix}node_content` (`node_id`, `content_id`, `content_type`, `number`, `ignored`) VALUES
+INSERT INTO `{$db_prefix}node_content` (`node_id`, `content_id`, `content_type`, `number`, `ignored`) VALUES
 (1, 1, 'text', 1, '0'),
 (1, 25, 'text', 2, '0'),
 (2, 15, 'text', 1, '0'),
@@ -666,7 +666,7 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-INSERT INTO `${db_prefix}node_locale` (`node_id`, `locale`, `name`, `title`, `abstract`, `cloud`) VALUES
+INSERT INTO `{$db_prefix}node_locale` (`node_id`, `locale`, `name`, `title`, `abstract`, `cloud`) VALUES
 (1, 'fr', 'haut', 'Haut', 'La version spécialisée d''iZend pour écrire un blog.', 'iZend blog moteur web'),
 (1, 'en', 'top', 'Top', 'The specialized version of iZend for writing a blog.', 'iZend blog web engine'),
 (2, 'fr', 'bas', 'Bas', NULL, 'identification édition'),
@@ -709,7 +709,7 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-INSERT INTO `${db_prefix}tag` (`tag_id`, `locale`, `name`) VALUES
+INSERT INTO `{$db_prefix}tag` (`tag_id`, `locale`, `name`) VALUES
 (1, 'en', 'iZend'),
 (2, 'en', 'blog'),
 (3, 'en', 'web'),
@@ -780,7 +780,7 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-INSERT INTO `${db_prefix}tag_index` (`tag_id`, `node_id`) VALUES
+INSERT INTO `{$db_prefix}tag_index` (`tag_id`, `node_id`) VALUES
 (1, 1),
 (2, 1),
 (3, 1),
@@ -905,7 +905,7 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-INSERT INTO `${db_prefix}thread` (`thread_id`, `user_id`, `thread_type`, `created`, `modified`, `number`, `visits`, `nosearch`, `nocloud`, `nocomment`, `nomorecomment`, `novote`, `nomorevote`, `ilike`, `tweet`, `linkedin`, `pinit`, `whatsapp`) VALUES
+INSERT INTO `{$db_prefix}thread` (`thread_id`, `user_id`, `thread_type`, `created`, `modified`, `number`, `visits`, `nosearch`, `nocloud`, `nocomment`, `nomorecomment`, `novote`, `nomorevote`, `ilike`, `tweet`, `linkedin`, `pinit`, `whatsapp`) VALUES
 (1, 1, 'thread', NOW(), NOW(), 1, '0', '0', '0', '0', '0', '0', '0', '1', '1', '1', '0', '0'),
 (2, 1, 'story', NOW(), NOW(), 2, '1', '0', '0', '0', '0', '0', '0', '1', '1', '1', '0', '0'),
 (3, 1, 'folder', NOW(), NOW(), 3, '1', '0', '0', '1', '1', '1', '1', '1', '1', '1', '0', '0'),
@@ -917,7 +917,7 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-INSERT INTO `${db_prefix}thread_locale` (`thread_id`, `locale`, `name`, `title`, `abstract`, `cloud`) VALUES
+INSERT INTO `{$db_prefix}thread_locale` (`thread_id`, `locale`, `name`, `title`, `abstract`, `cloud`) VALUES
 (1, 'fr', 'classeur', 'Classeur', NULL, NULL),
 (1, 'en', 'binder', 'Binder', NULL, NULL),
 (2, 'fr', 'test', 'Test', NULL, NULL),
@@ -936,7 +936,7 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-INSERT INTO `${db_prefix}thread_node` (`thread_id`, `node_id`, `number`, `ignored`) VALUES
+INSERT INTO `{$db_prefix}thread_node` (`thread_id`, `node_id`, `number`, `ignored`) VALUES
 (1, 1, 1, '0'),
 (1, 2, 2, '0'),
 (2, 3, 1, '0'),
