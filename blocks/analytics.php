@@ -2,8 +2,8 @@
 
 /**
  *
- * @copyright  2016-2023 izend.org
- * @version    5
+ * @copyright  2016-2026 izend.org
+ * @version    6
  * @link       http://www.izend.org
  */
 
@@ -12,13 +12,14 @@ require_once 'tokenid.php';
 
 require_once 'vendor/autoload.php';
 
-use Google\Analytics\Data\V1beta\BetaAnalyticsDataClient;
+use Google\Analytics\Data\V1beta\Client\BetaAnalyticsDataClient;
 use Google\Analytics\Data\V1beta\DateRange;
 use Google\Analytics\Data\V1beta\Dimension;
 use Google\Analytics\Data\V1beta\Metric;
 use Google\Analytics\Data\V1beta\Filter;
 use Google\Analytics\Data\V1beta\Filter\StringFilter;
 use Google\Analytics\Data\V1beta\FilterExpression;
+use Google\Analytics\Data\V1beta\RunReportRequest;
 
 function analytics($lang) {
 	global $googlecredentials;
@@ -234,13 +235,15 @@ function analytics($lang) {
 					'string_filter' => new StringFilter([ 'match_type' => 1, 'value' => $url ])
 				]);
 
-				$response = $client->runReport([
+				$request = new RunReportRequest([
 					'property' => "properties/$googleanalyticspropertyid",
-					'dateRanges' => [ $daterange ],
+					'date_ranges' => [ $daterange ],
 					'metrics' => [ new Metric(['name' => 'activeUsers']) ],
 					'dimensions' => [ new Dimension(['name' => 'pagePath']), new Dimension(['name' => 'date']) ],
-					'dimensionFilter' => new FilterExpression([ 'filter' => $filter ])
+					'dimension_filter' => new FilterExpression([	'filter' => $filter	])
 				]);
+
+				$response = $client->runReport($request);
 
 				if (count($response->getRows()) > 0) {
 					$gdata=array();
