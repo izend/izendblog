@@ -2,8 +2,8 @@
 
 /**
  *
- * @copyright  2020 izend.org
- * @version    1
+ * @copyright  2020--2026 izend.org
+ * @version    2
  * @link       http://www.izend.org
  */
 
@@ -21,7 +21,7 @@ function reloadonlogin($lang, $arglist=false) {
 		}
 	}
 
-	if ($login_verified and array_intersect($login_verified, user_profile('role'))) {
+	if ($login_verified and ($role=user_profile('role')) and array_intersect($login_verified, $role)) {
 		$user=$_SESSION['user'];
 		unset($_SESSION['user']);
 

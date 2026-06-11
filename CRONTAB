@@ -15,7 +15,7 @@ with the following content:
 # /etc/cron.d/izend: crontab for iZend
 # Runs cron.php every quarter of an hour for every site.
 
-*/15 * * * * www-data [ -f /var/www/sitename.net/cron.php ] && /usr/bin/php5 -f /var/www/sitename.net/cron.php
+*/15 * * * * www-data [ -f /var/www/sitename.net/cron.php ] && /usr/bin/php -f /var/www/sitename.net/cron.php
 
 cron.php will run every script file located in the cron directory.
 
