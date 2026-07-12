@@ -1,13 +1,15 @@
 /**
  *
- * @copyright  2010-2022 izend.org
- * @version    58
+ * @copyright  2010-2026 izend.org
+ * @version    59
  * @link       http://www.izend.org
  */
  
 /* print.css */
 
 * {background-color:white !important;}
+
+a:link, a:visited {text-decoration:none;}
 
 body {line-height:1.5;font-family:inherit;color:black;background:none;font-size:10pt;}
 hr {background:grey;color:grey;width:100%;height:0;padding:0;margin:1em 0;border:1px solid;}
