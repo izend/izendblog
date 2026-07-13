@@ -1,14 +1,13 @@
 /**
  *
  * @copyright  2010-2026 izend.org
- * @version    128
+ * @version    129
  * @link       http://www.izend.org
  */
  
 /* screen.css */
 
 *, :focus {outline:none;}
-::-moz-focus-inner, ::-moz-focus-outer {border:0;}
 
 a:link, a:visited {text-decoration:none;}
 a:hover {text-decoration:underline;}
@@ -17,7 +16,6 @@ body {font-family:Verdana, sans-serif;font-size:100%;line-height:1.4;}
 
 h1, h2, h3, h4, h5, h6, label, caption, #rate-it legend {font-family:Arial, sans-serif;}
 
-pre {font-family:Verdana, sans-serif;}
 code {font-family:"Courier New", Courier, monospace;}
 pre code {font-size:13px;white-space:pre-wrap;}
 
@@ -39,7 +37,7 @@ input, select, textarea {font-family:Verdana, sans-serif;font-size:14px;}
 
 input[type="text"], input[type="password"], textarea {box-sizing:border-box;max-width:100%;}
 
-input[type="text"], input[type="password"], input[type="number"], input[type="date"], textarea, select, fieldset {border:1px solid #ccc;outline:0 none;margin:1px 0;background:none repeat-x #fff;}
+input[type="text"], input[type="password"], input[type="number"], input[type="date"], textarea, select, fieldset {border:1px solid #ccc;outline:0 none;margin:1px 0;background:#fff;}
 input[type="text"]:focus, input[type="password"]:focus, input[type="number"]:focus, input[type="date"]:focus, textarea:focus {border-color:#aaa;}
 
 input[type="text"], input[type="password"], input[type="number"], input[type="date"], textarea, select, fieldset {border-radius:2px;}
@@ -48,16 +46,16 @@ input[type="text"], input[type="password"], input[type="number"], input[type="da
 fieldset {padding:5px 10px 8px;}
 select {padding:3px;}
 
-input[type="text"][readonly] {border-color:transparent;cursor:default;}
+input[type="text"][readonly], input[type="number"][readonly], input[type="date"][readonly] {border-color:transparent;cursor:default;}
 
 input[type="radio"], input[type="checkbox"] {min-height:14px;line-height:normal;}
 input[type="radio"] {margin-top:0;}
 
 label[for] input[type="checkbox"] {margin-top:0;}
 
-input.text_date[type="text"] {width:96px;}
+input[type="text"].text_date {width:96px;}
 
-input.text_captcha[type="text"] {text-align:center;}
+input[type="text"].text_captcha {text-align:center;}
 
 form.compact p, div.compact p, p.compact {margin-top:0.75em;margin-bottom:0.5em;}
 form div.row {margin-top:0;margin-bottom:0;}
@@ -114,7 +112,7 @@ ul {list-style-type:disc;}
 .popup ul li a {width:10em;}
 .popup li:hover ul {display:block;}
 
-div.file {word-wrap:break-word;}
+div.file {overflow-wrap:break-word;}
 
 div.row {display:flex;}
 div.row > * {margin:0 1%;flex:100%;}
@@ -131,17 +129,12 @@ div.column {display:flex;flex-direction:column;}
 div.column > * {flex:100%;}
 div.column > .fixed {flex:auto 0 0;}
 
-div.labeled > span {float:left;width:10em;margin-right:1em;text-align:right;}
-
 div.gallery {overflow:auto;white-space:nowrap;}
 div.gallery img {max-width:none;}
 div.gallery img, div.gallery a {border-color:#fff;border-style:solid;border-width:0 3px;vertical-align:text-bottom;}
 div.gallery img:first-child, div.gallery a:first-child {border-left-width:0 !important;}
 div.gallery img:last-child, div.gallery a:last-child {border-right-width:0 !important;}
 div.gallery.compact img, div.gallery.compact a {border:none;}
-
-.round {border-radius:8px;}
-.shadow {box-shadow:2px 2px 3px #999;-webkit-box-shadow:2px 2px 3px #999;}
 
 div.hbar > * {margin-left:0.5em;margin-right:0.5em;}
 div.hbar > *:first-child {margin-left:0;}
@@ -151,9 +144,10 @@ div.vbar > * {margin-top:0.5em;margin-bottom:0.5em;}
 div.vbar > *:first-child {margin-top:0;}
 div.vbar > *:last-child {margin-bottom:0;}
 
-.clear {clear:both;}
+.round {border-radius:8px;}
+.shadow {box-shadow:2px 2px 3px #999;}
 
-.incolumn {overflow:hidden;}
+.clear {clear:both;}
 
 .block {display:block !important;}
 .inline {display:inline !important;}
@@ -178,7 +172,6 @@ div.vbar > *:last-child {margin-bottom:0;}
 
 .selected {font-weight:bold;}
 .emphasis {font-style:italic;}
-.superscript {vertical-align:super;} 
 
 .aleft {text-align:left;}
 .aright {text-align:right;}
@@ -189,7 +182,7 @@ div.vbar > *:last-child {margin-bottom:0;}
 .hvflip {transform:scale(-1, -1);}
 
 .nowrap {white-space:nowrap !important;}
-.breakword {word-wrap:break-word !important;}
+.breakword {overflow-wrap:break-word !important;}
 .breakall {word-break:break-all !important;}
 
 .pointer {cursor:pointer;}
@@ -197,7 +190,7 @@ div.vbar > *:last-child {margin-bottom:0;}
 
 .nomargin {margin:0;}
 
-button, input.submit {padding:0;margin:1px 0;border:none;text-indent:-9999px;-webkit-appearance:none;cursor:pointer;}
+button, input.submit {padding:0;margin:1px 0;border:none;text-indent:-9999px;appearance:none;cursor:pointer;}
 span.icon {display:inline-block;text-indent:-9999px;vertical-align:middle;}
 
 a.button {padding:6px 0 4px;margin:1px 0;display:inline-block;text-align:center;vertical-align:middle;cursor:pointer;}
@@ -231,5 +224,5 @@ ol.tree li.firstnode {background:#fff;}
 ol.tree li.dirnode {font-style:italic;} 
 ol.tree li.filenode {font-style:normal;}
 
-.meter {width:200px;height:20px;font-weight:bold;font-size:small;border-radius:2px;border:1px solid #ccc;outline:0 none;margin:1px 0;background:none repeat-x #fff;max-width:90%;}
+.meter {width:200px;height:20px;font-weight:bold;font-size:small;border-radius:2px;border:1px solid #ccc;outline:0 none;margin:1px 0;background:#fff;max-width:90%;overflow:hidden;}
 .meter > span {display:block;height:100%;background-color:#ccc;color:#fff;text-align:center;}
