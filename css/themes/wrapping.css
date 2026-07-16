@@ -1,7 +1,7 @@
 /**
  *
- * @copyright  2016 izend.org
- * @version    1
+ * @copyright  2016-2026 izend.org
+ * @version    2
  * @link       http://www.izend.org
  */
  
@@ -29,10 +29,10 @@ a:hover #sitedomain {color:#202020;}
 
 .error, .errors, .inerror {color:#e15d3e;}
 
-.date {background:#d7d8bf;border-radius:2px;-webkit-box-shadow:3px 3px 4px rgba(99,99,99,.8);moz-box-shadow:3px 3px 4px rgba(99,99,99,.8);box-shadow:3px 3px 4px rgba(99,99,99,.8);text-shadow:2px 2px 5px #919191;}
+.date {background:#d7d8bf;border-radius:2px;box-shadow:3px 3px 4px rgba(99,99,99,.8);text-shadow:2px 2px 5px #919191;}
 .date .day {top:0.3em;left:-0.3em;color:#666666;}
 .date .month {top:5em;color:#666666;}
-.date .year {top:2em;left:2em;color:#e15d3e;-webkit-transform:rotate(-90deg);-moz-transform:rotate(-90deg);-o-transform:rotate(-90deg);-ms-transform:rotate(-90deg);transform:rotate(-90deg);}
+.date .year {top:2em;left:2em;color:#e15d3e;transform:rotate(-90deg);}
 
 .blogsummarytitle h4 a:hover, .blogsummarytitle .author a:hover {color:#e15d3e;}
 
@@ -46,18 +46,6 @@ a:hover #sitedomain {color:#202020;}
 
 .jspDrag {background:#d7d8bf;}
 
-input.submit {width:100px;height:30px;background:#cccccc;color:#333333;font-family:Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border-radius:8px;cursor:pointer;}
-input.submit {border:1px solid #cccccc;transition: all 0.3s ease-out;
-/* IE10 Consumer Preview */ 
-background-image: -ms-linear-gradient(top, #FFFFFF 0%, #999999 100%);
-/* Mozilla Firefox */ 
-background-image: -moz-linear-gradient(top, #FFFFFF 0%, #999999 100%);
-/* Opera */ 
-background-image: -o-linear-gradient(top, #FFFFFF 0%, #999999 100%);
-/* Webkit (Safari/Chrome 10) */ 
-background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(1, #999999));
-/* Webkit (Chrome 11+) */ 
-background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #999999 100%);
-/* W3C Markup, IE10 Release Preview */ 
-background-image: linear-gradient(to bottom, #FFFFFF 0%, #999999 100%);
-}
+input.submit {width:100px;height:30px;background:#cccccc;color:#333333;font-family:Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border-radius:8px;cursor:pointer;background-image:linear-gradient(to bottom, #ffffff 0%, #999999 100%);}
+input.submit {border:1px solid #cccccc;}
+

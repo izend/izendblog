@@ -18,8 +18,9 @@ a:hover #sitedomain {color:#ffffff;}
 #footer a:link, #footer a:visited {color:#333333;}
 #footer a:hover {color:#333333;}
 
-#footer .btn_mail {background:url(../../images/light/small/mail.png) no-repeat;}
-#footer .btn_login {background:url(../../images/light/small/user.png) no-repeat;}
-#footer .btn_logout {background:url(../../images/light/small/cancel.png) no-repeat;}
-#footer .btn_admin {background:url(../../images/light/small/work.png) no-repeat;}
+#footer .btn_mail {background-position:-120px -88px;}
+#footer .btn_login {background-position:-104px -88px;}
+#footer .btn_logout {background-position:-152px -88px;}
+#footer .btn_account {background-position:-104px -88px;}
+#footer .btn_admin {background-position:-136px -88px;}
 

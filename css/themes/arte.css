@@ -1,7 +1,7 @@
 /**
  *
- * @copyright  2014 izend.org
- * @version    2
+ * @copyright  2014-2026 izend.org
+ * @version    3
  * @link       http://www.izend.org
  */
  
@@ -30,10 +30,10 @@ a:hover #sitedomain {color:#202020;}
 
 .error, .errors, .inerror {color:#e15d3e;}
 
-.date {background:#d6d2cf;border-radius:2px;-webkit-box-shadow:3px 3px 4px rgba(99,99,99,.8);moz-box-shadow:3px 3px 4px rgba(99,99,99,.8);box-shadow:3px 3px 4px rgba(99,99,99,.8);text-shadow:2px 2px 5px #919191;}
+.date {background:#d6d2cf;border-radius:2px;box-shadow:3px 3px 4px rgba(99,99,99,.8);text-shadow:2px 2px 5px #919191;}
 .date .day {top:0.3em;left:-0.3em;color:#666666;}
 .date .month {top:5em;color:#666666;}
-.date .year {top:2em;left:2em;color:#e15d3e;-webkit-transform:rotate(-90deg);-moz-transform:rotate(-90deg);-o-transform:rotate(-90deg);-ms-transform:rotate(-90deg);transform:rotate(-90deg);}
+.date .year {top:2em;left:2em;color:#e15d3e;transform:rotate(-90deg);}
 
 .blogsummarytitle h4 a:hover, .blogsummarytitle .author a:hover {color:#e15d3e;}
 

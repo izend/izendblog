@@ -1,7 +1,7 @@
 /**
  *
- * @copyright  2014-2016 izend.org
- * @version    2
+ * @copyright  2014-2026 izend.org
+ * @version    3
  * @link       http://www.izend.org
  */
  
@@ -15,9 +15,9 @@ a:hover #sitedomain {color:#738d9e;}
 
 #socialbar a {background-color:#b7bfc2;}
 
-#standard, #editor, #viewer {background-color:#ffffff;border-radius:8px;box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;}
-#content, #footer {border-radius:0;-webkit-border-radius:0;box-shadow:none;-webkit-box-shadow:none;}
-#consent {margin-top:20px;border-radius:8x 8px 0;box-shadow:none;-webkit-box-shadow:none;}
+#standard, #editor, #viewer {background-color:#ffffff;border-radius:8px;box-shadow:1px 2px 5px #cccccc;}
+#content, #footer {border-radius:0;box-shadow:none;}
+#consent {margin-top:20px;border-radius:8x 8px 0;box-shadow:none;}
 
 #banner {margin-top:20px;}
 
@@ -33,13 +33,6 @@ a:hover #sitedomain {color:#738d9e;}
 
 h1,h2,h3 {color:#738d9e;}
 
-input.submit {width:100px;height:30px;background:#738d9e;color:#ffffff;font-family:Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border-radius:3px;cursor:pointer;}
-input.submit {box-shadow:1px 2px 5px #cccccc;-webkit-box-shadow:1px 2px 5px #cccccc;}
-input.submit {
-background-image:-webkit-linear-gradient(top, #b7bfc2, #738d9e);
-background-image:   -moz-linear-gradient(top, #b7bfc2, #738d9e);
-background-image:    -ms-linear-gradient(top, #b7bfc2, #738d9e);
-background-image:     -o-linear-gradient(top, #b7bfc2, #738d9e);
-background-image:        linear-gradient(top, #b7bfc2, #738d9e);
-}
+input.submit {width:100px;height:30px;background:#738d9e;color:#ffffff;font-family:Arial, sans-serif;text-indent:0;font-size:14px;font-weight:bold;border-radius:3px;cursor:pointer;background-image:linear-gradient(to bottom, #b7bfc2, #738d9e);}
+input.submit {box-shadow:1px 2px 5px #cccccc;}
 input.submit.selected {color:#333333;}
