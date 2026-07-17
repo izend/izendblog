@@ -11,13 +11,7 @@
 	color: #ccc;
 	position: relative;
 	z-index: 1;
-	background: #333;
-	background: -webkit-gradient( linear, left top, left bottom, from( #999 ), to( #333 ) );
-	background: -webkit-linear-gradient( top, #999, #333 );
-	background: -moz-linear-gradient( top, #999, #333 );
-	background: -ms-radial-gradient( top, #999, #333 );
-	background: -o-linear-gradient( top, #999, #333 );
-	background: linear-gradient( top, #999, #333 );
+	background: linear-gradient( to bottom, #999, #333 );
 	border-radius: 2px;
 }
 .audioplayer-mini {
@@ -181,10 +175,6 @@
 	left: 0.563em; /* 9 */
 	top: -0.063em; /* 1 */
 	border-radius: 0 0.938em 0 0; /* 15 */
-	-webkit-transform: rotate( 45deg );
-	-moz-transform: rotate( 45deg );
-	-ms-transform: rotate( 45deg );
-	-o-transform: rotate( 45deg );
 	transform: rotate( 45deg );
 }
 .audioplayer-volume-adjust {
@@ -195,16 +185,7 @@
 	right: 0;
 	top: -9999px;
 	background: #333;
-	background: -webkit-gradient( linear, left top, left bottom, from( #999 ), to( #333 ) );
-	background: -webkit-linear-gradient( top, #999, #333 );
-	background: -moz-linear-gradient( top, #999, #333 );
-	background: -ms-radial-gradient( top, #999, #333 );
-	background: -o-linear-gradient( top, #999, #333 );
-	background: linear-gradient( top, #999, #333 );
-	-webkit-border-top-left-radius: 2px;
-	-webkit-border-top-right-radius: 2px;
-	-moz-border-radius-topleft: 2px;
-	-moz-border-radius-topright: 2px;
+	background: linear-gradient( to bottom, #999, #333 );
 	border-top-left-radius: 2px;
 	border-top-right-radius: 2px;
 }
