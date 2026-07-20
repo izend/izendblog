@@ -1,13 +1,13 @@
 /**
  *
  * @copyright  2010-2026 izend.org
- * @version    60
+ * @version    61
  * @link       http://www.izend.org
  */
  
 /* print.css */
 
-* {background-color:white !important;}
+* {background-color:transparent !important;}
 
 a:link, a:visited {text-decoration:none;}
 
@@ -19,7 +19,7 @@ pre {font-family:Verdana, sans-serif;}
 pre code {white-space:pre-wrap;}
 a img {border:none;}
 blockquote {margin:1em 2em;padding:0;font-size:.9em;}
-a {color:black;text-decoration:none;}
+a {color:black;text-decoration:none;overflow-wrap:anywhere;}
 
 h1 {font-size:170%;}
 h2 {font-size:160%;line-height:130%;}
@@ -30,18 +30,22 @@ h6 {font-size:100%;}
 
 h1,h2,h3,h4,h5,h6 {font-weight:bold;margin:1em 0;}
 
-input, select, textarea {font-size:100%;border:none;vertical-align:middle;}
+input, select, fieldset, textarea {font-size:100%;border:none;vertical-align:middle;}
 
-fieldset {display:inline-block;padding:0.5em;}
+input[type="submit"] {font-family:"Courier New", Courier, monospace;font-size:.9em;}
+input[type="checkbox"], input[type="radio"] {background:transparent !important;}
+
+fieldset {display:inline-block;padding:0;}
 
 img {vertical-align:middle;max-width:100%;height:auto;}
 
 ol {list-style-type:decimal;}
 ul {list-style-type:disc;}
 
-h1, h2, h3, h4, h5, h6 {break-after:avoid;break-inside:avoid;}
-p, blockquote, table, pre {break-inside:avoid;}
-ul, ol, dl {break-before:avoid;}
+h1, h2, h3, h4, h5, h6 {break-after:avoid;break-inside:avoid;orphans:3;widows:3;}
+p, blockquote {break-inside:avoid;orphans:3;widows:3;}
+table, pre {break-inside:avoid;}
+ul, ol, dl {break-before:avoid;break-inside:avoid;}
 img {break-inside:avoid;break-after:avoid;float:none;}
 
 table th, table td {padding:5px;margin:0;}
@@ -68,11 +72,25 @@ audio, video {display:none;}
 .aright {text-align:right;}
 .acenter {text-align:center;}
 
-.lang {vertical-align:middle;}
+.monospace {font-family:monospace;font-size:9pt;}
+.proportional {font-family:sans-serif;}
+
+.smaller {font-size:smaller;}
+.larger {font-size:larger;}
+
+.selected {font-weight:bold;}
+.emphasis {font-style:italic;}
+
+.nowrap {white-space:nowrap !important;}
+.breakword {overflow-wrap:break-word !important;}
+.breakall {word-break:break-all !important;}
+
+.nomargin {margin:0;}
 
 .date, .author {color:black;font-style:italic;}
 
-.submit, a.button {display:none;}
+.submit[name], a.button[name] {display:none;}
+p:has(> input.submit[name]:first-child), p:has(> a.button[name]:first-child) {display:none;}
 
 div.row {display:flex;}
 div.row > * {margin:0 1%;flex:100%;}
@@ -96,7 +114,7 @@ div.vbar > * {margin-top:0.5em;margin-bottom:0.5em;}
 div.vbar > *:first-child {margin-top:0;}
 div.vbar > *:last-child {margin-bottom:0;}
 
-.menu, .menubar, .sidebar, .besocial, .cloud, .link, .clickit, .readmore, .summary, .vignette, .vote, .visits, .tagbar, .hidy, .pageselector {display:none !important;}
+.menu, .menubar, .sidebar, .besocial, .cloud, .link, .clickit, .readmore, .summary, .vignette, .vote, .visits, .tagbar, .bbcodebar, .bbcodehelp, .lang, .hidy, .pageselector {display:none !important;}
 
 #banner, #sidebar, #footermenu {display:none;}
 
@@ -111,12 +129,6 @@ div.download, div.longtail, div.youtube {display:none;}
 
 ol.tree li.dirnode {font-style:italic;}
 ol.tree li.filenode {font-style:normal;}
-
-.monospace {font-family:monospace;font-size:9pt;}
-.proportional {font-family:sans-serif;}
-
-.smaller {font-size:smaller;}
-.larger {font-size:larger;}
 
 .geshi {font-family:"Courier New", Courier, monospace;font-size:.9em;}
 
