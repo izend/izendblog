@@ -1,7 +1,7 @@
 /**
  *
  * @copyright  2010-2026 izend.org
- * @version    161
+ * @version    162
  * @link       http://www.izend.org
  */
 
@@ -350,12 +350,9 @@ a:hover #sitedomain {color:#ff9900;}
 #sharebar > li {padding:3px 0;}
 #sharebar > li:last-child {padding-bottom:0;}
 #sharebar.lite a {border-radius:0 5px 5px 0;}
-#sharebar.standard li.linkedin span {vertical-align:baseline !important;}
-#sharebar.standard button, .besocial.standard button {text-indent:0;background:none;width:auto;margin:0;}
 
 .besocial {width:100%;padding:0;margin:1em 0;}
 .besocial li {display:inline-block;padding:0;margin:0;}
-.besocial.standard li {height:30px;vertical-align:top;line-height:20px;}
 
 #sharebar.lite {padding:5px;}
 #sharebar.lite a span, .besocial.lite a span {display:none;}
@@ -509,4 +506,3 @@ a:hover .icon_instagram {background-position:-753px 0;}
 .pageselector {display:inline-block;color:#666666;font-weight:bold;margin:1em auto;}
 .pagenumber {font-size:small;padding:5px;background-color:#ffffff;border-radius:8px;box-shadow:1px 2px 5px #cccccc;}
 .pagenumber.currentpage {font-size:large;padding-top:7px;padding-bottom:7px;}
-

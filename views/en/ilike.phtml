@@ -2,37 +2,19 @@
 
 /**
  *
- * @copyright  2010-2019 izend.org
- * @version    14
+ * @copyright  2010-2026 izend.org
+ * @version    15
  * @link       http://www.izend.org
  */
 ?>
-<?php switch ($mode): ?>
-<?php case 'lite': ?>
-<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode($base_url . '/' . $request_path); ?>" target="_blank" title="Share on Facebook"><span>Facebook</span></a>
-<?php break; ?>
+<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo rawurlencode($base_url . '/' . $request_path); ?>" target="_blank" rel="noopener noreferrer" title="Share on Facebook">
+<?php switch ($sharemode): ?>
 <?php case 'awesome': ?>
-<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode($base_url . '/' . $request_path); ?>" target="_blank" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+<i class="fab fa-facebook-f"></i>
 <?php break; ?>
+<?php case 'lite': ?>
 <?php default: ?>
-<?php $id = uniqid('id'); ?>
-<div id="<?php echo $id; ?>"></div>
-<script>
-//<![CDATA[
-<?php switch ($mode): ?>
-<?php case 'bar': ?>
-$('#<?php echo $id; ?>').replaceWith('<div class="fb-like" data-href="<?php echo $base_url; ?>/<?php echo $request_path; ?>" data-send="true" data-layout="box_count" data-width="70" data-show-faces="false" data-font="arial" data-colorscheme="light"></div>');
-<?php break; ?>
-<?php case 'inline': ?>
-<?php default: ?>
-var w=$('body').width();
-var datalayout=w < 320 ? 'button_count' : 'standard';
-var datawidth=datalayout == 'standard' ? (w > 480 ? '450' : '300') : '100';
-$('#<?php echo $id; ?>').replaceWith('<div class="fb-like" data-href="<?php echo $base_url; ?>/<?php echo $request_path; ?>" data-send="true" data-layout="' + datalayout + '" data-width="' + datawidth + '" data-show-faces="false" data-font="arial" data-colorscheme="light"></div>');
+<span>Facebook</span>
 <?php break; ?>
 <?php endswitch; ?>
-//]]>
-</script>
-<?php global $facebookjssdk; $facebookjssdk='en_US'; ?>
-<?php break; ?>
-<?php endswitch; ?>
+</a>

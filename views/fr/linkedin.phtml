@@ -2,35 +2,20 @@
 
 /**
  *
- * @copyright  2010-2019 izend.org
- * @version    12
+ * @copyright  2010-2026 izend.org
+ * @version    13
  * @link       http://www.izend.org
  */
 ?>
-<?php switch ($mode): ?>
-<?php case 'lite': ?>
-<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?php echo urlencode($base_url . '/' . $request_path); ?>" target="_blank" title="Partager sur LinkedIn"><span>LinkedIn</span></a>
-<?php break; ?>
+<?php $uri="$base_url/$request_path"; ?>
+<a href="https://www.linkedin.com/sharing/share-offsite/?url=<?php echo rawurlencode($uri); ?>" target="_blank" rel="noopener noreferrer" title="Partager sur LinkedIn">
+<?php switch ($sharemode): ?>
 <?php case 'awesome': ?>
-<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?php echo urlencode($base_url . '/' . $request_path); ?>" target="_blank" title="Partager sur LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+<i class="fab fa-linkedin-in"></i>
 <?php break; ?>
+<?php case 'lite': ?>
 <?php default: ?>
-<?php global $linkedinapiid; ?>
-<?php head('javascript', 'https://platform.linkedin.com/in.js', "api_key: $linkedinapiid\nauthorize: true\nlang: fr_FR"); ?>
-<?php $id = uniqid('id'); ?>
-<div id="<?php echo $id; ?>"></div>
-<script>
-//<![CDATA[
-<?php switch ($mode): ?>
-<?php case 'bar': ?>
-$('#<?php echo $id; ?>').replaceWith('<script type="in/share" data-counter="top" data-url="<?php echo $base_url; ?>/<?php echo $request_path; ?>"><\/script>');
-<?php break; ?>
-<?php case 'inline': ?>
-<?php default: ?>
-$('#<?php echo $id; ?>').replaceWith('<script type="in/share" data-counter="right" data-url="<?php echo $base_url; ?>/<?php echo $request_path; ?>"><\/script>');
+<span>LinkedIn</span>
 <?php break; ?>
 <?php endswitch; ?>
-//]]>
-</script>
-<?php break; ?>
-<?php endswitch; ?>
+</a>

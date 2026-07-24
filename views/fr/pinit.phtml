@@ -2,34 +2,20 @@
 
 /**
  *
- * @copyright  2013-2019 izend.org
- * @version    12
+ * @copyright  2013-2026 izend.org
+ * @version    13
  * @link       http://www.izend.org
  */
 ?>
-<?php switch ($mode): ?>
-<?php case 'lite': ?>
-<a href="https://fr.pinterest.com/pin/create/button/?url=<?php echo urlencode($base_url . '/' . $request_path); ?><?php if (!empty($pinit_image)): ?>&amp;media=<?php echo urlencode($base_url . '/' . $pinit_image); ?><?php endif ?><?php if (!empty($pinit_text)): ?>&amp;description=<?php echo urlencode($pinit_text); ?><?php endif ?>" target="_blank" title="Partager sur Pinterest" data-pin-custom="true"><span>Pinterest</span></a>
-<?php break; ?>
+<?php $uri="$base_url/$request_path"; ?>
+<a href="https://www.pinterest.com/pin/create/?url=<?php echo rawurlencode($uri); ?><?php if (!empty($pinit_image)): ?>&media=<?php echo rawurlencode("$base_url/$pinit_image"); ?><?php endif; ?><?php if (!empty($pinit_text)): ?>&description=<?php echo rawurlencode($pinit_text); ?><?php endif; ?>" target="_blank" rel="noopener noreferrer" title="Partager sur Pinterest">
+<?php switch ($sharemode): ?>
 <?php case 'awesome': ?>
-<a href="https://fr.pinterest.com/pin/create/button/?url=<?php echo urlencode($base_url . '/' . $request_path); ?><?php if (!empty($pinit_image)): ?>&amp;media=<?php echo urlencode($base_url . '/' . $pinit_image); ?><?php endif ?><?php if (!empty($pinit_text)): ?>&amp;description=<?php echo urlencode($pinit_text); ?><?php endif ?>" target="_blank" title="Partager sur Pinterest" data-pin-custom="true"><i class="fab fa-pinterest-p"></i></a>
+<i class="fab fa-pinterest-p"></i>
 <?php break; ?>
+<?php case 'lite': ?>
 <?php default: ?>
-<?php $id = uniqid('id'); ?>
-<div id="<?php echo $id; ?>"></div>
-<script>
-//<![CDATA[
-<?php switch ($mode): ?>
-<?php case 'bar': ?>
-$('#<?php echo $id; ?>').replaceWith('<a href="//fr.pinterest.com/pin/create/button/?url=<?php echo urlencode($base_url . '/' . $request_path); ?><?php if (!empty($pinit_image)): ?>&media=<?php echo urlencode($base_url . '/' . $pinit_image); ?><?php endif ?><?php if (!empty($pinit_text)): ?>&description=<?php echo urlencode($pinit_text); ?><?php endif ?>" data-pin-save="false" data-pin-do="buttonPin"<?php if (false): ?> data-pin-count="above"<?php endif; ?> data-pin-color="white" data-pin-height="28"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_white_28.png" /></a>');
-<?php break; ?>
-<?php case 'inline': ?>
-<?php default: ?>
-$('#<?php echo $id; ?>').replaceWith('<a href="//fr.pinterest.com/pin/create/button/?url=<?php echo urlencode($base_url . '/' . $request_path); ?><?php if (!empty($pinit_image)): ?>&media=<?php echo urlencode($base_url . '/' . $pinit_image); ?><?php endif ?><?php if (!empty($pinit_text)): ?>&description=<?php echo urlencode($pinit_text); ?><?php endif ?>" data-pin-save="false" data-pin-do="buttonPin"<?php if (false): ?> data-pin-count="beside"<?php endif; ?> data-pin-color="white"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_white_20.png" /></a>');
+<span>Pinterest</span>
 <?php break; ?>
 <?php endswitch; ?>
-//]]>
-</script>
-<?php global $pinteresetassets; $pinteresetassets=true; ?>
-<?php break; ?>
-<?php endswitch; ?>
+</a>
