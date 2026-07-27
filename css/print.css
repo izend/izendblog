@@ -1,7 +1,7 @@
 /**
  *
  * @copyright  2010-2026 izend.org
- * @version    61
+ * @version    63
  * @link       http://www.izend.org
  */
  
@@ -34,6 +34,9 @@ input, select, fieldset, textarea {font-size:100%;border:none;vertical-align:mid
 
 input[type="submit"] {font-family:"Courier New", Courier, monospace;font-size:.9em;}
 input[type="checkbox"], input[type="radio"] {background:transparent !important;}
+
+input[type="checkbox"] {vertical-align:middle;}
+input[type="radio"] {vertical-align:text-bottom;}
 
 fieldset {display:inline-block;padding:0;}
 
@@ -114,7 +117,9 @@ div.vbar > * {margin-top:0.5em;margin-bottom:0.5em;}
 div.vbar > *:first-child {margin-top:0;}
 div.vbar > *:last-child {margin-bottom:0;}
 
-.menu, .menubar, .sidebar, .besocial, .cloud, .link, .clickit, .readmore, .summary, .vignette, .vote, .visits, .tagbar, .bbcodebar, .bbcodehelp, .lang, .hidy, .pageselector {display:none !important;}
+.menu, .menubar, .sidebar, .besocial, .cloud, .link, .clickit, .readmore, .summary, .vignette, .vote, .visits, .tagbar, .bbcodebar, .bbcodehelp, .hidy, .pageselector {display:none !important;}
+
+.lang {display:inline !important;}
 
 #banner, #sidebar, #footermenu {display:none;}
 
