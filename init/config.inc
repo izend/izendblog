@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2010-2026 izend.org
- * @version    65
+ * @version    68
  * @link       http://www.izend.org
  */
 <?php
@@ -57,15 +57,6 @@ global $cookieconsent, $cookieconsentauto;
 $cookieconsent=false;
 $cookieconsentauto=true;
 
-global $facebookjssdk, $facebookapiversion, $facebookid, $facebooksecret;
-
-$facebookjssdk=false;	// false
-
-$facebookapiversion='v17.0';
-
-$facebookid=false;
-$facebooksecret=false;
-
 global $pinterestassets;
 
 $pinterestassets=false;	// false
@@ -99,10 +90,6 @@ $googlecredentials=false;			// ROOT_DIR . DIRECTORY_SEPARATOR . 'google-credenti
 global $googleanalyticspageview;
 
 $googleanalyticspageview=false;
-
-global $linkedinapiid;
-
-$linkedinapiid=false;
 
 global $author;
 
