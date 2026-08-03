@@ -2,8 +2,8 @@
 
 /**
  *
- * @copyright  2014-2023 izend.org
- * @version    11
+ * @copyright  2014-2026 izend.org
+ * @version    12
  * @link       http://www.izend.org
  */
 
@@ -186,21 +186,6 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE TYPE "{$db_prefix}type_content_youtube_theme" AS ENUM('light','dark');
-_SEP_;
-		$db_conn->exec($sql);
-
-		$sql= <<<_SEP_
-CREATE FUNCTION {$db_prefix}type_content_youtube_theme(unknown) RETURNS {$db_prefix}type_content_youtube_theme AS 'SELECT $1::text::{$db_prefix}type_content_youtube_theme;' LANGUAGE 'SQL';
-_SEP_;
-		$db_conn->exec($sql);
-
-		$sql= <<<_SEP_
-CREATE CAST (unknown as {$db_prefix}type_content_youtube_theme) WITH FUNCTION {$db_prefix}type_content_youtube_theme(unknown) AS ASSIGNMENT;
-_SEP_;
-		$db_conn->exec($sql);
-
-		$sql= <<<_SEP_
 CREATE TABLE "{$db_prefix}content_youtube" (
   "content_id" SERIAL,
   "locale" {$db_prefix}type_locale NOT NULL DEFAULT '$default_language',
@@ -210,10 +195,6 @@ CREATE TABLE "{$db_prefix}content_youtube" (
   "miniature" varchar(200) DEFAULT NULL,
   "title" varchar(200) DEFAULT NULL,
   "autoplay" boolean NOT NULL DEFAULT '0',
-  "controls" boolean NOT NULL DEFAULT '0',
-  "fs" boolean NOT NULL DEFAULT '0',
-  "theme" {$db_prefix}type_content_youtube_theme NOT NULL DEFAULT 'dark',
-  "rel" boolean NOT NULL DEFAULT '0',
   PRIMARY KEY ("content_id","locale")
 );
 _SEP_;
@@ -616,13 +597,13 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-INSERT INTO "{$db_prefix}content_youtube" ("content_id", "locale", "id", "width", "height", "autoplay", "controls", "fs", "theme", "rel") VALUES
-(1, 'fr', 'b3txQs7jEJ4', 267, 200, '0', '1', '0', 'dark', '0'),
-(1, 'en', 'b3txQs7jEJ4', 267, 200, '0', '1', '0', 'dark', '0'),
-(2, 'fr', 'b3txQs7jEJ4', 267, 200, '0', '1', '0', 'dark', '0'),
-(2, 'en', 'b3txQs7jEJ4', 267, 200, '0', '1', '0', 'dark', '0'),
-(3, 'fr', 'eRsGyueVLvQ', 640, 272, '0', '1', '1', 'dark', '1'),
-(3, 'en', 'eRsGyueVLvQ', 640, 272, '0', '1', '1', 'dark', '1');
+INSERT INTO "{$db_prefix}content_youtube" ("content_id", "locale", "id", "width", "height", "autoplay") VALUES
+(1, 'fr', 'b3txQs7jEJ4', 267, 200, '0'),
+(1, 'en', 'b3txQs7jEJ4', 267, 200, '0'),
+(2, 'fr', 'b3txQs7jEJ4', 267, 200, '0'),
+(2, 'en', 'b3txQs7jEJ4', 267, 200, '0'),
+(3, 'fr', 'eRsGyueVLvQ', 640, 272, '0'),
+(3, 'en', 'eRsGyueVLvQ', 640, 272, '0');
 _SEP_;
 		$db_conn->exec($sql);
 

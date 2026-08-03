@@ -2,8 +2,8 @@
 
 /**
  *
- * @copyright  2014-2025 izend.org
- * @version    15
+ * @copyright  2014-2026 izend.org
+ * @version    16
  * @link       http://www.izend.org
  */
 
@@ -162,10 +162,6 @@ CREATE TABLE `{$db_prefix}content_youtube` (
   `miniature` VARCHAR(200) DEFAULT NULL,
   `title` VARCHAR(200) DEFAULT NULL,
   `autoplay` tinyint(1) NOT NULL DEFAULT '0',
-  `controls` tinyint(1) NOT NULL DEFAULT '0',
-  `fs` tinyint(1) NOT NULL DEFAULT '0',
-  `theme` enum('light','dark') NOT NULL DEFAULT 'dark',
-  `rel` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`content_id`,`locale`)
 ) DEFAULT CHARSET=utf8;
 _SEP_;
@@ -480,13 +476,13 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-INSERT INTO `{$db_prefix}content_youtube` (`content_id`, `locale`, `id`, `width`, `height`, `autoplay`, `controls`, `fs`, `theme`, `rel`) VALUES
-(1, 'fr', 'b3txQs7jEJ4', 267, 200, '0', '1', '0', 'dark', '0'),
-(1, 'en', 'b3txQs7jEJ4', 267, 200, '0', '1', '0', 'dark', '0'),
-(2, 'fr', 'b3txQs7jEJ4', 267, 200, '0', '1', '0', 'dark', '0'),
-(2, 'en', 'b3txQs7jEJ4', 267, 200, '0', '1', '0', 'dark', '0'),
-(3, 'fr', 'eRsGyueVLvQ', 640, 272, '0', '1', '1', 'dark', '1'),
-(3, 'en', 'eRsGyueVLvQ', 640, 272, '0', '1', '1', 'dark', '1');
+INSERT INTO `{$db_prefix}content_youtube` (`content_id`, `locale`, `id`, `width`, `height`, `autoplay`) VALUES
+(1, 'fr', 'b3txQs7jEJ4', 267, 200, '0'),
+(1, 'en', 'b3txQs7jEJ4', 267, 200, '0'),
+(2, 'fr', 'b3txQs7jEJ4', 267, 200, '0'),
+(2, 'en', 'b3txQs7jEJ4', 267, 200, '0'),
+(3, 'fr', 'eRsGyueVLvQ', 640, 272, '0'),
+(3, 'en', 'eRsGyueVLvQ', 640, 272, '0');
 _SEP_;
 		$db_conn->exec($sql);
 
