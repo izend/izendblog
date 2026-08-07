@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2014-2026 izend.org
- * @version    13
+ * @version    14
  * @link       http://www.izend.org
  */
 
@@ -13,7 +13,6 @@ function create_db($db_admin_user, $db_admin_password, $db_host, $db_name, $db_u
 	try {
 		$db_conn = new PDO($dsn, $db_admin_user, $db_admin_password);
 		$db_conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$db_conn->exec("SET NAMES 'utf8'");
 
 		$sql="CREATE ROLE \"$db_user\" WITH LOGIN PASSWORD '$db_password'";
 		$db_conn->exec($sql);
@@ -36,7 +35,6 @@ function recover_db($db_admin_user, $db_admin_password, $db_host, $db_name, $db_
 	try {
 		$db_conn = new PDO($dsn, $db_admin_user, $db_admin_password);
 		$db_conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$db_conn->exec("SET NAMES 'utf8'");
 
 		$sql="DROP DATABASE \"$db_name\"";
 		$db_conn->exec($sql);
@@ -58,15 +56,14 @@ function init_db($db_host, $db_name, $db_user, $db_password, $db_prefix, $site_a
 	try {
 		$db_conn = new PDO($dsn, $db_user, $db_password);
 		$db_conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$db_conn->exec("SET NAMES 'utf8'");
 
-		$db_conn->exec("CREATE OR REPLACE FUNCTION FROM_UNIXTIME(integer) RETURNS timestamp AS 'SELECT TO_TIMESTAMP($1)::timestamp AS result' LANGUAGE 'SQL';");
+		$db_conn->exec("CREATE OR REPLACE FUNCTION FROM_UNIXTIME(integer) RETURNS timestamp AS 'SELECT TO_TIMESTAMP($1)::timestamp AS result;' LANGUAGE 'SQL';");
 		$db_conn->exec("CREATE OR REPLACE FUNCTION UNIX_TIMESTAMP() RETURNS bigint AS 'SELECT EXTRACT(EPOCH FROM CURRENT_TIMESTAMP(0))::bigint AS result;' LANGUAGE 'SQL';");
 		$db_conn->exec("CREATE OR REPLACE FUNCTION UNIX_TIMESTAMP(timestamp with time zone) RETURNS bigint AS 'SELECT EXTRACT(EPOCH FROM $1)::bigint AS result;' LANGUAGE 'SQL';");
 		$db_conn->exec("CREATE OR REPLACE FUNCTION UNIX_TIMESTAMP(timestamp without time zone) RETURNS bigint AS 'SELECT EXTRACT(EPOCH FROM $1)::bigint AS result;' LANGUAGE 'SQL';");
 		$db_conn->exec("CREATE OR REPLACE FUNCTION INET_ATON(inet) RETURNS bigint AS 'SELECT INETMI($1,''0.0.0.0'');' LANGUAGE 'SQL';");
 		$db_conn->exec("CREATE OR REPLACE FUNCTION INET_NTOA(bigint) RETURNS inet AS 'SELECT ''0.0.0.0''::inet+$1;' LANGUAGE 'SQL';");
-		$db_conn->exec("CREATE OR REPLACE FUNCTION STRFLAT(text) RETURNS text AS 'SELECT TRANSLATE($1, ''ŠšŽžÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÑÒÓÔÕÖØÙÚÛÜÝŸÞàáâãäåæçèéêëìíîïñòóôõöøùúûüýÿþƒ'', ''SsZzAAAAAAACEEEEIIIINOOOOOOUUUUYYBaaaaaaaceeeeiiiinoooooouuuuyybf'');' LANGUAGE 'SQL';");
+		$db_conn->exec("CREATE OR REPLACE FUNCTION STRFLAT(text) RETURNS text AS 'SELECT TRANSLATE($1, ''ŠšŽžÀÁÂÃÄÅÆÇÐÈÉÊËÌÍÎÏŁÑÒÓÔÕÖØÙÚÛÜÝŸÞàáâãäåæçðèéêëìíîïłñòóôõöøùúûüýÿþƒĐđ'', ''SsZzAAAAAAACDEEEEIIIILNOOOOOOUUUUYYBaaaaaaacdeeeeiiiilnoooooouuuuyybfDd'');' LANGUAGE ''SQL'';");
 
 		$sql= <<<_SEP_
 CREATE TYPE "{$db_prefix}type_locale" AS ENUM('en','fr');
@@ -174,7 +171,7 @@ CREATE TABLE "{$db_prefix}content_longtail" (
 _SEP_;
 		$db_conn->exec($sql);
 
-			$sql= <<<_SEP_
+		$sql= <<<_SEP_
 CREATE TABLE "{$db_prefix}content_text" (
   "content_id" SERIAL,
   "locale" {$db_prefix}type_locale NOT NULL DEFAULT '$default_language',
@@ -192,6 +189,7 @@ CREATE TABLE "{$db_prefix}content_youtube" (
   "id" varchar(20) DEFAULT NULL,
   "width" integer NOT NULL DEFAULT 0,
   "height" integer NOT NULL DEFAULT 0,
+  "center" boolean NOT NULL DEFAULT FALSE,
   "miniature" varchar(200) DEFAULT NULL,
   "title" varchar(200) DEFAULT NULL,
   "autoplay" boolean NOT NULL DEFAULT FALSE,
@@ -308,7 +306,7 @@ _SEP_;
 		$sql= <<<_SEP_
 CREATE TABLE "{$db_prefix}thread" (
   "thread_id" SERIAL,
-  "user_id" integer NOT NULL DEFAULT '1',
+  "user_id" integer NOT NULL DEFAULT 1,
   "thread_type" {$db_prefix}type_thread_thread_type NOT NULL DEFAULT 'thread',
   "created" timestamp NOT NULL,
   "modified" timestamp NOT NULL,
@@ -480,7 +478,7 @@ CREATE TABLE "{$db_prefix}vote" (
   "created" timestamp NOT NULL,
   "user_id" integer NOT NULL DEFAULT 0,
   "ip_address" bigint NOT NULL,
-  "value" integer NOT NULL DEFAULT '1',
+  "value" integer NOT NULL DEFAULT 1,
   PRIMARY KEY ("vote_id"),
   UNIQUE ("content_id","content_type","content_locale","ip_address","user_id")
 );
