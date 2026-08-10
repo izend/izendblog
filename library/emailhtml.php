@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2010-2026 izend.org
- * @version    8
+ * @version    9
  * @link       http://www.izend.org
  */
 
@@ -53,7 +53,7 @@ _SEP_;
 				$cid=md5(uniqid('cid', true));
 				$qfname=preg_quote($url);
 				$pattern[]='#(<img[^>]+src=)"' . $qfname . '"([^>]*>)#is';
-				$replacement[]='{$1}"cid:' . $cid . '"{$2}';
+				$replacement[]='${1}"cid:' . $cid . '"${2}';
 				$related[$url]=array(basename($fname), $filetype, $cid, $base64);
 			}
 
