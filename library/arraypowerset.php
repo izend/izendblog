@@ -2,8 +2,8 @@
 
 /**
  *
- * @copyright  2010-2011 izend.org
- * @version    1
+ * @copyright  2010-2026 izend.org
+ * @version    2
  * @link       http://www.izend.org
  */
 
@@ -12,7 +12,7 @@ function array_power_set($arr) {
 
 	foreach ($arr as $e) {
 		foreach ($r as $c) {
-			array_push($r, array_merge(array($e), $c));
+			$r[] = array_merge(array($e), $c);
 		}
 	}
 
