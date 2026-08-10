@@ -2,10 +2,12 @@
 
 /**
  *
- * @copyright  2010-2011 izend.org
- * @version    2
+ * @copyright  2010-2026 izend.org
+ * @version    3
  * @link       http://www.izend.org
  */
+
+require_once 'sendmail.php';
 
 function emailme($subject, $msg, $from=false, $to=false) {
 	global $webmaster, $mailer;
@@ -19,11 +21,12 @@ function emailme($subject, $msg, $from=false, $to=false) {
 
 	$headers = <<<_SEP_
 From: $from
-Return-Path: $from
-Content-Type: text/plain; charset=utf-8
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
 X-Mailer: $mailer
 _SEP_;
 
-	return @mail($to, $subject, $msg, $headers);
+	return sendmail($to, $subject, $msg, $headers, $from);
 }
 

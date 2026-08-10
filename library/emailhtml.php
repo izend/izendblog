@@ -2,24 +2,28 @@
 
 /**
  *
- * @copyright  2010-2025 izend.org
- * @version    7
+ * @copyright  2010-2026 izend.org
+ * @version    9
  * @link       http://www.izend.org
  */
 
+require_once 'sendmail.php';
 require_once 'filemimetype.php';
 
-function emailhtml($text, $html, $css, $to, $subject, $sender=false) {
+function emailhtml($text, $html, $css, $to, $subject, $from=false) {
 	global $mailer, $webmaster, $sitename;
 
-	if (!$sender) {
-		$sender = $webmaster;
+	if (!$from) {
+		$from = $webmaster;
 	}
 
 	$textheader=$textbody=$htmlheader=$htmlbody=false;
 
 	if ($text) {
-		$textheader = 'Content-Type: text/plain; charset=utf-8';
+		$textheader = <<<_SEP_
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+_SEP_;
 		$textbody = <<<_SEP_
 $text
 
@@ -42,14 +46,14 @@ _SEP_;
 				$filetype=file_mime_type($fname, false);
 				if (!$filetype or strpos($filetype, 'image') !== 0)
 					continue;
-				$data=file_get_contents($fname);
+				$data=@file_get_contents($fname);
 				if (!$data)
 					continue;
 				$base64=chunk_split(base64_encode($data));
 				$cid=md5(uniqid('cid', true));
 				$qfname=preg_quote($url);
 				$pattern[]='#(<img[^>]+src=)"' . $qfname . '"([^>]*>)#is';
-				$replacement[]='{$1}"cid:' . $cid . '"{$2}';
+				$replacement[]='${1}"cid:' . $cid . '"${2}';
 				$related[$url]=array(basename($fname), $filetype, $cid, $base64);
 			}
 
@@ -58,11 +62,14 @@ _SEP_;
 
 		$title=htmlspecialchars($sitename, ENT_COMPAT, 'UTF-8');
 
-		$htmlheader = 'Content-Type: text/html; charset=utf-8';
+		$htmlheader = <<<_SEP_
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+_SEP_;
 		$htmlbody = <<<_SEP_
 <html>
 <head>
-<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <title>$title</title>
 <style type="text/css">
 $css
@@ -77,8 +84,8 @@ _SEP_;
 	}
 
 	$headers = <<<_SEP_
-From: $sender
-Return-Path: $sender
+From: $from
+MIME-Version: 1.0
 X-Mailer: $mailer
 
 _SEP_;
@@ -167,6 +174,5 @@ _SEP_;
 		$body=$htmlbody;
 	}
 
-	return @mail($to, $subject, $body, $headers);
+	return sendmail($to, $subject, $body, $headers, $from);
 }
-

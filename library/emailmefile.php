@@ -2,11 +2,12 @@
 
 /**
  *
- * @copyright  2017 izend.org
- * @version    1
+ * @copyright  2017-2026 izend.org
+ * @version    2
  * @link       http://www.izend.org
  */
 
+require_once 'sendmail.php';
 require_once 'filemimetype.php';
 
 function emailmefile($subject, $msg, $file, $filename=false, $from=false, $to=false) {
@@ -40,14 +41,15 @@ function emailmefile($subject, $msg, $file, $filename=false, $from=false, $to=fa
 
 	$headers = <<<_SEP_
 From: $from
-Return-Path: $from
+MIME-Version: 1.0
 Content-Type: multipart/mixed; boundary="$sep"
 X-Mailer: $mailer
 _SEP_;
 
 	$body = <<<_SEP_
 --$sep
-Content-Type: text/plain; charset=utf-8
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
 
 $msg
 --$sep
@@ -59,6 +61,6 @@ $data
 --$sep--
 _SEP_;
 
-	return @mail($to, $subject, $body, $headers);
+	return sendmail($to, $subject, $body, $headers, $from);
 }
 

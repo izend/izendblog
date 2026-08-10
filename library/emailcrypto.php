@@ -2,18 +2,19 @@
 
 /**
  *
- * @copyright  2010-2011 izend.org
- * @version    2
+ * @copyright  2010-2026 izend.org
+ * @version    3
  * @link       http://www.izend.org
  */
 
+require_once 'sendmail.php';
 require_once 'strtag.php';
 
-function emailcrypto($text, $tag, $to, $subject, $sender=false) {
+function emailcrypto($text, $tag, $to, $subject, $from=false) {
 	global $signature, $mailer, $webmaster;
 
-	if (!$sender) {
-		$sender = $webmaster;
+	if (!$from) {
+		$from = $webmaster;
 	}
 
 	$img=strtag($tag);
@@ -28,8 +29,8 @@ function emailcrypto($text, $tag, $to, $subject, $sender=false) {
 	$data=chunk_split(base64_encode($imgdata));
 
 	$headers = <<<_SEP_
-From: $sender
-Return-Path: $sender
+From: $from
+MIME-Version: 1.0
 Content-Type: multipart/mixed; boundary="$sep"
 X-Mailer: $mailer
 _SEP_;
@@ -39,7 +40,8 @@ _SEP_;
 	if ($text) {
 		$body .= <<<_SEP_
 --$sep
-Content-Type: text/plain; charset=utf-8
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
 
 $text
 
@@ -58,6 +60,6 @@ $data
 --$sep--
 _SEP_;
 
-	return @mail($to, $subject, $body, $headers);
+	return sendmail($to, $subject, $body, $headers, $from);
 }
 

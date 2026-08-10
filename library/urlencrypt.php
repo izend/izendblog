@@ -2,8 +2,8 @@
 
 /**
  *
- * @copyright  2013 izend.org
- * @version    2
+ * @copyright  2013-2026 izend.org
+ * @version    3
  * @link       http://www.izend.org
  */
 
@@ -21,7 +21,7 @@ function urldecodebase64($s) {
 		$s64 .= substr('====', $mod4);
 	}
 
-	return base64_decode($s64);
+	return base64_decode($s64, true);
 }
 
 function urlencrypt($s, $key) {
