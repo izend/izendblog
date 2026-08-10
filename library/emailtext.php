@@ -2,22 +2,25 @@
 
 /**
  *
- * @copyright  2013 izend.org
- * @version    1
+ * @copyright  2013-2026 izend.org
+ * @version    2
  * @link       http://www.izend.org
  */
 
-function emailtext($text, $to, $subject, $sender=false) {
+require_once 'sendmail.php';
+
+function emailtext($text, $to, $subject, $from=false) {
 	global $signature, $mailer, $webmaster;
 
-	if (!$sender) {
-		$sender = $webmaster;
+	if (!$from) {
+		$from = $webmaster;
 	}
 
 	$headers = <<<_SEP_
-From: $sender
-Return-Path: $sender
-Content-Type: text/plain; charset=utf-8
+From: $from
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
 X-Mailer: $mailer
 _SEP_;
 
@@ -28,6 +31,6 @@ $signature
 
 _SEP_;
 
-	return @mail($to, $subject, $body, $headers);
+	return sendmail($to, $subject, $body, $headers, $from);
 }
 
