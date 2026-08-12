@@ -2,8 +2,8 @@
 
 /**
  *
- * @copyright  2017-2018 izend.org
- * @version    2
+ * @copyright  2017-2026 izend.org
+ * @version    3
  * @link       http://www.izend.org
  */
 
@@ -13,7 +13,7 @@ function dircopy($from, $to, $mode = 0777) {
 	}
 
 	if (!is_dir($to)) {
-		if (!@mkdir($to)) {
+		if (!@mkdir($to, $mode)) {
 			return false;
 		}
 	}
