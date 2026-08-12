@@ -2,12 +2,12 @@
 
 /**
  *
- * @copyright  2014 izend.org
- * @version    1
+ * @copyright  2014-2026 izend.org
+ * @version    2
  * @link       http://www.izend.org
  */
 
 function server_ip_address() {
-	return $_SERVER['SERVER_ADDR'];
+	return isset($_SERVER['SERVER_ADDR']) ? $_SERVER['SERVER_ADDR'] : false;
 }
 
