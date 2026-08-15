@@ -2,8 +2,8 @@
 
 /**
  *
- * @copyright  2010-2021 izend.org
- * @version    5
+ * @copyright  2010-2026 izend.org
+ * @version    6
  * @link       http://www.izend.org
  */
 
@@ -11,8 +11,8 @@ function validate_url($url) {
 	return filter_var($url, FILTER_VALIDATE_URL);
 }
 
-function prefix_url($url, $protocol='http') {
-	if (!@parse_url($url, PHP_URL_SCHEME)) {
+function prefix_url($url, $protocol='https') {
+	if (!parse_url($url, PHP_URL_SCHEME)) {
         $url = $protocol . '://' . $url;
     }
 
@@ -20,7 +20,7 @@ function prefix_url($url, $protocol='http') {
 }
 
 function normalize_url($url) {
-	$purl = @parse_url($url);
+	$purl = parse_url($url);
 
 	if (!$purl) {
 		return false;
@@ -97,6 +97,7 @@ function normalize_url($url) {
 }
 
 function _remove_dot_segments($path) {
+	// Remove dot segments from a URI path (RFC 3986 §5.2.4)
 	$newpath = '';
 
 	$watchdog = 100;
@@ -136,6 +137,8 @@ function _remove_dot_segments($path) {
 }
 
 function _restore_allowed_chars($s) {
+	// Restore percent-encoded unreserved characters:
+	// ALPHA / DIGIT / "-" / "." / "_" / "~" (RFC 3986 §2.3)
 	$from = array(
 		'%41', '%42', '%43', '%44', '%45', '%46', '%47', '%48', '%49', '%4A', '%4B', '%4C', '%4D', '%4E', '%4F', '%50', '%51', '%52', '%53', '%54', '%55', '%56', '%57', '%58', '%59', '%5A',
 		'%61', '%62', '%63', '%64', '%65', '%66', '%67', '%68', '%69', '%6A', '%6B', '%6C', '%6D', '%6E', '%6F', '%70', '%71', '%72', '%73', '%74', '%75', '%76', '%77', '%78', '%79', '%7A',
