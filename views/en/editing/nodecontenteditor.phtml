@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2010-2026 izend.org
- * @version    29
+ * @version    30
  * @link       http://www.izend.org
  */
 ?>
@@ -30,8 +30,6 @@ $selected=$new_content_type ? $new_content_type : $content_types[0];
 <option value="file" <?php echo $selected == 'file' ? 'selected="selected"' : ''; ?>>File</option>
 <?php elseif ($type == 'youtube'): ?>
 <option value="youtube" <?php echo $selected == 'youtube' ? 'selected="youtube"' : ''; ?>>YouTube</option>
-<?php elseif ($type == 'longtail'): ?>
-<option value="longtail" <?php echo $selected == 'longtail' ? 'selected="selected"' : ''; ?>>LongTail</option>
 <?php endif; ?>
 <?php endforeach; ?>
 </select>
@@ -68,13 +66,6 @@ foreach ($node_contents as $c) {
 	$content_youtube_center=false;
 	$content_youtube_miniature=$content_youtube_title=false;
 	$content_youtube_autoplay=false;
-	$content_longtail_file=$content_longtail_image=false;
-	$content_longtail_width=$content_longtail_height=0;
-	$content_longtail_skin=false;
-	$content_longtail_controlbar='none';
-	$content_longtail_icons=false;
-	$content_longtail_duration=0;
-	$content_longtail_autostart=$content_longtail_repeat=false;
 	extract($c);	/* content_id content_number content_ignored content_type ... */
 ?>
 <p class="<?php echo $content_ignored ? 'ignored' : (($i % 2) ? 'odd' : 'even'); ?>">
@@ -96,9 +87,6 @@ foreach ($node_contents as $c) {
 <?php break; ?>
 <?php case 'youtube': ?>
 <label>YouTube:</label>
-<?php break; ?>
-<?php case 'longtail': ?>
-<label>LongTail:</label>
 <?php break; ?>
 <?php endswitch; ?>
 </p>
@@ -164,30 +152,6 @@ x
 </p>
 <p>
 <input name="content_youtube_title[<?php echo $i; ?>]" type="text" size="40" maxlength="200" value="<?php if ($content_youtube_title): ?><?php echo htmlspecialchars($content_youtube_title, ENT_COMPAT, 'UTF-8'); ?><?php endif; ?>" title="Title" onkeypress="return returnonenter(event)" />
-</p>
-<?php break; ?>
-<?php case 'longtail': ?>
-<p>
-<input name="content_longtail_file[<?php echo $i; ?>]" type="text" size="40" maxlength="200" value="<?php if ($content_longtail_file): ?><?php echo htmlspecialchars($content_longtail_file, ENT_COMPAT, 'UTF-8'); ?><?php endif; ?>" title="File" onkeypress="return returnonenter(event)" />
-<input name="content_longtail_width[<?php echo $i; ?>]" type="text" size="5" maxlength="5" value="<?php if ($content_longtail_width): ?><?php echo htmlspecialchars($content_longtail_width, ENT_COMPAT, 'UTF-8'); ?><?php endif; ?>" title="Width" onkeypress="return returnonenter(event)" />
-x
-<input name="content_longtail_height[<?php echo $i; ?>]" type="text" size="5" maxlength="5" value="<?php if ($content_longtail_height): ?><?php echo htmlspecialchars($content_longtail_height, ENT_COMPAT, 'UTF-8'); ?><?php endif; ?>" title="Height" onkeypress="return returnonenter(event)" />
-<span class="btn_edit btn_time">Duration:</span>
-<input name="content_longtail_duration[<?php echo $i; ?>]" type="text" size="5" maxlength="5" value="<?php if ($content_longtail_duration): ?><?php echo htmlspecialchars($content_longtail_duration, ENT_COMPAT, 'UTF-8'); ?><?php endif; ?>" title="Duration" onkeypress="return returnonenter(event)" />
-<label for="content_longtail_autostart[<?php echo $i; ?>]"><input id="content_longtail_autostart[<?php echo $i; ?>]" name="content_longtail_autostart[<?php echo $i; ?>]" type="checkbox"<?php if ($content_longtail_autostart): ?> checked="checked"<?php endif; ?> /><span class="btn_edit btn_autostart" title="Auto">auto</span></label>
-<label for="content_longtail_repeat[<?php echo $i; ?>]"><input id="content_longtail_repeat[<?php echo $i; ?>]" name="content_longtail_repeat[<?php echo $i; ?>]" type="checkbox"<?php if ($content_longtail_repeat): ?> checked="checked"<?php endif; ?> /><span class="btn_edit btn_repeat" title="Loop">loop</span></label>
-</p>
-<p>
-<input name="content_longtail_image[<?php echo $i; ?>]" type="text" size="40" maxlength="200" value="<?php if ($content_longtail_image): ?><?php echo htmlspecialchars($content_longtail_image, ENT_COMPAT, 'UTF-8'); ?><?php endif; ?>" title="Picture" onkeypress="return returnonenter(event)" />
-<label for="content_longtail_icons[<?php echo $i; ?>]"><input id="content_longtail_icons[<?php echo $i; ?>]" name="content_longtail_icons[<?php echo $i; ?>]" type="checkbox"<?php if ($content_longtail_icons): ?> checked="checked"<?php endif; ?> /><span class="btn_edit btn_playicon" title="Icons">icons</span></label>
-</p>
-<p>
-<input name="content_longtail_skin[<?php echo $i; ?>]" type="text" size="40" maxlength="200" value="<?php if ($content_longtail_skin): ?><?php echo htmlspecialchars($content_longtail_skin, ENT_COMPAT, 'UTF-8'); ?><?php endif; ?>" title="Skin" onkeypress="return returnonenter(event)" />
-<select name="content_longtail_controlbar[<?php echo $i; ?>]" title="Control bar">
-<?php foreach (array('none' => 'none', 'over' => 'over', 'top' => 'top', 'bottom' => 'bottom') as $cb => $tr): ?>
-<option value="<?php echo $cb; ?>"<?php if ($content_longtail_controlbar == $cb) : ?> selected="selected"<?php endif; ?>><?php echo $tr; ?></option>
-<?php endforeach; ?>
-</select>
 </p>
 <?php break; ?>
 <?php endswitch; ?>
