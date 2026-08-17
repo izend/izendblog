@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2010-2026 izend.org
- * @version    9
+ * @version    10
  * @link       http://www.izend.org
  */
 
@@ -69,22 +69,6 @@ function nodecontent($lang, $node_id) {
 					$autoplay = $c['content_youtube_autoplay'] == 1 ? true : false;
 					if ($id and $width > 0 and $height > 0) {
 						$contents[] = compact('type', 'id', 'width', 'height', 'center', 'miniature', 'title', 'autoplay');
-					}
-					break;
-				case 'longtail':
-					$file=$c['content_longtail_file'];
-					$image = $c['content_longtail_image'];
-					$width=$c['content_longtail_width'];
-					$height=$c['content_longtail_height'];
-					$icons=$c['content_longtail_icons'];
-					$skin=$c['content_longtail_skin'];
-					$controlbar=$c['content_longtail_controlbar'];
-					$duration=$c['content_longtail_duration'];
-					$autostart = $c['content_longtail_autostart'] == 1 ? true : false;
-					$repeat = $c['content_longtail_repeat'] == 1 ? true : false;
-					if ($file) {
-						head('javascript', 'jwplayer');
-						$contents[] = compact('type', 'file', 'image', 'width', 'height', 'icons', 'skin', 'controlbar', 'duration', 'autostart', 'repeat');
 					}
 					break;
 				default:

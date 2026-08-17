@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2010-2026 izend.org
- * @version    26
+ * @version    27
  * @link       http://www.izend.org
  */
 ?>
@@ -56,62 +56,6 @@ __MARK__;
 				echo $embed, PHP_EOL;
 				echo '</div>', PHP_EOL;
 			}
-			break;
-		case 'longtail':
-			extract($c);	/* file image width height skin icons controlbar duration autostart repeat */
-			$id = uniqid('id');
-			echo '<div class="longtail">', PHP_EOL;
-			echo '<div id="', $id, '"></div>', PHP_EOL;
-			echo '<script>', PHP_EOL;
-			echo 'var w=', $width,', h=', $height, ', maxw=$(window).innerWidth();', PHP_EOL;
-			echo 'if (maxw < w) {', PHP_EOL;
-			echo '    h=Math.floor(h*maxw/w);', PHP_EOL;
-			echo '    w=maxw;', PHP_EOL;
-			echo '}', PHP_EOL;
-			echo 'jwplayer("', $id, '").setup({', PHP_EOL;
-			if (true) {
-				echo '    flashplayer: "', $base_path, '/longtail/player.swf",', PHP_EOL;
-			}
-			echo '    id: "', $id, '",', PHP_EOL;
-			echo '    width: w,', PHP_EOL;
-			echo '    height: h,', PHP_EOL;
-			if ($image) {
-				echo '    image: "', $base_path, $image, '",', PHP_EOL;
-			}
-			if (false) {
-				echo '    modes: [', PHP_EOL;
-				echo '        { type: "html5" },', PHP_EOL;
-				echo '        { type: "flash", src: "', $base_path, '/longtail/player.swf" },', PHP_EOL;
-				echo '        { type: "download" },', PHP_EOL;
-				echo '    ],', PHP_EOL;
-			}
-			$levels=preg_split('/[\s]+/', $file);
-			switch (count($levels)) {
-				case 1:
-					echo '    file: "', $base_path, $file, '",', PHP_EOL;
-					break;
-				default:
-					echo '    levels: [', PHP_EOL;
-					foreach ($levels as $file) {
-						echo '        { file: "', $base_path, $file, '" },', PHP_EOL;
-					}
-					echo '    ],', PHP_EOL;
-					break;
-			}
-			if ($duration) {
-				echo '    duration: "', $duration, '",', PHP_EOL;
-			}
-			if ($skin) {
-				echo '    skin: "', $base_path, $skin, '",', PHP_EOL;
-			}
-			echo '    controlbar: "', $controlbar, '",', PHP_EOL;
-			echo '    icons: "', $icons ? 'true' : 'false', '",', PHP_EOL;
-			echo '    repeat: "', $repeat ? 'always' : 'none', '",', PHP_EOL;
-			echo '    autostart: "', $autostart ? 'true' : 'false', '",', PHP_EOL;
-			echo '    screencolor: "ffffff"', PHP_EOL;
-			echo '});', PHP_EOL;
-			echo '</script>', PHP_EOL;
-			echo '</div>', PHP_EOL;
 			break;
 		default:
 			break;

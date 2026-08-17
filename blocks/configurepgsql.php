@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2014-2026 izend.org
- * @version    18
+ * @version    19
  * @link       http://www.izend.org
  */
 
@@ -138,40 +138,6 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE TYPE "{$db_prefix}type_content_longtail_controlbar" AS ENUM('none','bottom','top','over');
-_SEP_;
-		$db_conn->exec($sql);
-
-		$sql= <<<_SEP_
-CREATE FUNCTION {$db_prefix}type_content_longtail_controlbar(unknown) RETURNS {$db_prefix}type_content_longtail_controlbar AS 'SELECT $1::text::{$db_prefix}type_content_longtail_controlbar;' LANGUAGE 'SQL';
-_SEP_;
-		$db_conn->exec($sql);
-
-		$sql= <<<_SEP_
-CREATE CAST (unknown as {$db_prefix}type_content_longtail_controlbar) WITH FUNCTION {$db_prefix}type_content_longtail_controlbar(unknown) AS ASSIGNMENT;
-_SEP_;
-		$db_conn->exec($sql);
-
-		$sql= <<<_SEP_
-CREATE TABLE "{$db_prefix}content_longtail" (
-  "content_id" SERIAL,
-  "locale" {$db_prefix}type_locale NOT NULL DEFAULT '$default_language',
-  "file" varchar(200) DEFAULT NULL,
-  "image" varchar(200) DEFAULT NULL,
-  "width" integer NOT NULL DEFAULT 0,
-  "height" integer NOT NULL DEFAULT 0,
-  "icons" boolean NOT NULL DEFAULT FALSE,
-  "skin" varchar(200) DEFAULT NULL,
-  "controlbar" {$db_prefix}type_content_longtail_controlbar NOT NULL DEFAULT 'none',
-  "duration" integer NOT NULL DEFAULT 0,
-  "autostart" boolean NOT NULL DEFAULT FALSE,
-  "repeat" boolean NOT NULL DEFAULT FALSE,
-  PRIMARY KEY ("content_id","locale")
-);
-_SEP_;
-		$db_conn->exec($sql);
-
-		$sql= <<<_SEP_
 CREATE TABLE "{$db_prefix}content_text" (
   "content_id" SERIAL,
   "locale" {$db_prefix}type_locale NOT NULL DEFAULT '$default_language',
@@ -262,7 +228,7 @@ _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
-CREATE TYPE "{$db_prefix}type_content_type" AS ENUM('text','file','download','infile','youtube','longtail');
+CREATE TYPE "{$db_prefix}type_content_type" AS ENUM('text','file','download','infile','youtube');
 _SEP_;
 		$db_conn->exec($sql);
 

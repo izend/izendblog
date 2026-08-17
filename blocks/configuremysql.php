@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2014-2026 izend.org
- * @version    21
+ * @version    22
  * @link       http://www.izend.org
  */
 
@@ -112,7 +112,7 @@ CREATE TABLE `{$db_prefix}content_file` (
 _SEP_;
 		$db_conn->exec($sql);
 
-			$sql= <<<_SEP_
+		$sql= <<<_SEP_
 CREATE TABLE `{$db_prefix}content_infile` (
   `content_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `locale` enum('en','fr') NOT NULL DEFAULT '$default_language',
@@ -122,26 +122,7 @@ CREATE TABLE `{$db_prefix}content_infile` (
 _SEP_;
 		$db_conn->exec($sql);
 
-			$sql= <<<_SEP_
-CREATE TABLE `{$db_prefix}content_longtail` (
-  `content_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `locale` enum('en','fr') NOT NULL DEFAULT '$default_language',
-  `file` varchar(200) DEFAULT NULL,
-  `image` varchar(200) DEFAULT NULL,
-  `width` int(4) unsigned NOT NULL DEFAULT 0,
-  `height` int(4) unsigned NOT NULL DEFAULT 0,
-  `icons` tinyint(1) NOT NULL DEFAULT 0,
-  `skin` varchar(200) DEFAULT NULL,
-  `controlbar` enum('none','bottom','top','over') NOT NULL DEFAULT 'none',
-  `duration` int(5) unsigned NOT NULL DEFAULT 0,
-  `autostart` tinyint(1) NOT NULL DEFAULT 0,
-  `repeat` tinyint(1) NOT NULL DEFAULT 0,
-  PRIMARY KEY (`content_id`,`locale`)
-) DEFAULT CHARSET=utf8;
-_SEP_;
-		$db_conn->exec($sql);
-
-			$sql= <<<_SEP_
+		$sql= <<<_SEP_
 CREATE TABLE `{$db_prefix}content_text` (
   `content_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `locale` enum('en','fr') NOT NULL DEFAULT '$default_language',
@@ -152,7 +133,7 @@ CREATE TABLE `{$db_prefix}content_text` (
 _SEP_;
 		$db_conn->exec($sql);
 
-			$sql= <<<_SEP_
+		$sql= <<<_SEP_
 CREATE TABLE `{$db_prefix}content_youtube` (
   `content_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `locale` enum('en','fr') NOT NULL DEFAULT '$default_language',
@@ -231,7 +212,7 @@ _SEP_;
 CREATE TABLE `{$db_prefix}node_content` (
   `node_id` int(10) unsigned NOT NULL,
   `content_id` int(10) unsigned NOT NULL,
-  `content_type` enum('text','file','download','infile','youtube','longtail') NOT NULL DEFAULT 'text',
+  `content_type` enum('text','file','download','infile','youtube') NOT NULL DEFAULT 'text',
   `number` int(3) unsigned NOT NULL,
   `ignored` tinyint(1) NOT NULL DEFAULT 0,
   PRIMARY KEY (`node_id`,`content_id`,`content_type`)
