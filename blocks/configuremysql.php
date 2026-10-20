@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2014-2026 izend.org
- * @version    24
+ * @version    25
  * @link       http://www.izend.org
  */
 
@@ -13,7 +13,7 @@ function create_db($db_admin_user, $db_admin_password, $db_host, $db_name, $db_u
 	try {
 		$db_conn = new PDO($dsn, $db_admin_user, $db_admin_password);
 		$db_conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$db_conn->exec("SET NAMES 'utf8'");
+		$db_conn->exec("SET NAMES 'utf8mb4'");
 
 		$sql="CREATE DATABASE `$db_name` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci";
 		$db_conn->exec($sql);
@@ -42,7 +42,7 @@ function recover_db($db_admin_user, $db_admin_password, $db_host, $db_name, $db_
 	try {
 		$db_conn = new PDO($dsn, $db_admin_user, $db_admin_password);
 		$db_conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$db_conn->exec("SET NAMES 'utf8'");
+		$db_conn->exec("SET NAMES 'utf8mb4'");
 
 		$sql="DELETE FROM mysql.`user` WHERE `user`.`Host` = '$db_host' AND `user`.`User` = '$db_user'";
 		$db_conn->exec($sql);
@@ -67,7 +67,7 @@ function init_db($db_host, $db_name, $db_user, $db_password, $db_prefix, $site_a
 	try {
 		$db_conn = new PDO($dsn, $db_user, $db_password);
 		$db_conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$db_conn->exec("SET NAMES 'utf8'");
+		$db_conn->exec("SET NAMES 'utf8mb4'");
 
 		$sql= <<<_SEP_
 CREATE TABLE `{$db_prefix}comment` (
