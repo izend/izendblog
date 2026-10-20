@@ -2,8 +2,8 @@
 
 /**
  *
- * @copyright  2014-2020 izend.org
- * @version    10
+ * @copyright  2014-2026 izend.org
+ * @version    11
  * @link       http://www.izend.org
  */
 
@@ -34,7 +34,7 @@ function db_connect($url, $persistent=true) {
 		$db_conn = new PDO($dsn, $user, $pass, $options);
 		$db_conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$db_conn->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-		$db_conn->exec("SET NAMES 'utf8'");
+		$db_conn->exec("SET NAMES 'utf8mb4'");
 
 		if ($scheme == 'mysql') {
 			$db_conn->exec("SET SQL_MODE='ANSI_QUOTES'");

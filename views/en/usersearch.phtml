@@ -2,8 +2,8 @@
 
 /**
  *
- * @copyright  2013-2022 izend.org
- * @version    15
+ * @copyright  2013-2026 izend.org
+ * @version    16
  * @link       http://www.izend.org
  */
 ?>
@@ -46,7 +46,7 @@ $pagenums=page_range($page, $npages, 2);
 <td class="useraccessed"><?php if ($user_accessed): ?><?php echo date('m/d/Y H:i', $user_accessed); ?><?php else: ?>&nbsp;<?php endif; ?></td>
 <td class="userlocked"><?php if (!$user_active or $user_banned): ?><span class="icon icon_lock">locked</span><?php else: ?>&nbsp;<?php endif; ?></td>
 <?php if ($with_website): ?>
-<td class="userwebsite"><?php if ($user_website): ?><a href="http://<?php echo $user_website; ?>"><?php echo $user_website; ?></a><?php else: ?>&nbsp;<?php endif; ?></td>
+<td class="userwebsite"><?php if ($user_website): ?><a href="https://<?php echo $user_website; ?>"><?php echo $user_website; ?></a><?php else: ?>&nbsp;<?php endif; ?></td>
 <?php endif; ?>
 </tr>
 <?php $i++; ?>

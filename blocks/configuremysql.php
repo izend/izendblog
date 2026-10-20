@@ -3,7 +3,7 @@
 /**
  *
  * @copyright  2014-2026 izend.org
- * @version    20
+ * @version    26
  * @link       http://www.izend.org
  */
 
@@ -13,7 +13,7 @@ function create_db($db_admin_user, $db_admin_password, $db_host, $db_name, $db_u
 	try {
 		$db_conn = new PDO($dsn, $db_admin_user, $db_admin_password);
 		$db_conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$db_conn->exec("SET NAMES 'utf8'");
+		$db_conn->exec("SET NAMES 'utf8mb4'");
 
 		$sql="CREATE DATABASE `$db_name` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci";
 		$db_conn->exec($sql);
@@ -42,7 +42,7 @@ function recover_db($db_admin_user, $db_admin_password, $db_host, $db_name, $db_
 	try {
 		$db_conn = new PDO($dsn, $db_admin_user, $db_admin_password);
 		$db_conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$db_conn->exec("SET NAMES 'utf8'");
+		$db_conn->exec("SET NAMES 'utf8mb4'");
 
 		$sql="DELETE FROM mysql.`user` WHERE `user`.`Host` = '$db_host' AND `user`.`User` = '$db_user'";
 		$db_conn->exec($sql);
@@ -67,13 +67,13 @@ function init_db($db_host, $db_name, $db_user, $db_password, $db_prefix, $site_a
 	try {
 		$db_conn = new PDO($dsn, $db_user, $db_password);
 		$db_conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$db_conn->exec("SET NAMES 'utf8'");
+		$db_conn->exec("SET NAMES 'utf8mb4'");
 
 		$sql= <<<_SEP_
 CREATE TABLE `{$db_prefix}comment` (
   `comment_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `node_id` int(10) unsigned NOT NULL,
-  `locale` enum('en','fr') CHARACTER SET ascii COLLATE ascii NOT NULL DEFAULT '$default_language',
+  `locale` enum('en','fr') CHARACTER SET ascii COLLATE ascii_bin NOT NULL DEFAULT '$default_language',
   `created` datetime NOT NULL,
   `edited` datetime NOT NULL,
   `user_id` int(10) unsigned NOT NULL DEFAULT 0,
@@ -83,60 +83,60 @@ CREATE TABLE `{$db_prefix}comment` (
   `confirmed` tinyint(1) NOT NULL DEFAULT 1,
   PRIMARY KEY (`comment_id`),
   KEY `node` (`node_id`,`locale`)
-) DEFAULT CHARSET=utf8;
+) DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_general_ci;
 _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
 CREATE TABLE `{$db_prefix}content_download` (
   `content_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `locale` enum('en','fr') CHARACTER SET ascii COLLATE ascii NOT NULL DEFAULT '$default_language',
+  `locale` enum('en','fr') CHARACTER SET ascii COLLATE ascii_bin NOT NULL DEFAULT '$default_language',
   `name` varchar(50) DEFAULT NULL,
   `path` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`content_id`,`locale`)
-) DEFAULT CHARSET=utf8;
+) DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_general_ci;
 _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
 CREATE TABLE `{$db_prefix}content_file` (
   `content_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `locale` enum('en','fr') CHARACTER SET ascii COLLATE ascii NOT NULL DEFAULT '$default_language',
+  `locale` enum('en','fr') CHARACTER SET ascii COLLATE ascii_bin NOT NULL DEFAULT '$default_language',
   `path` varchar(200) DEFAULT NULL,
   `start` int(5) unsigned NOT NULL DEFAULT 0,
   `end` int(5) unsigned NOT NULL DEFAULT 0,
   `format` varchar(20) DEFAULT NULL,
   `lineno` tinyint(1) NOT NULL DEFAULT 1,
   PRIMARY KEY (`content_id`,`locale`)
-) DEFAULT CHARSET=utf8;
+) DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_general_ci;
 _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
 CREATE TABLE `{$db_prefix}content_infile` (
   `content_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `locale` enum('en','fr') CHARACTER SET ascii COLLATE ascii NOT NULL DEFAULT '$default_language',
+  `locale` enum('en','fr') CHARACTER SET ascii COLLATE ascii_bin NOT NULL DEFAULT '$default_language',
   `path` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`content_id`,`locale`)
-) DEFAULT CHARSET=utf8;
+) DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_general_ci;
 _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
 CREATE TABLE `{$db_prefix}content_text` (
   `content_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `locale` enum('en','fr') CHARACTER SET ascii COLLATE ascii NOT NULL DEFAULT '$default_language',
+  `locale` enum('en','fr') CHARACTER SET ascii COLLATE ascii_bin NOT NULL DEFAULT '$default_language',
   `text` text,
   `eval` tinyint(1) NOT NULL DEFAULT 0,
   PRIMARY KEY (`content_id`,`locale`)
-) DEFAULT CHARSET=utf8;
+) DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_general_ci;
 _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
 CREATE TABLE `{$db_prefix}content_youtube` (
   `content_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `locale` enum('en','fr') CHARACTER SET ascii COLLATE ascii NOT NULL DEFAULT '$default_language',
+  `locale` enum('en','fr') CHARACTER SET ascii COLLATE ascii_bin NOT NULL DEFAULT '$default_language',
   `id` varchar(20) CHARACTER SET ascii COLLATE ascii_bin DEFAULT NULL,
   `width` int(4) unsigned NOT NULL DEFAULT 0,
   `height` int(4) unsigned NOT NULL DEFAULT 0,
@@ -145,7 +145,7 @@ CREATE TABLE `{$db_prefix}content_youtube` (
   `title` VARCHAR(200) DEFAULT NULL,
   `autoplay` tinyint(1) NOT NULL DEFAULT 0,
   PRIMARY KEY (`content_id`,`locale`)
-) DEFAULT CHARSET=utf8;
+) DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_general_ci;
 _SEP_;
 		$db_conn->exec($sql);
 
@@ -153,22 +153,22 @@ _SEP_;
 CREATE TABLE `{$db_prefix}newsletter_post` (
   `thread_id` int(10) unsigned NOT NULL,
   `node_id` int(10) unsigned NOT NULL,
-  `locale` enum('en','fr') CHARACTER SET ascii COLLATE ascii NOT NULL DEFAULT '$default_language',
+  `locale` enum('en','fr') CHARACTER SET ascii COLLATE ascii_bin NOT NULL DEFAULT '$default_language',
   `scheduled` datetime NOT NULL,
   `mailed` datetime DEFAULT NULL,
   PRIMARY KEY (`thread_id`,`node_id`,`locale`)
-) DEFAULT CHARSET=utf8;
+) DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_general_ci;
 _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
 CREATE TABLE `{$db_prefix}newsletter_user` (
   `mail` varchar(100) NOT NULL,
-  `locale` enum('en','fr') CHARACTER SET ascii COLLATE ascii NOT NULL DEFAULT '$default_language',
+  `locale` enum('en','fr') CHARACTER SET ascii COLLATE ascii_bin NOT NULL DEFAULT '$default_language',
   `created` datetime NOT NULL,
   PRIMARY KEY (`mail`),
   KEY `locale` (`locale`)
-) DEFAULT CHARSET=utf8;
+) DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_general_ci;
 _SEP_;
 		$db_conn->exec($sql);
 
@@ -189,14 +189,14 @@ CREATE TABLE `{$db_prefix}node` (
   `pinit` tinyint(1) NOT NULL DEFAULT 0,
   `whatsapp` tinyint(1) NOT NULL DEFAULT 1,
   PRIMARY KEY (`node_id`)
-) DEFAULT CHARSET=utf8;
+) DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_general_ci;
 _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
 CREATE TABLE `{$db_prefix}node_locale` (
   `node_id` int(10) unsigned NOT NULL,
-  `locale` enum('en','fr') CHARACTER SET ascii COLLATE ascii NOT NULL DEFAULT '$default_language',
+  `locale` enum('en','fr') CHARACTER SET ascii COLLATE ascii_bin NOT NULL DEFAULT '$default_language',
   `name` varchar(100) NOT NULL,
   `title` varchar(100) NULL default NULL,
   `abstract` text,
@@ -204,7 +204,7 @@ CREATE TABLE `{$db_prefix}node_locale` (
   `image` varchar(200) DEFAULT NULL,
   `visited` int(10) unsigned NOT NULL DEFAULT 0,
   PRIMARY KEY (`node_id`,`locale`)
-) DEFAULT CHARSET=utf8;
+) DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_general_ci;
 _SEP_;
 		$db_conn->exec($sql);
 
@@ -212,11 +212,11 @@ _SEP_;
 CREATE TABLE `{$db_prefix}node_content` (
   `node_id` int(10) unsigned NOT NULL,
   `content_id` int(10) unsigned NOT NULL,
-  `content_type` enum('text','file','download','infile','youtube') CHARACTER SET ascii COLLATE ascii NOT NULL DEFAULT 'text',
+  `content_type` enum('text','file','download','infile','youtube') CHARACTER SET ascii COLLATE ascii_bin NOT NULL DEFAULT 'text',
   `number` int(3) unsigned NOT NULL,
   `ignored` tinyint(1) NOT NULL DEFAULT 0,
   PRIMARY KEY (`node_id`,`content_id`,`content_type`)
-) DEFAULT CHARSET=utf8;
+) DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_general_ci;
 _SEP_;
 		$db_conn->exec($sql);
 
@@ -224,7 +224,7 @@ _SEP_;
 CREATE TABLE `{$db_prefix}thread` (
   `thread_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` int(10) unsigned NOT NULL DEFAULT 1,
-  `thread_type` enum('thread','folder','story','book','rss','newsletter') CHARACTER SET ascii COLLATE ascii NOT NULL DEFAULT 'thread',
+  `thread_type` enum('thread','folder','story','book','rss','newsletter') CHARACTER SET ascii COLLATE ascii_bin NOT NULL DEFAULT 'thread',
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL,
   `number` int(4) unsigned NOT NULL,
@@ -241,21 +241,21 @@ CREATE TABLE `{$db_prefix}thread` (
   `pinit` tinyint(1) NOT NULL DEFAULT 1,
   `whatsapp` tinyint(1) NOT NULL DEFAULT 1,
   PRIMARY KEY (`thread_id`)
-) DEFAULT CHARSET=utf8;
+) DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_general_ci;
 _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
 CREATE TABLE `{$db_prefix}thread_locale` (
   `thread_id` int(10) unsigned NOT NULL,
-  `locale` enum('en','fr') CHARACTER SET ascii COLLATE ascii NOT NULL DEFAULT '$default_language',
+  `locale` enum('en','fr') CHARACTER SET ascii COLLATE ascii_bin NOT NULL DEFAULT '$default_language',
   `name` varchar(100) NOT NULL,
   `title` varchar(100) DEFAULT NULL,
   `abstract` text,
   `cloud` text,
   `image` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`thread_id`,`locale`)
-) DEFAULT CHARSET=utf8;
+) DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_general_ci;
 _SEP_;
 		$db_conn->exec($sql);
 
@@ -266,18 +266,18 @@ CREATE TABLE `{$db_prefix}thread_node` (
   `number` int(4) unsigned NOT NULL,
   `ignored` tinyint(1) NOT NULL DEFAULT 0,
   PRIMARY KEY (`thread_id`,`node_id`)
-) DEFAULT CHARSET=utf8;
+) DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_general_ci;
 _SEP_;
 		$db_conn->exec($sql);
 
 		$sql= <<<_SEP_
 CREATE TABLE `{$db_prefix}tag` (
   `tag_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `locale` enum('en','fr') CHARACTER SET ascii COLLATE ascii NOT NULL DEFAULT '$default_language',
+  `locale` enum('en','fr') CHARACTER SET ascii COLLATE ascii_bin NOT NULL DEFAULT '$default_language',
   `name` varchar(100) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`tag_id`,`locale`),
   UNIQUE KEY `locale` (`locale`,`name`)
-) DEFAULT CHARSET=utf8;
+) DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_general_ci;
 _SEP_;
 		$db_conn->exec($sql);
 
@@ -286,7 +286,7 @@ CREATE TABLE `{$db_prefix}tag_index` (
   `tag_id` int(10) unsigned NOT NULL,
   `node_id` int(10) unsigned NOT NULL,
   PRIMARY KEY (`tag_id`,`node_id`)
-) DEFAULT CHARSET=utf8;
+) DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_general_ci;
 _SEP_;
 		$db_conn->exec($sql);
 
@@ -304,14 +304,14 @@ CREATE TABLE `{$db_prefix}user` (
   `modified` datetime DEFAULT NULL,
   `accessed` datetime DEFAULT NULL,
   `logged` int(10) unsigned NOT NULL DEFAULT 0,
-  `locale` enum('en','fr') CHARACTER SET ascii COLLATE ascii NOT NULL DEFAULT '$default_language',
+  `locale` enum('en','fr') CHARACTER SET ascii COLLATE ascii_bin NOT NULL DEFAULT '$default_language',
   `active` tinyint(1) NOT NULL DEFAULT 1,
   `banned` tinyint(1) NOT NULL DEFAULT 0,
   `confirmed` tinyint(1) NOT NULL DEFAULT 1,
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `name` (`name`),
   UNIQUE KEY `mail` (`mail`)
-) DEFAULT CHARSET=utf8;
+) DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_general_ci;
 _SEP_;
 		$db_conn->exec($sql);
 
@@ -322,7 +322,7 @@ CREATE TABLE IF NOT EXISTS `{$db_prefix}user_info` (
   `firstname` varchar(100) DEFAULT NULL,
   `help` tinyint(1) NOT NULL DEFAULT 1,
   PRIMARY KEY (`user_id`)
-) DEFAULT CHARSET=utf8;
+) DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_general_ci;
 _SEP_;
 		$db_conn->exec($sql);
 
@@ -332,7 +332,7 @@ CREATE TABLE `{$db_prefix}role` (
   `name` varchar(40) NOT NULL,
   PRIMARY KEY (`role_id`),
   UNIQUE KEY `name` (`name`)
-) DEFAULT CHARSET=utf8;
+) DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_general_ci;
 _SEP_;
 		$db_conn->exec($sql);
 
@@ -342,7 +342,7 @@ CREATE TABLE `{$db_prefix}user_role` (
   `role_id` int(10) unsigned NOT NULL,
   PRIMARY KEY (`user_id`,`role_id`),
   KEY `role` (`role_id`)
-) DEFAULT CHARSET=utf8;
+) DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_general_ci;
 _SEP_;
 		$db_conn->exec($sql);
 
@@ -351,7 +351,7 @@ CREATE TABLE `{$db_prefix}registry` (
   `name` varchar(100) NOT NULL,
   `value` longtext NOT NULL,
   PRIMARY KEY (`name`)
-) DEFAULT CHARSET=utf8;
+) DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_general_ci;
 _SEP_;
 		$db_conn->exec($sql);
 
@@ -363,7 +363,7 @@ CREATE TABLE `{$db_prefix}track` (
   `request_uri` varchar(255) NOT NULL,
   `user_agent` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`track_id`)
-) DEFAULT CHARSET=utf8;
+) DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_general_ci;
 _SEP_;
 		$db_conn->exec($sql);
 
@@ -371,15 +371,15 @@ _SEP_;
 CREATE TABLE `{$db_prefix}vote` (
   `vote_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `content_id` int(10) unsigned NOT NULL,
-  `content_type` enum('node','thread','comment') CHARACTER SET ascii COLLATE ascii NOT NULL DEFAULT 'node',
-  `content_locale` enum('en','fr') CHARACTER SET ascii COLLATE ascii NOT NULL DEFAULT '$default_language',
+  `content_type` enum('node','thread','comment') CHARACTER SET ascii COLLATE ascii_bin NOT NULL DEFAULT 'node',
+  `content_locale` enum('en','fr') CHARACTER SET ascii COLLATE ascii_bin NOT NULL DEFAULT '$default_language',
   `created` datetime NOT NULL,
   `user_id` int(10) unsigned NOT NULL DEFAULT 0,
   `ip_address` int(10) unsigned NOT NULL,
   `value` int(11) NOT NULL DEFAULT 1,
   PRIMARY KEY (`vote_id`),
   UNIQUE KEY `content` (`content_id`,`content_type`,`content_locale`,`ip_address`,`user_id`)
-) DEFAULT CHARSET=utf8;
+) DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_general_ci;
 _SEP_;
 		$db_conn->exec($sql);
 
